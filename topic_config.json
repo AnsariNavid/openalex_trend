@@ -1,0 +1,20 @@
+{
+  "institution_ids": [
+    "https://openalex.org/I74973139",
+    "https://openalex.org/I136199984"
+  ],
+  "from_date": "2020-01-01",
+  "to_date": "2024-12-31",
+  "max_pages": 8,
+  "per_page": 200,
+  "topics": [
+    "battery recycling",
+    "solid-state electrolytes",
+    "electrocatalysis"
+  ],
+  "results_dir": "results",
+  "output_relevant_jsonl": "topic_relevant_papers.jsonl",
+  "output_analysis_md": "topic_analysis.md",
+  "cheap_model": "gpt-4o-mini",
+  "analysis_model": "gpt-4.1"
+}
