@@ -13,10 +13,11 @@ PyCharm-friendly scripts for OpenAlex collaboration analysis.
 2. Filtered output restricted to journals and conferences.
 3. Top 10 collaborating institutes in Germany.
 4. Named host institutes in the report header.
-5. Yearly trend section (publication and collaborator-institute changes).
-6. Main collaborator individuals with a research-background column and short bios.
-7. Theme summaries based on publication abstracts.
-8. Smooth narrative + future collaboration section via GPT API (if `OPENAI_API_KEY` is set).
+5. **Collaboration directions per top German partner**, inferred from abstracts of papers co-authored with that partner.
+6. Yearly trend section (publication and collaborator-institute changes).
+7. Main collaborator individuals with a research-background column and short bios.
+8. Theme summaries based on publication abstracts.
+9. Smooth narrative + future collaboration section via GPT API (if `OPENAI_API_KEY` is set).
 
 ## Configuration
 
@@ -28,7 +29,8 @@ Edit `config.json` (or copy from `config.example.json`):
 - `top_collaborators`, `top_individuals`
 - `results_dir` (all outputs saved here)
 - `output_report`
-- `openai_model`
+- `openai_model` (general model)
+- `analysis_model` (recommended stronger model for deeper direction analysis, default `gpt-4.1`)
 
 ## Run in PyCharm
 
