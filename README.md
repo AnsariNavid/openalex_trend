@@ -56,3 +56,38 @@ Without this key, the script still runs and generates non-GPT fallback text.
 ## Progress bars
 
 Both scripts print progress bars for each major operation so it is easy to follow execution.
+
+
+## Topic-focused script (new)
+
+Use `topic_focused_collab_filter.py` when you want to track only papers relevant to specific topics.
+
+### What it does
+
+1. Uses your host institutes and date range.
+2. Keeps only papers co-authored with German collaborator institutes.
+3. Reads each paper (title + abstract) and checks relevance to your custom topics one-by-one using a **cheap model** (`cheap_model`).
+4. Saves relevant papers with metadata to JSONL.
+5. Produces a short topic-level collaboration analysis markdown file.
+
+### Topic config
+
+Copy and edit:
+
+```bash
+cp topic_config.example.json topic_config.json
+```
+
+Key settings:
+- `topics`: list of your topics of interest.
+- `cheap_model`: low-cost model for paper-level relevance decisions.
+- `analysis_model`: stronger model for final synthesis.
+- `output_relevant_jsonl`, `output_analysis_md`: output files under `results_dir`.
+
+### Run
+
+In PyCharm run `topic_focused_collab_filter.py`, or in terminal:
+
+```bash
+python topic_focused_collab_filter.py
+```
