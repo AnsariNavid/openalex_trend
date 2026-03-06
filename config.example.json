@@ -1,0 +1,15 @@
+{
+  "institution_ids": [
+    "https://openalex.org/I74973139",
+    "https://openalex.org/I136199984"
+  ],
+  "from_date": "2020-01-01",
+  "to_date": "2024-12-31",
+  "max_pages": 8,
+  "per_page": 200,
+  "top_collaborators": 10,
+  "top_individuals": 10,
+  "results_dir": "results",
+  "output_report": "collaboration_report.md",
+  "openai_model": "gpt-4o-mini"
+}
