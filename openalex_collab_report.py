@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import sys
 import textwrap
 import time
@@ -145,6 +146,66 @@ def invert_abstract(inverted: dict[str, list[int]] | None) -> str:
     return " ".join(t for t in tokens if t).strip()
 
 
+def normalize_for_dedup(sentence: str) -> str:
+    s = sentence.lower().strip()
+    s = re.sub(r"\s+", " ", s)
+    s = re.sub(r"[^a-z0-9 ]", "", s)
+    return s
+
+
+def dedupe_sentences(text: str) -> str:
+    parts = re.split(r"(?<=[.!?])\s+", text.strip())
+    seen: set[str] = set()
+    kept: list[str] = []
+    for part in parts:
+        clean = part.strip()
+        if not clean:
+            continue
+        key = normalize_for_dedup(clean)
+        if key and key not in seen:
+            seen.add(key)
+            kept.append(clean)
+    return " ".join(kept).strip()
+
+
+def parse_json_object_from_text(raw_text: str) -> dict[str, Any] | None:
+    stripped = raw_text.strip()
+    if stripped.startswith("```"):
+        stripped = re.sub(r"^```(?:json)?", "", stripped).strip()
+        stripped = re.sub(r"```$", "", stripped).strip()
+
+    try:
+        parsed = json.loads(stripped)
+        if isinstance(parsed, dict):
+            return parsed
+    except json.JSONDecodeError:
+        pass
+
+    match = re.search(r"\{.*\}", raw_text, re.DOTALL)
+    if not match:
+        return None
+
+    try:
+        parsed = json.loads(match.group(0))
+        return parsed if isinstance(parsed, dict) else None
+    except json.JSONDecodeError:
+        return None
+
+
+def build_local_theme_summaries(abstracts_by_theme: dict[str, list[str]]) -> dict[str, str]:
+    out: dict[str, str] = {}
+    for theme, abstracts in abstracts_by_theme.items():
+        if not abstracts:
+            out[theme] = "No abstract text available for this theme in the selected period."
+            continue
+        merged = " ".join(abstracts[:3])
+        sentences = re.split(r"(?<=[.!?])\s+", merged)
+        picked = [s.strip() for s in sentences if len(s.strip()) > 20][:3]
+        summary = " ".join(picked) if picked else merged[:320]
+        out[theme] = dedupe_sentences(summary)
+    return out
+
+
 def fetch_institution_name(inst_id: str) -> str:
     short_id = inst_id.replace("https://openalex.org/", "")
     data = safe_get(f"{OPENALEX_INSTITUTIONS_ENDPOINT}/{short_id}", {"select": "display_name"})
@@ -267,7 +328,7 @@ def build_top_individuals(works: list[dict[str, Any]], host_ids: set[str], top_n
         )
         bg_terms = [x.get("display_name", "") for x in (details.get("x_concepts") or [])[:3] if x.get("display_name")]
         bg_text = ", ".join(bg_terms) if bg_terms else "interdisciplinary collaboration"
-        bio = (
+        bio = dedupe_sentences(
             f"{name} works mainly on {bg_text}; has {details.get('works_count', 'N/A')} indexed works "
             f"and {details.get('cited_by_count', 'N/A')} citations"
             + (f"; recent affiliation: {inst_names}." if inst_names else ".")
@@ -341,31 +402,29 @@ def summarize_theme_abstracts(
             if theme.lower() in lowered and len(abstracts_by_theme[theme]) < 8:
                 abstracts_by_theme[theme].append(abstract[:1500])
 
+    local_fallback = build_local_theme_summaries(abstracts_by_theme)
+
     key = os.getenv("OPENAI_API_KEY")
     if not key:
-        # Lightweight fallback summaries.
-        out: dict[str, str] = {}
-        for theme, abstracts in abstracts_by_theme.items():
-            if not abstracts:
-                out[theme] = "No abstract text available for this theme in the selected period."
-            else:
-                sample = abstracts[0].split(". ")[:2]
-                out[theme] = " ".join(sample).strip() or abstracts[0][:240]
-        return out
+        return local_fallback
 
     payload = {
         "model": config.openai_model,
         "temperature": 0.2,
+        "response_format": {"type": "json_object"},
         "messages": [
             {
                 "role": "system",
-                "content": "You summarize research themes in concise and smooth human-friendly language.",
+                "content": (
+                    "You summarize research themes in concise, smooth, non-repetitive language. "
+                    "Never repeat the same fact in different wording."
+                ),
             },
             {
                 "role": "user",
                 "content": (
-                    "For each theme, write a 2-3 sentence summary based on abstract snippets. "
-                    "Return strict JSON object mapping theme to summary.\n"
+                    "Return only JSON mapping each theme to a 2-3 sentence summary based on the abstract snippets.\n"
+                    f"Themes: {top_theme_names}\n"
                     + json.dumps(abstracts_by_theme, ensure_ascii=False)
                 ),
             },
@@ -375,10 +434,18 @@ def summarize_theme_abstracts(
     headers = {"Authorization": f"Bearer {key}", "Content-Type": "application/json"}
     try:
         resp = safe_post_json(OPENAI_CHAT_ENDPOINT, payload, headers)
-        content = resp["choices"][0]["message"]["content"]
-        return json.loads(content)
+        content = resp.get("choices", [{}])[0].get("message", {}).get("content", "")
+        parsed = parse_json_object_from_text(content)
+        if not parsed:
+            return local_fallback
+
+        out: dict[str, str] = {}
+        for theme in top_theme_names:
+            candidate = str(parsed.get(theme, local_fallback.get(theme, ""))).strip()
+            out[theme] = dedupe_sentences(candidate) if candidate else local_fallback.get(theme, "")
+        return out
     except Exception:
-        return {t: "Theme summary could not be generated due to API/network limits." for t in top_theme_names}
+        return local_fallback
 
 
 def generate_gpt_analysis(
@@ -395,11 +462,14 @@ def generate_gpt_analysis(
 
     payload = {
         "model": config.openai_model,
-        "temperature": 0.3,
+        "temperature": 0.25,
         "messages": [
             {
                 "role": "system",
-                "content": "Write smooth, concise, easy-to-follow markdown text for research leaders.",
+                "content": (
+                    "Write smooth, concise markdown text for research leaders. "
+                    "Strictly avoid repeating the same fact."
+                ),
             },
             {
                 "role": "user",
@@ -421,7 +491,9 @@ def generate_gpt_analysis(
     headers = {"Authorization": f"Bearer {key}", "Content-Type": "application/json"}
     try:
         resp = safe_post_json(OPENAI_CHAT_ENDPOINT, payload, headers)
-        return resp["choices"][0]["message"]["content"]
+        raw = resp.get("choices", [{}])[0].get("message", {}).get("content", "")
+        text = dedupe_sentences(raw) if raw else ""
+        return text or "## Narrative Analysis\n\nGPT returned empty analysis content."
     except Exception:
         return "## Narrative Analysis\n\nGPT narrative could not be generated due to API/network limits."
 
@@ -465,7 +537,7 @@ def format_report(
     lines.extend(["", "## Theme Summaries from Abstracts", ""])
     for theme, _ in themes[:6]:
         lines.append(f"### {theme}")
-        lines.append(theme_summaries.get(theme, "No summary available."))
+        lines.append(dedupe_sentences(theme_summaries.get(theme, "No summary available.")))
         lines.append("")
 
     lines.extend([
@@ -475,7 +547,7 @@ def format_report(
         "|---|---:|---:|---:|---|---|",
     ])
     for p in top_people:
-        bio = p["bio"].replace("|", "\\|")
+        bio = dedupe_sentences(p["bio"]).replace("|", "\\|")
         rb = str(p["research_background"]).replace("|", "\\|")
         lines.append(
             f"| {p['name']} | {p['coauthored_papers']} | {p['works_count']} | {p['cited_by_count']} | {rb} | {bio} |"
