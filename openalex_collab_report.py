@@ -41,6 +41,7 @@ class AppConfig:
     results_dir: str
     openai_model: str
     analysis_model: str
+    openalex_api_key: str
 
 
 class ConfigError(Exception):
@@ -76,6 +77,7 @@ def load_config(path: str = "config.json") -> AppConfig:
         "output_report",
         "results_dir",
         "openai_model",
+        "openalex_api_key",
     ]
     missing = [k for k in required if k not in raw]
     if missing:
@@ -99,6 +101,7 @@ def load_config(path: str = "config.json") -> AppConfig:
         results_dir=str(raw["results_dir"]),
         openai_model=str(raw["openai_model"]),
         analysis_model=str(raw.get("analysis_model", "gpt-4.1")),
+        openalex_api_key=str(raw.get("openalex_api_key", "")).strip(),
     )
 
 
@@ -115,6 +118,13 @@ def safe_get(url: str, params: dict[str, Any], max_retries: int = 3) -> dict[str
     return {}
 
 
+
+
+def add_openalex_auth(params: dict[str, Any], api_key: str) -> dict[str, Any]:
+    enriched = dict(params)
+    if api_key:
+        enriched["api_key"] = api_key
+    return enriched
 def safe_post_json(url: str, payload: dict[str, Any], headers: dict[str, str], max_retries: int = 3) -> dict[str, Any]:
     req = Request(url=url, data=json.dumps(payload).encode("utf-8"), method="POST")
     for k, v in headers.items():
@@ -208,19 +218,19 @@ def build_local_theme_summaries(abstracts_by_theme: dict[str, list[str]]) -> dic
     return out
 
 
-def fetch_institution_name(inst_id: str) -> str:
+def fetch_institution_name(inst_id: str, openalex_api_key: str) -> str:
     short_id = inst_id.replace("https://openalex.org/", "")
-    data = safe_get(f"{OPENALEX_INSTITUTIONS_ENDPOINT}/{short_id}", {"select": "display_name"})
+    data = safe_get(f"{OPENALEX_INSTITUTIONS_ENDPOINT}/{short_id}", add_openalex_auth({"select": "display_name"}, openalex_api_key))
     return data.get("display_name", short_id)
 
 
-def fetch_host_institutions(inst_ids: list[str], pb: ProgressBar) -> dict[str, str]:
+def fetch_host_institutions(inst_ids: list[str], openalex_api_key: str, pb: ProgressBar) -> dict[str, str]:
     out: dict[str, str] = {}
     total = len(inst_ids)
     pb.update("Resolving host institute names", 0, total)
     for idx, iid in enumerate(inst_ids, start=1):
         try:
-            out[iid] = fetch_institution_name(iid)
+            out[iid] = fetch_institution_name(iid, openalex_api_key)
         except Exception:
             out[iid] = iid.replace("https://openalex.org/", "")
         pb.update("Resolving host institute names", idx, total)
@@ -248,7 +258,7 @@ def fetch_works(config: AppConfig, pb: ProgressBar) -> list[dict[str, Any]]:
                 "authorships,concepts,primary_location,abstract_inverted_index"
             ),
         }
-        data = safe_get(OPENALEX_WORKS_ENDPOINT, params)
+        data = safe_get(OPENALEX_WORKS_ENDPOINT, add_openalex_auth(params, config.openalex_api_key))
         batch = data.get("results", [])
         if not batch:
             pb.update("Fetching publications", page, config.max_pages)
@@ -284,20 +294,20 @@ def build_collaboration_stats(works: list[dict[str, Any]], host_ids: set[str], t
     return [(name, c, iid) for (iid, name), c in counter.most_common(top_n)]
 
 
-def fetch_author(author_id: str) -> dict[str, Any] | None:
+def fetch_author(author_id: str, openalex_api_key: str) -> dict[str, Any] | None:
     if not author_id:
         return None
     short_id = author_id.replace("https://openalex.org/", "")
     try:
         return safe_get(
             f"{OPENALEX_AUTHORS_ENDPOINT}/{short_id}",
-            {"select": "display_name,works_count,cited_by_count,last_known_institutions,x_concepts"},
+            add_openalex_auth({"select": "display_name,works_count,cited_by_count,last_known_institutions,x_concepts"}, openalex_api_key),
         )
     except Exception:
         return None
 
 
-def build_top_individuals(works: list[dict[str, Any]], host_ids: set[str], top_n: int, pb: ProgressBar) -> list[dict[str, Any]]:
+def build_top_individuals(works: list[dict[str, Any]], host_ids: set[str], top_n: int, openalex_api_key: str, pb: ProgressBar) -> list[dict[str, Any]]:
     counter: Counter[tuple[str, str]] = Counter()
     total = len(works)
     pb.update("Identifying collaborator individuals", 0, total)
@@ -322,7 +332,7 @@ def build_top_individuals(works: list[dict[str, Any]], host_ids: set[str], top_n
     result: list[dict[str, Any]] = []
     pb.update("Enriching collaborator bios", 0, len(top))
     for idx, ((aid, name), papers) in enumerate(top, start=1):
-        details = fetch_author(aid) or {}
+        details = fetch_author(aid, openalex_api_key) or {}
         inst_names = ", ".join(
             x.get("display_name", "")
             for x in (details.get("last_known_institutions") or [])[:2]
@@ -685,11 +695,11 @@ def main() -> int:
         pb.update("Loading config", 1, 1)
 
         host_ids = set(config.institution_ids)
-        host_names = fetch_host_institutions(config.institution_ids, pb)
+        host_names = fetch_host_institutions(config.institution_ids, config.openalex_api_key, pb)
         works = fetch_works(config, pb)
         top_institutes = build_collaboration_stats(works, host_ids, config.top_collaborators, pb)
         themes = summarize_themes(works)
-        top_people = build_top_individuals(works, host_ids, config.top_individuals, pb)
+        top_people = build_top_individuals(works, host_ids, config.top_individuals, config.openalex_api_key, pb)
         yearly = yearly_changes(works, host_ids)
 
         pb.update("Building collaborator abstract bundles", 0, 1)

@@ -31,6 +31,7 @@ Edit `config.json` (or copy from `config.example.json`):
 - `output_report`
 - `openai_model` (general model)
 - `analysis_model` (recommended stronger model for deeper direction analysis, default `gpt-4.1`)
+- `openalex_api_key` (your OpenAlex API key for authenticated requests)
 
 ## Run in PyCharm
 
@@ -52,6 +53,8 @@ export OPENAI_API_KEY="your_key_here"
 ```
 
 Without this key, the script still runs and generates non-GPT fallback text.
+
+Set `openalex_api_key` directly in `config.json` / `topic_config.json` to use your OpenAlex API key for data requests.
 
 ## Progress bars
 
@@ -82,6 +85,7 @@ Key settings:
 - `topics`: list of your topics of interest.
 - `cheap_model`: low-cost model for paper-level relevance decisions.
 - `analysis_model`: stronger model for final synthesis.
+- `openalex_api_key`: OpenAlex API key used for all OpenAlex requests.
 - `output_relevant_jsonl`, `output_analysis_md`: output files under `results_dir`.
 
 ### Run

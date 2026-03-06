@@ -16,5 +16,6 @@
   "output_relevant_jsonl": "topic_relevant_papers.jsonl",
   "output_analysis_md": "topic_analysis.md",
   "cheap_model": "gpt-4o-mini",
-  "analysis_model": "gpt-4.1"
+  "analysis_model": "gpt-4.1",
+  "openalex_api_key": ""
 }

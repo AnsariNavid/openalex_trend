@@ -42,6 +42,7 @@ class TopicConfig:
     output_analysis_md: str
     cheap_model: str
     analysis_model: str
+    openalex_api_key: str
 
 
 class ProgressBar:
@@ -69,6 +70,13 @@ def safe_get(url: str, params: dict[str, Any], max_retries: int = 3) -> dict[str
     return {}
 
 
+
+
+def add_openalex_auth(params: dict[str, Any], api_key: str) -> dict[str, Any]:
+    enriched = dict(params)
+    if api_key:
+        enriched["api_key"] = api_key
+    return enriched
 def safe_post_json(url: str, payload: dict[str, Any], headers: dict[str, str], max_retries: int = 3) -> dict[str, Any]:
     req = Request(url=url, data=json.dumps(payload).encode("utf-8"), method="POST")
     for k, v in headers.items():
@@ -118,6 +126,7 @@ def load_topic_config(path: str = "topic_config.json") -> TopicConfig:
         "output_analysis_md",
         "cheap_model",
         "analysis_model",
+        "openalex_api_key",
     ]
     missing = [k for k in required if k not in raw]
     if missing:
@@ -143,6 +152,7 @@ def load_topic_config(path: str = "topic_config.json") -> TopicConfig:
         output_analysis_md=str(raw["output_analysis_md"]),
         cheap_model=str(raw["cheap_model"]),
         analysis_model=str(raw["analysis_model"]),
+        openalex_api_key=str(raw.get("openalex_api_key", "")).strip(),
     )
 
 
@@ -167,7 +177,7 @@ def fetch_candidate_works(cfg: TopicConfig, pb: ProgressBar) -> list[dict[str, A
                 "authorships,concepts,abstract_inverted_index,primary_location"
             ),
         }
-        data = safe_get(OPENALEX_WORKS_ENDPOINT, params)
+        data = safe_get(OPENALEX_WORKS_ENDPOINT, add_openalex_auth(params, cfg.openalex_api_key))
         batch = data.get("results", [])
         if not batch:
             pb.update("Fetching host publications", page, cfg.max_pages)
