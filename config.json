@@ -9,6 +9,7 @@
   "per_page": 200,
   "top_collaborators": 10,
   "top_individuals": 10,
+  "results_dir": "results",
   "output_report": "collaboration_report.md",
   "openai_model": "gpt-4o-mini"
 }

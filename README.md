@@ -1,46 +1,56 @@
 # openalex_trend
 
-A PyCharm-friendly Python script to build a collaboration report from OpenAlex.
+PyCharm-friendly scripts for OpenAlex collaboration analysis.
 
-## What it does
+## Scripts
 
-1. Extracts publications for **multiple institutions** in a given time interval.
-2. Filters publications to keep only **journals** and **conferences**.
-3. Lists the **top 10 collaborating institutes in Germany**.
-4. Generates a short markdown report including:
-   - collaboration statistics,
-   - top themes,
-   - top collaborator individuals with short bios,
-   - a concise GPT-based narrative analysis and future-collaboration section (if `OPENAI_API_KEY` is set).
+- `openalex_collab_report.py` — main report generator.
+- `pick_host_institutes.py` — interactive helper to choose host institutes and write them into `config.json`.
 
-## Files
+## What the report includes
 
-- `openalex_collab_report.py` — main script (run directly).
-- `config.example.json` — configuration template.
-- `config.json` — your active config (edit this file before running).
+1. Publications for multiple host institutes in a configurable date interval.
+2. Filtered output restricted to journals and conferences.
+3. Top 10 collaborating institutes in Germany.
+4. Named host institutes in the report header.
+5. Yearly trend section (publication and collaborator-institute changes).
+6. Main collaborator individuals with a research-background column and short bios.
+7. Theme summaries based on publication abstracts.
+8. Smooth narrative + future collaboration section via GPT API (if `OPENAI_API_KEY` is set).
 
-## Setup
+## Configuration
 
-```bash
-cp config.example.json config.json
-```
+Edit `config.json` (or copy from `config.example.json`):
 
-Set your GPT API key (optional, only needed for narrative generation):
+- `institution_ids`
+- `from_date`, `to_date`
+- `max_pages`, `per_page`
+- `top_collaborators`, `top_individuals`
+- `results_dir` (all outputs saved here)
+- `output_report`
+- `openai_model`
+
+## Run in PyCharm
+
+### Option A: pick host institutes first
+
+1. Open `pick_host_institutes.py` and click **Run**.
+2. Search/select institutes interactively.
+3. It updates `config.json`.
+
+### Option B: run report directly
+
+1. Open `openalex_collab_report.py` and click **Run**.
+2. Report will be written to `results/<output_report>`.
+
+## Optional GPT setup
 
 ```bash
 export OPENAI_API_KEY="your_key_here"
 ```
 
-## Run
+Without this key, the script still runs and generates non-GPT fallback text.
 
-### In PyCharm
+## Progress bars
 
-Open `openalex_collab_report.py` and click the **Run** button.
-
-### In terminal
-
-```bash
-python openalex_collab_report.py
-```
-
-The report path is controlled by `output_report` in `config.json`.
+Both scripts print progress bars for each major operation so it is easy to follow execution.
