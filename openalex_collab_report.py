@@ -40,6 +40,7 @@ class AppConfig:
     output_report: str
     results_dir: str
     openai_model: str
+    analysis_model: str
 
 
 class ConfigError(Exception):
@@ -97,6 +98,7 @@ def load_config(path: str = "config.json") -> AppConfig:
         output_report=str(raw["output_report"]),
         results_dir=str(raw["results_dir"]),
         openai_model=str(raw["openai_model"]),
+        analysis_model=str(raw.get("analysis_model", "gpt-4.1")),
     )
 
 
@@ -409,21 +411,21 @@ def summarize_theme_abstracts(
         return local_fallback
 
     payload = {
-        "model": config.openai_model,
+        "model": config.analysis_model,
         "temperature": 0.2,
         "response_format": {"type": "json_object"},
         "messages": [
             {
                 "role": "system",
                 "content": (
-                    "You summarize research themes in concise, smooth, non-repetitive language. "
+                    "You summarize collaboration themes in concise, smooth, non-repetitive language. "
                     "Never repeat the same fact in different wording."
                 ),
             },
             {
                 "role": "user",
                 "content": (
-                    "Return only JSON mapping each theme to a 2-3 sentence summary based on the abstract snippets.\n"
+                    "Return only JSON mapping each theme to a 2-3 sentence summary grounded in these abstracts.\n"
                     f"Themes: {top_theme_names}\n"
                     + json.dumps(abstracts_by_theme, ensure_ascii=False)
                 ),
@@ -448,6 +450,108 @@ def summarize_theme_abstracts(
         return local_fallback
 
 
+def build_top_collaborator_abstract_bundles(
+    works: list[dict[str, Any]],
+    top_institutes: list[tuple[str, int, str]],
+) -> list[dict[str, Any]]:
+    top_ids = {iid for _, _, iid in top_institutes}
+    by_inst: dict[str, dict[str, Any]] = {
+        iid: {"name": name, "id": iid, "collaboration_count": count, "abstracts": [], "concepts": Counter()}
+        for name, count, iid in top_institutes
+    }
+
+    for work in works:
+        abstract = invert_abstract(work.get("abstract_inverted_index"))
+        work_inst_ids: set[str] = set()
+        for authorship in work.get("authorships", []):
+            for inst in authorship.get("institutions", []):
+                iid = inst.get("id", "")
+                if iid in top_ids:
+                    work_inst_ids.add(iid)
+
+        if not work_inst_ids:
+            continue
+
+        for iid in work_inst_ids:
+            entry = by_inst[iid]
+            if abstract and len(entry["abstracts"]) < 18:
+                entry["abstracts"].append(abstract[:2000])
+            for concept in work.get("concepts", []):
+                cname = concept.get("display_name")
+                cscore = concept.get("score", 0)
+                if cname and cscore >= 0.4:
+                    entry["concepts"][cname] += 1
+
+    output: list[dict[str, Any]] = []
+    for name, count, iid in top_institutes:
+        entry = by_inst.get(iid, {"name": name, "id": iid, "collaboration_count": count, "abstracts": [], "concepts": Counter()})
+        output.append(
+            {
+                "name": entry["name"],
+                "id": entry["id"],
+                "collaboration_count": entry["collaboration_count"],
+                "top_concepts": [k for k, _ in entry["concepts"].most_common(8)],
+                "abstracts": entry["abstracts"],
+            }
+        )
+    return output
+
+
+def build_local_collaborator_direction_summary(collab_bundles: list[dict[str, Any]]) -> str:
+    lines = ["## Collaboration Directions by Top German Partners", ""]
+    for idx, item in enumerate(collab_bundles, start=1):
+        concept_line = ", ".join(item.get("top_concepts", [])[:5]) or "No strong concept signal"
+        abstract_sample = ""
+        if item.get("abstracts"):
+            pieces = re.split(r"(?<=[.!?])\s+", item["abstracts"][0])
+            abstract_sample = dedupe_sentences(" ".join(p for p in pieces[:2] if p.strip()))
+        lines.append(f"### {idx}. {item['name']}")
+        lines.append(
+            f"Collaboration appears to center on: {concept_line}. "
+            f"Representative collaboration focus from abstracts: {abstract_sample or 'No abstract detail available.'}"
+        )
+        lines.append("")
+    return "\n".join(lines).strip()
+
+
+def generate_top_collaborator_theme_analysis(config: AppConfig, collab_bundles: list[dict[str, Any]]) -> str:
+    key = os.getenv("OPENAI_API_KEY")
+    if not key:
+        return build_local_collaborator_direction_summary(collab_bundles)
+
+    payload = {
+        "model": config.analysis_model,
+        "temperature": 0.2,
+        "messages": [
+            {
+                "role": "system",
+                "content": (
+                    "You are a research strategy analyst. Focus on collaboration patterns inferred from abstracts. "
+                    "Do not explain general fields. Do not repeat facts."
+                ),
+            },
+            {
+                "role": "user",
+                "content": (
+                    "Write a markdown section titled 'Collaboration Directions by Top German Partners'. "
+                    "For each partner, write 2-4 sentences on the important collaboration directions derived from abstracts. "
+                    "Explain what the host-partner collaborations are trying to solve or build, not generic field descriptions. "
+                    "Avoid repeating the same information across partners.\n\n"
+                    f"Data:\n{json.dumps(collab_bundles, ensure_ascii=False)}"
+                ),
+            },
+        ],
+    }
+
+    headers = {"Authorization": f"Bearer {key}", "Content-Type": "application/json"}
+    try:
+        resp = safe_post_json(OPENAI_CHAT_ENDPOINT, payload, headers)
+        raw = resp.get("choices", [{}])[0].get("message", {}).get("content", "")
+        return dedupe_sentences(raw) if raw else build_local_collaborator_direction_summary(collab_bundles)
+    except Exception:
+        return build_local_collaborator_direction_summary(collab_bundles)
+
+
 def generate_gpt_analysis(
     config: AppConfig,
     works: list[dict[str, Any]],
@@ -461,7 +565,7 @@ def generate_gpt_analysis(
         return "## Narrative Analysis\n\nOPENAI_API_KEY is not set, so advanced narrative generation is skipped."
 
     payload = {
-        "model": config.openai_model,
+        "model": config.analysis_model,
         "temperature": 0.25,
         "messages": [
             {
@@ -503,6 +607,7 @@ def format_report(
     host_names: dict[str, str],
     works: list[dict[str, Any]],
     top_institutes: list[tuple[str, int, str]],
+    partner_direction_text: str,
     themes: list[tuple[str, int]],
     theme_summaries: dict[str, str],
     top_people: list[dict[str, Any]],
@@ -526,7 +631,9 @@ def format_report(
     for idx, (name, count, iid) in enumerate(top_institutes, start=1):
         lines.append(f"| {idx} | {name} | {count} | {iid} |")
 
-    lines.extend(["", "## Changes Over the Years", "", "| Year | # Publications | # Unique German Collaborator Institutes |", "|---:|---:|---:|"])
+    lines.extend(["", partner_direction_text.strip(), ""])
+
+    lines.extend(["## Changes Over the Years", "", "| Year | # Publications | # Unique German Collaborator Institutes |", "|---:|---:|---:|"])
     for row in yearly:
         lines.append(f"| {row['year']} | {row['publications']} | {row['unique_german_collaborator_institutes']} |")
 
@@ -559,7 +666,7 @@ def format_report(
     _Notes:_
     - Data is pulled live from OpenAlex and may differ between runs.
     - Collaborator institutes are counted once per publication.
-    - Theme summaries are derived from available abstract text in the retrieved publication set.
+    - Direction analysis is inferred from abstract text in publications co-authored with each top collaborator.
     """).strip())
     return "\n".join(lines) + "\n"
 
@@ -585,6 +692,14 @@ def main() -> int:
         top_people = build_top_individuals(works, host_ids, config.top_individuals, pb)
         yearly = yearly_changes(works, host_ids)
 
+        pb.update("Building collaborator abstract bundles", 0, 1)
+        collab_bundles = build_top_collaborator_abstract_bundles(works, top_institutes)
+        pb.update("Building collaborator abstract bundles", 1, 1)
+
+        pb.update("Analyzing collaboration directions", 0, 1)
+        partner_direction_text = generate_top_collaborator_theme_analysis(config, collab_bundles)
+        pb.update("Analyzing collaboration directions", 1, 1)
+
         pb.update("Summarizing themes from abstracts", 0, 1)
         theme_summaries = summarize_theme_abstracts(config, works, themes)
         pb.update("Summarizing themes from abstracts", 1, 1)
@@ -600,6 +715,7 @@ def main() -> int:
             host_names,
             works,
             top_institutes,
+            partner_direction_text,
             themes,
             theme_summaries,
             top_people,
