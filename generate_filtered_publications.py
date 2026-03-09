@@ -81,7 +81,7 @@ def invert_abstract(inverted: dict[str, list[int]] | None) -> str:
     return " ".join(w for w in words if w).strip()
 
 
-def load_topic_config(path: str = "topic_config.json") -> TopicConfig:
+def load_topic_config(path: str = "config.json") -> TopicConfig:
     raw = json.loads(Path(path).read_text(encoding="utf-8"))
     for d in ("from_date", "to_date"):
         datetime.strptime(raw[d], "%Y-%m-%d")
@@ -163,7 +163,7 @@ def main() -> int:
     pb = ProgressBar()
     try:
         pb.update("Loading topic config", 0, 1)
-        cfg = load_topic_config("topic_config.json")
+        cfg = load_topic_config("config.json")
         pb.update("Loading topic config", 1, 1)
         print(f"Time period searched: {cfg.from_date} to {cfg.to_date}")
 

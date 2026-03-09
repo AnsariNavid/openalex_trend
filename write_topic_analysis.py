@@ -48,7 +48,7 @@ def safe_post_json(url: str, payload: dict[str, Any], headers: dict[str, str], m
     return {}
 
 
-def load_topic_config(path: str = "topic_config.json") -> TopicConfig:
+def load_topic_config(path: str = "config.json") -> TopicConfig:
     raw = json.loads(Path(path).read_text(encoding="utf-8"))
     return TopicConfig(
         topics=[str(x) for x in raw["topics"]],
@@ -137,7 +137,7 @@ def generate_analysis(cfg: TopicConfig, prompt_cfg: PromptConfig, rows: list[dic
 
 
 def main() -> int:
-    cfg = load_topic_config("topic_config.json")
+    cfg = load_topic_config("config.json")
     prompt_cfg = load_prompt_config(cfg.prompt_config_path)
     relevant_path = Path(cfg.results_dir) / cfg.output_relevant_jsonl
     if not relevant_path.exists():

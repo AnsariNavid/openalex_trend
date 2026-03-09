@@ -58,7 +58,7 @@ def safe_post_json(url: str, payload: dict[str, Any], headers: dict[str, str], m
     return {}
 
 
-def load_topic_config(path: str = "topic_config.json") -> TopicConfig:
+def load_topic_config(path: str = "config.json") -> TopicConfig:
     raw = json.loads(Path(path).read_text(encoding="utf-8"))
     return TopicConfig(
         topics=[str(x) for x in raw["topics"]],
@@ -115,7 +115,7 @@ def main() -> int:
     pb = ProgressBar()
     try:
         pb.update("Loading topic config", 0, 1)
-        cfg = load_topic_config("topic_config.json")
+        cfg = load_topic_config("config.json")
         pb.update("Loading topic config", 1, 1)
 
         pb.update("Loading prompt config", 0, 1)

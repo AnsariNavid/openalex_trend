@@ -54,7 +54,7 @@ export OPENAI_API_KEY="your_key_here"
 
 Without this key, the script still runs and generates non-GPT fallback text.
 
-Set `openalex_api_key` directly in `config.json` / `topic_config.json` to use your OpenAlex API key for data requests.
+Set `openalex_api_key` directly in `config.json` to use your OpenAlex API key for data requests.
 
 ## Progress bars
 
@@ -74,12 +74,11 @@ Use `topic_focused_collab_filter.py` when you want to track only papers relevant
 5. Saves topic-relevant papers with metadata to JSONL.
 6. Produces a short topic-level collaboration analysis markdown file.
 
-### Topic config
+### Unified config
 
 Copy and edit:
 
 ```bash
-cp topic_config.example.json topic_config.json
 cp topic_prompt_config.example.json topic_prompt_config.json
 ```
 
@@ -103,7 +102,7 @@ python topic_focused_collab_filter.py
 
 ## Split workflow scripts (generation -> abstract check -> analysis)
 
-Use this 3-step pipeline:
+Use this 4-step pipeline (all read from `config.json`):
 
 1. `generate_filtered_publications.py`
    - Generates full filtered dataset JSON (`output_filtered_json`) after journal/conference + German-collaboration + configured date range filtering.
