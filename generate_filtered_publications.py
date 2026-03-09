@@ -113,7 +113,7 @@ def fetch_works(cfg: TopicConfig, pb: ProgressBar) -> list[dict[str, Any]]:
             ]),
             "per-page": cfg.per_page,
             "cursor": cursor,
-            "select": "id,display_name,publication_year,publication_date,authorships,concepts,abstract_inverted_index,primary_location",
+            "select": "id,display_name,publication_year,publication_date,authorships,concepts,abstract_inverted_index,primary_location,best_oa_location,open_access",
         }
         data = safe_get(OPENALEX_WORKS_ENDPOINT, add_openalex_auth(params, cfg.openalex_api_key))
         batch = data.get("results", [])
@@ -148,12 +148,18 @@ def extract_metadata(work: dict[str, Any], host_ids: set[str]) -> dict[str, Any]
             iid = inst.get("id", "")
             if iid and iid not in host_ids and inst.get("country_code") == "DE":
                 german.add(inst.get("display_name", "Unknown institution"))
+    best_oa = work.get("best_oa_location") or {}
+    primary = work.get("primary_location") or {}
+    open_access = work.get("open_access") or {}
+    pdf_url = best_oa.get("pdf_url") or primary.get("pdf_url") or open_access.get("oa_url") or ""
+
     return {
         "id": work.get("id"),
         "title": work.get("display_name"),
         "publication_year": work.get("publication_year"),
         "publication_date": work.get("publication_date"),
         "source_type": (((work.get("primary_location") or {}).get("source") or {}).get("type")),
+        "pdf_url": pdf_url,
         "authors": authors[:25],
         "german_collaborator_institutes": sorted(german),
         "concepts": [c.get("display_name") for c in work.get("concepts", []) if c.get("display_name")][:20],

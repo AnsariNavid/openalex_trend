@@ -103,6 +103,10 @@ Use this 4-step pipeline (all read from `config.json`):
    - Generates full filtered dataset JSON (`output_filtered_json`) after journal/conference + German-collaboration + configured date range filtering.
 2. `check_filtered_abstracts.py`
    - Checks abstract availability on the filtered dataset and writes `results/abstract_coverage_report.json`.
+   - Attempts recovery for missing abstracts using `pdf_url`:
+     - exact abstract extraction from PDF text when possible,
+     - GPT-generated abstract when exact extraction is not possible.
+   - Reports: still missing count, exact recovered count, GPT-generated count.
 3. `classify_topics_from_filtered.py`
    - Runs topic relevance classification on filtered entries (typically only entries with abstracts) and writes relevant JSONL (`output_relevant_jsonl`).
 4. `write_topic_analysis.py`
@@ -112,7 +116,7 @@ Run order in terminal:
 
 ```bash
 python generate_filtered_publications.py
-python check_filtered_abstracts.py results/filtered_german_collab_dataset.json
+python check_filtered_abstracts.py results/filtered_german_collab_dataset.json results/abstract_coverage_report.json results/filtered_german_collab_dataset.json
 python classify_topics_from_filtered.py
 python write_topic_analysis.py
 ```
