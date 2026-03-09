@@ -1,0 +1,30 @@
+{
+  "institution_ids": [
+    "https://openalex.org/I74973139",
+    "https://openalex.org/I136199984"
+  ],
+  "from_date": "2020-01-01",
+  "to_date": "2024-12-31",
+  "max_pages": 8,
+  "per_page": 200,
+  "top_collaborators": 10,
+  "top_individuals": 10,
+  "results_dir": "results",
+  "output_report": "collaboration_report.md",
+  "openai_model": "gpt-4o-mini",
+  "analysis_model": "gpt-4.1",
+  "openalex_api_key": "",
+  "topics": [
+    "battery recycling",
+    "solid-state electrolytes",
+    "electrocatalysis"
+  ],
+  "output_relevant_jsonl": "topic_relevant_papers.jsonl",
+  "output_analysis_md": "topic_analysis.md",
+  "cheap_model": "gpt-4o-mini",
+  "output_filtered_json": "filtered_german_collab_dataset.json",
+  "relevance_system_prompt": "Classify whether a paper is relevant to the provided topics. Be conservative and avoid false positives.",
+  "relevance_user_prompt_template": "Return JSON with keys: relevant (bool), matched_topics (list[str]), rationale (str, <=40 words).\nTopics: {topics_json}\nTitle: {title}\nAbstract: {abstract}",
+  "analysis_system_prompt": "Write concise, smooth markdown analysis for research management. Avoid repeating statistics and avoid generic field explanations.",
+  "analysis_user_prompt_template": "Write sections: 'Topic-Focused Collaboration Analysis' and 'Actionable Next Steps'. Focus on collaboration patterns emerging from relevant papers and topics.\nInput topics: {topics_json}\nRelevant paper count: {relevant_count}\nTopic stats: {stats_json}\nPaper sample: {paper_sample_json}"
+}
