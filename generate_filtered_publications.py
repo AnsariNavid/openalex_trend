@@ -16,6 +16,8 @@ import time
 from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path
+
+from config_loader import load_json_file
 from typing import Any
 from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode
@@ -82,7 +84,7 @@ def invert_abstract(inverted: dict[str, list[int]] | None) -> str:
 
 
 def load_topic_config(path: str = "config.json") -> TopicConfig:
-    raw = json.loads(Path(path).read_text(encoding="utf-8"))
+    raw = load_json_file(path)
     for d in ("from_date", "to_date"):
         datetime.strptime(raw[d], "%Y-%m-%d")
     return TopicConfig(

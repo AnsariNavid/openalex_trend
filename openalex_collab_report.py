@@ -17,6 +17,8 @@ from collections import Counter, defaultdict
 from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path
+
+from config_loader import load_json_file
 from typing import Any
 from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode
@@ -64,7 +66,7 @@ def load_config(path: str = "config.json") -> AppConfig:
     p = Path(path)
     if not p.exists():
         raise ConfigError("config.json not found.")
-    raw = json.loads(p.read_text(encoding="utf-8"))
+    raw = load_json_file(p)
 
     required = [
         "institution_ids",

@@ -5,6 +5,8 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+
+from config_loader import load_json_file
 from typing import Any
 from urllib.parse import urlencode
 from urllib.request import urlopen
@@ -52,7 +54,7 @@ def search_institutions(query: str, openalex_api_key: str, per_page: int = 10) -
 def load_config(path: Path) -> dict[str, Any]:
     if not path.exists():
         raise FileNotFoundError("config.json not found.")
-    return json.loads(path.read_text(encoding="utf-8"))
+    return load_json_file(path)
 
 
 def main() -> int:

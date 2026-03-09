@@ -11,6 +11,8 @@ from collections import Counter
 from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path
+
+from config_loader import load_json_file
 from typing import Any
 from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode
@@ -35,7 +37,6 @@ class TopicConfig:
     cheap_model: str
     analysis_model: str
     openalex_api_key: str
-    prompt_config_path: str
 
 
 @dataclass
@@ -114,7 +115,7 @@ def load_topic_config(path: str = "config.json") -> TopicConfig:
     p = Path(path)
     if not p.exists():
         raise FileNotFoundError("config.json not found.")
-    raw = json.loads(p.read_text(encoding="utf-8"))
+    raw = load_json_file(p)
 
     required = [
         "institution_ids",
@@ -130,7 +131,6 @@ def load_topic_config(path: str = "config.json") -> TopicConfig:
         "cheap_model",
         "analysis_model",
         "openalex_api_key",
-        "prompt_config_path",
     ]
     missing = [k for k in required if k not in raw]
     if missing:
@@ -158,15 +158,10 @@ def load_topic_config(path: str = "config.json") -> TopicConfig:
         cheap_model=str(raw["cheap_model"]),
         analysis_model=str(raw["analysis_model"]),
         openalex_api_key=str(raw.get("openalex_api_key", "")).strip(),
-        prompt_config_path=str(raw["prompt_config_path"]),
     )
 
 
-def load_prompt_config(path: str) -> PromptConfig:
-    p = Path(path)
-    if not p.exists():
-        raise FileNotFoundError(f"Prompt config not found: {path}")
-    raw = json.loads(p.read_text(encoding="utf-8"))
+def load_prompt_config_from_raw(raw: dict[str, Any]) -> PromptConfig:
     required = [
         "relevance_system_prompt",
         "relevance_user_prompt_template",
@@ -175,14 +170,13 @@ def load_prompt_config(path: str) -> PromptConfig:
     ]
     missing = [k for k in required if k not in raw]
     if missing:
-        raise ValueError(f"Missing prompt keys: {', '.join(missing)}")
+        raise ValueError(f"Missing prompt keys in config.json: {', '.join(missing)}")
     return PromptConfig(
         relevance_system_prompt=str(raw["relevance_system_prompt"]),
         relevance_user_prompt_template=str(raw["relevance_user_prompt_template"]),
         analysis_system_prompt=str(raw["analysis_system_prompt"]),
         analysis_user_prompt_template=str(raw["analysis_user_prompt_template"]),
     )
-
 
 def fetch_candidate_works(cfg: TopicConfig, pb: ProgressBar) -> list[dict[str, Any]]:
     filters = [
@@ -391,7 +385,8 @@ def main() -> int:
         print(f"Time period searched: {cfg.from_date} to {cfg.to_date}")
 
         pb.update("Loading prompt config", 0, 1)
-        prompt_cfg = load_prompt_config(cfg.prompt_config_path)
+        raw_cfg = load_json_file("config.json")
+        prompt_cfg = load_prompt_config_from_raw(raw_cfg)
         pb.update("Loading prompt config", 1, 1)
 
         host_ids = set(cfg.institution_ids)

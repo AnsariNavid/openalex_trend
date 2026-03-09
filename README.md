@@ -76,11 +76,7 @@ Use `topic_focused_collab_filter.py` when you want to track only papers relevant
 
 ### Unified config
 
-Copy and edit:
-
-```bash
-cp topic_prompt_config.example.json topic_prompt_config.json
-```
+Use `config.json` as the single configuration file for all scripts.
 
 Key settings:
 - `topics`: list of your topics of interest.
@@ -89,7 +85,6 @@ Key settings:
 - `openalex_api_key`: OpenAlex API key used for all OpenAlex requests.
 - `output_filtered_json`: full filtered dataset (journal/conference + German-collab subset).
 - `output_relevant_jsonl`, `output_analysis_md`: output files under `results_dir`.
-- `prompt_config_path`: path to prompt JSON file (e.g., `topic_prompt_config.json`).
 
 ### Run
 

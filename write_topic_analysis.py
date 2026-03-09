@@ -10,6 +10,8 @@ import time
 from collections import Counter
 from dataclasses import dataclass
 from pathlib import Path
+
+from config_loader import load_json_file
 from typing import Any
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
@@ -24,7 +26,6 @@ class TopicConfig:
     output_relevant_jsonl: str
     output_analysis_md: str
     analysis_model: str
-    prompt_config_path: str
 
 
 @dataclass
@@ -49,19 +50,17 @@ def safe_post_json(url: str, payload: dict[str, Any], headers: dict[str, str], m
 
 
 def load_topic_config(path: str = "config.json") -> TopicConfig:
-    raw = json.loads(Path(path).read_text(encoding="utf-8"))
+    raw = load_json_file(path)
     return TopicConfig(
         topics=[str(x) for x in raw["topics"]],
         results_dir=str(raw["results_dir"]),
         output_relevant_jsonl=str(raw["output_relevant_jsonl"]),
         output_analysis_md=str(raw["output_analysis_md"]),
         analysis_model=str(raw["analysis_model"]),
-        prompt_config_path=str(raw["prompt_config_path"]),
     )
 
 
-def load_prompt_config(path: str) -> PromptConfig:
-    raw = json.loads(Path(path).read_text(encoding="utf-8"))
+def load_prompt_config_from_raw(raw: dict[str, Any]) -> PromptConfig:
     return PromptConfig(
         analysis_system_prompt=str(raw["analysis_system_prompt"]),
         analysis_user_prompt_template=str(raw["analysis_user_prompt_template"]),
@@ -138,7 +137,8 @@ def generate_analysis(cfg: TopicConfig, prompt_cfg: PromptConfig, rows: list[dic
 
 def main() -> int:
     cfg = load_topic_config("config.json")
-    prompt_cfg = load_prompt_config(cfg.prompt_config_path)
+    raw_cfg = load_json_file("config.json")
+    prompt_cfg = load_prompt_config_from_raw(raw_cfg)
     relevant_path = Path(cfg.results_dir) / cfg.output_relevant_jsonl
     if not relevant_path.exists():
         print(f"Error: relevant list not found: {relevant_path}")
