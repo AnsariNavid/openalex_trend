@@ -106,8 +106,10 @@ Use this 4-step pipeline (all read from `config.json`):
    - Attempts recovery for missing abstracts in this order:
      - exact abstract extraction from `html_url`,
      - exact abstract extraction from `pdf_url`,
+     - exact abstract extraction from arXiv API when title match is >= 90%,
      - GPT-generated abstract from paper text if exact extraction fails.
-   - Reports initial and final abstract availability, plus recovered/extracted/generate counts.
+   - If still missing, prompts manual abstract entry title-by-title.
+   - Reports initial and final abstract availability, plus HTML/PDF/arXiv recovered counts and GPT/manual counts.
 3. `classify_topics_from_filtered.py`
    - Runs topic relevance classification on filtered entries (typically only entries with abstracts) and writes relevant JSONL (`output_relevant_jsonl`).
 4. `write_topic_analysis.py`
