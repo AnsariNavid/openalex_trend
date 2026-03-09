@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Check abstract coverage and attempt abstract recovery from PDF links.
+"""Check abstract coverage and attempt abstract recovery from HTML/PDF links.
 
-Recovery policy:
-1) Try exact abstract extraction from PDF text (best effort).
-2) If exact extraction fails, use GPT to generate an abstract-like summary from PDF text.
+Recovery order:
+1) Try exact abstract extraction from HTML text (best effort).
+2) If not found, try exact abstract extraction from PDF text (best effort).
+3) If neither works, use GPT to generate an abstract-style summary from paper text.
 """
 
 from __future__ import annotations
@@ -13,7 +14,6 @@ import json
 import os
 import re
 import sys
-import time
 from pathlib import Path
 from typing import Any
 from urllib.error import HTTPError, URLError
@@ -43,19 +43,67 @@ def save_rows(path: Path, rows: list[dict[str, Any]]) -> None:
         path.write_text(json.dumps(rows, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
 
-def download_pdf_bytes(pdf_url: str, timeout_s: int = 45) -> bytes | None:
-    if not pdf_url:
-        return None
+def download_url_bytes(url: str, timeout_s: int = 45) -> tuple[bytes | None, str]:
+    if not url:
+        return None, ""
     try:
-        req = Request(pdf_url, headers={"User-Agent": "Mozilla/5.0"})
+        req = Request(url, headers={"User-Agent": "Mozilla/5.0"})
         with urlopen(req, timeout=timeout_s) as r:
-            content_type = str(r.headers.get("Content-Type", "")).lower()
-            data = r.read()
-            if "pdf" in content_type or data[:4] == b"%PDF":
-                return data
-            return None
+            return r.read(), str(r.headers.get("Content-Type", "")).lower()
     except (HTTPError, URLError, TimeoutError, ValueError):
+        return None, ""
+
+
+def download_pdf_bytes(pdf_url: str, timeout_s: int = 45) -> bytes | None:
+    data, content_type = download_url_bytes(pdf_url, timeout_s)
+    if not data:
         return None
+    if "pdf" in content_type or data[:4] == b"%PDF":
+        return data
+    return None
+
+
+def download_html_text(html_url: str, timeout_s: int = 45) -> str:
+    data, content_type = download_url_bytes(html_url, timeout_s)
+    if not data:
+        return ""
+    if "html" not in content_type and b"<html" not in data[:2000].lower():
+        return ""
+    try:
+        return data.decode("utf-8", errors="ignore")
+    except Exception:
+        return ""
+
+
+def clean_html_to_text(html: str) -> str:
+    if not html:
+        return ""
+    html = re.sub(r"(?is)<script.*?>.*?</script>", " ", html)
+    html = re.sub(r"(?is)<style.*?>.*?</style>", " ", html)
+    html = re.sub(r"(?is)<[^>]+>", " ", html)
+    text = re.sub(r"\s+", " ", html)
+    return text.strip()
+
+
+def find_exact_abstract_from_html(html: str) -> str:
+    if not html:
+        return ""
+
+    meta_patterns = [
+        r'(?is)<meta\s+name=["\']citation_abstract["\']\s+content=["\'](.*?)["\']',
+        r'(?is)<meta\s+name=["\']dc\.description["\']\s+content=["\'](.*?)["\']',
+        r'(?is)<meta\s+name=["\']description["\']\s+content=["\'](.*?)["\']',
+        r'(?is)<meta\s+property=["\']og:description["\']\s+content=["\'](.*?)["\']',
+    ]
+    for pat in meta_patterns:
+        m = re.search(pat, html)
+        if m:
+            candidate = re.sub(r"\s+", " ", m.group(1)).strip()
+            if len(candidate) >= 120:
+                return candidate
+
+    text = clean_html_to_text(html)
+    return find_exact_abstract_from_text(text)
 
 
 def extract_text_from_pdf(pdf_bytes: bytes, max_pages: int = 4) -> str:
@@ -141,60 +189,86 @@ def main() -> int:
     rows = load_rows(input_path)
     total = len(rows)
 
-    exact_recovered = 0
+    initial_with_abs = sum(1 for r in rows if (r.get("abstract") or "").strip())
+    initial_missing = total - initial_with_abs
+
+    print(f"Initial abstract availability: {initial_with_abs}/{total} ({(initial_with_abs/total if total else 0):.2%})")
+    print(f"Initial missing abstracts: {initial_missing}")
+
+    exact_html_recovered = 0
+    exact_pdf_recovered = 0
     gpt_generated = 0
-    still_missing = 0
 
     api_key = os.getenv("OPENAI_API_KEY", "")
 
     for idx, r in enumerate(rows, start=1):
-        abstract = (r.get("abstract") or "").strip()
-        if abstract:
+        if (r.get("abstract") or "").strip():
             continue
 
+        html_url = str(r.get("html_url") or "").strip()
         pdf_url = str(r.get("pdf_url") or "").strip()
+
         recovered = ""
         method = ""
+        combined_text = ""
 
-        if pdf_url:
+        # 1) exact from HTML
+        if html_url:
+            html = download_html_text(html_url)
+            if html:
+                recovered = find_exact_abstract_from_html(html)
+                combined_text += "\n" + clean_html_to_text(html)[:12000]
+                if recovered:
+                    method = "exact_from_html"
+
+        # 2) exact from PDF
+        if not recovered and pdf_url:
             pdf_bytes = download_pdf_bytes(pdf_url)
             if pdf_bytes:
                 pdf_text = extract_text_from_pdf(pdf_bytes)
+                combined_text += "\n" + pdf_text[:12000]
                 recovered = find_exact_abstract_from_text(pdf_text)
                 if recovered:
                     method = "exact_from_pdf"
-                elif pdf_text and api_key:
-                    recovered = gpt_generate_summary(str(r.get("title") or ""), pdf_text, api_key)
-                    if recovered:
-                        method = "gpt_generated_from_pdf"
+
+        # 3) GPT generated from available paper text
+        if not recovered and api_key and combined_text.strip():
+            recovered = gpt_generate_summary(str(r.get("title") or ""), combined_text, api_key)
+            if recovered:
+                method = "gpt_generated_from_paper"
 
         if recovered:
             r["abstract"] = recovered
             r["abstract_recovery_method"] = method
-            if method == "exact_from_pdf":
-                exact_recovered += 1
-            elif method == "gpt_generated_from_pdf":
+            if method == "exact_from_html":
+                exact_html_recovered += 1
+            elif method == "exact_from_pdf":
+                exact_pdf_recovered += 1
+            elif method == "gpt_generated_from_paper":
                 gpt_generated += 1
         else:
             r["abstract_recovery_method"] = "not_recovered"
-            still_missing += 1
 
         if idx % 10 == 0:
             print(f"Processed missing-abstract recovery for {idx}/{total} entries...")
 
-    with_abs = sum(1 for r in rows if (r.get("abstract") or "").strip())
+    final_with_abs = sum(1 for r in rows if (r.get("abstract") or "").strip())
+    final_missing = total - final_with_abs
     missing_entries = [{"id": r.get("id"), "title": r.get("title")} for r in rows if not (r.get("abstract") or "").strip()]
 
     report = {
         "input_file": str(input_path),
         "enriched_output_file": str(enriched_path),
         "total_entries": total,
-        "entries_with_abstract": with_abs,
-        "entries_missing_abstract": total - with_abs,
-        "coverage_ratio": (with_abs / total) if total else 0,
-        "exact_abstract_recovered_from_pdf": exact_recovered,
+        "initial_entries_with_abstract": initial_with_abs,
+        "initial_entries_missing_abstract": initial_missing,
+        "final_entries_with_abstract": final_with_abs,
+        "final_entries_missing_abstract": final_missing,
+        "final_coverage_ratio": (final_with_abs / total) if total else 0,
+        "exact_abstract_recovered_from_html": exact_html_recovered,
+        "exact_abstract_recovered_from_pdf": exact_pdf_recovered,
         "abstract_generated_by_gpt": gpt_generated,
-        "still_missing_after_recovery": still_missing,
+        "still_missing_after_recovery": final_missing,
         "missing_entries": missing_entries,
     }
 
@@ -205,10 +279,11 @@ def main() -> int:
 
     print(f"Abstract coverage report saved: {report_path.resolve()}")
     print(f"Enriched dataset saved: {enriched_path.resolve()}")
-    print(f"Coverage: {with_abs}/{total} ({report['coverage_ratio']:.2%})")
-    print(f"Recovered exact abstracts from PDF: {exact_recovered}")
+    print(f"Final abstract availability: {final_with_abs}/{total} ({report['final_coverage_ratio']:.2%})")
+    print(f"Recovered exact abstracts from HTML: {exact_html_recovered}")
+    print(f"Recovered exact abstracts from PDF: {exact_pdf_recovered}")
     print(f"Generated abstracts with GPT: {gpt_generated}")
-    print(f"Still missing abstracts: {still_missing}")
+    print(f"Still missing abstracts: {final_missing}")
     return 0
 
 

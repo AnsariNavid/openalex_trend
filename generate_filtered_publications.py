@@ -152,6 +152,7 @@ def extract_metadata(work: dict[str, Any], host_ids: set[str]) -> dict[str, Any]
     primary = work.get("primary_location") or {}
     open_access = work.get("open_access") or {}
     pdf_url = best_oa.get("pdf_url") or primary.get("pdf_url") or open_access.get("oa_url") or ""
+    html_url = best_oa.get("landing_page_url") or open_access.get("oa_url") or ""
 
     return {
         "id": work.get("id"),
@@ -160,6 +161,7 @@ def extract_metadata(work: dict[str, Any], host_ids: set[str]) -> dict[str, Any]
         "publication_date": work.get("publication_date"),
         "source_type": (((work.get("primary_location") or {}).get("source") or {}).get("type")),
         "pdf_url": pdf_url,
+        "html_url": html_url,
         "authors": authors[:25],
         "german_collaborator_institutes": sorted(german),
         "concepts": [c.get("display_name") for c in work.get("concepts", []) if c.get("display_name")][:20],
