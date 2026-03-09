@@ -1,10 +1,10 @@
 {
   "institution_ids": [
-    "https://openalex.org/I74973139",
-    "https://openalex.org/I136199984"
+    "https://openalex.org/I4210127875",
+    "https://openalex.org/I1304085615"
   ],
   "from_date": "2020-01-01",
-  "to_date": "2024-12-31",
+  "to_date": "2026-12-31",
   "max_pages": 8,
   "per_page": 200,
   "topics": [
@@ -17,7 +17,7 @@
   "output_analysis_md": "topic_analysis.md",
   "cheap_model": "gpt-4o-mini",
   "analysis_model": "gpt-4.1",
-  "openalex_api_key": "",
+  "openalex_api_key": "PJhYDnaWoH0FPCNVm0uID4",
   "output_filtered_json": "filtered_german_collab_dataset.json",
   "prompt_config_path": "topic_prompt_config.json"
 }
