@@ -6,6 +6,7 @@ PyCharm-friendly scripts for OpenAlex collaboration analysis.
 
 - `openalex_collab_report.py` — main report generator.
 - `pick_host_institutes.py` — interactive helper to choose host institutes and write them into `config.json`.
+- `classify_topics_batch.py` — batch topic classifier (up to 100 papers per model call) for higher-throughput relevance selection.
 
 ## What the report includes
 
@@ -90,9 +91,12 @@ Key settings:
 - `forbidden_topics`: topics to exclude early (mapped to OpenAlex concept tags, then filtered out).
 - `cheap_model`: low-cost model for paper-level relevance decisions.
 - `analysis_model`: stronger model for final synthesis.
+- `batch_classification_model`: stronger model used for batched classification requests.
+- `batch_classification_batch_size`: number of papers per batch request (capped at 100).
 - `openalex_api_key`: OpenAlex API key used for all OpenAlex requests.
 - `output_filtered_json`: full filtered dataset (journal/conference + German-collab subset).
 - `output_relevant_jsonl`, `output_relevant_tagged_json`, `output_analysis_md`: output files under `results_dir`.
+- `batch_relevance_system_prompt`, `batch_relevance_user_prompt_template`: instructions for one-call batch classification of up to 100 papers.
 
 ### Run
 
@@ -102,6 +106,19 @@ In PyCharm run `topic_focused_collab_filter.py`, or in terminal:
 python topic_focused_collab_filter.py
 ```
 
+
+
+### Batch classification option (new)
+
+If you want to classify faster in large sets, run:
+
+```bash
+python classify_topics_batch.py
+```
+
+This script sends papers in chunks (default 100 per request) to `batch_classification_model` and writes:
+- JSONL: `output_relevant_jsonl`
+- Tagged JSON: `output_relevant_tagged_json`
 
 ## Split workflow scripts (generation -> abstract check -> analysis)
 
