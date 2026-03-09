@@ -31,53 +31,55 @@
   "top_individuals": 10,
   "results_dir": "results",
   "output_report": "collaboration_report.md",
-  "openai_model": "gpt-4o-mini",
-  "analysis_model": "gpt-4.1",
-  "openalex_api_key": "PJhYDnaWoH0FPCNVm0uID4",
-  "topics": [
-    "chip-level cooling",
-    "board-level cooling",
-    "system-level cooling",
-    "microfluidics",
-    "thermal interface materials",
-    "hotspots mitigation in 2.5D/3D ICs",
-    "integrated heat pipes",
-    "vapor chambers",
-    "PCB thermal via optimization",
-    "cold-plate cooling",
-    "two-phase immersion cooling",
-    "rack-scale thermal management"
-  ],
-  "cooling_taxonomy": {
-    "chip-level": [
-      "Microfluidics",
-      "Thermal Interface Materials (TIMs)",
-      "hotspots mitigation in 2.5D/3D ICs"
-    ],
-    "board-level": [
-      "Integrated heat pipes",
-      "vapor chambers",
-      "PCB thermal via optimization"
-    ],
-    "system-level": [
-      "Cold-plate cooling",
-      "Two-phase immersion cooling",
-      "Rack-scale thermal management"
-    ]
-  },
+  "output_filtered_json": "filtered_german_collab_dataset.json",
   "output_relevant_jsonl": "topic_relevant_papers.jsonl",
   "output_relevant_tagged_json": "topic_relevant_tagged_papers.json",
   "output_analysis_md": "topic_analysis.md",
+  "openai_model": "gpt-4o-mini",
   "cheap_model": "gpt-4o-mini",
-  "output_filtered_json": "filtered_german_collab_dataset.json",
-  "relevance_system_prompt": "Classify whether a paper is relevant to the provided topics. Be conservative and avoid false positives.",
-  "relevance_user_prompt_template": "Return JSON with keys: relevant (bool), matched_topics (list[str]), cooling_level (str: chip-level|board-level|system-level|unknown), cooling_methodology (str), rationale (str, <=40 words). Use both title and abstract.\nTopics: {topics_json}\nCooling taxonomy: {cooling_taxonomy_json}\nTitle: {title}\nAbstract: {abstract}",
-  "analysis_system_prompt": "Write concise, smooth markdown analysis for research management. Avoid repeating statistics and avoid generic field explanations.",
-  "analysis_user_prompt_template": "Write sections: 'Topic-Focused Collaboration Analysis' and 'Actionable Next Steps'. Focus on collaboration patterns emerging from relevant papers and topics.\nInput topics: {topics_json}\nRelevant paper count: {relevant_count}\nTopic stats: {stats_json}\nPaper sample: {paper_sample_json}",
+  "analysis_model": "gpt-4.1",
+  "openalex_api_key": "",
+  "topics": [
+    "thermal management",
+    "electronic cooling",
+    "heat dissipation",
+    "thermal design",
+    "chip-level thermal management",
+    "board-level thermal management",
+    "system-level thermal management"
+  ],
+  "cooling_taxonomy": {
+    "chip-level": [
+      "microfluidics",
+      "thermal interface materials",
+      "TIM",
+      "hotspot mitigation",
+      "2.5D IC",
+      "3D IC"
+    ],
+    "board-level": [
+      "integrated heat pipe",
+      "heat pipe",
+      "vapor chamber",
+      "PCB thermal via",
+      "board cooling"
+    ],
+    "system-level": [
+      "cold plate cooling",
+      "two-phase immersion cooling",
+      "immersion cooling",
+      "rack-scale thermal management",
+      "data center cooling"
+    ]
+  },
   "forbidden_topics": [
     "bioinformatics",
     "health",
     "climate",
     "biology"
-  ]
+  ],
+  "relevance_system_prompt": "Classify whether a paper is even slightly relevant to thermal management across chip-level, board-level, or system-level cooling. Prefer recall over precision: include borderline-but-related papers. Use both title and abstract.",
+  "relevance_user_prompt_template": "Return JSON with keys: relevant (bool), matched_topics (list[str]), cooling_level (str: chip-level|board-level|system-level|unknown), cooling_methodology (str), rationale (str, <=40 words). Mark relevant=true for anything slightly related to thermal management/cooling/heat dissipation in electronics systems. \nTopics: {topics_json}\nCooling taxonomy: {cooling_taxonomy_json}\nTitle: {title}\nAbstract: {abstract}",
+  "analysis_system_prompt": "Write concise, smooth markdown analysis for research management. Avoid repeating statistics and avoid generic field explanations.",
+  "analysis_user_prompt_template": "Write sections: 'Topic-Focused Collaboration Analysis' and 'Actionable Next Steps'. Focus on collaboration patterns emerging from relevant papers and topics.\nInput topics: {topics_json}\nRelevant paper count: {relevant_count}\nTopic stats: {stats_json}\nPaper sample: {paper_sample_json}"
 }

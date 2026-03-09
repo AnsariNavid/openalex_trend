@@ -129,7 +129,17 @@ def keyword_taxonomy_tag(row: dict[str, Any], cfg: TopicConfig) -> tuple[str, st
 
 def keyword_relevance(row: dict[str, Any], topics: list[str]) -> dict[str, Any]:
     text = f"{row.get('title','')} {row.get('abstract','')}".lower()
+    broad_terms = [
+        "thermal management",
+        "thermal",
+        "cooling",
+        "heat dissipation",
+        "heat transfer",
+        "temperature control",
+        "therm",
+    ]
     matches = [t for t in topics if t.lower() in text]
+    matches.extend([t for t in broad_terms if t in text and t not in matches])
     return {"relevant": bool(matches), "matched_topics": matches, "rationale": "Keyword fallback matching."}
 
 

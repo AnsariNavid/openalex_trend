@@ -319,7 +319,17 @@ def llm_topic_decision(
 
 def keyword_fallback_decision(title: str, abstract: str, topics: list[str]) -> dict[str, Any]:
     text = f"{title} {abstract}".lower()
+    broad_terms = [
+        "thermal management",
+        "thermal",
+        "cooling",
+        "heat dissipation",
+        "heat transfer",
+        "temperature control",
+        "therm",
+    ]
     matches = [t for t in topics if t.lower() in text]
+    matches.extend([t for t in broad_terms if t in text and t not in matches])
     return {"relevant": bool(matches), "matched_topics": matches, "rationale": "Keyword fallback matching."}
 
 

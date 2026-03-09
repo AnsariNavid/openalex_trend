@@ -21,7 +21,13 @@ PyCharm-friendly scripts for OpenAlex collaboration analysis.
 
 ## Configuration
 
-Edit `config.json`:
+Edit `config.json` (organized into clearly separated sections):
+
+- **Data fetch**: institution/date/page settings.
+- **Outputs**: report and dataset output filenames.
+- **Models & API keys**: OpenAI/OpenAlex model and auth settings.
+- **Topic taxonomy**: `topics`, `cooling_taxonomy`, `forbidden_topics`.
+- **Prompts**: relevance and analysis prompt templates.
 
 - `institution_ids`
 - `from_date`, `to_date`
@@ -79,7 +85,7 @@ Use `topic_focused_collab_filter.py` when you want to track only papers relevant
 Use `config.json` as the single configuration file for all scripts.
 
 Key settings:
-- `topics`: list of your topics of interest.
+- `topics`: broad thermal-management category terms (configured to favor recall, including slightly related papers).
 - `cooling_taxonomy`: level-to-method mapping used to tag relevant papers (chip-level, board-level, system-level).
 - `forbidden_topics`: topics to exclude early (mapped to OpenAlex concept tags, then filtered out).
 - `cheap_model`: low-cost model for paper-level relevance decisions.
@@ -114,7 +120,7 @@ Use this 4-step pipeline (all read from `config.json`):
    - If still missing, prompts manual abstract entry title-by-title.
    - Reports initial and final abstract availability, plus HTML/PDF/arXiv recovered counts and GPT/manual counts.
 3. `classify_topics_from_filtered.py`
-   - Runs topic relevance classification using both title and abstract and writes relevant JSONL (`output_relevant_jsonl`).
+   - Runs topic relevance classification using both title and abstract with recall-oriented matching (includes slightly related thermal-management papers) and writes relevant JSONL (`output_relevant_jsonl`).
    - Writes a second JSON file (`output_relevant_tagged_json`) containing only relevant papers with `cooling_level` and `cooling_methodology` tags.
 4. `write_topic_analysis.py`
    - Reads the relevant JSONL list and writes analysis markdown (`output_analysis_md`) + `topic_stats.json`.
