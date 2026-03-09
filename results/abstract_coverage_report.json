@@ -1,30 +1,334 @@
 {
   "input_file": "results\\filtered_german_collab_dataset.json",
   "enriched_output_file": "results\\filtered_german_collab_dataset.json",
-  "total_entries": 137,
-  "initial_entries_with_abstract": 112,
-  "initial_entries_missing_abstract": 25,
-  "final_entries_with_abstract": 134,
-  "final_entries_missing_abstract": 3,
-  "final_coverage_ratio": 0.9781021897810219,
-  "exact_abstract_recovered_from_html": 10,
+  "total_entries": 645,
+  "initial_entries_with_abstract": 533,
+  "initial_entries_missing_abstract": 112,
+  "final_entries_with_abstract": 566,
+  "final_entries_missing_abstract": 79,
+  "final_coverage_ratio": 0.8775193798449612,
+  "exact_abstract_recovered_from_html": 27,
   "exact_abstract_recovered_from_pdf": 0,
   "exact_abstract_recovered_from_arxiv": 2,
-  "abstract_generated_by_gpt": 1,
-  "abstract_entered_manually": 9,
-  "still_missing_after_recovery": 3,
+  "abstract_generated_by_gpt": 4,
+  "abstract_entered_manually": 0,
+  "still_missing_after_recovery": 79,
   "missing_entries": [
+    {
+      "id": "https://openalex.org/W3201073812",
+      "title": "LAMMPS - a flexible simulation tool for particle-based materials modeling at the atomic, meso, and continuum scales"
+    },
+    {
+      "id": "https://openalex.org/W4391848979",
+      "title": "Explainable Artificial Intelligence (XAI) 2.0: A manifesto of open challenges and interdisciplinary research directions"
+    },
+    {
+      "id": "https://openalex.org/W3112346810",
+      "title": "VerSe: A Vertebrae labelling and segmentation benchmark for multi-detector CT images"
+    },
+    {
+      "id": "https://openalex.org/W4406694068",
+      "title": "Neuromorphic computing at scale"
+    },
+    {
+      "id": "https://openalex.org/W3155180562",
+      "title": "Atomic-scale investigation of Lithiation/Delithiation mechanism in High-entropy spinel oxide with superior electrochemical performance"
+    },
+    {
+      "id": "https://openalex.org/W4313594376",
+      "title": "Computational pathology in 2030: a Delphi study forecasting the role of AI in pathology within the next decade"
+    },
+    {
+      "id": "https://openalex.org/W3036022295",
+      "title": "Cardiac segmentation on late gadolinium enhancement MRI: A benchmark study from multi-sequence cardiac MR segmentation challenge"
+    },
+    {
+      "id": "https://openalex.org/W3082377385",
+      "title": "Measurement of gas pressure inside large-format prismatic lithium-ion cells during operation and cycle aging"
+    },
+    {
+      "id": "https://openalex.org/W4293875653",
+      "title": "Opportunistic maintenance scheduling with deep reinforcement learning"
+    },
+    {
+      "id": "https://openalex.org/W4294740541",
+      "title": "Rapid artificial intelligence solutions in a pandemic—The COVID-19-20 Lung CT Lesion Segmentation Challenge"
+    },
+    {
+      "id": "https://openalex.org/W3203325404",
+      "title": "Preliminary outcomes after vertebral body tethering (VBT) for lumbar curves and subanalysis of a 1- versus 2-tether construct"
+    },
+    {
+      "id": "https://openalex.org/W3126119598",
+      "title": "High frequency impedance characteristics of cylindrical lithium-ion cells: Physical-based modeling of cell state and cell design dependencies"
+    },
+    {
+      "id": "https://openalex.org/W4408181258",
+      "title": "Lifetime prediction for power modules in wind-energy converters based on temperature variations in a large area substrate solder connection"
+    },
+    {
+      "id": "https://openalex.org/W4224437061",
+      "title": "Electrochemical impedance spectroscopy error analysis and round robin on dummy cells and lithium-ion-batteries"
+    },
+    {
+      "id": "https://openalex.org/W3045805172",
+      "title": "Fully convolutional networks for void segmentation in X-ray images of solder joints"
+    },
+    {
+      "id": "https://openalex.org/W4211247687",
+      "title": "Embedded real-time state observer implementation for lithium-ion cells using an electrochemical model and extended Kalman filter"
+    },
+    {
+      "id": "https://openalex.org/W4318052114",
+      "title": "PlexusNet: A neural network architectural concept for medical image classification"
+    },
+    {
+      "id": "https://openalex.org/W4387122220",
+      "title": "Silicon carbide based traction inverter cooling in electric vehicle using heat pipes"
+    },
+    {
+      "id": "https://openalex.org/W3111937169",
+      "title": "Focused ion beam irradiation for generation of skyrmionic bubble like structures"
+    },
+    {
+      "id": "https://openalex.org/W4412591781",
+      "title": "Artificial Intelligence for Science in Quantum, Atomistic, and Continuum Systems"
+    },
+    {
+      "id": "https://openalex.org/W4409046753",
+      "title": "Ultra-low-power cryogenic complementary metal oxide semiconductor technology"
+    },
+    {
+      "id": "https://openalex.org/W4408259077",
+      "title": "Improved 2D charge carrier quantification workflow for scanning spreading resistance microscopy"
+    },
+    {
+      "id": "https://openalex.org/W4412908551",
+      "title": "3D Imaging of Defects, Buried Interfaces, and Strain with Multislice Electron Ptychography"
+    },
+    {
+      "id": "https://openalex.org/W4416061137",
+      "title": "Fundamental study on the chemical mechanical polishing for indium phosphide wafers: Thermochemical analysis, oxidation and chemical mechanical polishing experiments"
+    },
+    {
+      "id": "https://openalex.org/W4212872133",
+      "title": "HARadNet: Anchor-free target detection for radar point clouds using hierarchical attention and multi-task learning"
+    },
+    {
+      "id": "https://openalex.org/W3157304472",
+      "title": "Transformation of semantic knowledge into simulation-based decision support"
+    },
+    {
+      "id": "https://openalex.org/W4312236547",
+      "title": "Disruption evaluation in end-to-end semiconductor supply chains via interpretable machine learning"
+    },
+    {
+      "id": "https://openalex.org/W3213468788",
+      "title": "A holistic contribution to fast innovation in electric vehicles: An overview of the DEMOBASE research project"
+    },
+    {
+      "id": "https://openalex.org/W4312474564",
+      "title": "Simulating the COVID19-pandemic and its impact on the semiconductor supply chain: Enabling a supply chain risk management framework"
+    },
+    {
+      "id": "https://openalex.org/W4297200740",
+      "title": "Condition monitoring indicators for Si and SiC power modules"
+    },
+    {
+      "id": "https://openalex.org/W4296246734",
+      "title": "Early RTL delay prediction using neural networks"
+    },
+    {
+      "id": "https://openalex.org/W4391554836",
+      "title": "Automating application-driven customization of ASIPs: A survey"
+    },
+    {
+      "id": "https://openalex.org/W4400516133",
+      "title": "Structures in grain-refined directionally solidified hypoeutectic Al-Cu alloys: Benchmark experiments under microgravity on-board the International Space Station"
+    },
+    {
+      "id": "https://openalex.org/W3170427097",
+      "title": "Data analytics for time constraint adherence prediction in a semiconductor manufacturing use-case"
+    },
+    {
+      "id": "https://openalex.org/W3095435495",
+      "title": "Easy and efficient agent-based simulations with the OpenABL language and compiler"
+    },
+    {
+      "id": "https://openalex.org/W3187745473",
+      "title": "Artificial Intelligence in PET"
+    },
+    {
+      "id": "https://openalex.org/W4404291413",
+      "title": "Economic growth and food insecurity: evidence via panel estimation"
+    },
+    {
+      "id": "https://openalex.org/W3121661031",
+      "title": "Future Automotive Embedded Systems Enabled by Efficient Model-Based Software Development"
+    },
+    {
+      "id": "https://openalex.org/W4387207462",
+      "title": "Compact modelling of a thermo-mechanical finite element model of a microelectronic package"
+    },
+    {
+      "id": "https://openalex.org/W4387231816",
+      "title": "Test concept for a direct correlation between dislocations and the intrinsic degradation of lateral PIN diodes in GaN-on-Si under reverse bias"
+    },
+    {
+      "id": "https://openalex.org/W4404515319",
+      "title": "Characterization of LDMOS down to cryogenic temperatures and modeling with PSPHV"
+    },
+    {
+      "id": "https://openalex.org/W3201300345",
+      "title": "Novel evolutionary planning technique for flexible-grid transmission in optical networks"
+    },
+    {
+      "id": "https://openalex.org/W4387233380",
+      "title": "Avalanche ruggedness and failure mode of SiC trench MOSFETs"
+    },
+    {
+      "id": "https://openalex.org/W4391124970",
+      "title": "Best practice methods for the chemical and isotopic characterisation of porewater in low-permeability bedrock"
+    },
+    {
+      "id": "https://openalex.org/W4405877547",
+      "title": "Surgical management of cervical malignant spinal lesions: a retrospective study of cervical spine metastases and multiple myeloma cases"
+    },
+    {
+      "id": "https://openalex.org/W4409798999",
+      "title": "Complying with the EU AI Act: Innovations in explainable and user-centric hand gesture recognition"
+    },
+    {
+      "id": "https://openalex.org/W4412791712",
+      "title": "Real-time meshlet decompression"
+    },
     {
       "id": "https://openalex.org/W4210805935",
       "title": "General-purpose GPU hashing data structures and their application in accelerated genomics"
+    },
+    {
+      "id": "https://openalex.org/W4200498436",
+      "title": "IEEE Journal of Photovoltaics"
+    },
+    {
+      "id": "https://openalex.org/W4206099315",
+      "title": "IEEE Computational Intelligence Society Information"
+    },
+    {
+      "id": "https://openalex.org/W4387231876",
+      "title": "Study of different parameters influencing IGBT and diode robustness under short-circuit type III conditions"
+    },
+    {
+      "id": "https://openalex.org/W4200483507",
+      "title": "IEEE Computational Intelligence Society Information"
+    },
+    {
+      "id": "https://openalex.org/W4206400118",
+      "title": "IEEE Transactions on Semiconductor Manufacturing publication information"
+    },
+    {
+      "id": "https://openalex.org/W4206923494",
+      "title": "IEEE Computational Intelligence Society Information"
+    },
+    {
+      "id": "https://openalex.org/W4249240820",
+      "title": "IEEE Computational Intelligence Society Information"
+    },
+    {
+      "id": "https://openalex.org/W4250567871",
+      "title": "IEEE Computational Intelligence Society Information"
+    },
+    {
+      "id": "https://openalex.org/W4253781335",
+      "title": "IEEE Transactions on Semiconductor Manufacturing publication information"
+    },
+    {
+      "id": "https://openalex.org/W4283065893",
+      "title": "Table of Contents"
+    },
+    {
+      "id": "https://openalex.org/W4285102946",
+      "title": "ECTC 2022 Executive Committee"
+    },
+    {
+      "id": "https://openalex.org/W4297577934",
+      "title": "Table of Contents"
+    },
+    {
+      "id": "https://openalex.org/W4394969615",
+      "title": "IEEE VR 2024 Committee"
+    },
+    {
+      "id": "https://openalex.org/W4402983530",
+      "title": "Early-term outcome of apical fusion with vertebral body tethering for thoracolumbar curves in adolescent idiopathic scoliosis: A preliminary study"
+    },
+    {
+      "id": "https://openalex.org/W4405516729",
+      "title": "Horizontal uniformity improvements by using beam corrected profiles on the VIISta900/3D"
+    },
+    {
+      "id": "https://openalex.org/W4407163466",
+      "title": "Challenges of high dose ion implantations in photo-resist covered wafers for power device processing"
+    },
+    {
+      "id": "https://openalex.org/W4409154899",
+      "title": "A 470- <i>μ</i> W, 102.6-dB DR, 20-kHz BW Calibration-Free ΔΣ Modulator With SFDR in Excess of 110 dBc Using an Intrinsically Linear 13-Level DAC"
+    },
+    {
+      "id": "https://openalex.org/W4410428413",
+      "title": "Guest Editorial: Next-Generation Optical Communications and Networking"
+    },
+    {
+      "id": "https://openalex.org/W4410763444",
+      "title": "Mehr Komfort, Effizienz und Flexibilität - KI-Algorithmen optimieren autonomes Fahren"
+    },
+    {
+      "id": "https://openalex.org/W4410769345",
+      "title": "Enhanced Comfort, Efficiency and Flexibility - Optimizing Autonomous Driving with AI Algorithms"
+    },
+    {
+      "id": "https://openalex.org/W4411050531",
+      "title": "Mehr Komfort, Effizienz und Flexibilität - KI-Algorithmen optimieren autonomes Fahren"
+    },
+    {
+      "id": "https://openalex.org/W4411050603",
+      "title": "Enhanced Comfort, Efficiency and Flexibility - Optimizing Autonomous Driving with AI Algorithms"
+    },
+    {
+      "id": "https://openalex.org/W4411678365",
+      "title": "Enhanced Comfort, Efficiency and Flexibility - Optimizing Autonomous Driving with AI Algorithms"
+    },
+    {
+      "id": "https://openalex.org/W4411678366",
+      "title": "Mehr Komfort, Effizienz und Flexibilität - KI-Algorithmen optimieren autonomes Fahren"
     },
     {
       "id": "https://openalex.org/W4413162126",
       "title": "Assessing the effects of biostimulants on spinach through a Field-to-Lab approach for PET imaging"
     },
     {
+      "id": "https://openalex.org/W4414163252",
+      "title": "Guest Editorial: Co-Design of Communication, Computing, and Control in Industrial Cyber-Physical Systems—Part I"
+    },
+    {
+      "id": "https://openalex.org/W4415481127",
+      "title": "Guest Editorial: Co-Design of Communication, Computing, and Control in Industrial Cyber-Physical Systems—Part II"
+    },
+    {
       "id": "https://openalex.org/W4415769217",
       "title": "Recent trends in distant conversational speech recognition: A review of CHiME-7 and 8 DASR challenges"
+    },
+    {
+      "id": "https://openalex.org/W4415973231",
+      "title": "Femtosecond-laser-assisted focused ion beam method for the fabrication of tip specimens for atom probe tomography"
+    },
+    {
+      "id": "https://openalex.org/W4416589295",
+      "title": "A review of the state-of-the-art: progress in ultrasonic and acoustic techniques for quality assessment in the development and manufacturing of oral solid dosage forms − Part I: theoretical foundations and principles"
+    },
+    {
+      "id": "https://openalex.org/W7130719106",
+      "title": "Phase transition and crystallinity of InSe1-Te thin films (0 ≤ x ≤ 1) grown by molecular beam epitaxy with indium precursor layer"
     }
   ]
 }
