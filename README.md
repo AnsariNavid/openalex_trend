@@ -70,8 +70,9 @@ Use `topic_focused_collab_filter.py` when you want to track only papers relevant
 1. Uses your host institutes and date range.
 2. Keeps only papers co-authored with German collaborator institutes.
 3. Reads each paper (title + abstract) and checks relevance to your custom topics one-by-one using a **cheap model** (`cheap_model`).
-4. Saves relevant papers with metadata to JSONL.
-5. Produces a short topic-level collaboration analysis markdown file.
+4. Saves the full filtered dataset (journal/conference + German collaboration subset) to JSON.
+5. Saves topic-relevant papers with metadata to JSONL.
+6. Produces a short topic-level collaboration analysis markdown file.
 
 ### Topic config
 
@@ -79,6 +80,7 @@ Copy and edit:
 
 ```bash
 cp topic_config.example.json topic_config.json
+cp topic_prompt_config.example.json topic_prompt_config.json
 ```
 
 Key settings:
@@ -86,7 +88,9 @@ Key settings:
 - `cheap_model`: low-cost model for paper-level relevance decisions.
 - `analysis_model`: stronger model for final synthesis.
 - `openalex_api_key`: OpenAlex API key used for all OpenAlex requests.
+- `output_filtered_json`: full filtered dataset (journal/conference + German-collab subset).
 - `output_relevant_jsonl`, `output_analysis_md`: output files under `results_dir`.
+- `prompt_config_path`: path to prompt JSON file (e.g., `topic_prompt_config.json`).
 
 ### Run
 
@@ -94,4 +98,26 @@ In PyCharm run `topic_focused_collab_filter.py`, or in terminal:
 
 ```bash
 python topic_focused_collab_filter.py
+```
+
+
+## Split workflow scripts (generation -> abstract check -> analysis)
+
+Use this 3-step pipeline:
+
+1. `generate_filtered_publications.py`
+   - Generates:
+     - full filtered dataset JSON (`output_filtered_json`): after journal/conference + German-collaboration filtering.
+     - relevant publications JSONL (`output_relevant_jsonl`): after topic relevance classification.
+2. `check_filtered_abstracts.py`
+   - Checks if entries have abstracts and writes `results/abstract_coverage_report.json`.
+3. `write_topic_analysis.py`
+   - Reads the relevant JSONL list and writes analysis markdown (`output_analysis_md`) + `topic_stats.json`.
+
+Run order in terminal:
+
+```bash
+python generate_filtered_publications.py
+python check_filtered_abstracts.py results/filtered_german_collab_dataset.json
+python write_topic_analysis.py
 ```

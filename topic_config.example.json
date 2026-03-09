@@ -17,5 +17,7 @@
   "output_analysis_md": "topic_analysis.md",
   "cheap_model": "gpt-4o-mini",
   "analysis_model": "gpt-4.1",
-  "openalex_api_key": ""
+  "openalex_api_key": "",
+  "output_filtered_json": "filtered_german_collab_dataset.json",
+  "prompt_config_path": "topic_prompt_config.json"
 }

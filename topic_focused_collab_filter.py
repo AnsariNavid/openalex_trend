@@ -1,22 +1,13 @@
 #!/usr/bin/env python3
-"""Topic-focused collaboration filter for OpenAlex publications.
-
-Workflow:
-1) Pull works for host institutes and time range.
-2) Keep only works that include at least one German collaborator institute.
-3) Score each work against user topics via a cheap model (title + abstract).
-4) Save relevant works with metadata.
-5) Generate a short topic analysis report.
-"""
+"""Topic-focused collaboration filter for OpenAlex publications."""
 
 from __future__ import annotations
 
 import json
 import os
-import re
 import sys
 import time
-from collections import Counter, defaultdict
+from collections import Counter
 from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path
@@ -38,11 +29,21 @@ class TopicConfig:
     per_page: int
     topics: list[str]
     results_dir: str
+    output_filtered_json: str
     output_relevant_jsonl: str
     output_analysis_md: str
     cheap_model: str
     analysis_model: str
     openalex_api_key: str
+    prompt_config_path: str
+
+
+@dataclass
+class PromptConfig:
+    relevance_system_prompt: str
+    relevance_user_prompt_template: str
+    analysis_system_prompt: str
+    analysis_user_prompt_template: str
 
 
 class ProgressBar:
@@ -70,13 +71,6 @@ def safe_get(url: str, params: dict[str, Any], max_retries: int = 3) -> dict[str
     return {}
 
 
-
-
-def add_openalex_auth(params: dict[str, Any], api_key: str) -> dict[str, Any]:
-    enriched = dict(params)
-    if api_key:
-        enriched["api_key"] = api_key
-    return enriched
 def safe_post_json(url: str, payload: dict[str, Any], headers: dict[str, str], max_retries: int = 3) -> dict[str, Any]:
     req = Request(url=url, data=json.dumps(payload).encode("utf-8"), method="POST")
     for k, v in headers.items():
@@ -90,6 +84,13 @@ def safe_post_json(url: str, payload: dict[str, Any], headers: dict[str, str], m
                 raise
             time.sleep(1.1 * attempt)
     return {}
+
+
+def add_openalex_auth(params: dict[str, Any], api_key: str) -> dict[str, Any]:
+    out = dict(params)
+    if api_key:
+        out["api_key"] = api_key
+    return out
 
 
 def invert_abstract(inverted: dict[str, list[int]] | None) -> str:
@@ -114,6 +115,7 @@ def load_topic_config(path: str = "topic_config.json") -> TopicConfig:
     if not p.exists():
         raise FileNotFoundError("topic_config.json not found. Copy from topic_config.example.json first.")
     raw = json.loads(p.read_text(encoding="utf-8"))
+
     required = [
         "institution_ids",
         "from_date",
@@ -122,11 +124,13 @@ def load_topic_config(path: str = "topic_config.json") -> TopicConfig:
         "per_page",
         "topics",
         "results_dir",
+        "output_filtered_json",
         "output_relevant_jsonl",
         "output_analysis_md",
         "cheap_model",
         "analysis_model",
         "openalex_api_key",
+        "prompt_config_path",
     ]
     missing = [k for k in required if k not in raw]
     if missing:
@@ -148,11 +152,35 @@ def load_topic_config(path: str = "topic_config.json") -> TopicConfig:
         per_page=min(200, int(raw["per_page"])),
         topics=[str(t).strip() for t in raw["topics"] if str(t).strip()],
         results_dir=str(raw["results_dir"]),
+        output_filtered_json=str(raw["output_filtered_json"]),
         output_relevant_jsonl=str(raw["output_relevant_jsonl"]),
         output_analysis_md=str(raw["output_analysis_md"]),
         cheap_model=str(raw["cheap_model"]),
         analysis_model=str(raw["analysis_model"]),
         openalex_api_key=str(raw.get("openalex_api_key", "")).strip(),
+        prompt_config_path=str(raw["prompt_config_path"]),
+    )
+
+
+def load_prompt_config(path: str) -> PromptConfig:
+    p = Path(path)
+    if not p.exists():
+        raise FileNotFoundError(f"Prompt config not found: {path}")
+    raw = json.loads(p.read_text(encoding="utf-8"))
+    required = [
+        "relevance_system_prompt",
+        "relevance_user_prompt_template",
+        "analysis_system_prompt",
+        "analysis_user_prompt_template",
+    ]
+    missing = [k for k in required if k not in raw]
+    if missing:
+        raise ValueError(f"Missing prompt keys: {', '.join(missing)}")
+    return PromptConfig(
+        relevance_system_prompt=str(raw["relevance_system_prompt"]),
+        relevance_user_prompt_template=str(raw["relevance_user_prompt_template"]),
+        analysis_system_prompt=str(raw["analysis_system_prompt"]),
+        analysis_user_prompt_template=str(raw["analysis_user_prompt_template"]),
     )
 
 
@@ -209,28 +237,26 @@ def keep_german_collaboration_subset(works: list[dict[str, Any]], host_ids: set[
     return kept
 
 
-def llm_topic_decision(title: str, abstract: str, topics: list[str], model: str, api_key: str) -> dict[str, Any]:
+def llm_topic_decision(
+    title: str,
+    abstract: str,
+    topics: list[str],
+    model: str,
+    api_key: str,
+    prompt_cfg: PromptConfig,
+) -> dict[str, Any]:
+    user_prompt = prompt_cfg.relevance_user_prompt_template.format(
+        topics_json=json.dumps(topics, ensure_ascii=False),
+        title=title,
+        abstract=abstract[:5000],
+    )
     payload = {
         "model": model,
         "temperature": 0,
         "response_format": {"type": "json_object"},
         "messages": [
-            {
-                "role": "system",
-                "content": (
-                    "Classify whether a paper is relevant to provided topics. "
-                    "Be conservative and avoid false positives."
-                ),
-            },
-            {
-                "role": "user",
-                "content": (
-                    "Return JSON with keys: relevant (bool), matched_topics (list[str]), rationale (str, <=40 words).\n"
-                    f"Topics: {topics}\n"
-                    f"Title: {title}\n"
-                    f"Abstract: {abstract[:5000]}"
-                ),
-            },
+            {"role": "system", "content": prompt_cfg.relevance_system_prompt},
+            {"role": "user", "content": user_prompt},
         ],
     }
     headers = {"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"}
@@ -248,11 +274,7 @@ def llm_topic_decision(title: str, abstract: str, topics: list[str], model: str,
 def keyword_fallback_decision(title: str, abstract: str, topics: list[str]) -> dict[str, Any]:
     text = f"{title} {abstract}".lower()
     matches = [t for t in topics if t.lower() in text]
-    return {
-        "relevant": bool(matches),
-        "matched_topics": matches,
-        "rationale": "Keyword fallback matching.",
-    }
+    return {"relevant": bool(matches), "matched_topics": matches, "rationale": "Keyword fallback matching."}
 
 
 def extract_metadata(work: dict[str, Any], host_ids: set[str]) -> dict[str, Any]:
@@ -302,10 +324,14 @@ def build_topic_stats(relevant_rows: list[dict[str, Any]], topics: list[str]) ->
     }
 
 
-def generate_topic_analysis(cfg: TopicConfig, relevant_rows: list[dict[str, Any]], stats: dict[str, Any]) -> str:
+def generate_topic_analysis(
+    cfg: TopicConfig,
+    prompt_cfg: PromptConfig,
+    relevant_rows: list[dict[str, Any]],
+    stats: dict[str, Any],
+) -> str:
     api_key = os.getenv("OPENAI_API_KEY")
     if not api_key:
-        # concise local fallback
         lines = ["# Topic-Focused Collaboration Analysis", ""]
         lines.append(f"- Relevant papers: {len(relevant_rows)}")
         lines.append("- Topic coverage:")
@@ -327,28 +353,19 @@ def generate_topic_analysis(cfg: TopicConfig, relevant_rows: list[dict[str, Any]
         for r in relevant_rows[:300]
     ]
 
+    user_prompt = prompt_cfg.analysis_user_prompt_template.format(
+        topics_json=json.dumps(cfg.topics, ensure_ascii=False),
+        relevant_count=len(relevant_rows),
+        stats_json=json.dumps(stats, ensure_ascii=False),
+        paper_sample_json=json.dumps(slim_rows, ensure_ascii=False),
+    )
+
     payload = {
         "model": cfg.analysis_model,
         "temperature": 0.2,
         "messages": [
-            {
-                "role": "system",
-                "content": (
-                    "Write concise, smooth markdown analysis for research management. "
-                    "Avoid repeating statistics and avoid generic field explanations."
-                ),
-            },
-            {
-                "role": "user",
-                "content": (
-                    "Write sections: 'Topic-Focused Collaboration Analysis' and 'Actionable Next Steps'. "
-                    "Focus on collaboration patterns emerging from relevant papers and topics.\n"
-                    f"Input topics: {cfg.topics}\n"
-                    f"Relevant paper count: {len(relevant_rows)}\n"
-                    f"Topic stats: {json.dumps(stats, ensure_ascii=False)}\n"
-                    f"Paper sample: {json.dumps(slim_rows, ensure_ascii=False)}"
-                ),
-            },
+            {"role": "system", "content": prompt_cfg.analysis_system_prompt},
+            {"role": "user", "content": user_prompt},
         ],
     }
     headers = {"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"}
@@ -359,12 +376,22 @@ def generate_topic_analysis(cfg: TopicConfig, relevant_rows: list[dict[str, Any]
         return "# Topic-Focused Collaboration Analysis\n\nAnalysis generation failed due to network/API limits.\n"
 
 
+def serialize_filtered_work(work: dict[str, Any], host_ids: set[str]) -> dict[str, Any]:
+    entry = extract_metadata(work, host_ids)
+    entry["abstract"] = invert_abstract(work.get("abstract_inverted_index"))
+    return entry
+
+
 def main() -> int:
     pb = ProgressBar()
     try:
         pb.update("Loading topic config", 0, 1)
         cfg = load_topic_config("topic_config.json")
         pb.update("Loading topic config", 1, 1)
+
+        pb.update("Loading prompt config", 0, 1)
+        prompt_cfg = load_prompt_config(cfg.prompt_config_path)
+        pb.update("Loading prompt config", 1, 1)
 
         host_ids = set(cfg.institution_ids)
         works = fetch_candidate_works(cfg, pb)
@@ -378,7 +405,7 @@ def main() -> int:
             abstract = invert_abstract(work.get("abstract_inverted_index"))
 
             if api_key:
-                decision = llm_topic_decision(title, abstract, cfg.topics, cfg.cheap_model, api_key)
+                decision = llm_topic_decision(title, abstract, cfg.topics, cfg.cheap_model, api_key, prompt_cfg)
             else:
                 decision = keyword_fallback_decision(title, abstract, cfg.topics)
 
@@ -394,22 +421,24 @@ def main() -> int:
         stats = build_topic_stats(relevant_rows, cfg.topics)
 
         pb.update("Generating topic analysis", 0, 1)
-        analysis_md = generate_topic_analysis(cfg, relevant_rows, stats)
+        analysis_md = generate_topic_analysis(cfg, prompt_cfg, relevant_rows, stats)
         pb.update("Generating topic analysis", 1, 1)
 
         pb.update("Saving outputs", 0, 1)
         out_dir = Path(cfg.results_dir)
         out_dir.mkdir(parents=True, exist_ok=True)
+        filtered_json_path = out_dir / cfg.output_filtered_json
         jsonl_path = out_dir / cfg.output_relevant_jsonl
         md_path = out_dir / cfg.output_analysis_md
 
+        filtered_rows = [serialize_filtered_work(w, host_ids) for w in de_subset]
+        filtered_json_path.write_text(json.dumps(filtered_rows, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
         save_jsonl(jsonl_path, relevant_rows)
         md_path.write_text(analysis_md, encoding="utf-8")
-
-        # Save machine-readable stats too.
         (out_dir / "topic_stats.json").write_text(json.dumps(stats, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
         pb.update("Saving outputs", 1, 1)
 
+        print(f"Filtered dataset saved to: {filtered_json_path.resolve()}")
         print(f"Relevant papers saved to: {jsonl_path.resolve()}")
         print(f"Analysis saved to: {md_path.resolve()}")
         return 0
