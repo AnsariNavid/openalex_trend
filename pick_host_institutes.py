@@ -24,20 +24,27 @@ class ProgressBar:
         print(f"[{bar}] {int(ratio * 100):3d}% | {label}")
 
 
+
+
+def add_openalex_auth(params: dict[str, Any], api_key: str) -> dict[str, Any]:
+    enriched = dict(params)
+    if api_key:
+        enriched["api_key"] = api_key
+    return enriched
 def safe_get(url: str, params: dict[str, Any]) -> dict[str, Any]:
     full_url = f"{url}?{urlencode(params)}"
     with urlopen(full_url, timeout=45) as r:
         return json.loads(r.read().decode("utf-8"))
 
 
-def search_institutions(query: str, per_page: int = 10) -> list[dict[str, Any]]:
+def search_institutions(query: str, openalex_api_key: str, per_page: int = 10) -> list[dict[str, Any]]:
     data = safe_get(
         OPENALEX_INSTITUTIONS_ENDPOINT,
-        {
+        add_openalex_auth({
             "search": query,
             "per-page": per_page,
             "select": "id,display_name,country_code,type,works_count",
-        },
+        }, openalex_api_key),
     )
     return data.get("results", [])
 
@@ -56,6 +63,7 @@ def main() -> int:
         cfg = load_config(cfg_path)
         pb.update("Loading config", 1, 1)
 
+        openalex_api_key = str(cfg.get("openalex_api_key", "")).strip()
         chosen_ids: list[str] = []
         while True:
             query = input("Search institution name (or press Enter to finish): ").strip()
@@ -63,7 +71,7 @@ def main() -> int:
                 break
 
             pb.update("Searching institutions", 0, 1)
-            results = search_institutions(query)
+            results = search_institutions(query, openalex_api_key)
             pb.update("Searching institutions", 1, 1)
 
             if not results:
@@ -96,6 +104,7 @@ def main() -> int:
 
         if chosen_ids:
             cfg["institution_ids"] = chosen_ids
+            cfg.setdefault("openalex_api_key", openalex_api_key)
             pb.update("Saving updated config", 0, 1)
             cfg_path.write_text(json.dumps(cfg, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
             pb.update("Saving updated config", 1, 1)

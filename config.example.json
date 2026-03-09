@@ -12,5 +12,6 @@
   "results_dir": "results",
   "output_report": "collaboration_report.md",
   "openai_model": "gpt-4o-mini",
-  "analysis_model": "gpt-4.1"
+  "analysis_model": "gpt-4.1",
+  "openalex_api_key": ""
 }
