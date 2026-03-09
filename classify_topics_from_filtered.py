@@ -21,9 +21,11 @@ OPENAI_CHAT_ENDPOINT = "https://api.openai.com/v1/chat/completions"
 @dataclass
 class TopicConfig:
     topics: list[str]
+    cooling_taxonomy: dict[str, list[str]]
     results_dir: str
     output_filtered_json: str
     output_relevant_jsonl: str
+    output_relevant_tagged_json: str
     cheap_model: str
 
 
@@ -63,9 +65,14 @@ def load_topic_config(path: str = "config.json") -> TopicConfig:
     raw = load_json_file(path)
     return TopicConfig(
         topics=[str(x) for x in raw["topics"]],
+        cooling_taxonomy={
+            str(level): [str(m) for m in methods]
+            for level, methods in (raw.get("cooling_taxonomy") or {}).items()
+        },
         results_dir=str(raw["results_dir"]),
         output_filtered_json=str(raw["output_filtered_json"]),
         output_relevant_jsonl=str(raw["output_relevant_jsonl"]),
+        output_relevant_tagged_json=str(raw.get("output_relevant_tagged_json", "topic_relevant_tagged_papers.json")),
         cheap_model=str(raw["cheap_model"]),
     )
 
@@ -80,6 +87,7 @@ def load_prompt_config_from_raw(raw: dict[str, Any]) -> PromptConfig:
 def llm_relevance(row: dict[str, Any], cfg: TopicConfig, prompt_cfg: PromptConfig, api_key: str) -> dict[str, Any]:
     user_prompt = prompt_cfg.relevance_user_prompt_template.format(
         topics_json=json.dumps(cfg.topics, ensure_ascii=False),
+        cooling_taxonomy_json=json.dumps(cfg.cooling_taxonomy, ensure_ascii=False),
         title=row.get("title", ""),
         abstract=(row.get("abstract") or "")[:5000],
     )
@@ -101,7 +109,22 @@ def llm_relevance(row: dict[str, Any], cfg: TopicConfig, prompt_cfg: PromptConfi
             return parsed
     except json.JSONDecodeError:
         pass
-    return {"relevant": False, "matched_topics": [], "rationale": "Malformed model output."}
+    return {
+        "relevant": False,
+        "matched_topics": [],
+        "cooling_level": "unknown",
+        "cooling_methodology": "",
+        "rationale": "Malformed model output.",
+    }
+
+
+def keyword_taxonomy_tag(row: dict[str, Any], cfg: TopicConfig) -> tuple[str, str]:
+    text = f"{row.get('title','')} {row.get('abstract','')}".lower()
+    for level, methods in cfg.cooling_taxonomy.items():
+        for method in methods:
+            if method.lower() in text:
+                return level, method
+    return "unknown", ""
 
 
 def keyword_relevance(row: dict[str, Any], topics: list[str]) -> dict[str, Any]:
@@ -133,15 +156,19 @@ def main() -> int:
         pb.update("Classifying filtered papers by topics", 0, len(filtered))
         relevant = []
         for i, row in enumerate(filtered, start=1):
-            if not (row.get("abstract") or "").strip():
-                pb.update("Classifying filtered papers by topics", i, len(filtered))
-                continue
-
             decision = llm_relevance(row, cfg, prompt_cfg, api_key) if api_key else keyword_relevance(row, cfg.topics)
             if bool(decision.get("relevant")):
                 out = dict(row)
                 out["matched_topics"] = decision.get("matched_topics", [])
+                out["cooling_level"] = str(decision.get("cooling_level", "unknown"))
+                out["cooling_methodology"] = str(decision.get("cooling_methodology", ""))
                 out["rationale"] = decision.get("rationale", "")
+
+                if (not out["cooling_level"] or out["cooling_level"] == "unknown") and cfg.cooling_taxonomy:
+                    fallback_level, fallback_method = keyword_taxonomy_tag(row, cfg)
+                    out["cooling_level"] = fallback_level
+                    out["cooling_methodology"] = fallback_method
+
                 relevant.append(out)
             pb.update("Classifying filtered papers by topics", i, len(filtered))
 
@@ -152,7 +179,11 @@ def main() -> int:
             for r in relevant:
                 f.write(json.dumps(r, ensure_ascii=False) + "\n")
 
+        tagged_out_path = out_dir / cfg.output_relevant_tagged_json
+        tagged_out_path.write_text(json.dumps(relevant, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
         print(f"Relevant list saved: {out_path.resolve()}")
+        print(f"Relevant tagged JSON saved: {tagged_out_path.resolve()}")
         print(f"Relevant entries: {len(relevant)}")
         return 0
     except Exception as e:  # noqa: BLE001

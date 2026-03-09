@@ -31,6 +31,7 @@ class TopicConfig:
     max_pages: int
     per_page: int
     topics: list[str]
+    cooling_taxonomy: dict[str, list[str]]
     results_dir: str
     output_filtered_json: str
     output_relevant_jsonl: str
@@ -153,6 +154,10 @@ def load_topic_config(path: str = "config.json") -> TopicConfig:
         max_pages=int(raw["max_pages"]),
         per_page=min(200, int(raw["per_page"])),
         topics=[str(t).strip() for t in raw["topics"] if str(t).strip()],
+        cooling_taxonomy={
+            str(level): [str(m) for m in methods]
+            for level, methods in (raw.get("cooling_taxonomy") or {}).items()
+        },
         results_dir=str(raw["results_dir"]),
         output_filtered_json=str(raw["output_filtered_json"]),
         output_relevant_jsonl=str(raw["output_relevant_jsonl"]),
@@ -280,12 +285,14 @@ def llm_topic_decision(
     title: str,
     abstract: str,
     topics: list[str],
+    cooling_taxonomy: dict[str, list[str]],
     model: str,
     api_key: str,
     prompt_cfg: PromptConfig,
 ) -> dict[str, Any]:
     user_prompt = prompt_cfg.relevance_user_prompt_template.format(
         topics_json=json.dumps(topics, ensure_ascii=False),
+        cooling_taxonomy_json=json.dumps(cooling_taxonomy, ensure_ascii=False),
         title=title,
         abstract=abstract[:5000],
     )
@@ -459,7 +466,15 @@ def main() -> int:
             abstract = invert_abstract(work.get("abstract_inverted_index"))
 
             if api_key:
-                decision = llm_topic_decision(title, abstract, cfg.topics, cfg.cheap_model, api_key, prompt_cfg)
+                decision = llm_topic_decision(
+                    title,
+                    abstract,
+                    cfg.topics,
+                    cfg.cooling_taxonomy,
+                    cfg.cheap_model,
+                    api_key,
+                    prompt_cfg,
+                )
             else:
                 decision = keyword_fallback_decision(title, abstract, cfg.topics)
 
