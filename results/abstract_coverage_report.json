@@ -2,12 +2,15 @@
   "input_file": "results\\filtered_german_collab_dataset.json",
   "enriched_output_file": "results\\filtered_german_collab_dataset.json",
   "total_entries": 137,
-  "entries_with_abstract": 121,
-  "entries_missing_abstract": 16,
-  "coverage_ratio": 0.8832116788321168,
-  "exact_abstract_recovered_from_pdf": 1,
-  "abstract_generated_by_gpt": 8,
-  "still_missing_after_recovery": 16,
+  "initial_entries_with_abstract": 112,
+  "initial_entries_missing_abstract": 25,
+  "final_entries_with_abstract": 123,
+  "final_entries_missing_abstract": 14,
+  "final_coverage_ratio": 0.8978102189781022,
+  "exact_abstract_recovered_from_html": 10,
+  "exact_abstract_recovered_from_pdf": 0,
+  "abstract_generated_by_gpt": 1,
+  "still_missing_after_recovery": 14,
   "missing_entries": [
     {
       "id": "https://openalex.org/W2910094941",
@@ -26,10 +29,6 @@
       "title": "Artificial intelligence reconstructs missing climate information"
     },
     {
-      "id": "https://openalex.org/W4401806513",
-      "title": "Pushing the frontiers in climate modelling and analysis with machine learning"
-    },
-    {
       "id": "https://openalex.org/W3036022295",
       "title": "Cardiac segmentation on late gadolinium enhancement MRI: A benchmark study from multi-sequence cardiac MR segmentation challenge"
     },
@@ -40,10 +39,6 @@
     {
       "id": "https://openalex.org/W4366753223",
       "title": "Fetal brain tissue annotation and segmentation challenge results"
-    },
-    {
-      "id": "https://openalex.org/W3213672119",
-      "title": "Benchmarking the performance of irregular computations in AutoDock-GPU molecular docking"
     },
     {
       "id": "https://openalex.org/W4412591781",

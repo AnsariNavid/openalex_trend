@@ -6,6 +6,7 @@
     "publication_date": "2020-09-14",
     "source_type": "journal",
     "pdf_url": "https://www.nature.com/articles/s41746-020-00323-1.pdf",
+    "html_url": "https://doi.org/10.1038/s41746-020-00323-1",
     "authors": [
       "Nicola Rieke",
       "Jonny Hancox",
@@ -52,8 +53,8 @@
       "Health informatics",
       "Patient privacy"
     ],
-    "abstract": "is significant, as it allows for the development of machine learning models that can leverage diverse datasets while maintaining patient privacy and data governance. This perspective paper discusses the challenges of accessing and utilizing medical data, which is often siloed due to privacy concerns and regulatory constraints. Federated learning (FL) emerges as a promising solution, enabling collaborative model training without the need to centralize sensitive data. By allowing institutions to retain control over their data while still contributing to a shared learning process, FL can facilitate the creation of more accurate and equitable models in digital health. The authors highlight the importance of addressing technical considerations to ensure the safety and efficacy of FL implementations. They envision a future where FL can enhance precision medicine by providing insights from a broader range of data, ultimately improving healthcare outcomes. The paper aims to inform the medical community about the potential benefits and challenges of adopting FL in digital health applications, advocating for its role in overcoming existing barriers to data sharing and utilization in healthcare.",
-    "abstract_recovery_method": "gpt_generated_from_pdf"
+    "abstract": "Data-driven machine learning (ML) has emerged as a promising approach for building accurate and robust statistical models from medical data, which is collected in huge volumes by modern healthcare systems. Existing medical data is not fully exploited by ML primarily because it sits in data silos and privacy concerns restrict access to this data. However, without access to sufficient data, ML will be prevented from reaching its full potential and, ultimately, from making the transition from research to clinical practice. This paper considers key factors contributing to this issue, explores how federated learning (FL) may provide a solution for the future of digital health and highlights the challenges and considerations that need to be addressed.",
+    "abstract_recovery_method": "exact_from_html"
   },
   {
     "id": "https://openalex.org/W3177500196",
@@ -62,6 +63,7 @@
     "publication_date": "2021-07-07",
     "source_type": "journal",
     "pdf_url": "https://doi.org/10.1109/tpami.2021.3095381",
+    "html_url": "https://doi.org/10.1109/tpami.2021.3095381",
     "authors": [
       "Ahmed Elnaggar",
       "Michael Heinzinger",
@@ -97,6 +99,7 @@
     "publication_date": "2022-07-15",
     "source_type": "journal",
     "pdf_url": "https://www.nature.com/articles/s41467-022-30695-9.pdf",
+    "html_url": "https://doi.org/10.1038/s41467-022-30695-9",
     "authors": [
       "Michela Antonelli",
       "Annika Reinke",
@@ -156,8 +159,8 @@
       "Statistics",
       "Social science"
     ],
-    "abstract": "The Medical Segmentation Decathlon (MSD) is an international challenge aimed at advancing biomedical image analysis by evaluating algorithms across multiple segmentation tasks and modalities. This study investigates the hypothesis that algorithms performing well on diverse tasks will generalize effectively to unseen tasks, potentially outperforming specialized solutions. The MSD featured ten distinct datasets, encompassing various challenges such as small datasets, unbalanced labels, and multi-site data. The challenge was divided into two phases: a development phase with known tasks and a mystery phase with unseen tasks. Results indicated that state-of-the-art segmentation algorithms, particularly those based on convolutional neural networks, demonstrated significant generalizability when retrained on new tasks. The winning algorithm maintained strong performance across various clinical applications for two years post-challenge. Key findings include the establishment of a framework for benchmarking segmentation algorithms focused on generalizability, and the conclusion that consistent performance across multiple tasks serves as a reliable indicator of an algorithm's generalizability. The MSD thus represents a significant step towards creating adaptable AI solutions for medical image segmentation, enabling broader applications in clinical settings.",
-    "abstract_recovery_method": "gpt_generated_from_pdf"
+    "abstract": "International challenges have become the de facto standard for comparative assessment of image analysis algorithms. Although segmentation is the most widely investigated medical image processing task, the various challenges have been organized to focus only on specific clinical tasks. We organized the Medical Segmentation Decathlon (MSD)&#8212;a biomedical image analysis challenge, in which algorithms compete in a multitude of both tasks and modalities to investigate the hypothesis that a method capable of performing well on multiple tasks will generalize well to a previously unseen task and potentially outperform a custom-designed solution. MSD results confirmed this hypothesis, moreover, MSD winner continued generalizing well to a wide range of other clinical problems for the next two years. Three main conclusions can be drawn from this study: (1) state-of-the-art image segmentation algorithms generalize well when retrained on unseen tasks; (2) consistent algorithmic performance across multiple tasks is a strong surrogate of algorithmic generalizability; (3) the training of accurate AI segmentation models is now commoditized to scientists that are not versed in AI model training. International challenges have become the de facto standard for comparative assessment of image analysis algorithms. Here, the authors present the results of a biomedical image segmentation challenge, showing that a method capable of performing well on multiple tasks will generalize well to a previously unseen task.",
+    "abstract_recovery_method": "exact_from_html"
   },
   {
     "id": "https://openalex.org/W2910094941",
@@ -166,6 +169,7 @@
     "publication_date": "2022-11-17",
     "source_type": "journal",
     "pdf_url": "https://linkinghub.elsevier.com/science/article/pii/S1361841522003085/pdfft?md5=42606dbee21641af7f9e50655c0fdff2&pid=1-s2.0-S1361841522003085-main.pdf",
+    "html_url": "https://doi.org/10.1016/j.media.2022.102680",
     "authors": [
       "Patrick Bilic",
       "Patrick Ferdinand Christ",
@@ -232,6 +236,7 @@
     "publication_date": "2020-05-11",
     "source_type": "journal",
     "pdf_url": "https://aip.scitation.org/doi/pdf/10.1063/5.0004997",
+    "html_url": "https://doi.org/10.1063/5.0004997",
     "authors": [
       "E. Aprà",
       "E. J. Bylaska",
@@ -291,6 +296,7 @@
     "publication_date": "2021-02-15",
     "source_type": "journal",
     "pdf_url": "",
+    "html_url": "",
     "authors": [
       "Karthik Kashinath",
       "Mohamed Elhafiz Mustafa",
@@ -345,6 +351,7 @@
     "publication_date": "2022-05-01",
     "source_type": "journal",
     "pdf_url": "",
+    "html_url": "",
     "authors": [
       "Yiheng Xie",
       "Towaki Takikawa",
@@ -391,6 +398,7 @@
     "publication_date": "2022-09-23",
     "source_type": "journal",
     "pdf_url": "https://doi.org/10.1016/j.xgen.2022.100179",
+    "html_url": "https://doi.org/10.1016/j.xgen.2022.100179",
     "authors": [
       "S. M. Ashiqul Islam",
       "Marcos Díaz‐Gay",
@@ -439,6 +447,7 @@
     "publication_date": "2021-07-22",
     "source_type": "journal",
     "pdf_url": "https://ars.els-cdn.com/content/image/1-s2.0-S1361841521002127-ga1_lrg.jpg",
+    "html_url": "https://doi.org/10.1016/j.media.2021.102166",
     "authors": [
       "Anjany Sekuboyina",
       "Malek El Husseini",
@@ -503,6 +512,7 @@
     "publication_date": "2024-11-28",
     "source_type": "journal",
     "pdf_url": "https://www.nature.com/articles/s41592-024-02523-z.pdf",
+    "html_url": "https://doi.org/10.1038/s41592-024-02523-z",
     "authors": [
       "Hugo Dalla-Torre",
       "Liam Gonzalez",
@@ -552,6 +562,7 @@
     "publication_date": "2020-06-01",
     "source_type": "journal",
     "pdf_url": "",
+    "html_url": "",
     "authors": [
       "Christopher Kadow",
       "David Hall",
@@ -592,6 +603,7 @@
     "publication_date": "2023-06-13",
     "source_type": "journal",
     "pdf_url": "",
+    "html_url": "",
     "authors": [
       "R. Newbury",
       "Morris Gu",
@@ -639,6 +651,7 @@
     "publication_date": "2023-02-20",
     "source_type": "journal",
     "pdf_url": "https://www.zora.uzh.ch/id/eprint/257391/1/RAL2023_Salzmann.pdf",
+    "html_url": "https://www.zora.uzh.ch/id/eprint/257391/1/RAL2023_Salzmann.pdf",
     "authors": [
       "Tim Salzmann",
       "Elia Kaufmann",
@@ -676,6 +689,7 @@
     "publication_date": "2024-09-25",
     "source_type": "journal",
     "pdf_url": "",
+    "html_url": "",
     "authors": [
       "Roya Firoozi",
       "Johnathan Tucker",
@@ -715,6 +729,7 @@
     "publication_date": "2021-04-01",
     "source_type": "journal",
     "pdf_url": "https://ieeexplore.ieee.org/ielx7/8856/9397439/09398246.pdf",
+    "html_url": "https://doi.org/10.1109/tase.2021.3064065",
     "authors": [
       "Sebastian Höfer",
       "Kostas E. Bekris",
@@ -766,6 +781,7 @@
     "publication_date": "2023-06-12",
     "source_type": "journal",
     "pdf_url": "",
+    "html_url": "",
     "authors": [
       "Xingqin Lin",
       "Lopamudra Kundu",
@@ -803,6 +819,7 @@
     "publication_date": "2022-11-18",
     "source_type": "journal",
     "pdf_url": "https://doi.org/10.1016/j.csbj.2022.11.014",
+    "html_url": "https://doi.org/10.1016/j.csbj.2022.11.014",
     "authors": [
       "Noelia Ferruz",
       "Michael Heinzinger",
@@ -841,6 +858,7 @@
     "publication_date": "2023-07-17",
     "source_type": "journal",
     "pdf_url": "https://www.nature.com/articles/s42256-023-00652-2.pdf",
+    "html_url": "https://doi.org/10.1038/s42256-023-00652-2",
     "authors": [
       "Alexandros Karargyris",
       "Renato Umeton",
@@ -894,8 +912,8 @@
       "Operating system",
       "Economics"
     ],
-    "abstract": "Medical artificial intelligence (AI) has the potential to significantly enhance healthcare delivery, but its effective implementation necessitates rigorous evaluation across diverse patient populations. This paper introduces MedPerf, an open benchmarking platform designed for the federated evaluation of medical AI models. MedPerf allows for secure model distribution to various healthcare facilities, enabling local performance assessments while maintaining patient privacy. The platform addresses critical challenges in data sharing, including regulatory constraints and public perception risks, by facilitating model evaluation without direct data exchange. Initial applications of MedPerf include successful participation in the Federated Tumor Segmentation (FeTS) challenge and several academic pilot studies, demonstrating its scalability and adaptability across different clinical tasks. The platform's architecture supports both cloud-based and on-premises evaluations, enhancing its utility for diverse healthcare settings. MedPerf aims to foster collaboration among researchers and institutions, encouraging contributions to refine its benchmarking capabilities. By providing a structured methodology for evaluating AI models, MedPerf aspires to improve the generalizability and clinical applicability of medical AI, ultimately leading to better patient outcomes and more effective healthcare practices.",
-    "abstract_recovery_method": "gpt_generated_from_pdf"
+    "abstract": "Medical artificial intelligence (AI) has tremendous potential to advance healthcare by supporting and contributing to the evidence-based practice of medicine, personalizing patient treatment, reducing costs, and improving both healthcare provider and patient experience. Unlocking this potential requires systematic, quantitative evaluation of the performance of medical AI models on large-scale, heterogeneous data capturing diverse patient populations. Here, to meet this need, we introduce MedPerf, an open platform for benchmarking AI models in the medical domain. MedPerf focuses on enabling federated evaluation of AI models, by securely distributing them to different facilities, such as healthcare organizations. This process of bringing the model to the data empowers each facility to assess and verify the performance of AI models in an efficient and human-supervised process, while prioritizing privacy. We describe the current challenges healthcare and AI communities face, the need for an open platform, the design philosophy of MedPerf, its current implementation status and real-world deployment, our roadmap and, importantly, the use of MedPerf with multiple international institutions within cloud-based technology and on-premises scenarios. Finally, we welcome new contributions by researchers and organizations to further strengthen MedPerf as an open benchmarking platform. Federated learning can be used to train medical AI models on sensitive personal data while preserving important privacy properties; however, the sensitive nature of the data makes it difficult to evaluate approaches reproducibly on real data. The MedPerf project presented by Karargyris et al. provides the tools and infrastructure to distribute models to healthcare facilities, such that they can be trained and evaluated in realistic settings.",
+    "abstract_recovery_method": "exact_from_html"
   },
   {
     "id": "https://openalex.org/W4401806513",
@@ -904,6 +922,7 @@
     "publication_date": "2024-08-23",
     "source_type": "journal",
     "pdf_url": "https://www.osti.gov/biblio/2447145",
+    "html_url": "https://www.osti.gov/biblio/2447145",
     "authors": [
       "Veronika Eyring",
       "William D. Collins",
@@ -949,8 +968,8 @@
       "Business",
       "Marketing"
     ],
-    "abstract": "",
-    "abstract_recovery_method": "not_recovered"
+    "abstract": "Climate modelling and analysis are facing new demands to enhance projections and climate information. Here, in this study, we argue that now is the time to push the frontiers of machine learning beyond state-of-the-art approaches, not only by developing machine-learning-based Earth system models with greater fidelity, but also by providing new capabilities through emulators for extreme event projections with large ensembles, enhanced detection and attribution methods for extreme events, and advanced climate model analysis and benchmarking. Utilizing this potential requires key machine learning challenges to be addressed, in particular generalization, uncertainty quantification, explainable artificial intelligence and causality. This interdisciplinary effort requires bringing together machine learning and climate scientists, while also leveraging the private sector, to accelerate progress towards actionable climate science.",
+    "abstract_recovery_method": "exact_from_html"
   },
   {
     "id": "https://openalex.org/W3212380917",
@@ -959,6 +978,7 @@
     "publication_date": "2022-04-11",
     "source_type": "journal",
     "pdf_url": "https://www.frontiersin.org/articles/10.3389/frobt.2022.799893/pdf",
+    "html_url": "https://doi.org/10.3389/frobt.2022.799893",
     "authors": [
       "Fabio Muratore",
       "Fábio Ramos",
@@ -993,6 +1013,7 @@
     "publication_date": "2022-07-09",
     "source_type": "journal",
     "pdf_url": "",
+    "html_url": "",
     "authors": [
       "Xiahai Zhuang",
       "Jiahang Xu",
@@ -1047,6 +1068,7 @@
     "publication_date": "2022-10-02",
     "source_type": "journal",
     "pdf_url": "https://doi.org/10.1177/10943420221128233",
+    "html_url": "https://doi.org/10.1177/10943420221128233",
     "authors": [
       "Abigail C. Dommer",
       "Lorenzo Casalino",
@@ -1108,6 +1130,7 @@
     "publication_date": "2021-12-20",
     "source_type": "journal",
     "pdf_url": "https://www.aanda.org/articles/aa/pdf/2022/06/aa41677-21.pdf",
+    "html_url": "https://doi.org/10.1051/0004-6361/202141677",
     "authors": [
       "F. Motte",
       "S. Bontemps",
@@ -1160,6 +1183,7 @@
     "publication_date": "2020-01-01",
     "source_type": "journal",
     "pdf_url": "https://journals.openedition.org/espacoeconomia/pdf/11357",
+    "html_url": "https://doi.org/10.4000/espacoeconomia.11357",
     "authors": [
       "Heitor Soares de Farias"
     ],
@@ -1185,6 +1209,7 @@
     "publication_date": "2023-07-01",
     "source_type": "journal",
     "pdf_url": "https://ieeexplore.ieee.org/ielx7/27/4360151/10214236.pdf",
+    "html_url": "https://doi.org/10.1109/tps.2023.3268170",
     "authors": [
       "Rushil Anirudh",
       "Richard Archibald",
@@ -1234,6 +1259,7 @@
     "publication_date": "2023-10-27",
     "source_type": "journal",
     "pdf_url": "https://www.osti.gov/servlets/purl/2563710",
+    "html_url": "https://www.osti.gov/biblio/2563710",
     "authors": [
       "Maxim Zvyagin",
       "Alexander Brace",
@@ -1295,6 +1321,7 @@
     "publication_date": "2022-02-18",
     "source_type": "journal",
     "pdf_url": "https://doi.org/10.1016/j.lanepe.2022.100330",
+    "html_url": "https://doi.org/10.1016/j.lanepe.2022.100330",
     "authors": [
       "Saskia von Stillfried",
       "Roman D. Bülow",
@@ -1380,6 +1407,7 @@
     "publication_date": "2022-09-06",
     "source_type": "journal",
     "pdf_url": "http://orbilu.uni.lu/handle/10993/52082",
+    "html_url": "http://orbilu.uni.lu/handle/10993/52082",
     "authors": [
       "Holger R. Roth",
       "Ziyue Xu",
@@ -1445,6 +1473,7 @@
     "publication_date": "2021-01-19",
     "source_type": "journal",
     "pdf_url": "http://link.aps.org/pdf/10.1103/PhysRevC.103.014003",
+    "html_url": "https://doi.org/10.1103/physrevc.103.014003",
     "authors": [
       "Ben Hörz",
       "Dean Howarth",
@@ -1486,6 +1515,7 @@
     "publication_date": "2021-10-01",
     "source_type": "journal",
     "pdf_url": "http://hdl.handle.net/2117/362090",
+    "html_url": "http://hdl.handle.net/2117/362090",
     "authors": [
       "Luis Velasco",
       "Marco Signorelli",
@@ -1539,6 +1569,7 @@
     "publication_date": "2022-07-01",
     "source_type": "journal",
     "pdf_url": "https://journals.ametsoc.org/downloadpdf/journals/aies/1/3/AIES-D-21-0002.1.pdf",
+    "html_url": "https://doi.org/10.1175/aies-d-21-0002.1",
     "authors": [
       "Peter Dueben",
       "Martin G. Schultz",
@@ -1571,6 +1602,7 @@
     "publication_date": "2023-04-22",
     "source_type": "journal",
     "pdf_url": "https://ars.els-cdn.com/content/image/1-s2.0-S1361841523000932-ga1_lrg.jpg",
+    "html_url": "https://doi.org/10.1016/j.media.2023.102833",
     "authors": [
       "Kelly Payette",
       "Hongwei Li",
@@ -1630,6 +1662,7 @@
     "publication_date": "2024-03-09",
     "source_type": "journal",
     "pdf_url": "https://www.nature.com/articles/s41467-024-46485-4.pdf",
+    "html_url": "https://doi.org/10.1038/s41467-024-46485-4",
     "authors": [
       "Maximilian T. Strauss",
       "Isabell Bludau",
@@ -1656,8 +1689,8 @@
       "Genetics",
       "Gene"
     ],
-    "abstract": "AlphaPept is an innovative, open-source framework designed for the efficient processing of large-scale mass spectrometry (MS)-based proteomics data. Developed using Python, it leverages advanced computational techniques, including just-in-time compilation via Numba, to achieve significant speed improvements in data analysis. The framework facilitates the identification and quantification of peptides and proteins, addressing the challenges posed by the increasing volume of raw data generated in proteomics research. AlphaPept emphasizes accessibility and collaboration, allowing contributions from a diverse range of developers through a modular design and integration with Jupyter Notebooks for literate programming. This approach not only enhances code maintainability but also fosters community engagement and transparency in scientific research. The framework supports automated processing pipelines and is compatible with various downstream analysis tools, making it a versatile solution for proteomics workflows. By adopting robust software engineering principles, including continuous integration and testing, AlphaPept aims to improve the reliability and reproducibility of computational analyses in proteomics, ultimately contributing to the advancement of open science and collaborative research efforts.",
-    "abstract_recovery_method": "gpt_generated_from_pdf"
+    "abstract": "In common with other omics technologies, mass spectrometry (MS)-based proteomics produces ever-increasing amounts of raw data, making efficient analysis a principal challenge. A plethora of different computational tools can process the MS data to derive peptide and protein identification and quantification. However, during the last years there has been dramatic progress in computer science, including collaboration tools that have transformed research and industry. To leverage these advances, we develop AlphaPept, a Python-based open-source framework for efficient processing of large high-resolution MS data sets. Numba for just-in-time compilation on CPU and GPU achieves hundred-fold speed improvements. AlphaPept uses the Python scientific stack of highly optimized packages, reducing the code base to domain-specific tasks while accessing the latest advances. We provide an easy on-ramp for community contributions through the concept of literate programming, implemented in Jupyter Notebooks. Large datasets can rapidly be processed as shown by the analysis of hundreds of proteomes in minutes per file, many-fold faster than acquisition. AlphaPept can be used to build automated processing pipelines with web-serving functionality and compatibility with downstream analysis tools. It provides easy access via one-click installation, a modular Python library for advanced users, and via an open GitHub repository for developers. Mass spectrometry-based proteomics faces the challenge of processing vast data amounts. Here, the authors introduce AlphaPept, an open-source, Python-based framework that offers high speed analysis and easy integration for large-scale proteome analysis.",
+    "abstract_recovery_method": "exact_from_html"
   },
   {
     "id": "https://openalex.org/W4387326877",
@@ -1666,6 +1699,7 @@
     "publication_date": "2023-10-04",
     "source_type": "journal",
     "pdf_url": "https://doi.org/10.1021/acs.jpcb.3c04473",
+    "html_url": "https://doi.org/10.1021/acs.jpcb.3c04473",
     "authors": [
       "Yuxing Peng",
       "Alexander J. Pak",
@@ -1699,6 +1733,7 @@
     "publication_date": "2025-01-01",
     "source_type": "journal",
     "pdf_url": "https://biblio.ugent.be/publication/01K07391FQ3W8NMEEWMCAWW4DA/file/01K073AAKVJQ9Q34YP290ZCQJR.pdf",
+    "html_url": "http://hdl.handle.net/1854/LU-01K07391FQ3W8NMEEWMCAWW4DA",
     "authors": [
       "Yannick De Koninck",
       "Charles Caër",
@@ -1735,8 +1770,8 @@
       "Optics",
       "Physics"
     ],
-    "abstract": "This paper presents the successful fabrication of electrically driven gallium arsenide (GaAs) nano-ridge laser diodes on 300-mm silicon wafers using a novel integration technique known as nano-ridge engineering (NRE). This approach addresses the critical need for scalable, CMOS-integrated light sources in silicon photonics, which is essential for advancing optical communication and sensing technologies. The GaAs nano-ridge waveguides, featuring embedded p–i–n diodes and InGaAs quantum wells, were grown with high quality, achieving room-temperature continuous-wave lasing at approximately 1,020 nm across more than 300 devices. Key performance metrics include threshold currents as low as 5 mA, output powers exceeding 1 mW, and laser linewidths down to 46 MHz, with operational stability up to 55 °C. The NRE technique effectively reduces threading dislocation density, enhancing device reliability and performance. This work marks a significant milestone towards the monolithic integration of laser diodes in silicon photonics platforms, paving the way for cost-effective, high-volume applications in optical interconnects and sensors. The findings underscore the potential of NRE as a viable solution for overcoming existing barriers in the integration of III–V materials with silicon technology.",
-    "abstract_recovery_method": "gpt_generated_from_pdf"
+    "abstract": "Silicon photonics is a rapidly developing technology that promises to revolutionize the way we communicate, compute and sense the world1, 2, 3, 4, 5-6. However, the lack of highly scalable, native complementary metal-oxide-semiconductor (CMOS)-integrated light sources is one of the main factors hampering its widespread adoption. Despite considerable progress in hybrid and heterogeneous integration of III-V light sources on silicon7, 8, 9, 10, 11-12, monolithic integration by direct epitaxy of III-V materials remains the pinnacle of cost-effective on-chip light sources. Here we report the electrically driven gallium arsenide (GaAs)-based laser diodes fully fabricated on 300-mm Si wafers in a CMOS pilot manufacturing line based on a new integration approach, nano-ridge engineering. GaAs nano-ridge waveguides with embedded p-i-n diodes and InGaAs quantum wells are grown at high quality on a wafer scale. Room-temperature continuous-wave lasing is demonstrated at wavelengths around 1,020 nm in more than 300 devices across a wafer, with threshold currents as low as 5 mA, output powers beyond 1 mW, laser linewidths down to 46 MHz and laser operation up to 55 degrees C. These results illustrate the potential of the III-V/Si nano-ridge engineering concept for the monolithic integration of laser diodes in a Si photonics platform, enabling future cost-sensitive high-volume applications in optical sensing, interconnects and beyond.",
+    "abstract_recovery_method": "exact_from_html"
   },
   {
     "id": "https://openalex.org/W4384625456",
@@ -1745,6 +1780,7 @@
     "publication_date": "2024-12-27",
     "source_type": "journal",
     "pdf_url": "https://doi.org/10.1145/3700599",
+    "html_url": "https://doi.org/10.1145/3700599",
     "authors": [
       "Anthony Francis",
       "Claudia Pérez-D’Arpino",
@@ -1806,6 +1842,7 @@
     "publication_date": "2022-08-26",
     "source_type": "journal",
     "pdf_url": "https://www.melba-journal.org/pdf/2022:026.pdf",
+    "html_url": "https://doi.org/10.59275/j.melba.2022-354b",
     "authors": [
       "Raghav Mehta",
       "Angelos Filos",
@@ -1867,6 +1904,7 @@
     "publication_date": "2021-05-17",
     "source_type": "journal",
     "pdf_url": "https://www.nature.com/articles/s42003-021-02095-0.pdf",
+    "html_url": "https://doi.org/10.1038/s42003-021-02095-0",
     "authors": [
       "Mariana Galvão Ferrarini",
       "Avantika Lal",
@@ -1916,6 +1954,7 @@
     "publication_date": "2022-09-16",
     "source_type": "journal",
     "pdf_url": "https://gmd.copernicus.org/articles/15/6985/2022/gmd-15-6985-2022.pdf",
+    "html_url": "https://doi.org/10.5194/gmd-15-6985-2022",
     "authors": [
       "M. A. Giorgetta",
       "William Sawyer",
@@ -1972,6 +2011,7 @@
     "publication_date": "2024-08-27",
     "source_type": "journal",
     "pdf_url": "https://www.nature.com/articles/s43247-024-01626-x.pdf",
+    "html_url": "https://doi.org/10.1038/s43247-024-01626-x",
     "authors": [
       "Wilco Hazeleger",
       "Jerom Aerts",
@@ -2013,8 +2053,8 @@
       "Physics",
       "Astronomy"
     ],
-    "abstract": "Digital twins of the Earth serve as digital representations of the Earth system, designed to monitor, forecast, and assess both environmental conditions and the impacts of human activities. These systems aim to enhance decision-making regarding environmental challenges by allowing users to interact with and analyze the Earth system. The paper emphasizes the necessity of incorporating human dimensions within digital twins to accurately reflect human impacts and responses, as well as to guide responsible governance and use of information derived from these systems. The authors argue that understanding human values and societal organization is crucial for effective climate action, especially as individuals increasingly experience the direct effects of climate change. The paper highlights the urgency of climate action and the need for resilience-building strategies that address both environmental and social inequalities. It critiques current climate information practices for their limitations in quantifying societal responses and uncertainties, advocating for a more integrated approach that combines physical climate data with insights into human behavior. By fostering a collaborative relationship between humans and digital twins, the authors propose that these systems can empower individuals and communities to engage in effective climate action and policy-making.",
-    "abstract_recovery_method": "gpt_generated_from_pdf"
+    "abstract": "Digital twins of the Earth are digital representations of the Earth system, spanning scales and domains. Their purpose is to monitor, forecast and assess the Earth system and the consequences of human interventions on the Earth system. Providing users with the capability to interact with and interrogate the system, digital twins of the Earth are decision support systems for addressing environmental challenges. By informing humans of their impact on the Earth system, digital twins aspire to promote new pathways moving forward. By answering causal queries through intervention analysis, they can enhance evidence-based policy making. Existing digital twins of the Earth are primarily technological information systems that represent the physical world. However, as the social and physical worlds are intrinsically interconnected, we argue that humans must be accounted for both within and outside digital twins of the Earth: Within twins to represent human impacts and responses that are integral to the Earth system; and outside twins to govern access and development and to guide responsible use of information acquired from twins. Incorporating human interactions in digital twins of the Earth represents a transformative frontier, promising unparalleled insights into Earth system dynamics and empower humans for action. Humans must be represented within digital twins of the Earth, but they also play a role outside to govern development and access and guide usage, argues a perspective based on interdisciplinary scientific expert viewpoints.",
+    "abstract_recovery_method": "exact_from_html"
   },
   {
     "id": "https://openalex.org/W4200166884",
@@ -2023,6 +2063,7 @@
     "publication_date": "2021-12-08",
     "source_type": "journal",
     "pdf_url": "https://doi.org/10.1051/0004-6361/202141681",
+    "html_url": "https://doi.org/10.1051/0004-6361/202141681",
     "authors": [
       "Adam Ginsburg",
       "T. Csengeri",
@@ -2082,6 +2123,7 @@
     "publication_date": "2022-06-01",
     "source_type": "conference",
     "pdf_url": "",
+    "html_url": "",
     "authors": [
       "Tim Salzmann",
       "Marco Pavone",
@@ -2115,6 +2157,7 @@
     "publication_date": "2024-02-19",
     "source_type": "journal",
     "pdf_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1029/2023JD039202",
+    "html_url": "https://doi.org/10.1029/2023jd039202",
     "authors": [
       "Fernando Iglesias‐Suarez",
       "Pierre Gentine",
@@ -2150,6 +2193,7 @@
     "publication_date": "2024-04-30",
     "source_type": "journal",
     "pdf_url": "https://essd.copernicus.org/articles/16/2113/2024/essd-16-2113-2024.pdf",
+    "html_url": "https://doi.org/10.5194/essd-16-2113-2024",
     "authors": [
       "Björn Stevens",
       "Stefan Adami",
@@ -2219,6 +2263,7 @@
     "publication_date": "2025-08-05",
     "source_type": "journal",
     "pdf_url": "https://www.nature.com/articles/s44387-025-00019-5.pdf",
+    "html_url": "https://doi.org/10.1038/s44387-025-00019-5",
     "authors": [
       "Yanbo Zhang",
       "Sumeer Ahmad Khan",
@@ -2256,6 +2301,7 @@
     "publication_date": "2025-07-01",
     "source_type": "journal",
     "pdf_url": "https://biblio.ugent.be/publication/01K10G0JQH39KX7TFQP6RMR3RQ/file/01K9PCTKF1Z1BQZGJXTAA99A65.pdf",
+    "html_url": "http://hdl.handle.net/1854/LU-01K10G0JQH39KX7TFQP6RMR3RQ",
     "authors": [
       "Malte D. Luecken",
       "Scott Gigante",
@@ -2299,8 +2345,8 @@
       "Biology",
       "Marketing"
     ],
-    "abstract": "The paper presents the \"Open Problems in Single-Cell Analysis\" platform, an innovative, community-driven benchmarking framework designed to enhance the evaluation and development of single-cell analysis methods. With the rapid proliferation of single-cell analysis tools—over 1700 algorithms published as of February 2024—there is a pressing need for standardized benchmarks to guide users in selecting the most effective methods. Current benchmarks often lack standardization, leading to inconsistent evaluations and inflated performance assessments of new algorithms. The Open Problems platform addresses these issues by providing a living, extensible framework that includes 12 defined tasks, utilizing 81 datasets to evaluate 171 methods. This platform encourages community participation, allowing users to contribute code and insights, thereby ensuring continuous updates and relevance. By promoting a systematic approach to benchmarking, the Open Problems platform aims to raise the standards for method evaluation in single-cell analysis, ultimately fostering innovation and best practices in the field. The authors emphasize the importance of community involvement and the need for benchmarks that are independent of method development to provide unbiased assessments.",
-    "abstract_recovery_method": "gpt_generated_from_pdf"
+    "abstract": "With the increasing prevalence of single-cell analysis tools, the need for effective benchmarking has become critical to guide method development and analysis. This paper introduces \"Open Problems,\" a dynamic and community-driven benchmarking platform that addresses the current limitations in standardization and extensibility of existing benchmarks. The platform encompasses twelve key tasks in single-cell analysis, aiming to elevate the standards for method selection, evaluation, and development. By fostering collaboration and engagement within the research community, the authors envision that this initiative will enhance the relevance and longevity of benchmarks in single-cell genomics. The paper highlights the transformative potential of single-cell genomics in studying biological processes with unprecedented detail and scale, emphasizing the importance of robust benchmarking to support ongoing advancements in the field. The authors, including Malte D. Luecken and Scott Gigante among others, advocate for a unified approach to tackle the open problems in single-cell analysis, thereby contributing to the evolution of methodologies that can effectively harness the capabilities of emerging data generation technologies.",
+    "abstract_recovery_method": "gpt_generated_from_paper"
   },
   {
     "id": "https://openalex.org/W4386507616",
@@ -2309,6 +2355,7 @@
     "publication_date": "2023-09-07",
     "source_type": "journal",
     "pdf_url": "https://epub.ub.uni-muenchen.de/117281/1/Nimodipine_Reduces_Microvasospasms_After_Experimental_Subarachnoid.pdf",
+    "html_url": "http://nbn-resolving.de/urn:nbn:de:bvb:19-epub-117281-5",
     "authors": [
       "Julian Schwarting",
       "Biyan Nathanael Harapan",
@@ -2345,6 +2392,7 @@
     "publication_date": "2024-11-02",
     "source_type": "journal",
     "pdf_url": "https://bmcbioinformatics.biomedcentral.com/counter/pdf/10.1186/s12859-024-05965-6",
+    "html_url": "https://doi.org/10.1186/s12859-024-05965-6",
     "authors": [
       "Bertil Schmidt",
       "Felix Kallenborn",
@@ -2376,6 +2424,7 @@
     "publication_date": "2024-08-01",
     "source_type": "journal",
     "pdf_url": "https://doi.org/10.1029/2023ms004021",
+    "html_url": "https://doi.org/10.1029/2023ms004021",
     "authors": [
       "Matthias Karlbauer",
       "Nathaniel Cresswell‐Clay",
@@ -2407,6 +2456,7 @@
     "publication_date": "2025-02-11",
     "source_type": "journal",
     "pdf_url": "https://doi.org/10.1088/2632-2153/adb4ba",
+    "html_url": "https://doi.org/10.1088/2632-2153/adb4ba",
     "authors": [
       "Kuan–Cheng Chen",
       "Tai-Yue Li",
@@ -2445,6 +2495,7 @@
     "publication_date": "2025-09-18",
     "source_type": "journal",
     "pdf_url": "https://www.nature.com/articles/s41592-025-02819-8.pdf",
+    "html_url": "https://doi.org/10.1038/s41592-025-02819-8",
     "authors": [
       "Felix Kallenborn",
       "Alejandro Chacón",
@@ -2491,6 +2542,7 @@
     "publication_date": "2024-10-30",
     "source_type": "journal",
     "pdf_url": "https://doi.org/10.1109/tmi.2024.3485554",
+    "html_url": "https://doi.org/10.1109/tmi.2024.3485554",
     "authors": [
       "Kelly Payette",
       "Céline Steger",
@@ -2543,6 +2595,7 @@
     "publication_date": "2024-08-15",
     "source_type": "journal",
     "pdf_url": "https://iopscience.iop.org/article/10.1088/1741-4326/ad2fe9/pdf",
+    "html_url": "https://doi.org/10.1088/1741-4326/ad2fe9",
     "authors": [
       "C. T. Holcomb",
       "Joseph Abbate",
@@ -2599,6 +2652,7 @@
     "publication_date": "2025-04-01",
     "source_type": "journal",
     "pdf_url": "https://doi.org/10.1029/2024ms004272",
+    "html_url": "https://doi.org/10.1029/2024ms004272",
     "authors": [
       "Gunnar Behrens",
       "Tom Beucler",
@@ -2633,6 +2687,7 @@
     "publication_date": "2025-09-05",
     "source_type": "journal",
     "pdf_url": "https://doi.org/10.1088/2632-2153/ae040b",
+    "html_url": "https://doi.org/10.1088/2632-2153/ae040b",
     "authors": [
       "M. J. Messerly",
       "Sakib Matin",
@@ -2667,6 +2722,7 @@
     "publication_date": "2020-08-25",
     "source_type": "journal",
     "pdf_url": "http://link.aps.org/pdf/10.1103/PhysRevD.102.034507",
+    "html_url": "https://doi.org/10.1103/physrevd.102.034507",
     "authors": [
       "Nolan Miller",
       "Henry Monge-Camacho",
@@ -2712,6 +2768,7 @@
     "publication_date": "2021-11-10",
     "source_type": "journal",
     "pdf_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/8654209",
+    "html_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/8654209",
     "authors": [
       "Leonardo Solis-Vasquez",
       "Andreas F. Tillack",
@@ -2744,8 +2801,8 @@
       "Nursing",
       "Marketing"
     ],
-    "abstract": "",
-    "abstract_recovery_method": "not_recovered"
+    "abstract": "Irregular applications can be found in different scientific fields. In computer-aided drug design, molecular docking simulations play an important role in finding promising drug candidates. AutoDock is a software application widely used for ...",
+    "abstract_recovery_method": "exact_from_html"
   },
   {
     "id": "https://openalex.org/W3113347918",
@@ -2754,6 +2811,7 @@
     "publication_date": "2021-10-01",
     "source_type": "conference",
     "pdf_url": "https://arxiv.org/pdf/2012.03918",
+    "html_url": "http://arxiv.org/abs/2012.03918",
     "authors": [
       "Mark Boss",
       "Raphael Braun",
@@ -2793,6 +2851,7 @@
     "publication_date": "2021-10-01",
     "source_type": "conference",
     "pdf_url": "",
+    "html_url": "",
     "authors": [
       "James Herman",
       "Jonathan Francis",
@@ -2828,6 +2887,7 @@
     "publication_date": "2021-03-24",
     "source_type": "journal",
     "pdf_url": "http://link.aps.org/pdf/10.1103/PhysRevD.103.054511",
+    "html_url": "https://doi.org/10.1103/physrevd.103.054511",
     "authors": [
       "Nolan Miller",
       "Logan Carpenter",
@@ -2878,6 +2938,7 @@
     "publication_date": "2023-11-29",
     "source_type": "journal",
     "pdf_url": "http://link.aps.org/pdf/10.1103/PhysRevD.108.L091505",
+    "html_url": "https://doi.org/10.1103/physrevd.108.l091505",
     "authors": [
       "Thomas Appelquist",
       "Richard C. Brower",
@@ -2930,6 +2991,7 @@
     "publication_date": "2023-01-01",
     "source_type": "journal",
     "pdf_url": "https://academic.oup.com/database/article-pdf/doi/10.1093/database/baad005/49446600/baad005.pdf",
+    "html_url": "https://doi.org/10.1093/database/baad005",
     "authors": [
       "Robert Leaman",
       "Rezarta Islamaj",
@@ -2983,6 +3045,7 @@
     "publication_date": "2024-09-04",
     "source_type": "journal",
     "pdf_url": "http://link.aps.org/pdf/10.1103/PhysRevD.110.054501",
+    "html_url": "https://doi.org/10.1103/physrevd.110.054501",
     "authors": [
       "R. C. Brower",
       "Evan K. Owen",
@@ -3025,6 +3088,7 @@
     "publication_date": "2024-11-18",
     "source_type": "journal",
     "pdf_url": "https://www.frontiersin.org/journals/marine-science/articles/10.3389/fmars.2024.1443284/pdf",
+    "html_url": "https://doi.org/10.3389/fmars.2024.1443284",
     "authors": [
       "Enrique Ãlvarez Fanjul",
       "Stefania Angela Ciliberti",
@@ -3083,6 +3147,7 @@
     "publication_date": "2021-07-21",
     "source_type": "journal",
     "pdf_url": "https://arxiv.org/pdf/2012.07635",
+    "html_url": "http://arxiv.org/abs/2012.07635",
     "authors": [
       "Marvin Geiselhart",
       "Ahmed Elkelesh",
@@ -3124,6 +3189,7 @@
     "publication_date": "2023-06-29",
     "source_type": "journal",
     "pdf_url": "https://epub.ub.uni-muenchen.de/117282/1/Pericytes_Are_Not_Associated_With_Reduced_Capillary_Perfusion_After.pdf",
+    "html_url": "http://nbn-resolving.de/urn:nbn:de:bvb:19-epub-117282-0",
     "authors": [
       "Julian Schwarting",
       "Katrin Nehrkorn",
@@ -3162,6 +3228,7 @@
     "publication_date": "2023-12-14",
     "source_type": "journal",
     "pdf_url": "",
+    "html_url": "",
     "authors": [
       "Nesara Eranna Bethur",
       "Anthony Agnesina",
@@ -3193,6 +3260,7 @@
     "publication_date": "2024-03-18",
     "source_type": "journal",
     "pdf_url": "https://link.springer.com/content/pdf/10.1007/s11548-023-03049-z.pdf",
+    "html_url": "https://doi.org/10.1007/s11548-023-03049-z",
     "authors": [
       "Chen Shen",
       "Holger R. Roth",
@@ -3230,6 +3298,7 @@
     "publication_date": "2025-01-01",
     "source_type": "journal",
     "pdf_url": "",
+    "html_url": "",
     "authors": [
       "Xuan Zhang",
       "Limei Wang",
@@ -3279,6 +3348,7 @@
     "publication_date": "2025-08-09",
     "source_type": "journal",
     "pdf_url": "https://www.nature.com/articles/s41467-025-62373-x.pdf",
+    "html_url": "https://doi.org/10.1038/s41467-025-62373-x",
     "authors": [
       "Ezequiel de la Rosa",
       "Mauricio Reyes",
@@ -3329,8 +3399,8 @@
       "Physics",
       "Thermodynamics"
     ],
-    "abstract": "of algorithmic solutions stratiﬁed by network architecture, loss function, and input modalities.C Challenge leaderboard stratiﬁed by network architecture, loss function, and input modalities. CE Cross- entropy. Article https://doi.org/10.1038/s41467-025-62373-x Nature Communications| (2025) 16:7357 3 However, we chose to disregard this factor because the model demonstrated strong generalization abilities to scans from an entirely new center. Can DeepISLES identify stroke lesions of variable size? We test DeepISLES performance over lesions smaller than 5 ml, lesions larger than or equal to 5 ml but smaller than 20 ml, and lesions larger than or equal to 20 ml. The performance metrics over these groups are shown in Fig. 2(B). The relationship between lesion size and metrics like Dice, AVD, and ALD is anticipated; larger lesions typically yield higher Dice values, while AVD and ALD tend to increase with lesion size. Despite this, DeepISLES demonstrates strong generalization performance Fig. 2 | Test set performance metrics obtained byDeepISLES. A Performance by imaging center. Data is grouped by the center where the images come from (#1, #2, or #3) and by a seen or unseen label indicating if images from the same center were used for training the models. B Performance by lesion size. C Performance by stroke phase (acute or sub-acute).D Performance by the stroke phase (acute or sub- acute) grouped by lesion size. E Performance by stroke pattern subgroups, including single vessel infarcts, scattered infarcts based on micro-occlusions, and single vessel infarcts with accompanying scattered infarcts. All boxplots are based on a sample size of N = 150. Boxes show the interquartile range (IQR; 25th–75th percentiles), the center line marks the median, whiskers span values within",
-    "abstract_recovery_method": "exact_from_pdf"
+    "abstract": "Diffusion-weighted MRI is critical for diagnosing and managing ischemic stroke, but variability in images and disease presentation limits the generalizability of AI algorithms. We present DeepISLES, a robust ensemble algorithm developed from top submissions to the 2022 Ischemic Stroke Lesion Segmentation challenge we organized. By combining the strengths of best-performing methods from leading research groups, DeepISLES achieves superior accuracy in detecting and segmenting ischemic lesions, generalizing well across diverse axes. Validation on a large external dataset (N&#8201;=&#8201;1685) confirms its robustness, outperforming previous state-of-the-art models by 7.4% in Dice score and 12.6% in F1 score. It also excels at extracting clinical biomarkers and correlates strongly with clinical stroke scores, closely matching expert performance. Neuroradiologists prefer DeepISLES&#8217; segmentations over manual annotations in a Turing-like test. Our work demonstrates DeepISLES&#8217; clinical relevance and highlights the value of biomedical challenges in developing real-world, generalizable AI tools. DeepISLES is freely available at https://github.com/ezequieldlrosa/DeepIsles . Accurate segmentation of ischemic stroke lesions from brain MRI is crucial for timely diagnosis and treatment planning. Here, the authors present DeepISLES, an AI ensemble for stroke MRI analysis that outperforms previous methods and matches expert radiologist performance in identifying stroke lesions.",
+    "abstract_recovery_method": "exact_from_html"
   },
   {
     "id": "https://openalex.org/W4413037896",
@@ -3339,6 +3409,7 @@
     "publication_date": "2025-01-01",
     "source_type": "journal",
     "pdf_url": "https://pubs.rsc.org/en/content/articlepdf/2025/dd/d5dd00085h",
+    "html_url": "https://doi.org/10.1039/d5dd00085h",
     "authors": [
       "Sakib Matin",
       "Alice E. A. Allen",
@@ -3376,6 +3447,7 @@
     "publication_date": "2021-07-06",
     "source_type": "journal",
     "pdf_url": "https://doi.org/10.1016/j.neuroimage.2021.118367",
+    "html_url": "https://doi.org/10.1016/j.neuroimage.2021.118367",
     "authors": [
       "Alberto De Luca",
       "Andrada Ianuș",
@@ -3439,6 +3511,7 @@
     "publication_date": "2021-02-17",
     "source_type": "journal",
     "pdf_url": "https://zenodo.org/record/6408556",
+    "html_url": "https://doi.org/10.1109/TC.2021.3058872",
     "authors": [
       "Fernando Fernandes dos Santos",
       "Marcelo Brandalero",
@@ -3478,6 +3551,7 @@
     "publication_date": "2022-11-03",
     "source_type": "journal",
     "pdf_url": "https://ieeexplore.ieee.org/ielx7/42/10057585/09925717.pdf",
+    "html_url": "https://doi.org/10.1109/tmi.2022.3213983",
     "authors": [
       "Alessa Hering",
       "Lasse Hansen",
@@ -3540,6 +3614,7 @@
     "publication_date": "2021-09-29",
     "source_type": "journal",
     "pdf_url": "",
+    "html_url": "",
     "authors": [
       "Ingo Wald",
       "Nate Morrical",
@@ -3579,6 +3654,7 @@
     "publication_date": "2022-08-16",
     "source_type": "journal",
     "pdf_url": "",
+    "html_url": "",
     "authors": [
       "Stefano Cioni",
       "Xingqin Lin",
@@ -3616,6 +3692,7 @@
     "publication_date": "2022-02-23",
     "source_type": "journal",
     "pdf_url": "https://ieeexplore.ieee.org/ielx7/5992/9789490/09720179.pdf",
+    "html_url": "https://doi.org/10.1109/mcse.2022.3153677",
     "authors": [
       "Stefan Zellmann",
       "Daniel Seifried",
@@ -3661,6 +3738,7 @@
     "publication_date": "2023-05-01",
     "source_type": "journal",
     "pdf_url": "https://centaur.reading.ac.uk/114091/1/Hoefler%20et%20al.%20-%202023%20-%20Earth%20Virtualization%20Engines%20A%20Technical%20Perspect.pdf",
+    "html_url": "https://orcid.org/0000-0002-1333-9797",
     "authors": [
       "Torsten Hoefler",
       "Björn Stevens",
@@ -3717,6 +3795,7 @@
     "publication_date": "2020-01-01",
     "source_type": "journal",
     "pdf_url": "https://doi.org/10.4000/echogeo.18949",
+    "html_url": "https://doi.org/10.4000/echogeo.18949",
     "authors": [
       "Valérie November",
       "Alice Azémar",
@@ -3747,6 +3826,7 @@
     "publication_date": "2024-04-04",
     "source_type": "journal",
     "pdf_url": "https://aacrjournals.org/cancerdiscovery/article-pdf/14/4/663/3434678/663.pdf",
+    "html_url": "http://dx.doi.org/10.1158/2159-8290.cd-23-1500",
     "authors": [
       "Richard J. Gilbertson",
       "Sam Behjati",
@@ -3803,6 +3883,7 @@
     "publication_date": "2025-02-27",
     "source_type": "journal",
     "pdf_url": "https://infoscience.epfl.ch/handle/20.500.14299/247814",
+    "html_url": "https://infoscience.epfl.ch/handle/20.500.14299/247814",
     "authors": [
       "Minjie Chen",
       "Han Cui",
@@ -3837,6 +3918,7 @@
     "publication_date": "2024-03-28",
     "source_type": "journal",
     "pdf_url": "",
+    "html_url": "",
     "authors": [
       "Yen-Hsiang Huang",
       "Sai Pentapati",
@@ -3864,6 +3946,7 @@
     "publication_date": "2020-08-26",
     "source_type": "journal",
     "pdf_url": "",
+    "html_url": "",
     "authors": [
       "Ingo Wald",
       "Nate Morrical",
@@ -3906,6 +3989,7 @@
     "publication_date": "2021-10-01",
     "source_type": "conference",
     "pdf_url": "https://arxiv.org/pdf/2103.16130",
+    "html_url": "http://arxiv.org/abs/2103.16130",
     "authors": [
       "Ji-Woong Choi",
       "Ismail Elezi",
@@ -3940,6 +4024,7 @@
     "publication_date": "2021-10-01",
     "source_type": "conference",
     "pdf_url": "",
+    "html_url": "",
     "authors": [
       "Siva Karthik Mustikovela",
       "Shalini De Mello",
@@ -3979,6 +4064,7 @@
     "publication_date": "2022-03-01",
     "source_type": "journal",
     "pdf_url": "https://ieeexplore.ieee.org/ielx7/5992/9789490/09745399.pdf",
+    "html_url": "https://doi.org/10.1109/mcse.2022.3163151",
     "authors": [
       "John E. Stone",
       "Kevin Griffin",
@@ -4017,6 +4103,7 @@
     "publication_date": "2021-12-10",
     "source_type": "journal",
     "pdf_url": "https://www.osti.gov/servlets/purl/1855669",
+    "html_url": "https://www.osti.gov/biblio/1855669",
     "authors": [
       "Emmanuel Agullo",
       "Mirco Altenbernd",
@@ -4081,6 +4168,7 @@
     "publication_date": "2020-10-27",
     "source_type": "journal",
     "pdf_url": "",
+    "html_url": "",
     "authors": [
       "Biagio Cosenza",
       "Nikita Popov",
@@ -4126,6 +4214,7 @@
     "publication_date": "2021-08-03",
     "source_type": "journal",
     "pdf_url": "",
+    "html_url": "",
     "authors": [
       "Arkadiusz Sitek",
       "Sangtae Ahn",
@@ -4170,6 +4259,7 @@
     "publication_date": "2024-05-15",
     "source_type": "journal",
     "pdf_url": "https://arxiv.org/pdf/2405.14900",
+    "html_url": "http://arxiv.org/abs/2405.14900",
     "authors": [
       "K. Schmidt",
       "Benjamin Bearce",
@@ -4207,8 +4297,8 @@
       "Federated learning",
       "Algorithm"
     ],
-    "abstract": "The 2022 ACR-NCI-NVIDIA Federated Learning Challenge focused on the automated classification of breast density using federated learning (FL) techniques. Accurate breast density assessment is crucial for evaluating breast cancer risk, yet traditional AI models struggle to generalize across different mammography systems. This challenge aimed to explore FL methodologies by allowing participants to develop algorithms that could operate on diverse datasets from three simulated medical facilities without sharing sensitive data. The challenge ran from June 15 to September 5, 2022, attracting seven finalists globally. The winning submission achieved a linear kappa score of 0.653 on the challenge test data and 0.413 on an external dataset, demonstrating competitive performance compared to centrally trained models. The challenge architecture utilized a cloud-based environment, enabling participants to submit docker containers for automated FL runs. Results indicated that FL can enhance model generalizability in medical applications, addressing biases associated with single-institution data. The findings contribute to ongoing research in FL methodologies, emphasizing the potential of decentralized training in improving AI applications in healthcare. Future implications include refining FL techniques to further enhance accuracy and applicability across diverse patient populations and imaging technologies.",
-    "abstract_recovery_method": "gpt_generated_from_pdf"
+    "abstract": "The correct interpretation of breast density is important in the assessment of breast cancer risk. AI has been shown capable of accurately predicting breast density, however, due to the differences in imaging characteristics across mammography systems, models built using data from one system do not generalize well to other systems. Though federated learning (FL) has emerged as a way to improve the generalizability of AI without the need to share data, the best way to preserve features from all training data during FL is an active area of research. To explore FL methodology, the breast density classification FL challenge was hosted in partnership with the American College of Radiology, Harvard Medical School&#39;s Mass General Brigham, University of Colorado, NVIDIA, and the National Institutes of Health National Cancer Institute. Challenge participants were able to submit docker containers capable of implementing FL on three simulated medical facilities, each containing a unique large mammography dataset. The breast density FL challenge ran from June 15 to September 5, 2022, attracting seven finalists from around the world. The winning FL submission reached a linear kappa score of 0.653 on the challenge test data and 0.413 on an external testing dataset, scoring comparably to a model trained on the same data in a central location.",
+    "abstract_recovery_method": "exact_from_html"
   },
   {
     "id": "https://openalex.org/W4404059521",
@@ -4217,6 +4307,7 @@
     "publication_date": "2024-11-05",
     "source_type": "journal",
     "pdf_url": "http://link.aps.org/pdf/10.1103/PhysRevD.110.095001",
+    "html_url": "https://doi.org/10.1103/physrevd.110.095001",
     "authors": [
       "R. C. Brower",
       "Chris Culver",
@@ -4264,6 +4355,7 @@
     "publication_date": "2025-01-09",
     "source_type": "journal",
     "pdf_url": "https://www.osti.gov/biblio/2506860",
+    "html_url": "https://www.osti.gov/biblio/2506860",
     "authors": [
       "Yanfei Guo",
       "Ken Raffenetti",
@@ -4321,6 +4413,7 @@
     "publication_date": "2022-06-09",
     "source_type": "journal",
     "pdf_url": "http://link.aps.org/pdf/10.1103/PhysRevC.105.065203",
+    "html_url": "https://doi.org/10.1103/physrevc.105.065203",
     "authors": [
       "Jin-Chen He",
       "David Brantley",
@@ -4363,6 +4456,7 @@
     "publication_date": "2022-01-01",
     "source_type": "journal",
     "pdf_url": "",
+    "html_url": "",
     "authors": [
       "Michael Lutter",
       "Boris Belousov",
@@ -4400,6 +4494,7 @@
     "publication_date": "2022-05-16",
     "source_type": "conference",
     "pdf_url": "https://pos.sissa.it/396/081/pdf",
+    "html_url": "https://doi.org/10.22323/1.396.0081",
     "authors": [
       "Aaron S. Meyer",
       "Evan Berkowitz",
@@ -4445,6 +4540,7 @@
     "publication_date": "2022-02-09",
     "source_type": "journal",
     "pdf_url": "https://link.springer.com/content/pdf/10.1007/s41781-022-00080-8.pdf",
+    "html_url": "https://doi.org/10.1007/s41781-022-00080-8",
     "authors": [
       "Hendrik Schwanekamp",
       "Ramona Hohl",
@@ -4494,6 +4590,7 @@
     "publication_date": "2023-01-01",
     "source_type": "journal",
     "pdf_url": "https://academic.oup.com/database/article-pdf/doi/10.1093/database/baac108/49085039/baac108.pdf",
+    "html_url": "http://dx.doi.org/10.1093/database/baac108",
     "authors": [
       "Davy Weissenbacher",
       "Karen O’Connor",
@@ -4547,6 +4644,7 @@
     "publication_date": "2022-05-01",
     "source_type": "conference",
     "pdf_url": "",
+    "html_url": "",
     "authors": [
       "義裕 平居",
       "Amir Raoofy",
@@ -4587,6 +4685,7 @@
     "publication_date": "2021-03-26",
     "source_type": "journal",
     "pdf_url": "https://doi.org/10.12688/f1000research.51477.1",
+    "html_url": "https://doi.org/10.12688/f1000research.51477.1",
     "authors": [
       "Ann M. Mc Cartney",
       "Medhat Mahmoud",
@@ -4647,6 +4746,7 @@
     "publication_date": "2024-04-03",
     "source_type": "journal",
     "pdf_url": "https://gmd.copernicus.org/articles/17/2493/2024/gmd-17-2493-2024.pdf",
+    "html_url": "https://doi.org/10.5194/gmd-17-2493-2024",
     "authors": [
       "Justin L. Willson",
       "Kevin A. Reed",
@@ -4709,6 +4809,7 @@
     "publication_date": "2024-08-07",
     "source_type": "journal",
     "pdf_url": "https://doi.org/10.1016/j.isci.2024.110640",
+    "html_url": "https://doi.org/10.1016/j.isci.2024.110640",
     "authors": [
       "Nicole Zatorski",
       "Yifei Sun",
@@ -4748,6 +4849,7 @@
     "publication_date": "2024-08-31",
     "source_type": "journal",
     "pdf_url": "https://www.melba-journal.org/pdf/2024:019.pdf",
+    "html_url": "https://doi.org/10.59275/j.melba.2024-9c68",
     "authors": [
       "Nancy R. Newlin",
       "Kurt G. Schilling",
@@ -4809,6 +4911,7 @@
     "publication_date": "2024-12-18",
     "source_type": "journal",
     "pdf_url": "https://link.springer.com/content/pdf/10.1007/s42421-024-00115-z.pdf",
+    "html_url": "https://doi.org/10.1007/s42421-024-00115-z",
     "authors": [
       "S. Travis Waller",
       "Amalia Polydoropoulou",
@@ -4845,6 +4948,7 @@
     "publication_date": "2025-01-01",
     "source_type": "journal",
     "pdf_url": "https://arxiv.org/pdf/2505.17239",
+    "html_url": "http://arxiv.org/abs/2505.17239",
     "authors": [
       "Zhou Hongjian",
       "Haoyu Yang",
@@ -4889,6 +4993,7 @@
     "publication_date": "2022-06-01",
     "source_type": "conference",
     "pdf_url": "",
+    "html_url": "",
     "authors": [
       "Samarth Sinha",
       "Karsten Roth",
@@ -4932,6 +5037,7 @@
     "publication_date": "2021-10-01",
     "source_type": "conference",
     "pdf_url": "https://figshare.com/articles/conference_contribution/Dual_Contrastive_Loss_and_Attention_for_GANs/24613725",
+    "html_url": "https://figshare.com/articles/conference_contribution/Dual_Contrastive_Loss_and_Attention_for_GANs/24613725",
     "authors": [
       "Ning Yu",
       "Guilin Liu",
@@ -4974,6 +5080,7 @@
     "publication_date": "2022-03-04",
     "source_type": "journal",
     "pdf_url": "https://www.mdpi.com/2073-4441/14/5/810/pdf?version=1646640053",
+    "html_url": "https://doi.org/10.3390/w14050810",
     "authors": [
       "Johannes Lawen",
       "K. Lawen",
@@ -5007,6 +5114,7 @@
     "publication_date": "2023-06-30",
     "source_type": "journal",
     "pdf_url": "https://ieeexplore.ieee.org/ielx7/42/10168838/10169005.pdf",
+    "html_url": "https://doi.org/10.1109/tmi.2023.3278528",
     "authors": [
       "Holger R. Roth",
       "Nicola Rieke",
@@ -5044,6 +5152,7 @@
     "publication_date": "2024-02-13",
     "source_type": "journal",
     "pdf_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/cpe.8037",
+    "html_url": "https://doi.org/10.1002/cpe.8037",
     "authors": [
       "Ravil Dorozhinskii",
       "Gonzalo Brito Gadeschi",
@@ -5065,6 +5174,7 @@
     "publication_date": "2024-07-15",
     "source_type": "journal",
     "pdf_url": "",
+    "html_url": "",
     "authors": [
       "Alper Sahistan",
       "Serkan Demirci",
@@ -5097,6 +5207,7 @@
     "publication_date": "2024-12-27",
     "source_type": "journal",
     "pdf_url": "",
+    "html_url": "",
     "authors": [
       "Zhenkun Lin",
       "Genggeng Liu",
@@ -5128,6 +5239,7 @@
     "publication_date": "2025-02-21",
     "source_type": "journal",
     "pdf_url": "",
+    "html_url": "",
     "authors": [
       "Sarah Carlon",
       "Jessica Zoe Zanuttini",
@@ -5154,6 +5266,7 @@
     "publication_date": "2026-01-01",
     "source_type": "journal",
     "pdf_url": "https://doi.org/10.1109/ojits.2026.3660686",
+    "html_url": "https://doi.org/10.1109/ojits.2026.3660686",
     "authors": [
       "Yuan Gao",
       "M. Piccinini",
@@ -5206,6 +5319,7 @@
     "publication_date": "2025-10-16",
     "source_type": "journal",
     "pdf_url": "",
+    "html_url": "",
     "authors": [
       "Gregor Daiß",
       "Patrick Diehl",
@@ -5254,6 +5368,7 @@
     "publication_date": "2021-09-03",
     "source_type": "journal",
     "pdf_url": "https://doi.org/10.12688/f1000research.51477.2",
+    "html_url": "https://doi.org/10.12688/f1000research.51477.2",
     "authors": [
       "Ann M. Mc Cartney",
       "Medhat Mahmoud",
@@ -5315,6 +5430,7 @@
     "publication_date": "2022-02-04",
     "source_type": "journal",
     "pdf_url": "",
+    "html_url": "",
     "authors": [
       "Daniel Jünger",
       "Robin Kobus",
@@ -5346,6 +5462,7 @@
     "publication_date": "2022-08-29",
     "source_type": "conference",
     "pdf_url": "",
+    "html_url": "",
     "authors": [
       "Daniel Schäufele",
       "Guillermo Marcus",
@@ -5385,6 +5502,7 @@
     "publication_date": "2024-01-01",
     "source_type": "journal",
     "pdf_url": "",
+    "html_url": "",
     "authors": [
       "Lorenzo Maggi",
       "Aloïs Herzog",
@@ -5413,6 +5531,7 @@
     "publication_date": "2021-07-12",
     "source_type": "journal",
     "pdf_url": "http://www.pubvet.com.br/uploads/2eb61d5614c4a6802ff27b9e45edbeda.pdf",
+    "html_url": "https://doi.org/10.31533/pubvet.v15n08a878.1-10",
     "authors": [
       "Ronaldo José Piccoli",
       "Ronaldo José Piccoli",
@@ -5434,6 +5553,7 @@
     "publication_date": "2026-02-27",
     "source_type": "journal",
     "pdf_url": "https://research.wur.nl/en/publications/pystepspysteps",
+    "html_url": "https://research.wur.nl/en/publications/pystepspysteps",
     "authors": [
       "Seppo Pulkkinen",
       "Daniele Nerini",
@@ -5494,6 +5614,7 @@
     "publication_date": "2022-02-09",
     "source_type": "journal",
     "pdf_url": "http://link.aps.org/pdf/10.1103/PhysRevD.105.034505",
+    "html_url": "https://doi.org/10.1103/physrevd.105.034505",
     "authors": [
       "Thomas Appelquist",
       "Richard C. Brower",
@@ -5540,6 +5661,7 @@
     "publication_date": "2021-04-30",
     "source_type": "journal",
     "pdf_url": "",
+    "html_url": "",
     "authors": [
       "Оxana Tsigengagel",
       "Natalya Glushkova",
@@ -5575,6 +5697,7 @@
     "publication_date": "2021-10-07",
     "source_type": "conference",
     "pdf_url": "",
+    "html_url": "",
     "authors": [
       "Despoina Paschalidou",
       "Amlan Kar",
@@ -5619,6 +5742,7 @@
     "publication_date": "2022-03-31",
     "source_type": "journal",
     "pdf_url": "https://periodicorease.pro.br/rease/article/download/4731/1802",
+    "html_url": "https://doi.org/10.51891/rease.v8i3.4731",
     "authors": [
       "Bruna Nair Franco",
       "Dilmara Pereira",
@@ -5644,6 +5768,7 @@
     "publication_date": "2023-01-01",
     "source_type": "journal",
     "pdf_url": "http://www.saber.ula.ve/bitstream/123456789/49826/1/documento_1.pdf",
+    "html_url": "http://dx.doi.org/10.53766/receni/2022.34.14",
     "authors": [
       "Manuel Cancio"
     ],
@@ -5669,6 +5794,7 @@
     "publication_date": "2026-01-01",
     "source_type": "journal",
     "pdf_url": "https://arxiv.org/pdf/2411.11547",
+    "html_url": "http://arxiv.org/abs/2411.11547",
     "authors": [
       "Bertil Schmidt",
       "Felix Kallenborn",
@@ -5696,6 +5822,7 @@
     "publication_date": "2025-01-21",
     "source_type": "journal",
     "pdf_url": "",
+    "html_url": "",
     "authors": [
       "Abdul Mannan Baig",
       "Sandy Rosko",
@@ -5732,6 +5859,7 @@
     "publication_date": "2025-08-13",
     "source_type": "journal",
     "pdf_url": "https://doi.org/10.1016/j.atech.2025.101298",
+    "html_url": "https://doi.org/10.1016/j.atech.2025.101298",
     "authors": [
       "Emanuele Antonecchia",
       "Giancarlo Pagnani",
@@ -5766,6 +5894,7 @@
     "publication_date": "2025-10-07",
     "source_type": "journal",
     "pdf_url": "https://doi.org/10.1177/10564926251364213",
+    "html_url": "https://doi.org/10.1177/10564926251364213",
     "authors": [
       "Cynthia V. Fukami",
       "Aimee L. Hamilton",
@@ -5819,6 +5948,7 @@
     "publication_date": "2025-11-01",
     "source_type": "journal",
     "pdf_url": "https://www.sciencedirect.com/science/article/pii/S0885230825001263",
+    "html_url": "https://www.sciencedirect.com/science/article/pii/S0885230825001263",
     "authors": [
       "Samuele Cornell",
       "Christoph Boeddeker",
@@ -5868,6 +5998,7 @@
     "publication_date": "2025-11-21",
     "source_type": "journal",
     "pdf_url": "",
+    "html_url": "",
     "authors": [
       "Samantha Vlcek",
       "John Forster",
@@ -5911,6 +6042,7 @@
     "publication_date": "2025-12-21",
     "source_type": "journal",
     "pdf_url": "https://www.melba-journal.org/pdf/2025:034.pdf",
+    "html_url": "https://doi.org/10.59275/j.melba.2025-gc8c",
     "authors": [
       "Lasse Hansen",
       "Wiebke Heyer",
@@ -5973,6 +6105,7 @@
     "publication_date": "2025-11-13",
     "source_type": "journal",
     "pdf_url": "",
+    "html_url": "",
     "authors": [
       "Julen Urain",
       "Ajay Mandlekar",
@@ -6016,6 +6149,7 @@
     "publication_date": "2026-01-14",
     "source_type": "journal",
     "pdf_url": "",
+    "html_url": "",
     "authors": [
       "Alper Sahistan",
       "Stefan Zellmann",
@@ -6058,6 +6192,7 @@
     "publication_date": "2026-01-01",
     "source_type": "journal",
     "pdf_url": "",
+    "html_url": "",
     "authors": [
       "Bertil Schmidt",
       "Felix Kallenborn",
@@ -6100,6 +6235,7 @@
     "publication_date": "2026-01-01",
     "source_type": "journal",
     "pdf_url": "https://doi.org/10.1109/ojits.2026.3660686",
+    "html_url": "https://doi.org/10.1109/ojits.2026.3660686",
     "authors": [
       "Yuan Gao",
       "Mattia Piccinini",
@@ -6152,6 +6288,7 @@
     "publication_date": "2025-11-01",
     "source_type": "journal",
     "pdf_url": "",
+    "html_url": "",
     "authors": [
       "F Limbourg",
       "A Mijuskovic",
