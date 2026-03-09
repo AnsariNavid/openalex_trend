@@ -3,7 +3,7 @@
     "https://openalex.org/I4210127875",
     "https://openalex.org/I1304085615"
   ],
-  "from_date": "2023-01-01",
+  "from_date": "2020-01-01",
   "to_date": "2026-12-31",
   "max_pages": 8,
   "per_page": 200,
