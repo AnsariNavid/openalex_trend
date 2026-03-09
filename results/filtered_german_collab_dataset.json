@@ -226,8 +226,10 @@
       "Cartography",
       "Geography"
     ],
-    "abstract": "",
-    "abstract_recovery_method": "not_recovered"
+    "abstract": "In this work, we report the set-up and results of the Liver Tumor Segmentation Benchmark (LiTS), which was organized in conjunction with the IEEE International Symposium on Biomedical Imaging (ISBI) 2017 and the International Conferences on Medical Image Computing and Computer-Assisted Intervention (MICCAI) 2017 and 2018. The image dataset is diverse and contains primary and secondary tumors with varied sizes and appearances with various lesion-to-background levels (hyper-/hypo-dense), created in collaboration with seven hospitals and research institutions. Seventy-five submitted liver and liver tumor segmentation algorithms were trained on a set of 131 computed tomography (CT) volumes and were tested on 70 unseen test images acquired from different patients. We found that not a single algorithm performed best for both liver and liver tumors in the three events. The best liver segmentation algorithm achieved a Dice score of 0.963, whereas, for tumor segmentation, the best algorithms achieved Dices scores of 0.674 (ISBI 2017), 0.702 (MICCAI 2017), and 0.739 (MICCAI 2018). Retrospectively, we performed additional analysis on liver tumor detection and revealed that not all top-performing segmentation algorithms worked well for tumor detection. The best liver tumor detection method achieved a lesion-wise recall of 0.458 (ISBI 2017), 0.515 (MICCAI 2017), and 0.554 (MICCAI 2018), indicating the need for further research. LiTS remains an active benchmark and resource for research, e.g., contributing the liver-related segmentation tasks in \\url{http://medicaldecathlon.com/}. In addition, both data and online evaluation are accessible via \\url{www.lits-challenge.com}.",
+    "arxiv_match_score": 1.0,
+    "arxiv_id": "http://arxiv.org/abs/1901.04056v2",
+    "abstract_recovery_method": "exact_from_arxiv"
   },
   {
     "id": "https://openalex.org/W3020638658",
@@ -437,8 +439,8 @@
       "Mathematics",
       "Geometry"
     ],
-    "abstract": "",
-    "abstract_recovery_method": "not_recovered"
+    "abstract": "Mutational signature analysis is commonly performed in cancer genomic studies. Here, we present SigProfilerExtractor, an automated tool for de novo extraction of mutational signatures, and benchmark it against another 13 bioinformatics tools by using 34 scenarios encompassing 2,500 simulated signatures found in 60,000 synthetic genomes and 20,000 synthetic exomes. For simulations with 5% noise, reflecting high-quality datasets, SigProfilerExtractor outperforms other approaches by elucidating between 20% and 50% more true-positive signatures while yielding 5-fold less false-positive signatures. Applying SigProfilerExtractor to 4,643 whole-genome- and 19,184 whole-exome-sequenced cancers reveals four novel signatures. Two of the signatures are confirmed in independent cohorts, and one of these signatures is associated with tobacco smoking. In summary, this report provides a reference tool for analysis of mutational signatures, a comprehensive benchmarking of bioinformatics tools for extracting signatures, and several novel mutational signatures, including one putatively attributed to direct tobacco smoking mutagenesis in bladder tissues.",
+    "abstract_recovery_method": "manual_entry"
   },
   {
     "id": "https://openalex.org/W3112346810",
@@ -502,8 +504,8 @@
       "Business",
       "Programming language"
     ],
-    "abstract": "",
-    "abstract_recovery_method": "not_recovered"
+    "abstract": "Vertebral labelling and segmentation are two fundamental tasks in an automated spine processing pipeline. Reliable and accurate processing of spine images is expected to benefit clinical decision support systems for diagnosis, surgery planning, and population-based analysis of spine and bone health. However, designing automated algorithms for spine processing is challenging predominantly due to considerable variations in anatomy and acquisition protocols and due to a severe shortage of publicly available data. Addressing these limitations, the Large Scale Vertebrae Segmentation Challenge (VerSe) was organised in conjunction with the International Conference on Medical Image Computing and Computer Assisted Intervention (MICCAI) in 2019 and 2020, with a call for algorithms tackling the labelling and segmentation of vertebrae. Two datasets containing a total of 374 multi-detector CT scans from 355 patients were prepared and 4505 vertebrae have individually been annotated at voxel level by a human-machine hybrid algorithm (https://osf.io/nqjyw/, https://osf.io/t98fz/). A total of 25 algorithms were benchmarked on these datasets. In this work, we present the results of this evaluation and further investigate the performance variation at the vertebra level, scan level, and different fields of view. We also evaluate the generalisability of the approaches to an implicit domain shift in data by evaluating the top-performing algorithms of one challenge iteration on data from the other iteration. The principal takeaway from VerSe: the performance of an algorithm in labelling and segmenting a spine scan hinges on its ability to correctly identify vertebrae in cases of rare anatomical variations. The VerSe content and code can be accessed at: https://github.com/anjany/verse.",
+    "abstract_recovery_method": "manual_entry"
   },
   {
     "id": "https://openalex.org/W4404821554",
@@ -593,8 +595,8 @@
       "Paleontology",
       "Oceanography"
     ],
-    "abstract": "",
-    "abstract_recovery_method": "not_recovered"
+    "abstract": "Historical temperature measurements are the basis of global climate datasets like HadCRUT4. This dataset contains many missing values, particularly for periods before the mid-twentieth century, although recent years are also incomplete. Here we demonstrate that artificial intelligence can skilfully fill these observational gaps when combined with numerical climate model data. We show that recently developed image inpainting techniques perform accurate monthly reconstructions via transfer learning using either 20CR (Twentieth-Century Reanalysis) or the CMIP5 (Coupled Model Intercomparison Project Phase 5) experiments. The resulting global annual mean temperature time series exhibit high Pearson correlation coefficients (≥0.9941) and low root mean squared errors (≤0.0547 °C) as compared with the original data. These techniques also provide advantages relative to state-of-the-art kriging interpolation and principal component analysis-based infilling. When applied to HadCRUT4, our method restores a missing spatial pattern of the documented El Niño from July 1877. With respect to the global mean temperature time series, a HadCRUT4 reconstruction by our method points to a cooler nineteenth century, a less apparent hiatus in the twenty-first century, an even warmer 2016 being the warmest year on record and a stronger global trend between 1850 and 2018 relative to previous estimates. We propose image inpainting as an approach to reconstruct missing climate information and thereby reduce uncertainties and biases in climate records.",
+    "abstract_recovery_method": "manual_entry"
   },
   {
     "id": "https://openalex.org/W4380450805",
@@ -1058,8 +1060,8 @@
       "Geography",
       "Geodesy"
     ],
-    "abstract": "",
-    "abstract_recovery_method": "not_recovered"
+    "abstract": "Accurate computing, analysis and modeling of the ventricles and myocardium from medical images are important, especially in the diagnosis and treatment management for patients suffering from myocardial infarction (MI). Late gadolinium enhancement (LGE) cardiac magnetic resonance (CMR) provides an important protocol to visualize MI. However, compared with the other sequences LGE CMR images with gold standard labels are particularly limited. This paper presents the selective results from the Multi-Sequence Cardiac MR (MS-CMR) Segmentation challenge, in conjunction with MICCAI 2019. The challenge offered a data set of paired MS-CMR images, including auxiliary CMR sequences as well as LGE CMR, from 45 patients who underwent cardiomyopathy. It was aimed to develop new algorithms, as well as benchmark existing ones for LGE CMR segmentation focusing on myocardial wall of the left ventricle and blood cavity of the two ventricles. In addition, the paired MS-CMR images could enable algorithms to combine the complementary information from the other sequences for the ventricle segmentation of LGE CMR. Nine representative works were selected for evaluation and comparisons, among which three methods are unsupervised domain adaptation (UDA) methods and the other six are supervised. The results showed that the average performance of the nine methods was comparable to the inter-observer variations. Particularly, the top-ranking algorithms from both the supervised and UDA methods could generate reliable and robust segmentation results. The success of these methods was mainly attributed to the inclusion of the auxiliary sequences from the MS-CMR images, which provide important label information for the training of deep neural networks. The challenge continues as an ongoing resource, and the gold standard segmentation as well as the MS-CMR images of both the training and test data are available upon registration via its homepage",
+    "abstract_recovery_method": "manual_entry"
   },
   {
     "id": "https://openalex.org/W4300166936",
@@ -1463,8 +1465,8 @@
       "Outbreak",
       "Geography"
     ],
-    "abstract": "",
-    "abstract_recovery_method": "not_recovered"
+    "abstract": "Artificial intelligence (AI) methods for the automatic detection and quantification of COVID-19 lesions in chest computed tomography (CT) might play an important role in the monitoring and management of the disease. We organized an international challenge and competition for the development and comparison of AI algorithms for this task, which we supported with public data and state-of-the-art benchmark methods. Board Certified Radiologists annotated 295 public images from two sources (A and B) for algorithms training (",
+    "abstract_recovery_method": "manual_entry"
   },
   {
     "id": "https://openalex.org/W3088212615",
@@ -1652,8 +1654,10 @@
       "Biology",
       "Paleontology"
     ],
-    "abstract": "",
-    "abstract_recovery_method": "not_recovered"
+    "abstract": "In-utero fetal MRI is emerging as an important tool in the diagnosis and analysis of the developing human brain. Automatic segmentation of the developing fetal brain is a vital step in the quantitative analysis of prenatal neurodevelopment both in the research and clinical context. However, manual segmentation of cerebral structures is time-consuming and prone to error and inter-observer variability. Therefore, we organized the Fetal Tissue Annotation (FeTA) Challenge in 2021 in order to encourage the development of automatic segmentation algorithms on an international level. The challenge utilized FeTA Dataset, an open dataset of fetal brain MRI reconstructions segmented into seven different tissues (external cerebrospinal fluid, grey matter, white matter, ventricles, cerebellum, brainstem, deep grey matter). 20 international teams participated in this challenge, submitting a total of 21 algorithms for evaluation. In this paper, we provide a detailed analysis of the results from both a technical and clinical perspective. All participants relied on deep learning methods, mainly U-Nets, with some variability present in the network architecture, optimization, and image pre- and post-processing. The majority of teams used existing medical imaging deep learning frameworks. The main differences between the submissions were the fine tuning done during training, and the specific pre- and post-processing steps performed. The challenge results showed that almost all submissions performed similarly. Four of the top five teams used ensemble learning methods. However, one team's algorithm performed significantly superior to the other submissions, and consisted of an asymmetrical U-Net network architecture. This paper provides a first of its kind benchmark for future automatic multi-tissue segmentation algorithms for the developing human brain in utero.",
+    "arxiv_match_score": 1.0,
+    "arxiv_id": "http://arxiv.org/abs/2204.09573v1",
+    "abstract_recovery_method": "exact_from_arxiv"
   },
   {
     "id": "https://openalex.org/W4392615577",
@@ -2345,7 +2349,7 @@
       "Biology",
       "Marketing"
     ],
-    "abstract": "With the increasing prevalence of single-cell analysis tools, the need for effective benchmarking has become critical to guide method development and analysis. This paper introduces \"Open Problems,\" a dynamic and community-driven benchmarking platform that addresses the current limitations in standardization and extensibility of existing benchmarks. The platform encompasses twelve key tasks in single-cell analysis, aiming to elevate the standards for method selection, evaluation, and development. By fostering collaboration and engagement within the research community, the authors envision that this initiative will enhance the relevance and longevity of benchmarks in single-cell genomics. The paper highlights the transformative potential of single-cell genomics in studying biological processes with unprecedented detail and scale, emphasizing the importance of robust benchmarking to support ongoing advancements in the field. The authors, including Malte D. Luecken and Scott Gigante among others, advocate for a unified approach to tackle the open problems in single-cell analysis, thereby contributing to the evolution of methodologies that can effectively harness the capabilities of emerging data generation technologies.",
+    "abstract": "With the increasing prevalence of single-cell analysis tools, establishing benchmarks has become crucial for guiding analysis and method development. However, existing benchmarks often suffer from a lack of standardization and extensibility, which hinders their usability and relevance within the scientific community. In this paper, we introduce \"Open Problems,\" a dynamic, community-driven benchmarking platform that encompasses 12 current tasks in single-cell analysis. This initiative aims to elevate standards for the selection, evaluation, and development of analytical methods in this rapidly evolving field. By fostering collaboration and continuous improvement, the Open Problems platform seeks to address the pressing challenges in single-cell genomics, which has revolutionized the study of biological processes at unprecedented scales and resolutions. Our approach emphasizes the importance of community engagement in refining benchmarks to ensure they remain relevant and effective in guiding future research and technological advancements in single-cell analysis.",
     "abstract_recovery_method": "gpt_generated_from_paper"
   },
   {
@@ -3338,8 +3342,8 @@
       "Psychology",
       "Quantum mechanics"
     ],
-    "abstract": "",
-    "abstract_recovery_method": "not_recovered"
+    "abstract": ", source A), validation (",
+    "abstract_recovery_method": "manual_entry"
   },
   {
     "id": "https://openalex.org/W4413093915",
@@ -4204,8 +4208,8 @@
       "Computer network",
       "Linguistics"
     ],
-    "abstract": "",
-    "abstract_recovery_method": "not_recovered"
+    "abstract": ", source A) and testing (",
+    "abstract_recovery_method": "manual_entry"
   },
   {
     "id": "https://openalex.org/W3187745473",
@@ -4249,8 +4253,8 @@
       "Operating system",
       "Database"
     ],
-    "abstract": "",
-    "abstract_recovery_method": "not_recovered"
+    "abstract": ", source A;",
+    "abstract_recovery_method": "manual_entry"
   },
   {
     "id": "https://openalex.org/W4396919283",
@@ -4839,8 +4843,8 @@
       "Genetics",
       "Genome"
     ],
-    "abstract": "",
-    "abstract_recovery_method": "not_recovered"
+    "abstract": ", source B). There were 1,096 registered teams of which 225 and 98 completed the validation and testing phases, respectively. The challenge showed that AI models could be rapidly designed by diverse teams with the potential to measure disease or facilitate timely and patient-specific interventions. This paper provides an overview and the major outcomes of the COVID-19 Lung CT Lesion Segmentation Challenge — 2020.Structural features of proteins capture underlying information about protein evolution and function, which enhances the analysis of proteomic and transcriptomic data. Here, we develop Structural Analysis of Gene and protein Expression Signatures (SAGES), a method that describes expression data using features calculated from sequence-based prediction methods and 3D structural models. We used SAGES, along with machine learning, to characterize tissues from healthy individuals and those with breast cancer. We analyzed gene expression data from 23 breast cancer patients and genetic mutation data from the Catalog of Somatic Mutations In Cancer database as well as 17 breast tumor protein expression profiles. We identified prominent expression of intrinsically disordered regions in breast cancer proteins as well as relationships between drug perturbation signatures and breast cancer disease signatures. Our results suggest that SAGES is generally applicable to describe diverse biological phenomena including disease states and drug effects.",
+    "abstract_recovery_method": "manual_entry"
   },
   {
     "id": "https://openalex.org/W4402163945",

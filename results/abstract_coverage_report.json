@@ -4,58 +4,16 @@
   "total_entries": 137,
   "initial_entries_with_abstract": 112,
   "initial_entries_missing_abstract": 25,
-  "final_entries_with_abstract": 123,
-  "final_entries_missing_abstract": 14,
-  "final_coverage_ratio": 0.8978102189781022,
+  "final_entries_with_abstract": 134,
+  "final_entries_missing_abstract": 3,
+  "final_coverage_ratio": 0.9781021897810219,
   "exact_abstract_recovered_from_html": 10,
   "exact_abstract_recovered_from_pdf": 0,
+  "exact_abstract_recovered_from_arxiv": 2,
   "abstract_generated_by_gpt": 1,
-  "still_missing_after_recovery": 14,
+  "abstract_entered_manually": 9,
+  "still_missing_after_recovery": 3,
   "missing_entries": [
-    {
-      "id": "https://openalex.org/W2910094941",
-      "title": "The Liver Tumor Segmentation Benchmark (LiTS)"
-    },
-    {
-      "id": "https://openalex.org/W4296819410",
-      "title": "Uncovering novel mutational signatures by de novo extraction with SigProfilerExtractor"
-    },
-    {
-      "id": "https://openalex.org/W3112346810",
-      "title": "VerSe: A Vertebrae labelling and segmentation benchmark for multi-detector CT images"
-    },
-    {
-      "id": "https://openalex.org/W3029542277",
-      "title": "Artificial intelligence reconstructs missing climate information"
-    },
-    {
-      "id": "https://openalex.org/W3036022295",
-      "title": "Cardiac segmentation on late gadolinium enhancement MRI: A benchmark study from multi-sequence cardiac MR segmentation challenge"
-    },
-    {
-      "id": "https://openalex.org/W4294740541",
-      "title": "Rapid artificial intelligence solutions in a pandemic—The COVID-19-20 Lung CT Lesion Segmentation Challenge"
-    },
-    {
-      "id": "https://openalex.org/W4366753223",
-      "title": "Fetal brain tissue annotation and segmentation challenge results"
-    },
-    {
-      "id": "https://openalex.org/W4412591781",
-      "title": "Artificial Intelligence for Science in Quantum, Atomistic, and Continuum Systems"
-    },
-    {
-      "id": "https://openalex.org/W3095435495",
-      "title": "Easy and efficient agent-based simulations with the OpenABL language and compiler"
-    },
-    {
-      "id": "https://openalex.org/W3187745473",
-      "title": "Artificial Intelligence in PET"
-    },
-    {
-      "id": "https://openalex.org/W4401386769",
-      "title": "Structural analysis of genomic and proteomic signatures reveal dynamic expression of intrinsically disordered regions in breast cancer"
-    },
     {
       "id": "https://openalex.org/W4210805935",
       "title": "General-purpose GPU hashing data structures and their application in accelerated genomics"
