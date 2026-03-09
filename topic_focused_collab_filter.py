@@ -19,6 +19,7 @@ from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
 OPENALEX_WORKS_ENDPOINT = "https://api.openalex.org/works"
+OPENALEX_CONCEPTS_ENDPOINT = "https://api.openalex.org/concepts"
 OPENAI_CHAT_ENDPOINT = "https://api.openai.com/v1/chat/completions"
 
 
@@ -37,6 +38,7 @@ class TopicConfig:
     cheap_model: str
     analysis_model: str
     openalex_api_key: str
+    forbidden_topics: list[str]
 
 
 @dataclass
@@ -158,6 +160,7 @@ def load_topic_config(path: str = "config.json") -> TopicConfig:
         cheap_model=str(raw["cheap_model"]),
         analysis_model=str(raw["analysis_model"]),
         openalex_api_key=str(raw.get("openalex_api_key", "")).strip(),
+        forbidden_topics=[str(x).strip() for x in raw.get("forbidden_topics", []) if str(x).strip()],
     )
 
 
@@ -211,6 +214,48 @@ def fetch_candidate_works(cfg: TopicConfig, pb: ProgressBar) -> list[dict[str, A
             break
     return out
 
+
+
+def resolve_forbidden_concepts(terms: list[str], api_key: str, pb: ProgressBar) -> tuple[set[str], set[str]]:
+    concept_ids: set[str] = set()
+    concept_names: set[str] = set()
+    if not terms:
+        return concept_ids, concept_names
+
+    pb.update("Mapping forbidden topics to OpenAlex concept tags", 0, len(terms))
+    for i, term in enumerate(terms, start=1):
+        try:
+            data = safe_get(OPENALEX_CONCEPTS_ENDPOINT, add_openalex_auth({
+                "search": term,
+                "per-page": 5,
+                "select": "id,display_name,level",
+            }, api_key))
+            for c in data.get("results", []):
+                cid = c.get("id")
+                cname = c.get("display_name")
+                if cid:
+                    concept_ids.add(cid)
+                if cname:
+                    concept_names.add(str(cname).lower())
+        except Exception:
+            concept_names.add(term.lower())
+        pb.update("Mapping forbidden topics to OpenAlex concept tags", i, len(terms))
+
+    return concept_ids, concept_names
+
+
+def work_matches_forbidden_topics(work: dict[str, Any], forbidden_ids: set[str], forbidden_names: set[str], forbidden_terms: list[str]) -> bool:
+    concepts = work.get("concepts", [])
+    names = {str(c.get("display_name", "")).lower() for c in concepts if c.get("display_name")}
+    ids = {str(c.get("id", "")) for c in concepts if c.get("id")}
+
+    if forbidden_ids.intersection(ids):
+        return True
+    if forbidden_names.intersection(names):
+        return True
+
+    joined = " ".join(names)
+    return any(t.lower() in joined for t in forbidden_terms)
 
 def keep_german_collaboration_subset(works: list[dict[str, Any]], host_ids: set[str], pb: ProgressBar) -> list[dict[str, Any]]:
     kept: list[dict[str, Any]] = []
@@ -391,7 +436,20 @@ def main() -> int:
 
         host_ids = set(cfg.institution_ids)
         works = fetch_candidate_works(cfg, pb)
-        de_subset = keep_german_collaboration_subset(works, host_ids, pb)
+
+        forbidden_ids, forbidden_names = resolve_forbidden_concepts(cfg.forbidden_topics, cfg.openalex_api_key, pb)
+        pb.update("Applying forbidden-topic exclusion", 0, len(works))
+        works_no_forbidden: list[dict[str, Any]] = []
+        excluded_forbidden = 0
+        for i, w in enumerate(works, start=1):
+            if work_matches_forbidden_topics(w, forbidden_ids, forbidden_names, cfg.forbidden_topics):
+                excluded_forbidden += 1
+            else:
+                works_no_forbidden.append(w)
+            pb.update("Applying forbidden-topic exclusion", i, len(works))
+
+        de_subset = keep_german_collaboration_subset(works_no_forbidden, host_ids, pb)
+        print(f"Excluded by forbidden topics: {excluded_forbidden}")
 
         api_key = os.getenv("OPENAI_API_KEY", "")
         relevant_rows: list[dict[str, Any]] = []

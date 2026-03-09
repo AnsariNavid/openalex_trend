@@ -80,6 +80,7 @@ Use `config.json` as the single configuration file for all scripts.
 
 Key settings:
 - `topics`: list of your topics of interest.
+- `forbidden_topics`: topics to exclude early (mapped to OpenAlex concept tags, then filtered out).
 - `cheap_model`: low-cost model for paper-level relevance decisions.
 - `analysis_model`: stronger model for final synthesis.
 - `openalex_api_key`: OpenAlex API key used for all OpenAlex requests.
@@ -100,6 +101,7 @@ python topic_focused_collab_filter.py
 Use this 4-step pipeline (all read from `config.json`):
 
 1. `generate_filtered_publications.py`
+   - First excludes works matching `forbidden_topics` (mapped to OpenAlex concept tags).
    - Generates full filtered dataset JSON (`output_filtered_json`) after journal/conference + German-collaboration + configured date range filtering.
 2. `check_filtered_abstracts.py`
    - Checks abstract availability on the filtered dataset and writes `results/abstract_coverage_report.json`.

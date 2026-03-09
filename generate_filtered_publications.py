@@ -24,6 +24,7 @@ from urllib.parse import urlencode
 from urllib.request import urlopen
 
 OPENALEX_WORKS_ENDPOINT = "https://api.openalex.org/works"
+OPENALEX_CONCEPTS_ENDPOINT = "https://api.openalex.org/concepts"
 
 
 @dataclass
@@ -36,6 +37,7 @@ class TopicConfig:
     results_dir: str
     output_filtered_json: str
     openalex_api_key: str
+    forbidden_topics: list[str]
 
 
 class ProgressBar:
@@ -96,6 +98,7 @@ def load_topic_config(path: str = "config.json") -> TopicConfig:
         results_dir=str(raw["results_dir"]),
         output_filtered_json=str(raw["output_filtered_json"]),
         openalex_api_key=str(raw.get("openalex_api_key", "")).strip(),
+        forbidden_topics=[str(x).strip() for x in raw.get("forbidden_topics", []) if str(x).strip()],
     )
 
 
@@ -127,6 +130,49 @@ def fetch_works(cfg: TopicConfig, pb: ProgressBar) -> list[dict[str, Any]]:
             break
     return works
 
+
+
+def resolve_forbidden_concepts(terms: list[str], api_key: str, pb: ProgressBar) -> tuple[set[str], set[str]]:
+    concept_ids: set[str] = set()
+    concept_names: set[str] = set()
+    if not terms:
+        return concept_ids, concept_names
+
+    pb.update("Mapping forbidden topics to OpenAlex concept tags", 0, len(terms))
+    for i, term in enumerate(terms, start=1):
+        try:
+            data = safe_get(OPENALEX_CONCEPTS_ENDPOINT, add_openalex_auth({
+                "search": term,
+                "per-page": 5,
+                "select": "id,display_name,level",
+            }, api_key))
+            for c in data.get("results", []):
+                cid = c.get("id")
+                cname = c.get("display_name")
+                if cid:
+                    concept_ids.add(cid)
+                if cname:
+                    concept_names.add(str(cname).lower())
+        except Exception:
+            concept_names.add(term.lower())
+        pb.update("Mapping forbidden topics to OpenAlex concept tags", i, len(terms))
+
+    return concept_ids, concept_names
+
+
+def work_matches_forbidden_topics(work: dict[str, Any], forbidden_ids: set[str], forbidden_names: set[str], forbidden_terms: list[str]) -> bool:
+    concepts = work.get("concepts", [])
+    names = {str(c.get("display_name", "")).lower() for c in concepts if c.get("display_name")}
+    ids = {str(c.get("id", "")) for c in concepts if c.get("id")}
+
+    if forbidden_ids.intersection(ids):
+        return True
+    if forbidden_names.intersection(names):
+        return True
+
+    # fallback term-based match for unmapped/partial concepts
+    joined = " ".join(names)
+    return any(t.lower() in joined for t in forbidden_terms)
 
 def has_german_collab(work: dict[str, Any], host_ids: set[str]) -> bool:
     for a in work.get("authorships", []):
@@ -180,12 +226,24 @@ def main() -> int:
         host_ids = set(cfg.institution_ids)
         works = fetch_works(cfg, pb)
 
-        pb.update("Filtering journal/conference + German collaborations + year range", 0, len(works))
-        filtered: list[dict[str, Any]] = []
+        forbidden_ids, forbidden_names = resolve_forbidden_concepts(cfg.forbidden_topics, cfg.openalex_api_key, pb)
+
+        pb.update("Applying forbidden-topic exclusion", 0, len(works))
+        topic_filtered: list[dict[str, Any]] = []
+        excluded_forbidden = 0
         for i, w in enumerate(works, start=1):
+            if work_matches_forbidden_topics(w, forbidden_ids, forbidden_names, cfg.forbidden_topics):
+                excluded_forbidden += 1
+            else:
+                topic_filtered.append(w)
+            pb.update("Applying forbidden-topic exclusion", i, len(works))
+
+        pb.update("Filtering journal/conference + German collaborations + year range", 0, len(topic_filtered))
+        filtered: list[dict[str, Any]] = []
+        for i, w in enumerate(topic_filtered, start=1):
             if has_german_collab(w, host_ids):
                 filtered.append(extract_metadata(w, host_ids))
-            pb.update("Filtering journal/conference + German collaborations + year range", i, len(works))
+            pb.update("Filtering journal/conference + German collaborations + year range", i, len(topic_filtered))
 
         pb.update("Saving filtered dataset", 0, 1)
         out_dir = Path(cfg.results_dir)
@@ -195,6 +253,7 @@ def main() -> int:
         pb.update("Saving filtered dataset", 1, 1)
 
         print(f"Filtered dataset saved: {out_path.resolve()}")
+        print(f"Excluded by forbidden topics: {excluded_forbidden}")
         print(f"Filtered entries: {len(filtered)}")
         return 0
     except Exception as e:  # noqa: BLE001
