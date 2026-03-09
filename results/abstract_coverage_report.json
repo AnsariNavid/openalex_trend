@@ -1,18 +1,14 @@
 {
   "input_file": "results\\filtered_german_collab_dataset.json",
+  "enriched_output_file": "results\\filtered_german_collab_dataset.json",
   "total_entries": 137,
-  "entries_with_abstract": 112,
-  "entries_missing_abstract": 25,
-  "coverage_ratio": 0.8175182481751825,
+  "entries_with_abstract": 121,
+  "entries_missing_abstract": 16,
+  "coverage_ratio": 0.8832116788321168,
+  "exact_abstract_recovered_from_pdf": 1,
+  "abstract_generated_by_gpt": 8,
+  "still_missing_after_recovery": 16,
   "missing_entries": [
-    {
-      "id": "https://openalex.org/W3012501605",
-      "title": "The future of digital health with federated learning"
-    },
-    {
-      "id": "https://openalex.org/W3172681723",
-      "title": "The Medical Segmentation Decathlon"
-    },
     {
       "id": "https://openalex.org/W2910094941",
       "title": "The Liver Tumor Segmentation Benchmark (LiTS)"
@@ -28,10 +24,6 @@
     {
       "id": "https://openalex.org/W3029542277",
       "title": "Artificial intelligence reconstructs missing climate information"
-    },
-    {
-      "id": "https://openalex.org/W4384561507",
-      "title": "Federated benchmarking of medical artificial intelligence with MedPerf"
     },
     {
       "id": "https://openalex.org/W4401806513",
@@ -50,22 +42,6 @@
       "title": "Fetal brain tissue annotation and segmentation challenge results"
     },
     {
-      "id": "https://openalex.org/W4392615577",
-      "title": "AlphaPept: a modern and open framework for MS-based proteomics"
-    },
-    {
-      "id": "https://openalex.org/W4405965274",
-      "title": "GaAs nano-ridge laser diodes fully fabricated in a 300-mm CMOS pilot line"
-    },
-    {
-      "id": "https://openalex.org/W4401908383",
-      "title": "Digital twins of the Earth with and for humans"
-    },
-    {
-      "id": "https://openalex.org/W4411900437",
-      "title": "Defining and benchmarking open problems in single-cell analysis"
-    },
-    {
       "id": "https://openalex.org/W3213672119",
       "title": "Benchmarking the performance of irregular computations in AutoDock-GPU molecular docking"
     },
@@ -74,20 +50,12 @@
       "title": "Artificial Intelligence for Science in Quantum, Atomistic, and Continuum Systems"
     },
     {
-      "id": "https://openalex.org/W4413093915",
-      "title": "DeepISLES: a clinically validated ischemic stroke segmentation model from the ISLES'22 challenge"
-    },
-    {
       "id": "https://openalex.org/W3095435495",
       "title": "Easy and efficient agent-based simulations with the OpenABL language and compiler"
     },
     {
       "id": "https://openalex.org/W3187745473",
       "title": "Artificial Intelligence in PET"
-    },
-    {
-      "id": "https://openalex.org/W4396919283",
-      "title": "Fair evaluation of federated learning algorithms for automated breast density classification: The results of the 2022 ACR-NCI-NVIDIA federated learning challenge"
     },
     {
       "id": "https://openalex.org/W4401386769",

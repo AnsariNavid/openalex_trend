@@ -5,6 +5,7 @@
     "publication_year": 2020,
     "publication_date": "2020-09-14",
     "source_type": "journal",
+    "pdf_url": "https://www.nature.com/articles/s41746-020-00323-1.pdf",
     "authors": [
       "Nicola Rieke",
       "Jonny Hancox",
@@ -51,7 +52,8 @@
       "Health informatics",
       "Patient privacy"
     ],
-    "abstract": ""
+    "abstract": "is significant, as it allows for the development of machine learning models that can leverage diverse datasets while maintaining patient privacy and data governance. This perspective paper discusses the challenges of accessing and utilizing medical data, which is often siloed due to privacy concerns and regulatory constraints. Federated learning (FL) emerges as a promising solution, enabling collaborative model training without the need to centralize sensitive data. By allowing institutions to retain control over their data while still contributing to a shared learning process, FL can facilitate the creation of more accurate and equitable models in digital health. The authors highlight the importance of addressing technical considerations to ensure the safety and efficacy of FL implementations. They envision a future where FL can enhance precision medicine by providing insights from a broader range of data, ultimately improving healthcare outcomes. The paper aims to inform the medical community about the potential benefits and challenges of adopting FL in digital health applications, advocating for its role in overcoming existing barriers to data sharing and utilization in healthcare.",
+    "abstract_recovery_method": "gpt_generated_from_pdf"
   },
   {
     "id": "https://openalex.org/W3177500196",
@@ -59,6 +61,7 @@
     "publication_year": 2021,
     "publication_date": "2021-07-07",
     "source_type": "journal",
+    "pdf_url": "https://doi.org/10.1109/tpami.2021.3095381",
     "authors": [
       "Ahmed Elnaggar",
       "Michael Heinzinger",
@@ -93,6 +96,7 @@
     "publication_year": 2022,
     "publication_date": "2022-07-15",
     "source_type": "journal",
+    "pdf_url": "https://www.nature.com/articles/s41467-022-30695-9.pdf",
     "authors": [
       "Michela Antonelli",
       "Annika Reinke",
@@ -152,7 +156,8 @@
       "Statistics",
       "Social science"
     ],
-    "abstract": ""
+    "abstract": "The Medical Segmentation Decathlon (MSD) is an international challenge aimed at advancing biomedical image analysis by evaluating algorithms across multiple segmentation tasks and modalities. This study investigates the hypothesis that algorithms performing well on diverse tasks will generalize effectively to unseen tasks, potentially outperforming specialized solutions. The MSD featured ten distinct datasets, encompassing various challenges such as small datasets, unbalanced labels, and multi-site data. The challenge was divided into two phases: a development phase with known tasks and a mystery phase with unseen tasks. Results indicated that state-of-the-art segmentation algorithms, particularly those based on convolutional neural networks, demonstrated significant generalizability when retrained on new tasks. The winning algorithm maintained strong performance across various clinical applications for two years post-challenge. Key findings include the establishment of a framework for benchmarking segmentation algorithms focused on generalizability, and the conclusion that consistent performance across multiple tasks serves as a reliable indicator of an algorithm's generalizability. The MSD thus represents a significant step towards creating adaptable AI solutions for medical image segmentation, enabling broader applications in clinical settings.",
+    "abstract_recovery_method": "gpt_generated_from_pdf"
   },
   {
     "id": "https://openalex.org/W2910094941",
@@ -160,6 +165,7 @@
     "publication_year": 2022,
     "publication_date": "2022-11-17",
     "source_type": "journal",
+    "pdf_url": "https://linkinghub.elsevier.com/science/article/pii/S1361841522003085/pdfft?md5=42606dbee21641af7f9e50655c0fdff2&pid=1-s2.0-S1361841522003085-main.pdf",
     "authors": [
       "Patrick Bilic",
       "Patrick Ferdinand Christ",
@@ -216,7 +222,8 @@
       "Cartography",
       "Geography"
     ],
-    "abstract": ""
+    "abstract": "",
+    "abstract_recovery_method": "not_recovered"
   },
   {
     "id": "https://openalex.org/W3020638658",
@@ -224,6 +231,7 @@
     "publication_year": 2020,
     "publication_date": "2020-05-11",
     "source_type": "journal",
+    "pdf_url": "https://aip.scitation.org/doi/pdf/10.1063/5.0004997",
     "authors": [
       "E. Aprà",
       "E. J. Bylaska",
@@ -282,6 +290,7 @@
     "publication_year": 2021,
     "publication_date": "2021-02-15",
     "source_type": "journal",
+    "pdf_url": "",
     "authors": [
       "Karthik Kashinath",
       "Mohamed Elhafiz Mustafa",
@@ -335,6 +344,7 @@
     "publication_year": 2022,
     "publication_date": "2022-05-01",
     "source_type": "journal",
+    "pdf_url": "",
     "authors": [
       "Yiheng Xie",
       "Towaki Takikawa",
@@ -380,6 +390,7 @@
     "publication_year": 2022,
     "publication_date": "2022-09-23",
     "source_type": "journal",
+    "pdf_url": "https://doi.org/10.1016/j.xgen.2022.100179",
     "authors": [
       "S. M. Ashiqul Islam",
       "Marcos Díaz‐Gay",
@@ -418,7 +429,8 @@
       "Mathematics",
       "Geometry"
     ],
-    "abstract": ""
+    "abstract": "",
+    "abstract_recovery_method": "not_recovered"
   },
   {
     "id": "https://openalex.org/W3112346810",
@@ -426,6 +438,7 @@
     "publication_year": 2021,
     "publication_date": "2021-07-22",
     "source_type": "journal",
+    "pdf_url": "https://ars.els-cdn.com/content/image/1-s2.0-S1361841521002127-ga1_lrg.jpg",
     "authors": [
       "Anjany Sekuboyina",
       "Malek El Husseini",
@@ -480,7 +493,8 @@
       "Business",
       "Programming language"
     ],
-    "abstract": ""
+    "abstract": "",
+    "abstract_recovery_method": "not_recovered"
   },
   {
     "id": "https://openalex.org/W4404821554",
@@ -488,6 +502,7 @@
     "publication_year": 2024,
     "publication_date": "2024-11-28",
     "source_type": "journal",
+    "pdf_url": "https://www.nature.com/articles/s41592-024-02523-z.pdf",
     "authors": [
       "Hugo Dalla-Torre",
       "Liam Gonzalez",
@@ -536,6 +551,7 @@
     "publication_year": 2020,
     "publication_date": "2020-06-01",
     "source_type": "journal",
+    "pdf_url": "",
     "authors": [
       "Christopher Kadow",
       "David Hall",
@@ -566,7 +582,8 @@
       "Paleontology",
       "Oceanography"
     ],
-    "abstract": ""
+    "abstract": "",
+    "abstract_recovery_method": "not_recovered"
   },
   {
     "id": "https://openalex.org/W4380450805",
@@ -574,6 +591,7 @@
     "publication_year": 2023,
     "publication_date": "2023-06-13",
     "source_type": "journal",
+    "pdf_url": "",
     "authors": [
       "R. Newbury",
       "Morris Gu",
@@ -620,6 +638,7 @@
     "publication_year": 2023,
     "publication_date": "2023-02-20",
     "source_type": "journal",
+    "pdf_url": "https://www.zora.uzh.ch/id/eprint/257391/1/RAL2023_Salzmann.pdf",
     "authors": [
       "Tim Salzmann",
       "Elia Kaufmann",
@@ -656,6 +675,7 @@
     "publication_year": 2024,
     "publication_date": "2024-09-25",
     "source_type": "journal",
+    "pdf_url": "",
     "authors": [
       "Roya Firoozi",
       "Johnathan Tucker",
@@ -694,6 +714,7 @@
     "publication_year": 2021,
     "publication_date": "2021-04-01",
     "source_type": "journal",
+    "pdf_url": "https://ieeexplore.ieee.org/ielx7/8856/9397439/09398246.pdf",
     "authors": [
       "Sebastian Höfer",
       "Kostas E. Bekris",
@@ -744,6 +765,7 @@
     "publication_year": 2023,
     "publication_date": "2023-06-12",
     "source_type": "journal",
+    "pdf_url": "",
     "authors": [
       "Xingqin Lin",
       "Lopamudra Kundu",
@@ -780,6 +802,7 @@
     "publication_year": 2022,
     "publication_date": "2022-11-18",
     "source_type": "journal",
+    "pdf_url": "https://doi.org/10.1016/j.csbj.2022.11.014",
     "authors": [
       "Noelia Ferruz",
       "Michael Heinzinger",
@@ -817,6 +840,7 @@
     "publication_year": 2023,
     "publication_date": "2023-07-17",
     "source_type": "journal",
+    "pdf_url": "https://www.nature.com/articles/s42256-023-00652-2.pdf",
     "authors": [
       "Alexandros Karargyris",
       "Renato Umeton",
@@ -870,7 +894,8 @@
       "Operating system",
       "Economics"
     ],
-    "abstract": ""
+    "abstract": "Medical artificial intelligence (AI) has the potential to significantly enhance healthcare delivery, but its effective implementation necessitates rigorous evaluation across diverse patient populations. This paper introduces MedPerf, an open benchmarking platform designed for the federated evaluation of medical AI models. MedPerf allows for secure model distribution to various healthcare facilities, enabling local performance assessments while maintaining patient privacy. The platform addresses critical challenges in data sharing, including regulatory constraints and public perception risks, by facilitating model evaluation without direct data exchange. Initial applications of MedPerf include successful participation in the Federated Tumor Segmentation (FeTS) challenge and several academic pilot studies, demonstrating its scalability and adaptability across different clinical tasks. The platform's architecture supports both cloud-based and on-premises evaluations, enhancing its utility for diverse healthcare settings. MedPerf aims to foster collaboration among researchers and institutions, encouraging contributions to refine its benchmarking capabilities. By providing a structured methodology for evaluating AI models, MedPerf aspires to improve the generalizability and clinical applicability of medical AI, ultimately leading to better patient outcomes and more effective healthcare practices.",
+    "abstract_recovery_method": "gpt_generated_from_pdf"
   },
   {
     "id": "https://openalex.org/W4401806513",
@@ -878,6 +903,7 @@
     "publication_year": 2024,
     "publication_date": "2024-08-23",
     "source_type": "journal",
+    "pdf_url": "https://www.osti.gov/biblio/2447145",
     "authors": [
       "Veronika Eyring",
       "William D. Collins",
@@ -923,7 +949,8 @@
       "Business",
       "Marketing"
     ],
-    "abstract": ""
+    "abstract": "",
+    "abstract_recovery_method": "not_recovered"
   },
   {
     "id": "https://openalex.org/W3212380917",
@@ -931,6 +958,7 @@
     "publication_year": 2022,
     "publication_date": "2022-04-11",
     "source_type": "journal",
+    "pdf_url": "https://www.frontiersin.org/articles/10.3389/frobt.2022.799893/pdf",
     "authors": [
       "Fabio Muratore",
       "Fábio Ramos",
@@ -964,6 +992,7 @@
     "publication_year": 2022,
     "publication_date": "2022-07-09",
     "source_type": "journal",
+    "pdf_url": "",
     "authors": [
       "Xiahai Zhuang",
       "Jiahang Xu",
@@ -1008,7 +1037,8 @@
       "Geography",
       "Geodesy"
     ],
-    "abstract": ""
+    "abstract": "",
+    "abstract_recovery_method": "not_recovered"
   },
   {
     "id": "https://openalex.org/W4300166936",
@@ -1016,6 +1046,7 @@
     "publication_year": 2022,
     "publication_date": "2022-10-02",
     "source_type": "journal",
+    "pdf_url": "https://doi.org/10.1177/10943420221128233",
     "authors": [
       "Abigail C. Dommer",
       "Lorenzo Casalino",
@@ -1076,6 +1107,7 @@
     "publication_year": 2021,
     "publication_date": "2021-12-20",
     "source_type": "journal",
+    "pdf_url": "https://www.aanda.org/articles/aa/pdf/2022/06/aa41677-21.pdf",
     "authors": [
       "F. Motte",
       "S. Bontemps",
@@ -1127,6 +1159,7 @@
     "publication_year": 2020,
     "publication_date": "2020-01-01",
     "source_type": "journal",
+    "pdf_url": "https://journals.openedition.org/espacoeconomia/pdf/11357",
     "authors": [
       "Heitor Soares de Farias"
     ],
@@ -1151,6 +1184,7 @@
     "publication_year": 2023,
     "publication_date": "2023-07-01",
     "source_type": "journal",
+    "pdf_url": "https://ieeexplore.ieee.org/ielx7/27/4360151/10214236.pdf",
     "authors": [
       "Rushil Anirudh",
       "Richard Archibald",
@@ -1199,6 +1233,7 @@
     "publication_year": 2023,
     "publication_date": "2023-10-27",
     "source_type": "journal",
+    "pdf_url": "https://www.osti.gov/servlets/purl/2563710",
     "authors": [
       "Maxim Zvyagin",
       "Alexander Brace",
@@ -1259,6 +1294,7 @@
     "publication_year": 2022,
     "publication_date": "2022-02-18",
     "source_type": "journal",
+    "pdf_url": "https://doi.org/10.1016/j.lanepe.2022.100330",
     "authors": [
       "Saskia von Stillfried",
       "Roman D. Bülow",
@@ -1343,6 +1379,7 @@
     "publication_year": 2022,
     "publication_date": "2022-09-06",
     "source_type": "journal",
+    "pdf_url": "http://orbilu.uni.lu/handle/10993/52082",
     "authors": [
       "Holger R. Roth",
       "Ziyue Xu",
@@ -1398,7 +1435,8 @@
       "Outbreak",
       "Geography"
     ],
-    "abstract": ""
+    "abstract": "",
+    "abstract_recovery_method": "not_recovered"
   },
   {
     "id": "https://openalex.org/W3088212615",
@@ -1406,6 +1444,7 @@
     "publication_year": 2021,
     "publication_date": "2021-01-19",
     "source_type": "journal",
+    "pdf_url": "http://link.aps.org/pdf/10.1103/PhysRevC.103.014003",
     "authors": [
       "Ben Hörz",
       "Dean Howarth",
@@ -1446,6 +1485,7 @@
     "publication_year": 2021,
     "publication_date": "2021-10-01",
     "source_type": "journal",
+    "pdf_url": "http://hdl.handle.net/2117/362090",
     "authors": [
       "Luis Velasco",
       "Marco Signorelli",
@@ -1498,6 +1538,7 @@
     "publication_year": 2022,
     "publication_date": "2022-07-01",
     "source_type": "journal",
+    "pdf_url": "https://journals.ametsoc.org/downloadpdf/journals/aies/1/3/AIES-D-21-0002.1.pdf",
     "authors": [
       "Peter Dueben",
       "Martin G. Schultz",
@@ -1529,6 +1570,7 @@
     "publication_year": 2023,
     "publication_date": "2023-04-22",
     "source_type": "journal",
+    "pdf_url": "https://ars.els-cdn.com/content/image/1-s2.0-S1361841523000932-ga1_lrg.jpg",
     "authors": [
       "Kelly Payette",
       "Hongwei Li",
@@ -1578,7 +1620,8 @@
       "Biology",
       "Paleontology"
     ],
-    "abstract": ""
+    "abstract": "",
+    "abstract_recovery_method": "not_recovered"
   },
   {
     "id": "https://openalex.org/W4392615577",
@@ -1586,6 +1629,7 @@
     "publication_year": 2024,
     "publication_date": "2024-03-09",
     "source_type": "journal",
+    "pdf_url": "https://www.nature.com/articles/s41467-024-46485-4.pdf",
     "authors": [
       "Maximilian T. Strauss",
       "Isabell Bludau",
@@ -1612,7 +1656,8 @@
       "Genetics",
       "Gene"
     ],
-    "abstract": ""
+    "abstract": "AlphaPept is an innovative, open-source framework designed for the efficient processing of large-scale mass spectrometry (MS)-based proteomics data. Developed using Python, it leverages advanced computational techniques, including just-in-time compilation via Numba, to achieve significant speed improvements in data analysis. The framework facilitates the identification and quantification of peptides and proteins, addressing the challenges posed by the increasing volume of raw data generated in proteomics research. AlphaPept emphasizes accessibility and collaboration, allowing contributions from a diverse range of developers through a modular design and integration with Jupyter Notebooks for literate programming. This approach not only enhances code maintainability but also fosters community engagement and transparency in scientific research. The framework supports automated processing pipelines and is compatible with various downstream analysis tools, making it a versatile solution for proteomics workflows. By adopting robust software engineering principles, including continuous integration and testing, AlphaPept aims to improve the reliability and reproducibility of computational analyses in proteomics, ultimately contributing to the advancement of open science and collaborative research efforts.",
+    "abstract_recovery_method": "gpt_generated_from_pdf"
   },
   {
     "id": "https://openalex.org/W4387326877",
@@ -1620,6 +1665,7 @@
     "publication_year": 2023,
     "publication_date": "2023-10-04",
     "source_type": "journal",
+    "pdf_url": "https://doi.org/10.1021/acs.jpcb.3c04473",
     "authors": [
       "Yuxing Peng",
       "Alexander J. Pak",
@@ -1652,6 +1698,7 @@
     "publication_year": 2025,
     "publication_date": "2025-01-01",
     "source_type": "journal",
+    "pdf_url": "https://biblio.ugent.be/publication/01K07391FQ3W8NMEEWMCAWW4DA/file/01K073AAKVJQ9Q34YP290ZCQJR.pdf",
     "authors": [
       "Yannick De Koninck",
       "Charles Caër",
@@ -1688,7 +1735,8 @@
       "Optics",
       "Physics"
     ],
-    "abstract": ""
+    "abstract": "This paper presents the successful fabrication of electrically driven gallium arsenide (GaAs) nano-ridge laser diodes on 300-mm silicon wafers using a novel integration technique known as nano-ridge engineering (NRE). This approach addresses the critical need for scalable, CMOS-integrated light sources in silicon photonics, which is essential for advancing optical communication and sensing technologies. The GaAs nano-ridge waveguides, featuring embedded p–i–n diodes and InGaAs quantum wells, were grown with high quality, achieving room-temperature continuous-wave lasing at approximately 1,020 nm across more than 300 devices. Key performance metrics include threshold currents as low as 5 mA, output powers exceeding 1 mW, and laser linewidths down to 46 MHz, with operational stability up to 55 °C. The NRE technique effectively reduces threading dislocation density, enhancing device reliability and performance. This work marks a significant milestone towards the monolithic integration of laser diodes in silicon photonics platforms, paving the way for cost-effective, high-volume applications in optical interconnects and sensors. The findings underscore the potential of NRE as a viable solution for overcoming existing barriers in the integration of III–V materials with silicon technology.",
+    "abstract_recovery_method": "gpt_generated_from_pdf"
   },
   {
     "id": "https://openalex.org/W4384625456",
@@ -1696,6 +1744,7 @@
     "publication_year": 2024,
     "publication_date": "2024-12-27",
     "source_type": "journal",
+    "pdf_url": "https://doi.org/10.1145/3700599",
     "authors": [
       "Anthony Francis",
       "Claudia Pérez-D’Arpino",
@@ -1756,6 +1805,7 @@
     "publication_year": 2022,
     "publication_date": "2022-08-26",
     "source_type": "journal",
+    "pdf_url": "https://www.melba-journal.org/pdf/2022:026.pdf",
     "authors": [
       "Raghav Mehta",
       "Angelos Filos",
@@ -1816,6 +1866,7 @@
     "publication_year": 2021,
     "publication_date": "2021-05-17",
     "source_type": "journal",
+    "pdf_url": "https://www.nature.com/articles/s42003-021-02095-0.pdf",
     "authors": [
       "Mariana Galvão Ferrarini",
       "Avantika Lal",
@@ -1864,6 +1915,7 @@
     "publication_year": 2022,
     "publication_date": "2022-09-16",
     "source_type": "journal",
+    "pdf_url": "https://gmd.copernicus.org/articles/15/6985/2022/gmd-15-6985-2022.pdf",
     "authors": [
       "M. A. Giorgetta",
       "William Sawyer",
@@ -1919,6 +1971,7 @@
     "publication_year": 2024,
     "publication_date": "2024-08-27",
     "source_type": "journal",
+    "pdf_url": "https://www.nature.com/articles/s43247-024-01626-x.pdf",
     "authors": [
       "Wilco Hazeleger",
       "Jerom Aerts",
@@ -1960,7 +2013,8 @@
       "Physics",
       "Astronomy"
     ],
-    "abstract": ""
+    "abstract": "Digital twins of the Earth serve as digital representations of the Earth system, designed to monitor, forecast, and assess both environmental conditions and the impacts of human activities. These systems aim to enhance decision-making regarding environmental challenges by allowing users to interact with and analyze the Earth system. The paper emphasizes the necessity of incorporating human dimensions within digital twins to accurately reflect human impacts and responses, as well as to guide responsible governance and use of information derived from these systems. The authors argue that understanding human values and societal organization is crucial for effective climate action, especially as individuals increasingly experience the direct effects of climate change. The paper highlights the urgency of climate action and the need for resilience-building strategies that address both environmental and social inequalities. It critiques current climate information practices for their limitations in quantifying societal responses and uncertainties, advocating for a more integrated approach that combines physical climate data with insights into human behavior. By fostering a collaborative relationship between humans and digital twins, the authors propose that these systems can empower individuals and communities to engage in effective climate action and policy-making.",
+    "abstract_recovery_method": "gpt_generated_from_pdf"
   },
   {
     "id": "https://openalex.org/W4200166884",
@@ -1968,6 +2022,7 @@
     "publication_year": 2021,
     "publication_date": "2021-12-08",
     "source_type": "journal",
+    "pdf_url": "https://doi.org/10.1051/0004-6361/202141681",
     "authors": [
       "Adam Ginsburg",
       "T. Csengeri",
@@ -2026,6 +2081,7 @@
     "publication_year": 2022,
     "publication_date": "2022-06-01",
     "source_type": "conference",
+    "pdf_url": "",
     "authors": [
       "Tim Salzmann",
       "Marco Pavone",
@@ -2058,6 +2114,7 @@
     "publication_year": 2024,
     "publication_date": "2024-02-19",
     "source_type": "journal",
+    "pdf_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1029/2023JD039202",
     "authors": [
       "Fernando Iglesias‐Suarez",
       "Pierre Gentine",
@@ -2092,6 +2149,7 @@
     "publication_year": 2024,
     "publication_date": "2024-04-30",
     "source_type": "journal",
+    "pdf_url": "https://essd.copernicus.org/articles/16/2113/2024/essd-16-2113-2024.pdf",
     "authors": [
       "Björn Stevens",
       "Stefan Adami",
@@ -2160,6 +2218,7 @@
     "publication_year": 2025,
     "publication_date": "2025-08-05",
     "source_type": "journal",
+    "pdf_url": "https://www.nature.com/articles/s44387-025-00019-5.pdf",
     "authors": [
       "Yanbo Zhang",
       "Sumeer Ahmad Khan",
@@ -2196,6 +2255,7 @@
     "publication_year": 2025,
     "publication_date": "2025-07-01",
     "source_type": "journal",
+    "pdf_url": "https://biblio.ugent.be/publication/01K10G0JQH39KX7TFQP6RMR3RQ/file/01K9PCTKF1Z1BQZGJXTAA99A65.pdf",
     "authors": [
       "Malte D. Luecken",
       "Scott Gigante",
@@ -2239,7 +2299,8 @@
       "Biology",
       "Marketing"
     ],
-    "abstract": ""
+    "abstract": "The paper presents the \"Open Problems in Single-Cell Analysis\" platform, an innovative, community-driven benchmarking framework designed to enhance the evaluation and development of single-cell analysis methods. With the rapid proliferation of single-cell analysis tools—over 1700 algorithms published as of February 2024—there is a pressing need for standardized benchmarks to guide users in selecting the most effective methods. Current benchmarks often lack standardization, leading to inconsistent evaluations and inflated performance assessments of new algorithms. The Open Problems platform addresses these issues by providing a living, extensible framework that includes 12 defined tasks, utilizing 81 datasets to evaluate 171 methods. This platform encourages community participation, allowing users to contribute code and insights, thereby ensuring continuous updates and relevance. By promoting a systematic approach to benchmarking, the Open Problems platform aims to raise the standards for method evaluation in single-cell analysis, ultimately fostering innovation and best practices in the field. The authors emphasize the importance of community involvement and the need for benchmarks that are independent of method development to provide unbiased assessments.",
+    "abstract_recovery_method": "gpt_generated_from_pdf"
   },
   {
     "id": "https://openalex.org/W4386507616",
@@ -2247,6 +2308,7 @@
     "publication_year": 2023,
     "publication_date": "2023-09-07",
     "source_type": "journal",
+    "pdf_url": "https://epub.ub.uni-muenchen.de/117281/1/Nimodipine_Reduces_Microvasospasms_After_Experimental_Subarachnoid.pdf",
     "authors": [
       "Julian Schwarting",
       "Biyan Nathanael Harapan",
@@ -2282,6 +2344,7 @@
     "publication_year": 2024,
     "publication_date": "2024-11-02",
     "source_type": "journal",
+    "pdf_url": "https://bmcbioinformatics.biomedcentral.com/counter/pdf/10.1186/s12859-024-05965-6",
     "authors": [
       "Bertil Schmidt",
       "Felix Kallenborn",
@@ -2312,6 +2375,7 @@
     "publication_year": 2024,
     "publication_date": "2024-08-01",
     "source_type": "journal",
+    "pdf_url": "https://doi.org/10.1029/2023ms004021",
     "authors": [
       "Matthias Karlbauer",
       "Nathaniel Cresswell‐Clay",
@@ -2342,6 +2406,7 @@
     "publication_year": 2025,
     "publication_date": "2025-02-11",
     "source_type": "journal",
+    "pdf_url": "https://doi.org/10.1088/2632-2153/adb4ba",
     "authors": [
       "Kuan–Cheng Chen",
       "Tai-Yue Li",
@@ -2379,6 +2444,7 @@
     "publication_year": 2025,
     "publication_date": "2025-09-18",
     "source_type": "journal",
+    "pdf_url": "https://www.nature.com/articles/s41592-025-02819-8.pdf",
     "authors": [
       "Felix Kallenborn",
       "Alejandro Chacón",
@@ -2424,6 +2490,7 @@
     "publication_year": 2024,
     "publication_date": "2024-10-30",
     "source_type": "journal",
+    "pdf_url": "https://doi.org/10.1109/tmi.2024.3485554",
     "authors": [
       "Kelly Payette",
       "Céline Steger",
@@ -2475,6 +2542,7 @@
     "publication_year": 2024,
     "publication_date": "2024-08-15",
     "source_type": "journal",
+    "pdf_url": "https://iopscience.iop.org/article/10.1088/1741-4326/ad2fe9/pdf",
     "authors": [
       "C. T. Holcomb",
       "Joseph Abbate",
@@ -2530,6 +2598,7 @@
     "publication_year": 2025,
     "publication_date": "2025-04-01",
     "source_type": "journal",
+    "pdf_url": "https://doi.org/10.1029/2024ms004272",
     "authors": [
       "Gunnar Behrens",
       "Tom Beucler",
@@ -2563,6 +2632,7 @@
     "publication_year": 2025,
     "publication_date": "2025-09-05",
     "source_type": "journal",
+    "pdf_url": "https://doi.org/10.1088/2632-2153/ae040b",
     "authors": [
       "M. J. Messerly",
       "Sakib Matin",
@@ -2596,6 +2666,7 @@
     "publication_year": 2020,
     "publication_date": "2020-08-25",
     "source_type": "journal",
+    "pdf_url": "http://link.aps.org/pdf/10.1103/PhysRevD.102.034507",
     "authors": [
       "Nolan Miller",
       "Henry Monge-Camacho",
@@ -2640,6 +2711,7 @@
     "publication_year": 2021,
     "publication_date": "2021-11-10",
     "source_type": "journal",
+    "pdf_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/8654209",
     "authors": [
       "Leonardo Solis-Vasquez",
       "Andreas F. Tillack",
@@ -2672,7 +2744,8 @@
       "Nursing",
       "Marketing"
     ],
-    "abstract": ""
+    "abstract": "",
+    "abstract_recovery_method": "not_recovered"
   },
   {
     "id": "https://openalex.org/W3113347918",
@@ -2680,6 +2753,7 @@
     "publication_year": 2021,
     "publication_date": "2021-10-01",
     "source_type": "conference",
+    "pdf_url": "https://arxiv.org/pdf/2012.03918",
     "authors": [
       "Mark Boss",
       "Raphael Braun",
@@ -2718,6 +2792,7 @@
     "publication_year": 2021,
     "publication_date": "2021-10-01",
     "source_type": "conference",
+    "pdf_url": "",
     "authors": [
       "James Herman",
       "Jonathan Francis",
@@ -2752,6 +2827,7 @@
     "publication_year": 2021,
     "publication_date": "2021-03-24",
     "source_type": "journal",
+    "pdf_url": "http://link.aps.org/pdf/10.1103/PhysRevD.103.054511",
     "authors": [
       "Nolan Miller",
       "Logan Carpenter",
@@ -2801,6 +2877,7 @@
     "publication_year": 2023,
     "publication_date": "2023-11-29",
     "source_type": "journal",
+    "pdf_url": "http://link.aps.org/pdf/10.1103/PhysRevD.108.L091505",
     "authors": [
       "Thomas Appelquist",
       "Richard C. Brower",
@@ -2852,6 +2929,7 @@
     "publication_year": 2023,
     "publication_date": "2023-01-01",
     "source_type": "journal",
+    "pdf_url": "https://academic.oup.com/database/article-pdf/doi/10.1093/database/baad005/49446600/baad005.pdf",
     "authors": [
       "Robert Leaman",
       "Rezarta Islamaj",
@@ -2904,6 +2982,7 @@
     "publication_year": 2024,
     "publication_date": "2024-09-04",
     "source_type": "journal",
+    "pdf_url": "http://link.aps.org/pdf/10.1103/PhysRevD.110.054501",
     "authors": [
       "R. C. Brower",
       "Evan K. Owen",
@@ -2945,6 +3024,7 @@
     "publication_year": 2024,
     "publication_date": "2024-11-18",
     "source_type": "journal",
+    "pdf_url": "https://www.frontiersin.org/journals/marine-science/articles/10.3389/fmars.2024.1443284/pdf",
     "authors": [
       "Enrique Ãlvarez Fanjul",
       "Stefania Angela Ciliberti",
@@ -3002,6 +3082,7 @@
     "publication_year": 2021,
     "publication_date": "2021-07-21",
     "source_type": "journal",
+    "pdf_url": "https://arxiv.org/pdf/2012.07635",
     "authors": [
       "Marvin Geiselhart",
       "Ahmed Elkelesh",
@@ -3042,6 +3123,7 @@
     "publication_year": 2023,
     "publication_date": "2023-06-29",
     "source_type": "journal",
+    "pdf_url": "https://epub.ub.uni-muenchen.de/117282/1/Pericytes_Are_Not_Associated_With_Reduced_Capillary_Perfusion_After.pdf",
     "authors": [
       "Julian Schwarting",
       "Katrin Nehrkorn",
@@ -3079,6 +3161,7 @@
     "publication_year": 2023,
     "publication_date": "2023-12-14",
     "source_type": "journal",
+    "pdf_url": "",
     "authors": [
       "Nesara Eranna Bethur",
       "Anthony Agnesina",
@@ -3109,6 +3192,7 @@
     "publication_year": 2024,
     "publication_date": "2024-03-18",
     "source_type": "journal",
+    "pdf_url": "https://link.springer.com/content/pdf/10.1007/s11548-023-03049-z.pdf",
     "authors": [
       "Chen Shen",
       "Holger R. Roth",
@@ -3145,6 +3229,7 @@
     "publication_year": 2025,
     "publication_date": "2025-01-01",
     "source_type": "journal",
+    "pdf_url": "",
     "authors": [
       "Xuan Zhang",
       "Limei Wang",
@@ -3184,7 +3269,8 @@
       "Psychology",
       "Quantum mechanics"
     ],
-    "abstract": ""
+    "abstract": "",
+    "abstract_recovery_method": "not_recovered"
   },
   {
     "id": "https://openalex.org/W4413093915",
@@ -3192,6 +3278,7 @@
     "publication_year": 2025,
     "publication_date": "2025-08-09",
     "source_type": "journal",
+    "pdf_url": "https://www.nature.com/articles/s41467-025-62373-x.pdf",
     "authors": [
       "Ezequiel de la Rosa",
       "Mauricio Reyes",
@@ -3242,7 +3329,8 @@
       "Physics",
       "Thermodynamics"
     ],
-    "abstract": ""
+    "abstract": "of algorithmic solutions stratiﬁed by network architecture, loss function, and input modalities.C Challenge leaderboard stratiﬁed by network architecture, loss function, and input modalities. CE Cross- entropy. Article https://doi.org/10.1038/s41467-025-62373-x Nature Communications| (2025) 16:7357 3 However, we chose to disregard this factor because the model demonstrated strong generalization abilities to scans from an entirely new center. Can DeepISLES identify stroke lesions of variable size? We test DeepISLES performance over lesions smaller than 5 ml, lesions larger than or equal to 5 ml but smaller than 20 ml, and lesions larger than or equal to 20 ml. The performance metrics over these groups are shown in Fig. 2(B). The relationship between lesion size and metrics like Dice, AVD, and ALD is anticipated; larger lesions typically yield higher Dice values, while AVD and ALD tend to increase with lesion size. Despite this, DeepISLES demonstrates strong generalization performance Fig. 2 | Test set performance metrics obtained byDeepISLES. A Performance by imaging center. Data is grouped by the center where the images come from (#1, #2, or #3) and by a seen or unseen label indicating if images from the same center were used for training the models. B Performance by lesion size. C Performance by stroke phase (acute or sub-acute).D Performance by the stroke phase (acute or sub- acute) grouped by lesion size. E Performance by stroke pattern subgroups, including single vessel infarcts, scattered infarcts based on micro-occlusions, and single vessel infarcts with accompanying scattered infarcts. All boxplots are based on a sample size of N = 150. Boxes show the interquartile range (IQR; 25th–75th percentiles), the center line marks the median, whiskers span values within",
+    "abstract_recovery_method": "exact_from_pdf"
   },
   {
     "id": "https://openalex.org/W4413037896",
@@ -3250,6 +3338,7 @@
     "publication_year": 2025,
     "publication_date": "2025-01-01",
     "source_type": "journal",
+    "pdf_url": "https://pubs.rsc.org/en/content/articlepdf/2025/dd/d5dd00085h",
     "authors": [
       "Sakib Matin",
       "Alice E. A. Allen",
@@ -3286,6 +3375,7 @@
     "publication_year": 2021,
     "publication_date": "2021-07-06",
     "source_type": "journal",
+    "pdf_url": "https://doi.org/10.1016/j.neuroimage.2021.118367",
     "authors": [
       "Alberto De Luca",
       "Andrada Ianuș",
@@ -3348,6 +3438,7 @@
     "publication_year": 2021,
     "publication_date": "2021-02-17",
     "source_type": "journal",
+    "pdf_url": "https://zenodo.org/record/6408556",
     "authors": [
       "Fernando Fernandes dos Santos",
       "Marcelo Brandalero",
@@ -3386,6 +3477,7 @@
     "publication_year": 2022,
     "publication_date": "2022-11-03",
     "source_type": "journal",
+    "pdf_url": "https://ieeexplore.ieee.org/ielx7/42/10057585/09925717.pdf",
     "authors": [
       "Alessa Hering",
       "Lasse Hansen",
@@ -3447,6 +3539,7 @@
     "publication_year": 2021,
     "publication_date": "2021-09-29",
     "source_type": "journal",
+    "pdf_url": "",
     "authors": [
       "Ingo Wald",
       "Nate Morrical",
@@ -3485,6 +3578,7 @@
     "publication_year": 2022,
     "publication_date": "2022-08-16",
     "source_type": "journal",
+    "pdf_url": "",
     "authors": [
       "Stefano Cioni",
       "Xingqin Lin",
@@ -3521,6 +3615,7 @@
     "publication_year": 2022,
     "publication_date": "2022-02-23",
     "source_type": "journal",
+    "pdf_url": "https://ieeexplore.ieee.org/ielx7/5992/9789490/09720179.pdf",
     "authors": [
       "Stefan Zellmann",
       "Daniel Seifried",
@@ -3565,6 +3660,7 @@
     "publication_year": 2023,
     "publication_date": "2023-05-01",
     "source_type": "journal",
+    "pdf_url": "https://centaur.reading.ac.uk/114091/1/Hoefler%20et%20al.%20-%202023%20-%20Earth%20Virtualization%20Engines%20A%20Technical%20Perspect.pdf",
     "authors": [
       "Torsten Hoefler",
       "Björn Stevens",
@@ -3620,6 +3716,7 @@
     "publication_year": 2020,
     "publication_date": "2020-01-01",
     "source_type": "journal",
+    "pdf_url": "https://doi.org/10.4000/echogeo.18949",
     "authors": [
       "Valérie November",
       "Alice Azémar",
@@ -3649,6 +3746,7 @@
     "publication_year": 2024,
     "publication_date": "2024-04-04",
     "source_type": "journal",
+    "pdf_url": "https://aacrjournals.org/cancerdiscovery/article-pdf/14/4/663/3434678/663.pdf",
     "authors": [
       "Richard J. Gilbertson",
       "Sam Behjati",
@@ -3704,6 +3802,7 @@
     "publication_year": 2025,
     "publication_date": "2025-02-27",
     "source_type": "journal",
+    "pdf_url": "https://infoscience.epfl.ch/handle/20.500.14299/247814",
     "authors": [
       "Minjie Chen",
       "Han Cui",
@@ -3737,6 +3836,7 @@
     "publication_year": 2024,
     "publication_date": "2024-03-28",
     "source_type": "journal",
+    "pdf_url": "",
     "authors": [
       "Yen-Hsiang Huang",
       "Sai Pentapati",
@@ -3763,6 +3863,7 @@
     "publication_year": 2020,
     "publication_date": "2020-08-26",
     "source_type": "journal",
+    "pdf_url": "",
     "authors": [
       "Ingo Wald",
       "Nate Morrical",
@@ -3804,6 +3905,7 @@
     "publication_year": 2021,
     "publication_date": "2021-10-01",
     "source_type": "conference",
+    "pdf_url": "https://arxiv.org/pdf/2103.16130",
     "authors": [
       "Ji-Woong Choi",
       "Ismail Elezi",
@@ -3837,6 +3939,7 @@
     "publication_year": 2021,
     "publication_date": "2021-10-01",
     "source_type": "conference",
+    "pdf_url": "",
     "authors": [
       "Siva Karthik Mustikovela",
       "Shalini De Mello",
@@ -3875,6 +3978,7 @@
     "publication_year": 2022,
     "publication_date": "2022-03-01",
     "source_type": "journal",
+    "pdf_url": "https://ieeexplore.ieee.org/ielx7/5992/9789490/09745399.pdf",
     "authors": [
       "John E. Stone",
       "Kevin Griffin",
@@ -3912,6 +4016,7 @@
     "publication_year": 2021,
     "publication_date": "2021-12-10",
     "source_type": "journal",
+    "pdf_url": "https://www.osti.gov/servlets/purl/1855669",
     "authors": [
       "Emmanuel Agullo",
       "Mirco Altenbernd",
@@ -3975,6 +4080,7 @@
     "publication_year": 2020,
     "publication_date": "2020-10-27",
     "source_type": "journal",
+    "pdf_url": "",
     "authors": [
       "Biagio Cosenza",
       "Nikita Popov",
@@ -4010,7 +4116,8 @@
       "Computer network",
       "Linguistics"
     ],
-    "abstract": ""
+    "abstract": "",
+    "abstract_recovery_method": "not_recovered"
   },
   {
     "id": "https://openalex.org/W3187745473",
@@ -4018,6 +4125,7 @@
     "publication_year": 2021,
     "publication_date": "2021-08-03",
     "source_type": "journal",
+    "pdf_url": "",
     "authors": [
       "Arkadiusz Sitek",
       "Sangtae Ahn",
@@ -4052,7 +4160,8 @@
       "Operating system",
       "Database"
     ],
-    "abstract": ""
+    "abstract": "",
+    "abstract_recovery_method": "not_recovered"
   },
   {
     "id": "https://openalex.org/W4396919283",
@@ -4060,6 +4169,7 @@
     "publication_year": 2024,
     "publication_date": "2024-05-15",
     "source_type": "journal",
+    "pdf_url": "https://arxiv.org/pdf/2405.14900",
     "authors": [
       "K. Schmidt",
       "Benjamin Bearce",
@@ -4097,7 +4207,8 @@
       "Federated learning",
       "Algorithm"
     ],
-    "abstract": ""
+    "abstract": "The 2022 ACR-NCI-NVIDIA Federated Learning Challenge focused on the automated classification of breast density using federated learning (FL) techniques. Accurate breast density assessment is crucial for evaluating breast cancer risk, yet traditional AI models struggle to generalize across different mammography systems. This challenge aimed to explore FL methodologies by allowing participants to develop algorithms that could operate on diverse datasets from three simulated medical facilities without sharing sensitive data. The challenge ran from June 15 to September 5, 2022, attracting seven finalists globally. The winning submission achieved a linear kappa score of 0.653 on the challenge test data and 0.413 on an external dataset, demonstrating competitive performance compared to centrally trained models. The challenge architecture utilized a cloud-based environment, enabling participants to submit docker containers for automated FL runs. Results indicated that FL can enhance model generalizability in medical applications, addressing biases associated with single-institution data. The findings contribute to ongoing research in FL methodologies, emphasizing the potential of decentralized training in improving AI applications in healthcare. Future implications include refining FL techniques to further enhance accuracy and applicability across diverse patient populations and imaging technologies.",
+    "abstract_recovery_method": "gpt_generated_from_pdf"
   },
   {
     "id": "https://openalex.org/W4404059521",
@@ -4105,6 +4216,7 @@
     "publication_year": 2024,
     "publication_date": "2024-11-05",
     "source_type": "journal",
+    "pdf_url": "http://link.aps.org/pdf/10.1103/PhysRevD.110.095001",
     "authors": [
       "R. C. Brower",
       "Chris Culver",
@@ -4151,6 +4263,7 @@
     "publication_year": 2025,
     "publication_date": "2025-01-09",
     "source_type": "journal",
+    "pdf_url": "https://www.osti.gov/biblio/2506860",
     "authors": [
       "Yanfei Guo",
       "Ken Raffenetti",
@@ -4207,6 +4320,7 @@
     "publication_year": 2022,
     "publication_date": "2022-06-09",
     "source_type": "journal",
+    "pdf_url": "http://link.aps.org/pdf/10.1103/PhysRevC.105.065203",
     "authors": [
       "Jin-Chen He",
       "David Brantley",
@@ -4248,6 +4362,7 @@
     "publication_year": 2022,
     "publication_date": "2022-01-01",
     "source_type": "journal",
+    "pdf_url": "",
     "authors": [
       "Michael Lutter",
       "Boris Belousov",
@@ -4284,6 +4399,7 @@
     "publication_year": 2022,
     "publication_date": "2022-05-16",
     "source_type": "conference",
+    "pdf_url": "https://pos.sissa.it/396/081/pdf",
     "authors": [
       "Aaron S. Meyer",
       "Evan Berkowitz",
@@ -4328,6 +4444,7 @@
     "publication_year": 2022,
     "publication_date": "2022-02-09",
     "source_type": "journal",
+    "pdf_url": "https://link.springer.com/content/pdf/10.1007/s41781-022-00080-8.pdf",
     "authors": [
       "Hendrik Schwanekamp",
       "Ramona Hohl",
@@ -4376,6 +4493,7 @@
     "publication_year": 2023,
     "publication_date": "2023-01-01",
     "source_type": "journal",
+    "pdf_url": "https://academic.oup.com/database/article-pdf/doi/10.1093/database/baac108/49085039/baac108.pdf",
     "authors": [
       "Davy Weissenbacher",
       "Karen O’Connor",
@@ -4428,6 +4546,7 @@
     "publication_year": 2022,
     "publication_date": "2022-05-01",
     "source_type": "conference",
+    "pdf_url": "",
     "authors": [
       "義裕 平居",
       "Amir Raoofy",
@@ -4467,6 +4586,7 @@
     "publication_year": 2021,
     "publication_date": "2021-03-26",
     "source_type": "journal",
+    "pdf_url": "https://doi.org/10.12688/f1000research.51477.1",
     "authors": [
       "Ann M. Mc Cartney",
       "Medhat Mahmoud",
@@ -4526,6 +4646,7 @@
     "publication_year": 2024,
     "publication_date": "2024-04-03",
     "source_type": "journal",
+    "pdf_url": "https://gmd.copernicus.org/articles/17/2493/2024/gmd-17-2493-2024.pdf",
     "authors": [
       "Justin L. Willson",
       "Kevin A. Reed",
@@ -4587,6 +4708,7 @@
     "publication_year": 2024,
     "publication_date": "2024-08-07",
     "source_type": "journal",
+    "pdf_url": "https://doi.org/10.1016/j.isci.2024.110640",
     "authors": [
       "Nicole Zatorski",
       "Yifei Sun",
@@ -4616,7 +4738,8 @@
       "Genetics",
       "Genome"
     ],
-    "abstract": ""
+    "abstract": "",
+    "abstract_recovery_method": "not_recovered"
   },
   {
     "id": "https://openalex.org/W4402163945",
@@ -4624,6 +4747,7 @@
     "publication_year": 2024,
     "publication_date": "2024-08-31",
     "source_type": "journal",
+    "pdf_url": "https://www.melba-journal.org/pdf/2024:019.pdf",
     "authors": [
       "Nancy R. Newlin",
       "Kurt G. Schilling",
@@ -4684,6 +4808,7 @@
     "publication_year": 2024,
     "publication_date": "2024-12-18",
     "source_type": "journal",
+    "pdf_url": "https://link.springer.com/content/pdf/10.1007/s42421-024-00115-z.pdf",
     "authors": [
       "S. Travis Waller",
       "Amalia Polydoropoulou",
@@ -4719,6 +4844,7 @@
     "publication_year": 2025,
     "publication_date": "2025-01-01",
     "source_type": "journal",
+    "pdf_url": "https://arxiv.org/pdf/2505.17239",
     "authors": [
       "Zhou Hongjian",
       "Haoyu Yang",
@@ -4762,6 +4888,7 @@
     "publication_year": 2022,
     "publication_date": "2022-06-01",
     "source_type": "conference",
+    "pdf_url": "",
     "authors": [
       "Samarth Sinha",
       "Karsten Roth",
@@ -4804,6 +4931,7 @@
     "publication_year": 2021,
     "publication_date": "2021-10-01",
     "source_type": "conference",
+    "pdf_url": "https://figshare.com/articles/conference_contribution/Dual_Contrastive_Loss_and_Attention_for_GANs/24613725",
     "authors": [
       "Ning Yu",
       "Guilin Liu",
@@ -4845,6 +4973,7 @@
     "publication_year": 2022,
     "publication_date": "2022-03-04",
     "source_type": "journal",
+    "pdf_url": "https://www.mdpi.com/2073-4441/14/5/810/pdf?version=1646640053",
     "authors": [
       "Johannes Lawen",
       "K. Lawen",
@@ -4877,6 +5006,7 @@
     "publication_year": 2023,
     "publication_date": "2023-06-30",
     "source_type": "journal",
+    "pdf_url": "https://ieeexplore.ieee.org/ielx7/42/10168838/10169005.pdf",
     "authors": [
       "Holger R. Roth",
       "Nicola Rieke",
@@ -4913,6 +5043,7 @@
     "publication_year": 2024,
     "publication_date": "2024-02-13",
     "source_type": "journal",
+    "pdf_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/cpe.8037",
     "authors": [
       "Ravil Dorozhinskii",
       "Gonzalo Brito Gadeschi",
@@ -4933,6 +5064,7 @@
     "publication_year": 2024,
     "publication_date": "2024-07-15",
     "source_type": "journal",
+    "pdf_url": "",
     "authors": [
       "Alper Sahistan",
       "Serkan Demirci",
@@ -4964,6 +5096,7 @@
     "publication_year": 2024,
     "publication_date": "2024-12-27",
     "source_type": "journal",
+    "pdf_url": "",
     "authors": [
       "Zhenkun Lin",
       "Genggeng Liu",
@@ -4994,6 +5127,7 @@
     "publication_year": 2025,
     "publication_date": "2025-02-21",
     "source_type": "journal",
+    "pdf_url": "",
     "authors": [
       "Sarah Carlon",
       "Jessica Zoe Zanuttini",
@@ -5019,6 +5153,7 @@
     "publication_year": 2026,
     "publication_date": "2026-01-01",
     "source_type": "journal",
+    "pdf_url": "https://doi.org/10.1109/ojits.2026.3660686",
     "authors": [
       "Yuan Gao",
       "M. Piccinini",
@@ -5070,6 +5205,7 @@
     "publication_year": 2025,
     "publication_date": "2025-10-16",
     "source_type": "journal",
+    "pdf_url": "",
     "authors": [
       "Gregor Daiß",
       "Patrick Diehl",
@@ -5117,6 +5253,7 @@
     "publication_year": 2021,
     "publication_date": "2021-09-03",
     "source_type": "journal",
+    "pdf_url": "https://doi.org/10.12688/f1000research.51477.2",
     "authors": [
       "Ann M. Mc Cartney",
       "Medhat Mahmoud",
@@ -5177,6 +5314,7 @@
     "publication_year": 2022,
     "publication_date": "2022-02-04",
     "source_type": "journal",
+    "pdf_url": "",
     "authors": [
       "Daniel Jünger",
       "Robin Kobus",
@@ -5198,7 +5336,8 @@
       "Computational science",
       "Programming language"
     ],
-    "abstract": ""
+    "abstract": "",
+    "abstract_recovery_method": "not_recovered"
   },
   {
     "id": "https://openalex.org/W4312349889",
@@ -5206,6 +5345,7 @@
     "publication_year": 2022,
     "publication_date": "2022-08-29",
     "source_type": "conference",
+    "pdf_url": "",
     "authors": [
       "Daniel Schäufele",
       "Guillermo Marcus",
@@ -5244,6 +5384,7 @@
     "publication_year": 2024,
     "publication_date": "2024-01-01",
     "source_type": "journal",
+    "pdf_url": "",
     "authors": [
       "Lorenzo Maggi",
       "Aloïs Herzog",
@@ -5271,6 +5412,7 @@
     "publication_year": 2021,
     "publication_date": "2021-07-12",
     "source_type": "journal",
+    "pdf_url": "http://www.pubvet.com.br/uploads/2eb61d5614c4a6802ff27b9e45edbeda.pdf",
     "authors": [
       "Ronaldo José Piccoli",
       "Ronaldo José Piccoli",
@@ -5291,6 +5433,7 @@
     "publication_year": 2026,
     "publication_date": "2026-02-27",
     "source_type": "journal",
+    "pdf_url": "https://research.wur.nl/en/publications/pystepspysteps",
     "authors": [
       "Seppo Pulkkinen",
       "Daniele Nerini",
@@ -5350,6 +5493,7 @@
     "publication_year": 2022,
     "publication_date": "2022-02-09",
     "source_type": "journal",
+    "pdf_url": "http://link.aps.org/pdf/10.1103/PhysRevD.105.034505",
     "authors": [
       "Thomas Appelquist",
       "Richard C. Brower",
@@ -5395,6 +5539,7 @@
     "publication_year": 2021,
     "publication_date": "2021-04-30",
     "source_type": "journal",
+    "pdf_url": "",
     "authors": [
       "Оxana Tsigengagel",
       "Natalya Glushkova",
@@ -5429,6 +5574,7 @@
     "publication_year": 2021,
     "publication_date": "2021-10-07",
     "source_type": "conference",
+    "pdf_url": "",
     "authors": [
       "Despoina Paschalidou",
       "Amlan Kar",
@@ -5472,6 +5618,7 @@
     "publication_year": 2022,
     "publication_date": "2022-03-31",
     "source_type": "journal",
+    "pdf_url": "https://periodicorease.pro.br/rease/article/download/4731/1802",
     "authors": [
       "Bruna Nair Franco",
       "Dilmara Pereira",
@@ -5496,6 +5643,7 @@
     "publication_year": 2023,
     "publication_date": "2023-01-01",
     "source_type": "journal",
+    "pdf_url": "http://www.saber.ula.ve/bitstream/123456789/49826/1/documento_1.pdf",
     "authors": [
       "Manuel Cancio"
     ],
@@ -5520,6 +5668,7 @@
     "publication_year": 2026,
     "publication_date": "2026-01-01",
     "source_type": "journal",
+    "pdf_url": "https://arxiv.org/pdf/2411.11547",
     "authors": [
       "Bertil Schmidt",
       "Felix Kallenborn",
@@ -5546,6 +5695,7 @@
     "publication_year": 2025,
     "publication_date": "2025-01-21",
     "source_type": "journal",
+    "pdf_url": "",
     "authors": [
       "Abdul Mannan Baig",
       "Sandy Rosko",
@@ -5581,6 +5731,7 @@
     "publication_year": 2025,
     "publication_date": "2025-08-13",
     "source_type": "journal",
+    "pdf_url": "https://doi.org/10.1016/j.atech.2025.101298",
     "authors": [
       "Emanuele Antonecchia",
       "Giancarlo Pagnani",
@@ -5605,7 +5756,8 @@
       "Biochemistry",
       "Pure mathematics"
     ],
-    "abstract": ""
+    "abstract": "",
+    "abstract_recovery_method": "not_recovered"
   },
   {
     "id": "https://openalex.org/W4414909962",
@@ -5613,6 +5765,7 @@
     "publication_year": 2025,
     "publication_date": "2025-10-07",
     "source_type": "journal",
+    "pdf_url": "https://doi.org/10.1177/10564926251364213",
     "authors": [
       "Cynthia V. Fukami",
       "Aimee L. Hamilton",
@@ -5665,6 +5818,7 @@
     "publication_year": 2025,
     "publication_date": "2025-11-01",
     "source_type": "journal",
+    "pdf_url": "https://www.sciencedirect.com/science/article/pii/S0885230825001263",
     "authors": [
       "Samuele Cornell",
       "Christoph Boeddeker",
@@ -5704,7 +5858,8 @@
       "Natural language processing",
       "Language model"
     ],
-    "abstract": ""
+    "abstract": "",
+    "abstract_recovery_method": "not_recovered"
   },
   {
     "id": "https://openalex.org/W4416668112",
@@ -5712,6 +5867,7 @@
     "publication_year": 2025,
     "publication_date": "2025-11-21",
     "source_type": "journal",
+    "pdf_url": "",
     "authors": [
       "Samantha Vlcek",
       "John Forster",
@@ -5754,6 +5910,7 @@
     "publication_year": 2025,
     "publication_date": "2025-12-21",
     "source_type": "journal",
+    "pdf_url": "https://www.melba-journal.org/pdf/2025:034.pdf",
     "authors": [
       "Lasse Hansen",
       "Wiebke Heyer",
@@ -5815,6 +5972,7 @@
     "publication_year": 2025,
     "publication_date": "2025-11-13",
     "source_type": "journal",
+    "pdf_url": "",
     "authors": [
       "Julen Urain",
       "Ajay Mandlekar",
@@ -5857,6 +6015,7 @@
     "publication_year": 2026,
     "publication_date": "2026-01-14",
     "source_type": "journal",
+    "pdf_url": "",
     "authors": [
       "Alper Sahistan",
       "Stefan Zellmann",
@@ -5898,6 +6057,7 @@
     "publication_year": 2026,
     "publication_date": "2026-01-01",
     "source_type": "journal",
+    "pdf_url": "",
     "authors": [
       "Bertil Schmidt",
       "Felix Kallenborn",
@@ -5939,6 +6099,7 @@
     "publication_year": 2026,
     "publication_date": "2026-01-01",
     "source_type": "journal",
+    "pdf_url": "https://doi.org/10.1109/ojits.2026.3660686",
     "authors": [
       "Yuan Gao",
       "Mattia Piccinini",
@@ -5990,6 +6151,7 @@
     "publication_year": 2025,
     "publication_date": "2025-11-01",
     "source_type": "journal",
+    "pdf_url": "",
     "authors": [
       "F Limbourg",
       "A Mijuskovic",
