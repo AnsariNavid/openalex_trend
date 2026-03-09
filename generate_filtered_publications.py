@@ -1,10 +1,16 @@
 #!/usr/bin/env python3
-"""Generate filtered publication lists for topic-focused collaboration analysis."""
+"""Step 1: generate filtered publications only.
+
+Filters applied:
+- host institutions
+- date interval (year/date via from/to publication date)
+- source type journal/conference
+- collaboration with German institutes
+"""
 
 from __future__ import annotations
 
 import json
-import os
 import sys
 import time
 from dataclasses import dataclass
@@ -13,10 +19,9 @@ from pathlib import Path
 from typing import Any
 from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode
-from urllib.request import Request, urlopen
+from urllib.request import urlopen
 
 OPENALEX_WORKS_ENDPOINT = "https://api.openalex.org/works"
-OPENAI_CHAT_ENDPOINT = "https://api.openai.com/v1/chat/completions"
 
 
 @dataclass
@@ -26,19 +31,9 @@ class TopicConfig:
     to_date: str
     max_pages: int
     per_page: int
-    topics: list[str]
     results_dir: str
     output_filtered_json: str
-    output_relevant_jsonl: str
-    cheap_model: str
     openalex_api_key: str
-    prompt_config_path: str
-
-
-@dataclass
-class PromptConfig:
-    relevance_system_prompt: str
-    relevance_user_prompt_template: str
 
 
 class ProgressBar:
@@ -63,14 +58,6 @@ def safe_get(url: str, params: dict[str, Any], max_retries: int = 3) -> dict[str
                 raise
             time.sleep(i)
     return {}
-
-
-def safe_post_json(url: str, payload: dict[str, Any], headers: dict[str, str]) -> dict[str, Any]:
-    req = Request(url=url, data=json.dumps(payload).encode("utf-8"), method="POST")
-    for k, v in headers.items():
-        req.add_header(k, v)
-    with urlopen(req, timeout=90) as r:
-        return json.loads(r.read().decode("utf-8"))
 
 
 def add_openalex_auth(params: dict[str, Any], api_key: str) -> dict[str, Any]:
@@ -104,21 +91,9 @@ def load_topic_config(path: str = "topic_config.json") -> TopicConfig:
         to_date=str(raw["to_date"]),
         max_pages=int(raw["max_pages"]),
         per_page=min(200, int(raw["per_page"])),
-        topics=[str(x) for x in raw["topics"]],
         results_dir=str(raw["results_dir"]),
         output_filtered_json=str(raw["output_filtered_json"]),
-        output_relevant_jsonl=str(raw["output_relevant_jsonl"]),
-        cheap_model=str(raw["cheap_model"]),
         openalex_api_key=str(raw.get("openalex_api_key", "")).strip(),
-        prompt_config_path=str(raw["prompt_config_path"]),
-    )
-
-
-def load_prompt_config(path: str) -> PromptConfig:
-    raw = json.loads(Path(path).read_text(encoding="utf-8"))
-    return PromptConfig(
-        relevance_system_prompt=str(raw["relevance_system_prompt"]),
-        relevance_user_prompt_template=str(raw["relevance_user_prompt_template"]),
     )
 
 
@@ -151,6 +126,15 @@ def fetch_works(cfg: TopicConfig, pb: ProgressBar) -> list[dict[str, Any]]:
     return works
 
 
+def has_german_collab(work: dict[str, Any], host_ids: set[str]) -> bool:
+    for a in work.get("authorships", []):
+        for inst in a.get("institutions", []):
+            iid = inst.get("id", "")
+            if iid and iid not in host_ids and inst.get("country_code") == "DE":
+                return True
+    return False
+
+
 def extract_metadata(work: dict[str, Any], host_ids: set[str]) -> dict[str, Any]:
     german = set()
     authors = []
@@ -175,48 +159,6 @@ def extract_metadata(work: dict[str, Any], host_ids: set[str]) -> dict[str, Any]
     }
 
 
-def has_german_collab(work: dict[str, Any], host_ids: set[str]) -> bool:
-    for a in work.get("authorships", []):
-        for inst in a.get("institutions", []):
-            iid = inst.get("id", "")
-            if iid and iid not in host_ids and inst.get("country_code") == "DE":
-                return True
-    return False
-
-
-def llm_relevance(meta: dict[str, Any], cfg: TopicConfig, prompt_cfg: PromptConfig, api_key: str) -> dict[str, Any]:
-    user_prompt = prompt_cfg.relevance_user_prompt_template.format(
-        topics_json=json.dumps(cfg.topics, ensure_ascii=False),
-        title=meta.get("title", ""),
-        abstract=meta.get("abstract", "")[:5000],
-    )
-    payload = {
-        "model": cfg.cheap_model,
-        "temperature": 0,
-        "response_format": {"type": "json_object"},
-        "messages": [
-            {"role": "system", "content": prompt_cfg.relevance_system_prompt},
-            {"role": "user", "content": user_prompt},
-        ],
-    }
-    headers = {"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"}
-    resp = safe_post_json(OPENAI_CHAT_ENDPOINT, payload, headers)
-    content = resp.get("choices", [{}])[0].get("message", {}).get("content", "{}")
-    try:
-        parsed = json.loads(content)
-        if isinstance(parsed, dict):
-            return parsed
-    except json.JSONDecodeError:
-        pass
-    return {"relevant": False, "matched_topics": [], "rationale": "Malformed model output."}
-
-
-def keyword_relevance(meta: dict[str, Any], topics: list[str]) -> dict[str, Any]:
-    text = f"{meta.get('title','')} {meta.get('abstract','')}".lower()
-    matches = [t for t in topics if t.lower() in text]
-    return {"relevant": bool(matches), "matched_topics": matches, "rationale": "Keyword fallback matching."}
-
-
 def main() -> int:
     pb = ProgressBar()
     try:
@@ -224,42 +166,25 @@ def main() -> int:
         cfg = load_topic_config("topic_config.json")
         pb.update("Loading topic config", 1, 1)
 
-        pb.update("Loading prompt config", 0, 1)
-        prompt_cfg = load_prompt_config(cfg.prompt_config_path)
-        pb.update("Loading prompt config", 1, 1)
-
         host_ids = set(cfg.institution_ids)
         works = fetch_works(cfg, pb)
 
-        pb.update("Filtering journal/conference + German collaborations", 0, len(works))
+        pb.update("Filtering journal/conference + German collaborations + year range", 0, len(works))
         filtered: list[dict[str, Any]] = []
         for i, w in enumerate(works, start=1):
             if has_german_collab(w, host_ids):
                 filtered.append(extract_metadata(w, host_ids))
-            pb.update("Filtering journal/conference + German collaborations", i, len(works))
+            pb.update("Filtering journal/conference + German collaborations + year range", i, len(works))
 
-        api_key = os.getenv("OPENAI_API_KEY", "")
-        pb.update("Classifying filtered papers by topics", 0, len(filtered))
-        relevant: list[dict[str, Any]] = []
-        for i, row in enumerate(filtered, start=1):
-            decision = llm_relevance(row, cfg, prompt_cfg, api_key) if api_key else keyword_relevance(row, cfg.topics)
-            if bool(decision.get("relevant")):
-                row["matched_topics"] = decision.get("matched_topics", [])
-                row["rationale"] = decision.get("rationale", "")
-                relevant.append(row)
-            pb.update("Classifying filtered papers by topics", i, len(filtered))
-
-        pb.update("Saving outputs", 0, 1)
+        pb.update("Saving filtered dataset", 0, 1)
         out_dir = Path(cfg.results_dir)
         out_dir.mkdir(parents=True, exist_ok=True)
-        (out_dir / cfg.output_filtered_json).write_text(json.dumps(filtered, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-        with (out_dir / cfg.output_relevant_jsonl).open("w", encoding="utf-8") as f:
-            for row in relevant:
-                f.write(json.dumps(row, ensure_ascii=False) + "\n")
-        pb.update("Saving outputs", 1, 1)
+        out_path = out_dir / cfg.output_filtered_json
+        out_path.write_text(json.dumps(filtered, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+        pb.update("Saving filtered dataset", 1, 1)
 
-        print(f"Filtered dataset saved: {(out_dir / cfg.output_filtered_json).resolve()}")
-        print(f"Relevant list saved: {(out_dir / cfg.output_relevant_jsonl).resolve()}")
+        print(f"Filtered dataset saved: {out_path.resolve()}")
+        print(f"Filtered entries: {len(filtered)}")
         return 0
     except Exception as e:  # noqa: BLE001
         print(f"Error: {e}")

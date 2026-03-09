@@ -106,12 +106,12 @@ python topic_focused_collab_filter.py
 Use this 3-step pipeline:
 
 1. `generate_filtered_publications.py`
-   - Generates:
-     - full filtered dataset JSON (`output_filtered_json`): after journal/conference + German-collaboration filtering.
-     - relevant publications JSONL (`output_relevant_jsonl`): after topic relevance classification.
+   - Generates full filtered dataset JSON (`output_filtered_json`) after journal/conference + German-collaboration + configured date range filtering.
 2. `check_filtered_abstracts.py`
-   - Checks if entries have abstracts and writes `results/abstract_coverage_report.json`.
-3. `write_topic_analysis.py`
+   - Checks abstract availability on the filtered dataset and writes `results/abstract_coverage_report.json`.
+3. `classify_topics_from_filtered.py`
+   - Runs topic relevance classification on filtered entries (typically only entries with abstracts) and writes relevant JSONL (`output_relevant_jsonl`).
+4. `write_topic_analysis.py`
    - Reads the relevant JSONL list and writes analysis markdown (`output_analysis_md`) + `topic_stats.json`.
 
 Run order in terminal:
@@ -119,5 +119,6 @@ Run order in terminal:
 ```bash
 python generate_filtered_publications.py
 python check_filtered_abstracts.py results/filtered_german_collab_dataset.json
+python classify_topics_from_filtered.py
 python write_topic_analysis.py
 ```
