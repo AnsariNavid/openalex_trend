@@ -63,7 +63,7 @@ class ProgressBar:
 def load_config(path: str = "config.json") -> AppConfig:
     p = Path(path)
     if not p.exists():
-        raise ConfigError("config.json not found. Copy from config.example.json first.")
+        raise ConfigError("config.json not found.")
     raw = json.loads(p.read_text(encoding="utf-8"))
 
     required = [
@@ -693,6 +693,7 @@ def main() -> int:
         pb.update("Loading config", 0, 1)
         config = load_config("config.json")
         pb.update("Loading config", 1, 1)
+        print(f"Time period searched: {config.from_date} to {config.to_date}")
 
         host_ids = set(config.institution_ids)
         host_names = fetch_host_institutions(config.institution_ids, config.openalex_api_key, pb)

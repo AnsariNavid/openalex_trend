@@ -113,7 +113,7 @@ def invert_abstract(inverted: dict[str, list[int]] | None) -> str:
 def load_topic_config(path: str = "topic_config.json") -> TopicConfig:
     p = Path(path)
     if not p.exists():
-        raise FileNotFoundError("topic_config.json not found. Copy from topic_config.example.json first.")
+        raise FileNotFoundError("topic_config.json not found.")
     raw = json.loads(p.read_text(encoding="utf-8"))
 
     required = [
@@ -388,6 +388,7 @@ def main() -> int:
         pb.update("Loading topic config", 0, 1)
         cfg = load_topic_config("topic_config.json")
         pb.update("Loading topic config", 1, 1)
+        print(f"Time period searched: {cfg.from_date} to {cfg.to_date}")
 
         pb.update("Loading prompt config", 0, 1)
         prompt_cfg = load_prompt_config(cfg.prompt_config_path)

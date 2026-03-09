@@ -21,7 +21,7 @@ PyCharm-friendly scripts for OpenAlex collaboration analysis.
 
 ## Configuration
 
-Edit `config.json` (or copy from `config.example.json`):
+Edit `config.json`:
 
 - `institution_ids`
 - `from_date`, `to_date`

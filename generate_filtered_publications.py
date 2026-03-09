@@ -165,6 +165,7 @@ def main() -> int:
         pb.update("Loading topic config", 0, 1)
         cfg = load_topic_config("topic_config.json")
         pb.update("Loading topic config", 1, 1)
+        print(f"Time period searched: {cfg.from_date} to {cfg.to_date}")
 
         host_ids = set(cfg.institution_ids)
         works = fetch_works(cfg, pb)

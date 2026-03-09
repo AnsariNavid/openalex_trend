@@ -51,7 +51,7 @@ def search_institutions(query: str, openalex_api_key: str, per_page: int = 10) -
 
 def load_config(path: Path) -> dict[str, Any]:
     if not path.exists():
-        raise FileNotFoundError("config.json not found. Copy config.example.json first.")
+        raise FileNotFoundError("config.json not found.")
     return json.loads(path.read_text(encoding="utf-8"))
 
 
