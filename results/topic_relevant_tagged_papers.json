@@ -30238,5 +30238,3392 @@
     "topic_category": "optics-and-equipment",
     "topic_method": "molecular beam epitaxy",
     "rationale": "The study of thin films and their optical properties relates to precision measurement and materials engineering."
+  },
+  {
+    "id": "https://openalex.org/W4214590964",
+    "title": "Mask-less nano-structuring of hydrogen terminated diamond using localized field emission scanning probe lithography (FE-SPL)",
+    "publication_year": 2022,
+    "publication_date": "2022-02-28",
+    "source_type": "journal",
+    "pdf_url": "",
+    "html_url": "",
+    "authors": [
+      "Steve Yianni",
+      "Martin R. Hofmann",
+      "Alex K. Schenk",
+      "Christoph Reuter",
+      "Ivo W. Rangelow",
+      "C. I. Pakes"
+    ],
+    "german_collaborator_institutes": [
+      "Fraunhofer Institute for Integrated Systems and Device Technology",
+      "Technische Universität Ilmenau"
+    ],
+    "concepts": [
+      "Diamond",
+      "Field electron emission",
+      "Materials science",
+      "Nanolithography",
+      "Optoelectronics",
+      "Lithography",
+      "Micrometer",
+      "Etching (microfabrication)",
+      "Scanning electron microscope",
+      "Nanotechnology",
+      "Nanodiamond",
+      "Optics",
+      "Electron",
+      "Fabrication",
+      "Physics",
+      "Quantum mechanics",
+      "Pathology",
+      "Layer (electronics)",
+      "Alternative medicine",
+      "Medicine"
+    ],
+    "abstract": "Sensing and manipulating a particle's spin promise the development of more energy efficient and ultra-fast devices. Diamond is a promising candidate for spintronics and quantum systems, where nano-structuring of diamond surfaces on nanometer length scales is required. Here, direct-write modification of a diamond surface at sub-50 nm resolution is demonstrated. This is achieved with an atomic force microscope tip used as a spatially localized field emission source or so-called field-emission scanning probe lithography on a sample in ambient conditions, which are rendered conductive only through the surface conductivity of hydrogen-terminated diamond. Mask-less direct structuring of the diamond surface is observed, creating features of depth in the range of 4–8 nm and linewidths of 70–150 nm, as well as the desorption of hydrogen from the surface achieving minimum linewidths of 40 nm. Both the linewidth and depth of etching appear to depend on the energy of emitted electrons and the resulting electron exposure dose. These findings demonstrate the possibility of controllably nano-structuring diamond surfaces with features over micrometer length scales and with sub-50 nm resolution, while held under ambient conditions.",
+    "matched_topics": [
+      "micro- and nanotechnology for precision engineering",
+      "precision measurement",
+      "additive manufacturing"
+    ],
+    "topic_category": "manufacturing-and-micro-nano",
+    "topic_method": "nano-structuring and lithography",
+    "rationale": "The paper discusses nano-structuring techniques relevant to precision engineering and measurement at the nanoscale."
+  },
+  {
+    "id": "https://openalex.org/W4294692051",
+    "title": "Numerical Analysis of Gas Flow Instabilities in Simplified Vertical HVPE GaN Reactors",
+    "publication_year": 2022,
+    "publication_date": "2022-09-02",
+    "source_type": "journal",
+    "pdf_url": "https://www.mdpi.com/2073-4352/12/9/1248/pdf?version=1662698063",
+    "html_url": "https://doi.org/10.3390/cryst12091248",
+    "authors": [
+      "Markus Zenk",
+      "G. Lukin",
+      "D. Bastin",
+      "R. Doradziński",
+      "Franziska C. Beyer",
+      "Elke Meißner",
+      "Jochen Friedrich"
+    ],
+    "german_collaborator_institutes": [
+      "Fraunhofer Institute for Integrated Systems and Device Technology",
+      "Freiberger Compound Materials (Germany)",
+      "Technologiezentrum Halbleitermaterialien"
+    ],
+    "concepts": [
+      "Buoyancy",
+      "Laminar flow",
+      "Mechanics",
+      "Flow (mathematics)",
+      "Baroclinity",
+      "Scaling",
+      "Materials science",
+      "Fluid dynamics",
+      "Mass flow",
+      "Physics",
+      "Geometry",
+      "Mathematics"
+    ],
+    "abstract": "This paper investigates the gas flow and the mass transport in simplified axial-symmetric vertical HVPE reactors for the growth of GaN bulk crystals through numerical simulations. We evaluate the relative significance of different flow and transport phenomena in dependence on the direction of gravity. The performed simulations show that buoyancy effects due to density differences between neighboring gas lines are the main factor causing the deformation of laminar flow patterns and the formation of recirculation cells within the growth zone. Baroclinic instabilities have been identified as the source for these phenomena. In contrast, typical vertical temperature gradients show only a minor impact on the stability of the gas flow within the growth zone in the vicinity of the growing crystal. Based on these results, major differences of the species transport in vertical HVPE reactors, where the flow is parallel or anti-parallel to the direction of gravity, referred to as down-flow and up-flow, respectively, are summarized. The performed analysis of the interplay and relative significance of different flow effects in the HVPE environment allows a general recommendation for reactor design and scaling with respect to stable gas flow conditions within the growth zone.",
+    "matched_topics": [
+      "precision engineering progress",
+      "micro- and nanotechnology for precision engineering"
+    ],
+    "topic_category": "manufacturing-and-micro-nano",
+    "topic_method": "numerical simulations",
+    "rationale": "The study on gas flow in HVPE reactors relates to precision engineering in crystal growth and reactor design."
+  },
+  {
+    "id": "https://openalex.org/W4381805360",
+    "title": "Modelling of the Solidifying Microstructure of Inconel 718: Quasi-Binary Approximation",
+    "publication_year": 2023,
+    "publication_date": "2023-06-22",
+    "source_type": "journal",
+    "pdf_url": "https://www.mdpi.com/2673-3951/4/3/18/pdf?version=1687662272",
+    "html_url": "https://doi.org/10.3390/modelling4030018",
+    "authors": [
+      "Nikolai Kropotin",
+      "Yindong Fang",
+      "Chu Yu",
+      "Martin Seyring",
+      "Katharina Freiberg",
+      "Stephanie Lippmann",
+      "Tatu Pinomaa",
+      "Anssi Laukkanen",
+      "Nikolas Provatas",
+      "P. K. Galenko"
+    ],
+    "german_collaborator_institutes": [
+      "Friedrich Schiller University Jena"
+    ],
+    "concepts": [
+      "Superalloy",
+      "Inconel",
+      "Microstructure",
+      "Materials science",
+      "Supercooling",
+      "Mesoscopic physics",
+      "Phase (matter)",
+      "Thermodynamics",
+      "Eutectic system",
+      "Metastability",
+      "Precipitation",
+      "Alloy",
+      "Metallurgy",
+      "Mechanics",
+      "Condensed matter physics",
+      "Physics",
+      "Meteorology",
+      "Quantum mechanics"
+    ],
+    "abstract": "The prediction of the equilibrium and metastable morphologies during the solidification of Ni-based superalloys on the mesoscopic scale can be performed using phase-field modeling. In the present paper, we apply the phase-field model to simulate the evolution of solidification microstructures depending on undercooling in a quasi-binary approximation. The results of modeling are compared with experimental data obtained on samples of the alloy Inconel 718 (IN718) processed using the electromagnetic leviatation (EML) technique. The final microstructure, concentration profiles of niobium, and the interface-velocity–undercooling relationship predicted by the phase field modeling are in good agreement with the experimental findings. The simulated microstructures and concentration fields can be used as inputs for the simulation of the precipitation of secondary phases.",
+    "matched_topics": [
+      "micro- and nanotechnology for precision engineering",
+      "additive manufacturing"
+    ],
+    "topic_category": "manufacturing-and-micro-nano",
+    "topic_method": "phase-field modeling",
+    "rationale": "The study involves microstructural modeling relevant to precision manufacturing and materials processing."
+  },
+  {
+    "id": "https://openalex.org/W4386887768",
+    "title": "Self-Induced Ultrafast Electron-Hole-Plasma Temperature Oscillations in Nanowire Lasers",
+    "publication_year": 2023,
+    "publication_date": "2023-09-20",
+    "source_type": "journal",
+    "pdf_url": "http://link.aps.org/pdf/10.1103/PhysRevApplied.20.034045",
+    "html_url": "http://dx.doi.org/10.1103/physrevapplied.20.034045",
+    "authors": [
+      "Andreas Thurn",
+      "Jochen Bissinger",
+      "Stefan Meinecke",
+      "Paul Schmiedeke",
+      "Sang Soon Oh",
+      "Weng W. Chow",
+      "Kathy Lüdge",
+      "Gregor Koblmüller",
+      "Jonathan J. Finley"
+    ],
+    "german_collaborator_institutes": [
+      "Technical University of Munich",
+      "Technische Universität Berlin",
+      "Technische Universität Ilmenau"
+    ],
+    "concepts": [
+      "Lasing threshold",
+      "Laser",
+      "Ultrashort pulse",
+      "Nanowire",
+      "Optoelectronics",
+      "Photonics",
+      "Materials science",
+      "Electron",
+      "Plasma",
+      "Phonon",
+      "Semiconductor",
+      "Resonator",
+      "Physics",
+      "Wavelength",
+      "Condensed matter physics",
+      "Optics",
+      "Quantum mechanics"
+    ],
+    "abstract": "Nanowire lasers can be monolithically and site-selectively integrated onto silicon photonic circuits. To assess their full potential for ultrafast optoelectronic devices, a detailed understanding of their lasing dynamics is crucial. However, the roles played by their resonator geometry and the microscopic processes that mediate energy exchange between the photonic, electronic, and phononic subsystems are largely unexplored. Here, we study the dynamics of $\\mathrm{Ga}\\mathrm{As}$-$\\mathrm{Al}\\mathrm{Ga}\\mathrm{As}$ core-shell nanowire lasers at cryogenic temperatures using a combined experimental and theoretical approach. Our results indicate that these NW lasers exhibit sustained intensity oscillations with frequencies ranging from $160\\phantom{\\rule{0.2em}{0ex}}\\text{GHz}$ to $260\\phantom{\\rule{0.2em}{0ex}}\\text{GHz}$. As the underlying physical mechanism, we have identified self-induced electron-hole plasma temperature oscillations resulting from a dynamic competition between photoinduced carrier heating and cooling via phonon scattering. These dynamics are intimately linked to the strong interaction between the lasing mode and the gain material, which arises from the wavelength-scale dimensions of these lasers. We anticipate that our results could lead to optimised approaches for ultrafast intensity and phase modulation of chip-integrated semiconductor lasers at the nanoscale.",
+    "matched_topics": [
+      "optical engineering and precision equipment",
+      "micro- and nanotechnology for precision engineering"
+    ],
+    "topic_category": "optics-and-equipment",
+    "topic_method": "experimental and theoretical approach",
+    "rationale": "The study of nanowire lasers contributes to optical engineering and precision measurement in nanotechnology."
+  },
+  {
+    "id": "https://openalex.org/W4391812584",
+    "title": "Morphological and electrical characterization of gate recessed AlGaN/GaN high electron mobility transistor device by purge-free atomic layer etching",
+    "publication_year": 2024,
+    "publication_date": "2024-02-14",
+    "source_type": "journal",
+    "pdf_url": "https://pubs.aip.org/avs/jva/article-pdf/doi/10.1116/6.0003350/19673187/022604_1_6.0003350.pdf",
+    "html_url": "https://doi.org/10.1116/6.0003350",
+    "authors": [
+      "Christian Miersch",
+      "Sarah Seidel",
+      "Alexander Schmid",
+      "Thomas Fuhs",
+      "Johannes Heitmann",
+      "Franziska C. Beyer"
+    ],
+    "german_collaborator_institutes": [
+      "Fraunhofer Institute for Integrated Systems and Device Technology",
+      "TU Bergakademie Freiberg"
+    ],
+    "concepts": [
+      "Etching (microfabrication)",
+      "Optoelectronics",
+      "Transistor",
+      "Materials science",
+      "Layer (electronics)",
+      "High-electron-mobility transistor",
+      "Characterization (materials science)",
+      "Induced high electron mobility transistor",
+      "Electrical engineering",
+      "Nanotechnology",
+      "Engineering",
+      "Voltage"
+    ],
+    "abstract": "An atomic layer etching (ALE) process without purge has been developed for gate recess etching of AlGaN/GaN high electron mobility transistors (HEMTs). The process consists of repeating ALE cycles where Cl2/BCl3 plasma modifies the surface by chemisorption. The modified layer is removed by the subsequential Ar ion removal step. In this manner, AlGaN/GaN HEMTs with three different gate recess etching depths of (7.3 ± 0.5), (13.6 ± 0.5), and (21.0 ± 0.5) nm were fabricated. The determined etch per cycle (EPC) of ∼0.5 nm corresponding to one unit cell in the c-direction of GaN was constant for all recesses, illustrating the precision and controllability of the developed ALE process. The root-mean-square surface roughness was 0.3 nm for every etching depth, which corresponds to the roughness of the unetched reference. The electrical measurements show a linear dependence between threshold voltage (Vth) and etching depth. An enhancement mode (E-mode) HEMT was successfully achieved. A deeper gate recess than 20 nm leads to an increased channel resistance, lower saturation current, and higher gate leakage. Hence, a compromise between the desired Vth shift and device performance has to be reached. The achieved results of electrical and morphological measurements confirm the great potential of recess etching using the ALE technique with precisely controlled EPC for contact and channel engineering of AlGaN/GaN HEMTs.",
+    "matched_topics": [
+      "micro- and nanotechnology for precision engineering",
+      "precision measurement",
+      "precision manufacturing"
+    ],
+    "topic_category": "manufacturing-and-micro-nano",
+    "topic_method": "atomic layer etching",
+    "rationale": "The paper discusses precision etching techniques relevant to micro/nano technology and precision measurement in semiconductor devices."
+  },
+  {
+    "id": "https://openalex.org/W4391876365",
+    "title": "Low-threshold single ternary GaAsSb nanowire lasers emitting at silicon transparent wavelengths",
+    "publication_year": 2024,
+    "publication_date": "2024-02-12",
+    "source_type": "journal",
+    "pdf_url": "https://pubs.aip.org/aip/apl/article-pdf/doi/10.1063/5.0191070/19676615/071112_1_5.0191070.pdf",
+    "html_url": "https://doi.org/10.1063/5.0191070",
+    "authors": [
+      "Paul Schmiedeke",
+      "Ismael C. Doganlar",
+      "Hyowon W. Jeong",
+      "Markus Döblinger",
+      "Jonathan J. Finley",
+      "Gregor Koblmüller"
+    ],
+    "german_collaborator_institutes": [
+      "Ludwig-Maximilians-Universität München",
+      "Technical University of Munich"
+    ],
+    "concepts": [
+      "Materials science",
+      "Ternary operation",
+      "Optoelectronics",
+      "Nanowire",
+      "Silicon",
+      "Laser",
+      "Wavelength",
+      "Semiconductor laser theory",
+      "Diode",
+      "Optics",
+      "Programming language",
+      "Computer science",
+      "Physics"
+    ],
+    "abstract": "Conventional binary III–V nanowire (NW) lasers face substantial challenges in tuning their lasing emission to silicon transparent wavelengths and require complex quantum heterostructure designs for realizing on-chip integrated nanolasers. Here, an alternative and straightforward approach is reported by developing ternary III–V NW-lasers in the form of surface-passivated GaAsSb NW-lasers grown on silicon. High-quality GaAsSb NW-cavities with high Sb-content (&amp;gt;20%) and extended lengths (&amp;gt;5 μm) are shown to exhibit striking radiative efficiency enhancements (∼200-fold) when passivated by closely lattice-matched InAlGaAs shell layers. Utilizing this core–shell approach, optically pumped lasing is then demonstrated from single GaAsSb NW-lasers with lasing threshold as low as 3.2 μJ/cm2 at temperatures up to 250 K and emission wavelengths of ∼1.1–1.2 μm. Analysis of the optical mode spectra and mode-dependent threshold gain further shows that lasing is induced by the fundamental HE11 modes, and likely even lower thresholds may be achieved by establishing the TE01 mode at increased NW-cavity diameters.",
+    "matched_topics": [
+      "optical engineering and precision equipment",
+      "micro- and nanotechnology for precision engineering"
+    ],
+    "topic_category": "optics-and-equipment",
+    "topic_method": "nanotechnology",
+    "rationale": "The paper discusses GaAsSb nanowire lasers, relevant to optical engineering and nanotechnology in precision applications."
+  },
+  {
+    "id": "https://openalex.org/W4392238806",
+    "title": "The Effect of Stereocomplexation and Crystallinity on the Degradation of Polylactide Nanoparticles",
+    "publication_year": 2024,
+    "publication_date": "2024-02-28",
+    "source_type": "journal",
+    "pdf_url": "https://www.mdpi.com/2079-4991/14/5/440/pdf?version=1709105935",
+    "html_url": "https://doi.org/10.3390/nano14050440",
+    "authors": [
+      "Chuan Yin",
+      "Jenny Hemstedt",
+      "Karl Scheuer",
+      "Maja Struczyńska",
+      "Christine Weber",
+      "Ulrich S. Schubert",
+      "Jörg Bossert",
+      "Klaus D. Jandt"
+    ],
+    "german_collaborator_institutes": [
+      "Friedrich Schiller University Jena"
+    ],
+    "concepts": [
+      "Crystallinity",
+      "Degradation (telecommunications)",
+      "Materials science",
+      "Hydrolysis",
+      "Chemical engineering",
+      "Lactide",
+      "Polyester",
+      "Polymer",
+      "Nanoparticle",
+      "Polymer chemistry",
+      "Nanotechnology",
+      "Chemistry",
+      "Organic chemistry",
+      "Composite material",
+      "Polymerization",
+      "Engineering",
+      "Computer science",
+      "Telecommunications"
+    ],
+    "abstract": "Polymeric nanoparticles (PNPs) are frequently researched and used in drug delivery. The degradation of PNPs is highly dependent on various properties, such as polymer chemical structure, size, crystallinity, and melting temperature. Hence, a precise understanding of PNP degradation behavior is essential for optimizing the system. This study focused on enzymatic hydrolysis as a degradation mechanism by investigation of the degradation of PNP with various crystallinities. The aliphatic polyester polylactide ([C<sub>3</sub>H<sub>4</sub>O<sub>2</sub>]n, PLA) was used as two chiral forms, poly l-lactide (PlLA) and poly d-lactide (PdLA), and formed a unique crystalline stereocomplex (SC). PNPs were prepared via a nanoprecipitation method. In order to further control the crystallinity and melting temperatures of the SC, the polymer poly(3-ethylglycolide) [C<sub>6</sub>H<sub>8</sub>O<sub>4</sub>]n (PEtGly) was synthesized. Our investigation shows that the PNP degradation can be controlled by various chemical structures, crystallinity and stereocomplexation. The influence of proteinase K on PNP degradation was also discussed in this research. AFM did not reveal any changes within the first 24 h but indicated accelerated degradation after 7 days when higher EtGly content was present, implying that lower crystallinity renders the particles more susceptible to hydrolysis. QCM-D exhibited reduced enzyme adsorption and a slower degradation rate in SC-PNPs with lower EtGly contents and higher crystallinities. A more in-depth analysis of the degradation process unveiled that QCM-D detected rapid degradation from the outset, whereas AFM exhibited delayed changes of degradation. The knowledge gained in this work is useful for the design and creation of advanced PNPs with enhanced structures and properties.",
+    "matched_topics": [
+      "micro- and nanotechnology for precision engineering",
+      "precision measurement",
+      "additive manufacturing"
+    ],
+    "topic_category": "manufacturing-and-micro-nano",
+    "topic_method": "nanoprecipitation and enzymatic hydrolysis",
+    "rationale": "The study on polymeric nanoparticles contributes to precision measurement and micro/nano technology, relevant for advanced manufacturing applications."
+  },
+  {
+    "id": "https://openalex.org/W4396596693",
+    "title": "Influence of Grain Size on the Electrochemical Performance of Li<sub>7‐3x</sub>La<sub>3</sub>Zr<sub>2</sub>Al<sub>x</sub>O<sub>12</sub> Solid Electrolyte",
+    "publication_year": 2024,
+    "publication_date": "2024-05-02",
+    "source_type": "journal",
+    "pdf_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/batt.202300370",
+    "html_url": "https://doi.org/10.1002/batt.202300370",
+    "authors": [
+      "Miriam Botros",
+      "Jesús González‐Julián",
+      "Torsten Scherer",
+      "Radian Popescu",
+      "Christoph Loho",
+      "Askar Kilmametov",
+      "Oliver Clemens",
+      "Horst Hahn"
+    ],
+    "german_collaborator_institutes": [
+      "Forschungszentrum Jülich",
+      "Karlsruhe Institute of Technology",
+      "RWTH Aachen University",
+      "Technische Universität Darmstadt",
+      "University of Stuttgart"
+    ],
+    "concepts": [
+      "Grain size",
+      "Electrolyte",
+      "Electrochemistry",
+      "Materials science",
+      "Fast ion conductor",
+      "Chemical engineering",
+      "Chemistry",
+      "Metallurgy",
+      "Electrode",
+      "Physical chemistry",
+      "Engineering"
+    ],
+    "abstract": "Abstract Contemporary Li‐ion batteries are facing substantial challenges like safety and limited energy density. The development of all‐solid‐state battery cells mitigates safety hazards and allows the use of Li‐metal anodes increasing energy density. Garnet‐type solid electrolytes can be vital to achieving an all‐solid‐state cell and an understanding of the influence of its microstructure on the electrochemical performance is crucial for material and cell design. In this work the influence of grain size on the Li‐ion conductivity of Li 7‐3x La 3 Zr 2 Al x O 12 ( x =0.22) is presented. The synthesis and processing procedure allows changing the ceramic grain size, while maintaining the same synthesis parameters, eliminating influences of the synthesis on grain boundary composition. Field assisted sintering technology is a powerful method to obtain dense, fine‐grained ceramics with an optimal grain size of 2–3 μm, where the conductivity is double that of the counterpart (0.7 μm). A total Li‐ion conductivity of 0.43 mS cm −1 and an activation energy of 0.36 eV were achieved. The oxide‐based all‐solid‐state battery cell combining the garnet‐type electrolyte, a Li‐metal anode and a thin‐film LiCoO 2 cathode was assembled and cycled at room temperature for 90 hours. This represents a proof of concept, for the application of oxide‐based electrolytes at ambient temperatures.",
+    "matched_topics": [
+      "micro- and nanotechnology for precision engineering",
+      "precision measurement",
+      "additive manufacturing"
+    ],
+    "topic_category": "manufacturing-and-micro-nano",
+    "topic_method": "material synthesis and processing",
+    "rationale": "The study on grain size in solid electrolytes relates to precision measurement and microstructural control in manufacturing."
+  },
+  {
+    "id": "https://openalex.org/W4399746215",
+    "title": "III-Nitride Magnetron Sputter Epitaxy on Si: Controlling Morphology, Crystal Quality, and Polarity Using Al Seed Layers",
+    "publication_year": 2024,
+    "publication_date": "2024-06-17",
+    "source_type": "journal",
+    "pdf_url": "https://pubs.acs.org/doi/pdf/10.1021/acsami.4c03112",
+    "html_url": "https://doi.org/10.1021/acsami.4c03112",
+    "authors": [
+      "Katrin Pingen",
+      "Niklas Wolff",
+      "Zahra Mohammadian",
+      "Per Sandström",
+      "Susanne Beuer",
+      "Elizabeth von Hauff",
+      "Lorenz Kienle",
+      "Lars Hultman",
+      "Jens Birch",
+      "Ching‐Lien Hsiao",
+      "A. Hinz"
+    ],
+    "german_collaborator_institutes": [
+      "Fraunhofer Institute for Integrated Systems and Device Technology",
+      "Fraunhofer Institute for Organic Electronics, Electron Beam and Plasma Technology",
+      "Kiel University",
+      "TU Dresden"
+    ],
+    "concepts": [
+      "Materials science",
+      "Epitaxy",
+      "Nitride",
+      "Sputter deposition",
+      "Optoelectronics",
+      "Sputtering",
+      "Thin film",
+      "Nanotechnology",
+      "Layer (electronics)"
+    ],
+    "abstract": "Group III-nitride semiconductors have been subject of intensive research, resulting in the maturing of the material system and adoption of III-nitrides in modern optoelectronics and power electronic devices. Defined film polarity is an important aspect of III-nitride epitaxy as the polarity affects the design of electronic devices. Magnetron sputtering is a novel approach for cost-effective epitaxy of III-nitrides nearing the technological maturity needed for device production; therefore, control of film polarity is an important technological milestone. In this study, we show the impact of Al seeding on the AlN/Si interface and resulting changes in crystal quality, film morphology, and polarity of GaN/AlN stacks grown by magnetron sputter epitaxy. X-ray diffraction measurements demonstrate the improvement of the crystal quality of the AlN and subsequently the GaN film by the Al seeding. Nanoscale structural and chemical investigations using scanning transmission electron microscopy reveal the inversion of the AlN film polarity. It is proposed that N-polar growth induced by Al seeding is related to the formation of a polycrystalline oxygen-rich AlN interlayer partially capped by an atomically thin Si-rich layer at the AlN/Si interface. Complementary aqueous KOH etch studies of GaN/AlN stacks demonstrate that purely metal-polar and N-polar layers can be grown on a macroscopic scale by controlling the amount of Al seeding.",
+    "matched_topics": [
+      "optical engineering and precision equipment",
+      "micro- and nanotechnology for precision engineering"
+    ],
+    "topic_category": "optics-and-equipment",
+    "topic_method": "magnetron sputter epitaxy",
+    "rationale": "The study explores advanced epitaxy techniques relevant to precision engineering in semiconductor manufacturing."
+  },
+  {
+    "id": "https://openalex.org/W4403760895",
+    "title": "Prediction of visual outcomes using virtual implantation of a trifocal intraocular lens in presbyopic lens exchange patients",
+    "publication_year": 2024,
+    "publication_date": "2024-10-25",
+    "source_type": "journal",
+    "pdf_url": "",
+    "html_url": "",
+    "authors": [
+      "Steven C. Schallhorn",
+      "Joaquín Fernández",
+      "Hakan Kaymak",
+      "Mario Gerlach",
+      "Friedrich O. Kirchner"
+    ],
+    "german_collaborator_institutes": [
+      "Saarland University"
+    ],
+    "concepts": [
+      "Optometry",
+      "Intraocular lens",
+      "Ophthalmology",
+      "Lens (geology)",
+      "Presbyopia",
+      "Medicine",
+      "Computer science",
+      "Optics",
+      "Physics"
+    ],
+    "abstract": "The device reasonably predicted the pattern of measured variables. VA/CS reduction might be attributed to viewing the objects through a more complex optical system and would need to be accounted for in clinical studies.",
+    "matched_topics": [
+      "optical engineering and precision equipment",
+      "precision measurement"
+    ],
+    "topic_category": "optics-and-equipment",
+    "topic_method": "clinical study and optical prediction",
+    "rationale": "The paper discusses optical systems and measurement predictions, relevant to precision engineering in optical equipment."
+  },
+  {
+    "id": "https://openalex.org/W4380991948",
+    "title": "Comparison of Robot-Assisted and Manual Cannula Insertion in Simulated Big-Bubble Deep Anterior Lamellar Keratoplasty",
+    "publication_year": 2023,
+    "publication_date": "2023-06-16",
+    "source_type": "journal",
+    "pdf_url": "https://www.mdpi.com/2072-666X/14/6/1261/pdf?version=1686912344",
+    "html_url": "https://doi.org/10.3390/mi14061261",
+    "authors": [
+      "Yinzheng Zhao",
+      "Anne-Marie Jablonka",
+      "Niklas A. Maierhofer",
+      "Hessam Roodaki",
+      "Abouzar Eslami",
+      "Mathias Maier",
+      "M. Ali Nasseri",
+      "Daniel Zapp"
+    ],
+    "german_collaborator_institutes": [
+      "Klinik und Poliklinik für Augenheilkunde Universitätsklinikum Regensburg",
+      "Technical University of Munich"
+    ],
+    "concepts": [
+      "Cannula",
+      "Biomedical engineering",
+      "Robot",
+      "Bubble",
+      "Medicine",
+      "Surgery",
+      "Computer science",
+      "Ophthalmology",
+      "Artificial intelligence",
+      "Parallel computing"
+    ],
+    "abstract": "This study aimed to compare the efficacy of robot-assisted and manual cannula insertion in simulated big-bubble deep anterior lamellar keratoplasty (DALK). Novice surgeons with no prior experience in performing DALK were trained to perform the procedure using manual or robot-assisted techniques. The results showed that both methods could generate an airtight tunnel in the porcine cornea, and result in successful generation of a deep stromal demarcation plane representing sufficient depth reached for big-bubble generation in most cases. However, the combination of intraoperative OCT and robotic assistance received a significant increase in the depth of achieved detachment in non-perforated cases, comprising a mean of 89% as opposed to 85% of the cornea in manual trials. This research suggests that robot-assisted DALK may offer certain advantages over manual techniques, particularly when used in conjunction with intraoperative OCT.",
+    "matched_topics": [
+      "AI for precision engineering",
+      "optical engineering and precision equipment",
+      "precision measurement"
+    ],
+    "topic_category": "ai-and-digital-precision",
+    "topic_method": "robot-assisted techniques",
+    "rationale": "The study explores robot-assisted techniques in precision surgery, highlighting advancements in precision measurement and optical engineering."
+  },
+  {
+    "id": "https://openalex.org/W4387265410",
+    "title": "Improved Properties of Post-Deposition Annealed Ga2O3/SiC and Ga2O3/Al2O3/SiC Back-Gate Transistors Fabricated by Radio Frequency Sputtering",
+    "publication_year": 2023,
+    "publication_date": "2023-09-30",
+    "source_type": "journal",
+    "pdf_url": "https://www.mdpi.com/2673-8023/3/4/55/pdf?version=1696066456",
+    "html_url": "https://doi.org/10.3390/micro3040055",
+    "authors": [
+      "Hee-Jae Lee",
+      "Geon‐Hee Lee",
+      "Seunghwan Chung",
+      "Dong-Wook Byun",
+      "Michael A. Schweitz",
+      "Dae Hwan Chun",
+      "N. Joo",
+      "Minwho Lim",
+      "Tobias Erlbacher",
+      "Sang‐Mo Koo"
+    ],
+    "german_collaborator_institutes": [
+      "Fraunhofer Institute for Integrated Systems and Device Technology"
+    ],
+    "concepts": [
+      "Materials science",
+      "Optoelectronics",
+      "Annealing (glass)",
+      "Sputtering",
+      "Heterojunction",
+      "Thin film",
+      "Crystallinity",
+      "Electron mobility",
+      "Doping",
+      "Auger electron spectroscopy",
+      "Band gap",
+      "Full width at half maximum",
+      "Figure of merit",
+      "Analytical Chemistry (journal)",
+      "Nanotechnology",
+      "Composite material",
+      "Chromatography",
+      "Physics",
+      "Nuclear physics",
+      "Chemistry"
+    ],
+    "abstract": "The high breakdown electric field, n-type doping capability, availability of high-quality substrates, and high Baliga’s figure of merit of Ga2O3 demonstrate its potential as a next-generation power semiconductor material. However, the thermal conductivity of Ga2O3 is lower than that of other wide-bandgap materials, resulting in the degradation of the electrical performance and reduced reliability of devices. The heterostructure formation on substrates with high thermal conductivity has been noted to facilitate heat dissipation in devices. In this work, Ga2O3 thin films with an Al2O3 interlayer were deposited on SiC substrates by radio frequency sputtering. Post-deposition annealing was performed at 900 °C for 1 h to crystallize the Ga2O3 thin films. The Auger electron spectroscopy depth profiles revealed the interdiffusion of the Ga and Al atoms at the Ga2O3/Al2O3 interface after annealing. The X-ray diffraction (XRD) results displayed improved crystallinity after annealing and adding the Al2O3 interlayer. The crystallite size increased from 5.72 to 8.09 nm as calculated by the Scherrer equation using the full width at half maximum (FWHM). The carrier mobility was enhanced from 5.31 to 28.39 cm2 V−1 s−1 in the annealed Ga2O3 thin films on Al2O3/SiC. The transfer and output characteristics of the Ga2O3/SiC and Ga2O3/Al2O3/SiC back-gate transistors reflect the trend of the XRD and Hall measurement results. Therefore, this work demonstrated that the physical and electrical properties of the Ga2O3/SiC back-gate transistors can be improved by post-deposition annealing and the introduction of an Al2O3 interlayer.",
+    "matched_topics": [
+      "optical engineering and precision equipment",
+      "micro- and nanotechnology for precision engineering"
+    ],
+    "topic_category": "optics-and-equipment",
+    "topic_method": "material characterization and processing",
+    "rationale": "The study on Ga2O3 thin films relates to precision materials and their properties, relevant for precision engineering applications."
+  },
+  {
+    "id": "https://openalex.org/W4403282643",
+    "title": "Soft X-ray chemically sensitive ptychographic imaging of 3D nano-objects",
+    "publication_year": 2024,
+    "publication_date": "2024-10-10",
+    "source_type": "journal",
+    "pdf_url": "https://doi.org/10.1364/oe.535314",
+    "html_url": "https://doi.org/10.1364/oe.535314",
+    "authors": [
+      "V. V. Krasnov",
+      "Igor A. Makhotkin",
+      "Jeroen E. Scheerder",
+      "Lars Loetgering",
+      "Victor Soltwisch",
+      "P.A.W. van der Heide",
+      "Claudia Fleischmann"
+    ],
+    "german_collaborator_institutes": [
+      "Friedrich Schiller University Jena",
+      "Helmholtz Institute Jena"
+    ],
+    "concepts": [
+      "Optics",
+      "Materials science",
+      "Ptychography",
+      "Soft X-rays",
+      "Biological imaging",
+      "X-ray",
+      "Diffraction",
+      "Physics",
+      "Laser",
+      "Fluorescence"
+    ],
+    "abstract": "The results of a soft X-ray chemically sensitive ptychographic imaging of non-planar nanoscale 3D objects - atom probe tomography tips, with resolution down to 12 nm at 800 eV using scanning X-ray microscope at the electron storage ring BESSY II are presented. We validate that this approach can be used to determine the tip (emitter) shape, and to resolve inner nano-scale structures as relevant for semiconductor applications and even for quantitative chemical composition analysis. Imaging of buried interfaces with below 30 nm resolution is demonstrated. This work might pave the way for contactless, ptychographic in-situ characterization of APT tips with tabletop coherent EUV sources.",
+    "matched_topics": [
+      "micro- and nanotechnology for precision engineering",
+      "precision measurement",
+      "additive manufacturing"
+    ],
+    "topic_category": "manufacturing-and-micro-nano",
+    "topic_method": "imaging and characterization techniques",
+    "rationale": "The paper discusses advanced imaging techniques for nanoscale objects, relevant for precision measurement and semiconductor applications."
+  },
+  {
+    "id": "https://openalex.org/W4406172058",
+    "title": "High-Performance SiGe Analog Multiplexer Enabling 176 GBd PAM-8 Transmission",
+    "publication_year": 2025,
+    "publication_date": "2025-01-08",
+    "source_type": "journal",
+    "pdf_url": "",
+    "html_url": "",
+    "authors": [
+      "Qian Hu",
+      "Markus Grözing",
+      "Tobias Tannert",
+      "Robert Borkowski",
+      "Fred Buchali",
+      "Pat Iannone",
+      "G. Raybon",
+      "Xi Chen",
+      "Georg Rademacher",
+      "Roland Ryf"
+    ],
+    "german_collaborator_institutes": [
+      "Nokia (Germany)",
+      "University of Stuttgart"
+    ],
+    "concepts": [
+      "Multiplexer",
+      "Electronic engineering",
+      "Transmission (telecommunications)",
+      "Wavelength-division multiplexing",
+      "Optical communication",
+      "Computer science",
+      "Multiplexing",
+      "Materials science",
+      "Optoelectronics",
+      "Electrical engineering",
+      "Telecommunications",
+      "Engineering",
+      "Wavelength"
+    ],
+    "abstract": "Analog multiplexer (AMUX) integrated circuits (ICs) expand the analog electrical bandwidth of transmitter frontends, enabling signal generation at ultrahigh symbol rates. In this work, we employ a SiGe AMUX which adopts a circuit topology optimized for signal linearity, supporting high-order modulation formats, such as multilevel pulse amplitude modulation (PAM). We discuss in detail the circuit design of the AMUX, including its AMUX core, clock path and output amplifier. We compare two circuit topologies with respect to power consumption, circuit complexity, clock strength and inputto-output linearity. We also perform theoretical analysis of signal impairments induced by misalignments between AMUX inputs to understand their impact on the integrity of the interleaved signal. Using this high-performance SiGe AMUX to drive an optical intensity modulator, we experimentally demonstrate generation and 2 km fiber transmission of different orders of PAM, up to PAM-8 at 176 GBd yielding a net bitrate of 467 Gbit/s.",
+    "matched_topics": [
+      "optical engineering and precision equipment",
+      "precision measurement"
+    ],
+    "topic_category": "optics-and-equipment",
+    "topic_method": "experimental analysis",
+    "rationale": "The paper discusses high-performance analog multiplexers for optical signal transmission, relevant to precision measurement and optical engineering."
+  },
+  {
+    "id": "https://openalex.org/W4406973320",
+    "title": "Enhancing surgical precision in squamous cell carcinoma of the head and neck: Hyperspectral imaging and artificial intelligence for improved margin assessment in an ex vivo setting",
+    "publication_year": 2025,
+    "publication_date": "2025-01-30",
+    "source_type": "journal",
+    "pdf_url": "https://doi.org/10.1016/j.saa.2025.125817",
+    "html_url": "https://doi.org/10.1016/j.saa.2025.125817",
+    "authors": [
+      "Felix Boehm",
+      "Anna Alperovich",
+      "Carolin Schwamborn",
+      "M. Z. Mostafa",
+      "Tommaso Giannantonio",
+      "Julia Lingl",
+      "R. Lehner",
+      "Xiaohan Zhang",
+      "Thomas K. Hoffmann",
+      "Patrick J. Schuler"
+    ],
+    "german_collaborator_institutes": [
+      "Heidelberg University",
+      "University Hospital Heidelberg",
+      "University Hospital Ulm"
+    ],
+    "concepts": [
+      "Chemistry",
+      "Ex vivo",
+      "Hyperspectral imaging",
+      "Head and neck squamous-cell carcinoma",
+      "Margin (machine learning)",
+      "Head and neck",
+      "Carcinoma",
+      "Radiology",
+      "Artificial intelligence",
+      "Pathology",
+      "Head and neck cancer",
+      "Radiation therapy",
+      "Surgery",
+      "Machine learning",
+      "Biochemistry",
+      "In vitro",
+      "Medicine",
+      "Computer science"
+    ],
+    "abstract": "Hyperspectral imaging, complemented by AI, shows promise in enhancing tissue differentiation for HNSCC. The study envisions real-time integration of HSI into surgery for margin assessment. Challenges such as data volume and capture times warrant further exploration, emphasizing the need for ongoing investigations to refine clinical applications.",
+    "matched_topics": [
+      "AI for precision engineering",
+      "precision measurement"
+    ],
+    "topic_category": "ai-and-digital-precision",
+    "topic_method": "hyperspectral imaging and AI",
+    "rationale": "The paper discusses AI and imaging techniques to enhance precision in surgical applications, relevant to precision measurement and engineering."
+  },
+  {
+    "id": "https://openalex.org/W4410613962",
+    "title": "Artificial Intelligence for DC Arc Fault Detection in Photovoltaic Systems: A Comprehensive Review",
+    "publication_year": 2025,
+    "publication_date": "2025-01-01",
+    "source_type": "journal",
+    "pdf_url": "https://doi.org/10.1109/access.2025.3572521",
+    "html_url": "https://doi.org/10.1109/access.2025.3572521",
+    "authors": [
+      "Kamal Chandra Paul",
+      "Disnebio Waldmann",
+      "Chen Chen",
+      "Yao Wang",
+      "Tiefu Zhao"
+    ],
+    "german_collaborator_institutes": [
+      "Bayer (Germany)"
+    ],
+    "concepts": [
+      "Photovoltaic system",
+      "Computer science",
+      "Fault detection and isolation",
+      "Arc-fault circuit interrupter",
+      "Arc (geometry)",
+      "Fault (geology)",
+      "Artificial intelligence",
+      "Electrical engineering",
+      "Engineering",
+      "Voltage",
+      "Short circuit",
+      "Geology",
+      "Seismology",
+      "Actuator",
+      "Mechanical engineering"
+    ],
+    "abstract": "Photovoltaic (PV) systems are increasingly used for renewable energy generation but remain vulnerable to series arc faults, which can cause serious safety risks and system failures. Detecting these faults in DC circuits is challenging due to their subtle electrical signatures and the presence of noise from system and environmental sources. Traditional detection methods often fall short in terms of accuracy, prompting growing interest in artificial intelligence (AI)-based solutions. This review provides a comprehensive analysis of AI-based techniques for series arc fault detection in PV systems, covering key aspects such as data preprocessing, feature extraction, model optimization, and hardware implementation. It presents a structured comparison of existing methods—including their strengths, and limitations—through descriptive discussion and summary tables. The review also includes a simplified flowchart to illustrate the typical AI-based detection process. Key challenges are discussed, along with future directions such as hybrid models, transfer learning, and deployment in resource-constrained environments. This work aims to support continued research and development by helping researchers and engineers better understand the strengths and limitations of current approaches and identify practical ways to improve arc fault detection for safer and more reliable PV systems.",
+    "matched_topics": [
+      "AI for precision engineering",
+      "smart manufacturing and automation"
+    ],
+    "topic_category": "ai-and-digital-precision",
+    "topic_method": "AI-based fault detection",
+    "rationale": "The paper discusses AI techniques for fault detection, relevant to precision engineering in safety and reliability."
+  },
+  {
+    "id": "https://openalex.org/W3024859313",
+    "title": "All-inkjet-printed MoS2 field-effect transistors on paper for low-cost and flexible electronics",
+    "publication_year": 2020,
+    "publication_date": "2020-05-16",
+    "source_type": "journal",
+    "pdf_url": "",
+    "html_url": "",
+    "authors": [
+      "Zhi Jiang",
+      "Long Chen",
+      "Jin- Ju Chen",
+      "Yan Wang",
+      "Zhao Xu",
+      "Enrico Sowade",
+      "Reinhard R. Baumann",
+      "Evgeniya Sheremet",
+      "Raúl D. Rodriguez",
+      "Zhe- sheng Feng"
+    ],
+    "german_collaborator_institutes": [
+      "Chemnitz University of Technology"
+    ],
+    "concepts": [
+      "Materials science",
+      "Printed electronics",
+      "Transistor",
+      "Flexible electronics",
+      "Electronics",
+      "Fabrication",
+      "Nanotechnology",
+      "Electronic circuit",
+      "Nanochemistry",
+      "Substrate (aquarium)",
+      "Field-effect transistor",
+      "Electrode",
+      "Layer (electronics)",
+      "Optoelectronics",
+      "Inkwell",
+      "Electrical engineering",
+      "Voltage",
+      "Engineering",
+      "Composite material",
+      "Medicine"
+    ],
+    "abstract": "",
+    "abstract_recovery_method": "not_recovered",
+    "matched_topics": [
+      "micro- and nanotechnology for precision engineering",
+      "precision measurement",
+      "additive manufacturing"
+    ],
+    "topic_category": "manufacturing-and-micro-nano",
+    "topic_method": "additive manufacturing",
+    "rationale": "The paper discusses printed electronics, relevant to precision measurement and micro/nano technology in manufacturing."
+  },
+  {
+    "id": "https://openalex.org/W3207145272",
+    "title": "Twin-crane scheduling during seaside workload peaks with a dedicated handshake area",
+    "publication_year": 2021,
+    "publication_date": "2021-10-15",
+    "source_type": "journal",
+    "pdf_url": "https://link.springer.com/content/pdf/10.1007/s10951-021-00710-w.pdf",
+    "html_url": "https://doi.org/10.1007/s10951-021-00710-w",
+    "authors": [
+      "Lennart Zey",
+      "Dirk Briskorn",
+      "Nils Boysen"
+    ],
+    "german_collaborator_institutes": [
+      "Friedrich Schiller University Jena",
+      "University of Wuppertal"
+    ],
+    "concepts": [
+      "Handshake",
+      "Heuristics",
+      "Computer science",
+      "Scheduling (production processes)",
+      "Simple (philosophy)",
+      "Distributed computing",
+      "Operations research",
+      "Computer network",
+      "Mathematical optimization",
+      "Engineering",
+      "Asynchronous communication",
+      "Mathematics",
+      "Operating system",
+      "Philosophy",
+      "Epistemology"
+    ],
+    "abstract": "To enable the efficient division of labor in container yards, many large ports apply twin cranes, two identical automated stacking cranes each dedicated to one of the transfer zones on the seaside and landside. The use of a handshake area, a bay of containers that separates the dedicated areas of the two cranes, is a simple means to avoid crane interference. Inbound containers arriving in the transfer zone of one crane and dedicated to a stacking position of the other crane&#8217;s area are placed intermediately in the handshake area by the first crane and then taken over by the second crane, and vice versa for outbound containers. Existing research only evaluates simple heuristics and rule-based approaches for the coordination of twin cranes interconnected by a handshake area. For this setting, accounting for precedence constraints due to stacking containers in the handshake area, we derive exact solution procedures under a makespan minimization objective. In this way, a comprehensive computational evaluation is enabled, which benchmarks heuristics with optimal solutions and additionally compares alternative crane settings (i.e., without workload sharing and cooperation with flexible handover). We further provide insights into where to position the handshake area. Our results reveal that when planning is too simple (i.e., with a rule-based approach), optimality gaps become large, but with sophisticated optimization, the price of a simplified crane coordination via a handshake area is low.",
+    "abstract_recovery_method": "exact_from_html",
+    "matched_topics": [
+      "smart manufacturing and automation",
+      "AI for precision engineering"
+    ],
+    "topic_category": "ai-and-digital-precision",
+    "topic_method": "optimization and scheduling",
+    "rationale": "The paper discusses optimization in automated crane scheduling, relevant to smart manufacturing and AI applications in precision engineering."
+  },
+  {
+    "id": "https://openalex.org/W3089032903",
+    "title": "Additive manufacturing of binary Al-Li alloys",
+    "publication_year": 2020,
+    "publication_date": "2020-01-01",
+    "source_type": "journal",
+    "pdf_url": "https://doi.org/10.1016/j.procir.2020.09.014",
+    "html_url": "https://doi.org/10.1016/j.procir.2020.09.014",
+    "authors": [
+      "Burak Yürekli",
+      "Lisa Schade",
+      "Tobias Ullsperger",
+      "Brian Seyfarth",
+      "Hagen Kohl",
+      "Gabor Matthäus",
+      "Dongmei Liu",
+      "Markus Rettenmayr",
+      "Stefan Nolte"
+    ],
+    "german_collaborator_institutes": [
+      "Fraunhofer Institute for Applied Optics and Precision Engineering",
+      "Friedrich Schiller University Jena"
+    ],
+    "concepts": [
+      "Materials science",
+      "Mass fraction",
+      "Binary number",
+      "Stiffness",
+      "Precipitation",
+      "Fusion",
+      "Elastic modulus",
+      "Laser",
+      "Content (measure theory)",
+      "Metallurgy",
+      "Mass ratio",
+      "Composite material",
+      "Optics",
+      "Mathematics",
+      "Physics",
+      "Meteorology",
+      "Linguistics",
+      "Astrophysics",
+      "Mathematical analysis",
+      "Arithmetic"
+    ],
+    "abstract": "",
+    "abstract_recovery_method": "not_recovered",
+    "matched_topics": [
+      "additive manufacturing",
+      "precision manufacturing"
+    ],
+    "topic_category": "manufacturing-and-micro-nano",
+    "topic_method": "additive manufacturing",
+    "rationale": "The paper discusses additive manufacturing, relevant to precision engineering and modern manufacturing techniques."
+  },
+  {
+    "id": "https://openalex.org/W3103638147",
+    "title": "A novel material measure for characterising two-dimensional instrument transfer functions of areal surface topography measuring instruments",
+    "publication_year": 2020,
+    "publication_date": "2020-11-12",
+    "source_type": "journal",
+    "pdf_url": "",
+    "html_url": "",
+    "authors": [
+      "Gaoliang Dai",
+      "Ziyang Jiao",
+      "Lan-Ting Xiang",
+      "Benedikt Seeger",
+      "Thomas Weimann",
+      "Weichang Xie",
+      "Rainer Tutsch"
+    ],
+    "german_collaborator_institutes": [
+      "Physikalisch-Technische Bundesanstalt",
+      "Technische Universität Braunschweig"
+    ],
+    "concepts": [
+      "Measure (data warehouse)",
+      "Optics",
+      "Calibration",
+      "Optical instrument",
+      "Grating",
+      "Metrology",
+      "Materials science",
+      "Physics",
+      "Computer science",
+      "Mathematics",
+      "Statistics",
+      "Database"
+    ],
+    "abstract": "Abstract A new material measure for characterising two-dimensional (2D) instrument transfer functions (ITF) of areal surface topography measuring instruments has been designed, manufactured, calibrated and applied. Several innovative ideas are implemented in its design. Firstly, the material measure is designed with circular structure patterns. Such rotational symmetric patterns are advantageous for characterising the ITF in different angular directions, thus for characterising angular-dependent asymmetries of instruments. Secondly, different types of patterns are designed: circular chirp (CC) pattern and circular discreate grating (CDG) pattern. They represent different kinds of spatial signals applicable for characterising ITFs. A material measure consists of 25 different circular patterns with radii from 30 μ m to 300 μ m, and wavelengths from 0.1 μ m to 150 μ m. These patterns can be applied complementary and combinedly, offering high application flexibility for calibrating a variety of instruments, e.g. with different optical objectives from 5× to 100× and with different sizes of field of view (FOV). Material measures with heights of 8 nm, 16 nm and 32 nm, respectively, have been manufactured using state-of-the-art e-beam lithography technique. The feature heights are far less than λ /4, thus they are suitable for characterising the ITF of optical tools which can be approximated as linear systems. A metrological large range atomic force microscope (AFM) has been applied in the calibration of the developed material measure, showing good feature quality. The calibrated material measure has been successfully applied in research and industry.",
+    "matched_topics": [
+      "precision measurement",
+      "optical engineering and precision equipment"
+    ],
+    "topic_category": "optics-and-equipment",
+    "topic_method": "metrology instrumentation",
+    "rationale": "The paper discusses a novel material measure for characterizing optical instruments, relevant to precision measurement and optical engineering."
+  },
+  {
+    "id": "https://openalex.org/W3015934737",
+    "title": "Theory of four-wave mixing for bound and leaky modes",
+    "publication_year": 2020,
+    "publication_date": "2020-04-07",
+    "source_type": "journal",
+    "pdf_url": "",
+    "html_url": "",
+    "authors": [
+      "Izzatjon Allayarov",
+      "Markus A. Schmidt",
+      "Thomas Weiß"
+    ],
+    "german_collaborator_institutes": [
+      "Friedrich Schiller University Jena",
+      "Leibniz Institute of Photonic Technology",
+      "University of Stuttgart"
+    ],
+    "concepts": [
+      "Physics",
+      "Leaky mode",
+      "Instability",
+      "Bound state",
+      "Nonlinear system",
+      "Upper and lower bounds",
+      "Modulation (music)",
+      "Quantum mechanics",
+      "Classical mechanics",
+      "Mechanics",
+      "Optics",
+      "Single-mode optical fiber",
+      "Mathematical analysis",
+      "Optical fiber",
+      "Radiation mode",
+      "Acoustics",
+      "Mathematics"
+    ],
+    "abstract": "We present a comprehensive theory of four-wave mixing in waveguide geometries, providing a rigorous description of the dynamics of both bound as well as leaky modes within a single theoretical framework. Our approach is based on the resonant-state expansion including analytical mode normalization. For bound modes, our approach agrees with the previous theory, while it results in modified nonlinear pulse propagation for leaky modes. For instance, it predicts a more efficient generation of Stokes and anti-Stokes bands with an earlier onset than expected from the previous theory for bound modes. These effects have been demonstrated numerically for a gas-filled hollow-core annulus fiber that supports leaky modes, rendering conventional bound-mode theory inappropriate for such systems. Moreover, we find that leaky modes provide modulation instability, not only in the anomalous but also in the normal dispersion regime. The modulation instability can occur for all frequencies, which is a fundamental difference to bound modes.",
+    "matched_topics": [
+      "optical engineering and precision equipment"
+    ],
+    "topic_category": "optics-and-equipment",
+    "topic_method": "theoretical analysis",
+    "rationale": "The paper discusses four-wave mixing in waveguide geometries, relevant to optical engineering and precision equipment."
+  },
+  {
+    "id": "https://openalex.org/W3094064106",
+    "title": "Intrinsic nano-diffusion-couple for studying high temperature diffusion in multi-component superalloys",
+    "publication_year": 2020,
+    "publication_date": "2020-10-19",
+    "source_type": "journal",
+    "pdf_url": "https://doi.org/10.1016/j.scriptamat.2020.10.002",
+    "html_url": "https://doi.org/10.1016/j.scriptamat.2020.10.002",
+    "authors": [
+      "Yolita M. Eggeler",
+      "Dorota Kubacka",
+      "P. Pichler",
+      "Mingjian Wu",
+      "Erdmann Spiecker"
+    ],
+    "german_collaborator_institutes": [
+      "Fraunhofer Institute for Integrated Systems and Device Technology",
+      "Friedrich-Alexander-Universität Erlangen-Nürnberg"
+    ],
+    "concepts": [
+      "Superalloy",
+      "Materials science",
+      "Annealing (glass)",
+      "Diffusion",
+      "Component (thermodynamics)",
+      "Microstructure",
+      "Thermodynamics",
+      "Nano-",
+      "Transient (computer programming)",
+      "Metallurgy",
+      "Composite material",
+      "Computer science",
+      "Operating system",
+      "Physics"
+    ],
+    "abstract": "",
+    "abstract_recovery_method": "not_recovered",
+    "matched_topics": [
+      "micro- and nanotechnology for precision engineering",
+      "precision measurement"
+    ],
+    "topic_category": "manufacturing-and-micro-nano",
+    "topic_method": "experimental study",
+    "rationale": "The study of nano-diffusion in superalloys relates to precision measurement and micro/nano technology in engineering."
+  },
+  {
+    "id": "https://openalex.org/W3134157651",
+    "title": "Thermal strengthening of low‐expansion glasses and thin‐walled glass products by ultra‐fast heat extraction",
+    "publication_year": 2021,
+    "publication_date": "2021-02-27",
+    "source_type": "journal",
+    "pdf_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/jace.17759",
+    "html_url": "https://doi.org/10.1111/jace.17759",
+    "authors": [
+      "Roman Sajzew",
+      "Lothar Wondraczek"
+    ],
+    "german_collaborator_institutes": [
+      "Friedrich Schiller University Jena"
+    ],
+    "concepts": [
+      "Borosilicate glass",
+      "Thermal expansion",
+      "Materials science",
+      "Heat transfer coefficient",
+      "Composite material",
+      "Glass transition",
+      "Gallium",
+      "Quenching (fluorescence)",
+      "Heat transfer",
+      "Metallurgy",
+      "Thermodynamics",
+      "Optics",
+      "Polymer",
+      "Physics",
+      "Fluorescence"
+    ],
+    "abstract": "Abstract Thermal strengthening remains the primary method for enhancing the practical strength of commodity glass products, however, the process is limited in terms of applicable glass thickness and coefficient of thermal expansion. The primary reasons for this limitation are the achievable heat transfer coefficient when using conventional gas cooling, and the occurrence of transient surface tension in the early stages of rapid quenching. We revisit this problem for the case of thin borosilicate glass sheet. Using liquid gallium as the cooling medium, ultra‐fast heat extraction is achieved, with a heat transfer coefficient exceeding 5000 Wm −2 K −1 . The low vapor pressure of gallium even at high temperatures enables preheating to a wide range of sheet entrant temperatures. We demonstrate thermal strengthening of low‐expansion borosilicate glass with persistent surface compression of up to 85 MPa, and quenching to a fictive temperature of ~190 K above the glass transition temperature. Glass sheet obtained in this way exhibits notably enhanced surface defect resistance to sharp indentation. In addition to thermal strengthening, the extraordinarily high heat extraction rates achieved by liquid metal immersion enable exploitation of high‐ T f glass properties beyond small and thin sample geometry.",
+    "matched_topics": [
+      "optical engineering and precision equipment",
+      "precision measurement",
+      "additive manufacturing"
+    ],
+    "topic_category": "optics-and-equipment",
+    "topic_method": "thermal strengthening and heat extraction",
+    "rationale": "The paper discusses thermal strengthening of glass, relevant to precision measurement and optical engineering."
+  },
+  {
+    "id": "https://openalex.org/W3158217363",
+    "title": "Selective area growth of GaN nanowires and nanofins by molecular beam epitaxy on heteroepitaxial diamond (001) substrates",
+    "publication_year": 2021,
+    "publication_date": "2021-01-01",
+    "source_type": "journal",
+    "pdf_url": "https://doi.org/10.1039/d1na00221j",
+    "html_url": "https://doi.org/10.1039/d1na00221j",
+    "authors": [
+      "Florian Pantle",
+      "Fabian Becker",
+      "Max Kraut",
+      "Simon Wörle",
+      "Theresa Hoffmann",
+      "Sabrina Artmeier",
+      "M. Stutzmann"
+    ],
+    "german_collaborator_institutes": [
+      "Max Planck Computing and Data Facility",
+      "Technical University of Munich"
+    ],
+    "concepts": [
+      "Diamond",
+      "Materials science",
+      "Nanowire",
+      "Optoelectronics",
+      "Epitaxy",
+      "Molecular beam epitaxy",
+      "Nanostructure",
+      "Nanotechnology",
+      "Substrate (aquarium)",
+      "Photoluminescence",
+      "Material properties of diamond",
+      "Chemical vapor deposition",
+      "Composite material",
+      "Layer (electronics)",
+      "Oceanography",
+      "Geology"
+    ],
+    "abstract": "GaN-on-diamond is a promising route towards reliable high-power transistor devices with outstanding performances due to better heat management, replacing common GaN-on-SiC technologies. Nevertheless, the implementation of GaN-on-diamond remains challenging. In this work, the selective area growth of GaN nanostructures on cost-efficient, large-scale available heteroepitaxial diamond (001) substrates by means of plasma-assisted molecular beam epitaxy is investigated. Additionally, we discuss the influence of an AlN buffer on the morphology of the GaN nanostructures. The nanowires and nanofins are characterized by a very high selectivity and controllable dimensions. Low temperature photoluminescence measurements are used to evaluate their structural quality. The growth of two GaN crystal domains, which are in-plane rotated against each other by 30°, is observed. The favoring of a certain domain is determined by the off-cut direction of the diamond substrates. By X-ray diffraction we show that the GaN nanostructures grow perpendicular to the diamond surface on off-cut diamond (001) substrates, which is in contrast to the growth on diamond (111), where the nanostructures are aligned with the substrate lattice. Polarity-selective wet chemical etching and Kelvin probe force microscopy reveal that the GaN nanostructures grow solely in the Ga-polar direction. This is a major advantage compared to the growth on diamond (111) and enables the application of GaN nanostructures on cost-efficient diamond for high-power/high-frequency applications.",
+    "matched_topics": [
+      "micro- and nanotechnology for precision engineering",
+      "precision measurement",
+      "additive manufacturing"
+    ],
+    "topic_category": "manufacturing-and-micro-nano",
+    "topic_method": "molecular beam epitaxy",
+    "rationale": "The paper discusses GaN nanostructures, relevant to micro/nano technology and precision measurement in manufacturing."
+  },
+  {
+    "id": "https://openalex.org/W3183745247",
+    "title": "Application of Large Eddy Simulation to Predict Underwater Noise of Marine Propulsors. Part 1: Cavitation Dynamics",
+    "publication_year": 2021,
+    "publication_date": "2021-07-22",
+    "source_type": "journal",
+    "pdf_url": "https://www.mdpi.com/2077-1312/9/8/792/pdf?version=1627032505",
+    "html_url": "https://doi.org/10.3390/jmse9080792",
+    "authors": [
+      "Julian Kimmerl",
+      "Paul Mertes",
+      "Moustafa Abdel‐Maksoud"
+    ],
+    "german_collaborator_institutes": [
+      "Hamburg University of Technology"
+    ],
+    "concepts": [
+      "Propeller",
+      "Cavitation",
+      "Acoustics",
+      "Marine engineering",
+      "Vortex",
+      "Turbulence",
+      "Detached eddy simulation",
+      "Noise (video)",
+      "Underwater",
+      "Large eddy simulation",
+      "Wake",
+      "Aeroacoustics",
+      "Computational fluid dynamics",
+      "Propulsion",
+      "Computer science",
+      "Physics",
+      "Reynolds-averaged Navier–Stokes equations",
+      "Engineering",
+      "Mechanics",
+      "Aerospace engineering"
+    ],
+    "abstract": "Marine propulsors are identified as the main contributor to a vessel’s underwater radiated noise as a result of tonal propeller noise and broadband emissions caused by its induced cavitation. To reduce a vessel’s signature, spectral limits are set for the propulsion industry, which can be experimentally obtained for a complete vessel at the full-scale; however, the prediction capability of the sound sources is still rudimentary at best. To adhere to the regulatory demands, more accurate numerical methods for combined turbulence and two-phase modeling for a high-quality prediction of acoustic sources of a propeller are required. Several studies have suggested implicit LES as a capable tool for propeller cavitation simulation. In the presented study, the main objective was the evaluation of the tip and hub vortex cavitating flows with implicit LES focusing on probable sound source representation. Cavitation structures for free-running propeller test cases were compared with experimental measurements. To resolve the structure of the tip vortex accurately, a priory mesh refinement was employed during the simulation in regions of high vorticity. Good visual agreement with the experiments and a fundamental investigation of the tip cavity structure confirmed the capability of the implicit LES for resolving detailed turbulent flow and cavitation structures for free-running propellers.",
+    "matched_topics": [
+      "precision engineering progress",
+      "smart manufacturing and automation"
+    ],
+    "topic_category": "manufacturing-and-micro-nano",
+    "topic_method": "numerical simulation",
+    "rationale": "The study enhances prediction methods for underwater noise, relevant to precision engineering in marine propulsors and automation in manufacturing."
+  },
+  {
+    "id": "https://openalex.org/W3015209212",
+    "title": "Novel Flexible Electrochemical Microreactor and its Validation by Three Model Electrosyntheses",
+    "publication_year": 2020,
+    "publication_date": "2020-04-06",
+    "source_type": "journal",
+    "pdf_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/cite.201900140",
+    "html_url": "https://doi.org/10.1002/cite.201900140",
+    "authors": [
+      "Athanassios Ziogas",
+      "C Hofmann",
+      "Sebastian Baranyai",
+      "Patrick Löb",
+      "Gunther Kolb"
+    ],
+    "german_collaborator_institutes": [
+      "Fraunhofer Institute for Microengineering and Microsystems",
+      "HTWG Hochschule Konstanz - Technik, Wirtschaft und Gestaltung"
+    ],
+    "concepts": [
+      "Microreactor",
+      "Modular design",
+      "Electrolysis",
+      "Electrochemistry",
+      "Flow chemistry",
+      "Process engineering",
+      "Flexibility (engineering)",
+      "Process (computing)",
+      "Materials science",
+      "Chemistry",
+      "Chemical engineering",
+      "Computer science",
+      "Engineering",
+      "Catalysis",
+      "Electrode",
+      "Organic chemistry",
+      "Physical chemistry",
+      "Mathematics",
+      "Operating system",
+      "Electrolyte"
+    ],
+    "abstract": "Abstract A novel flexible electrochemical microreactor has been developed. Flexibility is reached by a modular design, suitability for a broad process parameter range including high pressure operation, and accessibility of production scale. Selected reactor aspects have been validated by applying the reactor to three different electrosyntheses: synthesis of tailor‐made mixtures of paraffins by Kolbe electrolysis, cation flow method, and synthesis of peroxodicarbonate. High conversion rates, yields, selectivities, and Faraday efficiency levels have been observed, showing precise process control.",
+    "matched_topics": [
+      "micro- and nanotechnology for precision engineering",
+      "precision measurement",
+      "precision manufacturing"
+    ],
+    "topic_category": "manufacturing-and-micro-nano",
+    "topic_method": "electrochemical microreactor",
+    "rationale": "The paper discusses a microreactor with precise process control, relevant to precision engineering and manufacturing."
+  },
+  {
+    "id": "https://openalex.org/W3026746868",
+    "title": "Structural and optical properties of nonpolar <i>m-</i> and <i>a-</i>plane GaN/AlGaN heterostructures for narrow-linewidth mid-infrared intersubband transitions",
+    "publication_year": 2020,
+    "publication_date": "2020-05-18",
+    "source_type": "journal",
+    "pdf_url": "",
+    "html_url": "",
+    "authors": [
+      "Morteza Monavarian",
+      "Jiaming Xu",
+      "Micha N. Fireman",
+      "Nishant Nookala",
+      "Feng Wu",
+      "Bastien Bonef",
+      "Kai Shek Qwah",
+      "Erin C. Young",
+      "Mikhail A. Belkin",
+      "James S. Speck"
+    ],
+    "german_collaborator_institutes": [
+      "Technical University of Munich"
+    ],
+    "concepts": [
+      "Laser linewidth",
+      "Heterojunction",
+      "Molecular beam epitaxy",
+      "Materials science",
+      "Absorption (acoustics)",
+      "Infrared",
+      "Quantum well",
+      "Infrared spectroscopy",
+      "Doping",
+      "Optoelectronics",
+      "Condensed matter physics",
+      "Epitaxy",
+      "Optics",
+      "Chemistry",
+      "Laser",
+      "Physics",
+      "Nanotechnology",
+      "Organic chemistry",
+      "Composite material",
+      "Layer (electronics)"
+    ],
+    "abstract": "Mid-infrared intersubband transitions are investigated in nonpolar m-plane and a-plane GaN/AlGaN multi-quantum well heterostructures. Nominally identical heterostructures were grown by ammonia molecular-beam epitaxy on free-standing m-plane and a-plane GaN substrates. A total of 12 well- and barrier-doped samples with intersubband transition energies in the range of 220–320 meV (wavelength range 3.8–5.6 μm) were grown. The intersubband absorption lines of the m-plane samples were 10–40% narrower than those of the a-plane samples, and a very narrow intersubband absorption linewidth of 38 meV (full width at half maximum) at a transition energy of approximately 250 meV (5 μm wavelength) was observed in an m-plane sample. Narrower intersubband absorption linewidths of m-plane samples can be explained by more abrupt heterostructure interfaces revealed by structural characterization, which is attributed to a higher stability of the m-plane compared to the a-plane. No significant difference in the intersubband absorption linewidth was observed between the barrier- and well-doped samples.",
+    "matched_topics": [
+      "optical engineering and precision equipment",
+      "precision measurement"
+    ],
+    "topic_category": "optics-and-equipment",
+    "topic_method": "experimental characterization",
+    "rationale": "The study investigates optical properties of heterostructures, relevant to precision measurement and optical engineering."
+  },
+  {
+    "id": "https://openalex.org/W3100113496",
+    "title": "Novel Benchtop Magnetic Particle Spectrometer for Process Monitoring of Magnetic Nanoparticle Synthesis",
+    "publication_year": 2020,
+    "publication_date": "2020-11-17",
+    "source_type": "journal",
+    "pdf_url": "https://www.mdpi.com/2079-4991/10/11/2277/pdf?version=1605685297",
+    "html_url": "https://doi.org/10.3390/nano10112277",
+    "authors": [
+      "Norbert Löwa",
+      "Dirk Gutkelch",
+      "Ernst-Albrecht Welge",
+      "Roland Welz",
+      "Florian Meier",
+      "Abdulkader Baki",
+      "Regina Bleul",
+      "Thorsten Klein",
+      "Frank Wiekhorst"
+    ],
+    "german_collaborator_institutes": [
+      "Fraunhofer Institute for Microengineering and Microsystems",
+      "Physikalisch-Technische Bundesanstalt",
+      "Postnova Analytics (Germany)"
+    ],
+    "concepts": [
+      "Magnetic nanoparticles",
+      "Micromixer",
+      "Materials science",
+      "Magnetic particle inspection",
+      "Detector",
+      "Spectrometer",
+      "Nanoparticle",
+      "Nanotechnology",
+      "Characterization (materials science)",
+      "Magnetic separation",
+      "Inductive coupling",
+      "Magnetic field",
+      "Computer science",
+      "Microfluidics",
+      "Physics",
+      "Engineering",
+      "Electrical engineering",
+      "Optics",
+      "Metallurgy",
+      "Telecommunications"
+    ],
+    "abstract": "Magnetic nanoparticles combine unique magnetic properties that can be used in a variety of biomedical applications for therapy and diagnostics. These applications place high demands on the magnetic properties of nanoparticles. Thus, research, development, and quality assurance of magnetic nanoparticles requires powerful analytical methods that are capable of detecting relevant structural and, above all, magnetic parameters. By directly coupling nanoparticle synthesis with magnetic detectors, relevant nanoparticle properties can be obtained and evaluated, and adjustments can be made to the manufacturing process in real time. This work presents a sensitive and fast magnetic detector for online characterization of magnetic nanoparticles during their continuous micromixer synthesis. The detector is based on the measurement of the nonlinear dynamic magnetic response of magnetic nanoparticles exposed to an oscillating excitation at a frequency of 25 kHz, a technique also known as magnetic particle spectroscopy. Our results underline the excellent suitability of the developed magnetic online detection for coupling with magnetic nanoparticle synthesis based on the micromixer approach. The proven practicability and reliability of the detector for process monitoring forms the basis for further application fields, e.g., as a monitoring tool for chromatographic separation processes.",
+    "matched_topics": [
+      "micro- and nanotechnology for precision engineering",
+      "precision measurement",
+      "additive manufacturing"
+    ],
+    "topic_category": "manufacturing-and-micro-nano",
+    "topic_method": "process monitoring and characterization",
+    "rationale": "The paper discusses a novel detection method for monitoring nanoparticle synthesis, relevant to precision measurement and micro/nano technology."
+  },
+  {
+    "id": "https://openalex.org/W3115449142",
+    "title": "Design Guidelines for Thermal Comfort and Energy Consumption of Triple Glazed Fluidic Windows on Building Level",
+    "publication_year": 2020,
+    "publication_date": "2020-12-28",
+    "source_type": "journal",
+    "pdf_url": "https://doi.org/10.1002/adsu.202000194",
+    "html_url": "https://doi.org/10.1002/adsu.202000194",
+    "authors": [
+      "Lingqi Su",
+      "Mathias Fraaß",
+      "Lothar Wondraczek"
+    ],
+    "german_collaborator_institutes": [
+      "Berliner Hochschule für Technik",
+      "Friedrich Schiller University Jena"
+    ],
+    "concepts": [
+      "Glazing",
+      "Window (computing)",
+      "Air conditioning",
+      "Energy consumption",
+      "Thermal comfort",
+      "Efficient energy use",
+      "Solar gain",
+      "Architectural engineering",
+      "Thermal",
+      "Building automation",
+      "Automotive engineering",
+      "Mechanical engineering",
+      "Computer science",
+      "Engineering",
+      "Solar energy",
+      "Electrical engineering",
+      "Civil engineering",
+      "Operating system",
+      "Physics",
+      "Thermodynamics"
+    ],
+    "abstract": "Abstract There has been a growing trend for buildings with large glazing size. As a trade‐off, this comes with enhanced solar heat input and/or reduced thermal insulation. Several approaches are being followed to reduce the energy consumption in these buildings, including the prolific field of smart windows. In a previous report, a fluidic window device for thermal harvesting and air‐conditioning was introduced. Using this example, the impact of a building's window‐to‐wall ratio on the triple glazed fluidic window's energy consumption and user thermal comfort is evaluated, providing design guidelines for large‐scale implementation of such smart windows with real‐world buildings. The analysis shows that the proposed window design reduces the primary energy demand as compared to using a conventional air‐conditioning system. Building simulation results indicate that the system enables satisfying thermal comfort for buildings with different window‐to‐wall ratios. Although a higher window‐to‐wall ratio improves the heat pump efficiency, it requires more heating and cooling energy. On‐device photovoltaic modules may be used for changing this relationship. In this case, the proposed device may become self‐sufficient once the transfer efficiency is high enough. It is argued that similar considerations should be applied to other types of smart window technologies.",
+    "matched_topics": [
+      "smart manufacturing and automation",
+      "precision engineering progress"
+    ],
+    "topic_category": "ai-and-digital-precision",
+    "topic_method": "design guidelines and energy analysis",
+    "rationale": "The paper discusses smart windows, which relate to automation and energy efficiency in precision engineering."
+  },
+  {
+    "id": "https://openalex.org/W3127886006",
+    "title": "Rail platooning: Scheduling trains along a rail corridor with rapid-shunting facilities",
+    "publication_year": 2021,
+    "publication_date": "2021-02-11",
+    "source_type": "journal",
+    "pdf_url": "",
+    "html_url": "",
+    "authors": [
+      "Stefan Schwerdfeger",
+      "Alena Otto",
+      "Nils Boysen"
+    ],
+    "german_collaborator_institutes": [
+      "University of Passau"
+    ],
+    "concepts": [
+      "Train",
+      "Platoon",
+      "Shunting",
+      "Traction power network",
+      "Freight trains",
+      "Scheduling (production processes)",
+      "Computer science",
+      "Rail transportation",
+      "Automotive engineering",
+      "Tree traversal",
+      "Rail freight transport",
+      "Rail transit",
+      "Transport engineering",
+      "Power (physics)",
+      "Engineering",
+      "Physics",
+      "Internal medicine",
+      "Operations management",
+      "Artificial intelligence",
+      "Cartography"
+    ],
+    "abstract": "",
+    "abstract_recovery_method": "not_recovered",
+    "matched_topics": [
+      "smart manufacturing and automation",
+      "precision engineering progress"
+    ],
+    "topic_category": "ai-and-digital-precision",
+    "topic_method": "scheduling and automation",
+    "rationale": "The paper discusses scheduling and automation in rail systems, relevant to smart manufacturing and precision engineering."
+  },
+  {
+    "id": "https://openalex.org/W3175220042",
+    "title": "Ultralong Tracking of Fast‐Diffusing Nano‐Objects inside Nanofluidic Channel−Enhanced Microstructured Optical Fiber",
+    "publication_year": 2021,
+    "publication_date": "2021-06-22",
+    "source_type": "journal",
+    "pdf_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/adpr.202100032",
+    "html_url": "https://doi.org/10.1002/adpr.202100032",
+    "authors": [
+      "Fengji Gui",
+      "Shiqi Jiang",
+      "Ronny Förster",
+      "Malte Plidschun",
+      "Stefan Weidlich",
+      "Jiangbo Zhao",
+      "Markus A. Schmidt"
+    ],
+    "german_collaborator_institutes": [
+      "Friedrich Schiller University Jena",
+      "Heraeus (Germany)",
+      "Leibniz Institute of Photonic Technology"
+    ],
+    "concepts": [
+      "Nanofluidics",
+      "Microrheology",
+      "Frame rate",
+      "Brownian motion",
+      "Optical tweezers",
+      "Tracking (education)",
+      "Optical fiber",
+      "Diffusion",
+      "Materials science",
+      "Nanotechnology",
+      "Fiber",
+      "Frame (networking)",
+      "Channel (broadcasting)",
+      "Optics",
+      "Computer science",
+      "Physics",
+      "Telecommunications",
+      "Computer network",
+      "Composite material",
+      "Thermodynamics"
+    ],
+    "abstract": "Nanoparticle tracking analysis (NTA) represents one essential technology to characterize diffusing nanoscale objects. Herein, uncovering dynamic processes and high‐precision measurements requires tracks with thousands of frames to reach high statistical significance, ideally at high frame rates. Optical fibers with nanochannels are used for NTA, successfully demonstrating acquisition of trajectories of fast diffusion nano‐objects with 100 000 frames. Due to the spatial limitation of the central nanofluidic channel, diffusion of objects illuminated by the core mode is confined, enabling the recording of Brownian motion over extraordinarily long time scales at high frame rates. The resulting benefits are discussed on a representative track of a gold nanosphere diffusing in water in over nearly 100 000 frames at 2 kHz frame rate. In addition to the verification of the fiber‐based NTA using two data processing methods, a segmented analysis reveals a correlation between precision of determined diameter and continuous time interval (i.e., number of frames per subtrajectory). The presented results demonstrate the capabilities of fiber‐based NTA in terms of 1) determining diameters with extraordinary high precision of single species and 2) monitoring dynamic processes of the object or the fluidic environment, both of which are relevant within biology, microrheology, and nano‐object characterization.",
+    "matched_topics": [
+      "precision measurement",
+      "optical engineering and precision equipment",
+      "micro- and nanotechnology for precision engineering"
+    ],
+    "topic_category": "optics-and-equipment",
+    "topic_method": "nanoparticle tracking analysis",
+    "rationale": "The paper discusses high-precision measurements of nanoscale objects using optical fibers, relevant to precision measurement and optical engineering."
+  },
+  {
+    "id": "https://openalex.org/W3184710768",
+    "title": "The Action‐Networks of Nanosilver: Bridging the Gap between Material and Biology",
+    "publication_year": 2021,
+    "publication_date": "2021-07-26",
+    "source_type": "journal",
+    "pdf_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/adhm.202100619",
+    "html_url": "https://doi.org/10.1002/adhm.202100619",
+    "authors": [
+      "Huiliang Cao",
+      "Hui Qin",
+      "Yongsheng Li",
+      "Klaus D. Jandt"
+    ],
+    "german_collaborator_institutes": [
+      "Friedrich Schiller University Jena",
+      "Jena Bioscience (Germany)"
+    ],
+    "concepts": [
+      "Bridging (networking)",
+      "Materials science",
+      "Nanotechnology",
+      "Action (physics)",
+      "Computer science",
+      "Physics",
+      "Computer network",
+      "Quantum mechanics"
+    ],
+    "abstract": "The emergence of nanosilver (silver in nanoscale shapes and their assemblies) benefits the landscape of modern healthcare; however, this brings about concerns over its safety issues associated with an ultrasmall size and high mobility. By reviewing previous reporting details about the synthesis and characterization of nanosilver and its biological responses, a gap between materials synthesis and their biomedical uses is characterized by the insufficient understanding of the interacting and interplaying nanoscale actions of silver. To improve reporting quality and advance clinical translations, it is suggested that researchers have a comprehensive recognition of the \"Indications for use\" before designing innovative nanosilver-based materials and an \"Action-network\" concept addressing the acting range and strength of those nanoscale actions is implemented. Although this discussion is specific to nanosilver, the idea of \"Indications for use\" centered design and synthesis is generally applicable to other biomedical nanomaterials.",
+    "matched_topics": [
+      "micro- and nanotechnology for precision engineering"
+    ],
+    "topic_category": "manufacturing-and-micro-nano",
+    "topic_method": "nanosilver synthesis and characterization",
+    "rationale": "The paper discusses nanosilver, relevant to micro/nanotechnology in precision engineering."
+  },
+  {
+    "id": "https://openalex.org/W4281554947",
+    "title": "Coping Asynchronous Modular Product Design by Modelling a Systems-in-System",
+    "publication_year": 2022,
+    "publication_date": "2022-05-01",
+    "source_type": "journal",
+    "pdf_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/77B94353BDCDD68F35AAFBF6A0F8D146/S2732527X22002589a.pdf/div-class-title-coping-asynchronous-modular-product-design-by-modelling-a-systems-in-system-div.pdf",
+    "html_url": "https://doi.org/10.1017/pds.2022.258",
+    "authors": [
+      "Marc Zuefle",
+      "S. Muschik",
+      "Nikola Bursac",
+      "Dieter Krause"
+    ],
+    "german_collaborator_institutes": [
+      "Hamburg University of Technology",
+      "Universität Hamburg"
+    ],
+    "concepts": [
+      "Modular design",
+      "Harmonization",
+      "Asynchronous communication",
+      "Systems engineering",
+      "Computer science",
+      "Mechatronics",
+      "Multidisciplinary approach",
+      "New product development",
+      "Software engineering",
+      "Variety (cybernetics)",
+      "Coping (psychology)",
+      "Engineering",
+      "Programming language",
+      "Artificial intelligence",
+      "Business",
+      "Sociology",
+      "Computer network",
+      "Psychology",
+      "Social science",
+      "Marketing"
+    ],
+    "abstract": "Abstract This paper analyzes the potential of crossdisciplinary collaboration in the methodical development of Modular Design by harmonization asynchronous mechatronic system structures. Subsystem boundaries in multidisciplinary development processes are set disciplinespecific, resulting in inconsistencies in module fitting. Based on a case study, harmonization of disciplines is elaborated as a solution. This aligns discipline structures and reduces effects on the variety in system structures.This implementation shows support for modular design and enables an integrated view as a systems-in-system.",
+    "matched_topics": [
+      "smart manufacturing and automation",
+      "precision engineering progress"
+    ],
+    "topic_category": "ai-and-digital-precision",
+    "topic_method": "modular design and systems integration",
+    "rationale": "The paper discusses modular design and cross-disciplinary collaboration, relevant to smart manufacturing and precision engineering."
+  },
+  {
+    "id": "https://openalex.org/W3016932472",
+    "title": "Bi-metallic Pd/Au nanoparticles prepared by UV-excimer laser exposure",
+    "publication_year": 2020,
+    "publication_date": "2020-04-15",
+    "source_type": "journal",
+    "pdf_url": "",
+    "html_url": "",
+    "authors": [
+      "Gabriele Schmidl",
+      "M. Raugust",
+      "Jan Dellith",
+      "Andrea Dellith",
+      "F. Schmidl",
+      "Arne Bochmann",
+      "Jonathan Plentz"
+    ],
+    "german_collaborator_institutes": [
+      "Ernst Abbe University of Applied Sciences Jena",
+      "Friedrich Schiller University Jena",
+      "Helmholtz Institute Jena",
+      "Leibniz Institute of Photonic Technology"
+    ],
+    "concepts": [
+      "Materials science",
+      "Nanoparticle",
+      "Excimer laser",
+      "Alloy",
+      "Particle (ecology)",
+      "Laser",
+      "Metal",
+      "Diffraction",
+      "Analytical Chemistry (journal)",
+      "Surface plasmon resonance",
+      "Nanotechnology",
+      "Composite material",
+      "Optics",
+      "Metallurgy",
+      "Chemistry",
+      "Physics",
+      "Oceanography",
+      "Chromatography",
+      "Geology"
+    ],
+    "abstract": "",
+    "abstract_recovery_method": "not_recovered",
+    "matched_topics": [
+      "optical engineering and precision equipment",
+      "precision measurement"
+    ],
+    "topic_category": "optics-and-equipment",
+    "topic_method": "laser processing",
+    "rationale": "The paper discusses laser processing techniques relevant to precision measurement and optical engineering."
+  },
+  {
+    "id": "https://openalex.org/W3037882521",
+    "title": "Measuring the supporting slats of laser cutting machines using laser triangulation",
+    "publication_year": 2020,
+    "publication_date": "2020-06-01",
+    "source_type": "journal",
+    "pdf_url": "https://link.springer.com/content/pdf/10.1007/s00170-020-05640-z.pdf",
+    "html_url": "https://doi.org/10.1007/s00170-020-05640-z",
+    "authors": [
+      "Frederick Struckmeier",
+      "Jim Zhao",
+      "Fernando Puente León"
+    ],
+    "german_collaborator_institutes": [
+      "Karlsruhe Institute of Technology"
+    ],
+    "concepts": [
+      "Laser",
+      "Robustness (evolution)",
+      "Laser cutting",
+      "Computer science",
+      "Triangulation",
+      "Position (finance)",
+      "Machine tool",
+      "Coordinate-measuring machine",
+      "Machine vision",
+      "Artificial intelligence",
+      "Computer vision",
+      "Mechanical engineering",
+      "Engineering drawing",
+      "Engineering",
+      "Optics",
+      "Mathematics",
+      "Geometry",
+      "Finance",
+      "Economics",
+      "Chemistry"
+    ],
+    "abstract": "Abstract When automatically generating programs for flatbed laser cutting machines, it is advantageous to know the position of the supporting tips of the raw material. This allows the nesting layout and tool path to be adapted in an intelligent way. The problem of measuring the supporting tips of a laser cutting machine has not been considered in published literature before. We introduce possible methods first and choose a laser triangulation system. A novel setup, where none of the components is at a right angle to the measured surface, is proposed to account for the circumstances in a laser cutting machine. Its performance is investigated thoroughly with special regard to robustness and accuracy. In order to achieve very high accuracies, the setup is extrinsically calibrated on the measured object and different line extraction algorithms are tested for their effect on the measurement result. It is shown that the measurement setup is robust for different changes in the environment, such as different slat materials, bent supporting tips, and slagging. The measurement accuracy of the setup is calculated to be within ± 0.8 mm.",
+    "matched_topics": [
+      "optical engineering and precision equipment",
+      "precision measurement",
+      "smart manufacturing and automation"
+    ],
+    "topic_category": "optics-and-equipment",
+    "topic_method": "laser triangulation",
+    "rationale": "The paper discusses laser triangulation for precision measurement in laser cutting, relevant to optical engineering and automation."
+  },
+  {
+    "id": "https://openalex.org/W3084120224",
+    "title": "Three-dimensional spatiotemporal tracking of nano-objects diffusing in water-filled optofluidic microstructured fiber",
+    "publication_year": 2020,
+    "publication_date": "2020-08-31",
+    "source_type": "journal",
+    "pdf_url": "https://www.degruyter.com/document/doi/10.1515/nanoph-2020-0330/pdf",
+    "html_url": "https://doi.org/10.1515/nanoph-2020-0330",
+    "authors": [
+      "Shiqi Jiang",
+      "Ronny Förster",
+      "Malte Plidschun",
+      "Jens Kobelke",
+      "Ron Fatobene Ando",
+      "Markus A. Schmidt"
+    ],
+    "german_collaborator_institutes": [
+      "Friedrich Schiller University Jena",
+      "Leibniz Institute of Photonic Technology"
+    ],
+    "concepts": [
+      "Materials science",
+      "Tracking (education)",
+      "Microchannel",
+      "Optics",
+      "Scattering",
+      "Nanoscopic scale",
+      "Microscopy",
+      "Endomicroscopy",
+      "Light scattering",
+      "Image resolution",
+      "Nanotechnology",
+      "Physics",
+      "Confocal",
+      "Pedagogy",
+      "Psychology"
+    ],
+    "abstract": "Abstract Three-dimensional (3D) tracking of nano-objects represents a novel pathway for understanding dynamic nanoscale processes within bioanalytics and life science. Here we demonstrate 3D tracking of diffusing 100 nm gold nanosphere within a water-filled optofluidic fiber via elastic light scattering–based position retrieval. Specifically, the correlation between intensity and position inside a region of a fiber-integrated microchannel has been used to decode the axial position from the scattered intensity, while image processing–based tracking was used in the image plane. The 3D trajectory of a diffusing gold nanosphere has been experimentally determined, while the determined diameter analysis matches expectations. Beside key advantages such as homogenous light-line illumination, low-background scattering, long observation time, large number of frames, high temporal and spatial resolution and compatibility with standard microscope, the particular properties of operating with water defines a new bioanalytical platform that is highly relevant for medical and life science applications.",
+    "matched_topics": [
+      "optical engineering and precision equipment",
+      "micro- and nanotechnology for precision engineering",
+      "precision measurement"
+    ],
+    "topic_category": "optics-and-equipment",
+    "topic_method": "experimental tracking and imaging",
+    "rationale": "The paper discusses 3D tracking of nano-objects, relevant for precision measurement and optical engineering in bioanalytics."
+  },
+  {
+    "id": "https://openalex.org/W3163595339",
+    "title": "Kinetics of the Light and Elevated Temperature Induced Degradation and Regeneration of Quasi-Monocrystalline Silicon Solar Cells",
+    "publication_year": 2021,
+    "publication_date": "2021-05-19",
+    "source_type": "journal",
+    "pdf_url": "",
+    "html_url": "",
+    "authors": [
+      "Nadine Wehmeier",
+      "Gerd Fischer",
+      "Sandra Herlufsen",
+      "Franziska Wolny",
+      "Matthias Wagner",
+      "Karsten Bothe",
+      "M. Müller"
+    ],
+    "german_collaborator_institutes": [
+      "Fraunhofer Institute for Photonic Microsystems",
+      "Institut für Solarenergieforschung"
+    ],
+    "concepts": [
+      "Monocrystalline silicon",
+      "Materials science",
+      "Degradation (telecommunications)",
+      "Silicon",
+      "Intensity (physics)",
+      "Common emitter",
+      "Kinetics",
+      "Light intensity",
+      "Suns in alchemy",
+      "Crystalline silicon",
+      "Solar cell",
+      "Atmospheric temperature range",
+      "Range (aeronautics)",
+      "Analytical Chemistry (journal)",
+      "Optoelectronics",
+      "Optics",
+      "Chemistry",
+      "Thermodynamics",
+      "Composite material",
+      "Physics"
+    ],
+    "abstract": "We investigate the degradation and regeneration behavior of quasi-monocrystalline silicon passivated emitter and rear cells under illumination at elevated temperatures. The decrease and increase of the solar cell efficiencies over time is accelerated under increased temperature or illumination intensity. We examine the defect activation kinetics and determine rate constants both for the degradation and regeneration. We apply temperatures in the range of 37-140 °C and illumination intensities in the range of 0.1-1.4 suns. These conditions typically occur when operating solar modules in the field. The rate constants are strongly increased with increasing temperature and increasing illumination intensity. We perform multiple regressions fits of the degradation and regeneration data with different approaches for the illumination intensity dependence. A linear illumination intensity dependence on the rates of degradation and regeneration is found. Activation energies for the degradation and regeneration of (0.89 ± 0.04) eV and (1.07 ± 0.07) eV, respectively, are extracted that allow for identification of the defect activation and deactivation mechanisms.",
+    "matched_topics": [
+      "optical engineering and precision equipment",
+      "precision measurement"
+    ],
+    "topic_category": "optics-and-equipment",
+    "topic_method": "experimental analysis",
+    "rationale": "The study on solar cell degradation relates to precision measurement and optical engineering in energy applications."
+  },
+  {
+    "id": "https://openalex.org/W4283374131",
+    "title": "Designing Multifunctional Cobalt Oxide Layers for Efficient and Stable Electrochemical Oxygen Evolution",
+    "publication_year": 2022,
+    "publication_date": "2022-06-24",
+    "source_type": "journal",
+    "pdf_url": "https://doi.org/10.1002/admi.202200582",
+    "html_url": "https://doi.org/10.1002/admi.202200582",
+    "authors": [
+      "Matthias Kuhl",
+      "Alex Henning",
+      "Lukas Haller",
+      "Laura I. Wagner",
+      "Chang‐Ming Jiang",
+      "Verena Streibel",
+      "Ian D. Sharp",
+      "Johanna Eichhorn"
+    ],
+    "german_collaborator_institutes": [
+      "Technical University of Munich"
+    ],
+    "concepts": [
+      "Materials science",
+      "Cobalt",
+      "Chemical engineering",
+      "Atomic layer deposition",
+      "Electrochemistry",
+      "Bilayer",
+      "Crystallinity",
+      "Noble metal",
+      "Catalysis",
+      "Oxide",
+      "Oxygen evolution",
+      "Inorganic chemistry",
+      "Thin film",
+      "Nanotechnology",
+      "Metal",
+      "Membrane",
+      "Electrode",
+      "Composite material",
+      "Chemistry",
+      "Organic chemistry"
+    ],
+    "abstract": "Abstract Disordered and porous metal oxides are promising earth‐abundant and cost‐effective alternatives to noble‐metal electrocatalysts. Herein, nonsaturated oxidation in plasma‐enhanced atomic layer deposition is leveraged to tune the structural, mechanical, and optical properties of biphasic cobalt hydroxide films, thereby tailoring their catalytic activities and chemical stabilities. Short oxygen plasma exposure times and low plasma powers incompletely oxidize the cobaltocene precursor to Co(OH) 2 and result in carbon impurity incorporation. These Co(OH) 2 films are highly porous and catalytically active, but their electrochemical stability is impacted by poor substrate adhesion. In contrast, long exposure times and high powers completely oxidize the precursor to Co 3 O 4 , reduce the carbon incorporation, and improve the crystallinity. While the Co 3 O 4 films have high electrochemical stability, they are characterized by low oxygen evolution reaction activity. To overcome these competing properties, the established relation between deposition parameters and functional film properties is applied to design bilayer films exhibiting simultaneously improved electrochemical performance and chemical stability. The bilayer films combine a highly active Co(OH) 2 surface with a stable Co 3 O 4 interface layer. These coatings exhibit minimal light absorption, thus making them suitable as protective catalytic layers on semiconductor light absorbers for application in photoelectrochemical devices.",
+    "matched_topics": [
+      "optical engineering and precision equipment",
+      "precision measurement"
+    ],
+    "topic_category": "optics-and-equipment",
+    "topic_method": "material design and characterization",
+    "rationale": "The study involves designing multifunctional layers with tailored properties, relevant to precision measurement and optical applications."
+  },
+  {
+    "id": "https://openalex.org/W4316363060",
+    "title": "Nanostructured Silicon Matrix for Materials Engineering",
+    "publication_year": 2023,
+    "publication_date": "2023-01-15",
+    "source_type": "journal",
+    "pdf_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/smll.202206318",
+    "html_url": "https://doi.org/10.1002/smll.202206318",
+    "authors": [
+      "Poting Liu",
+      "Alexander Schleusener",
+      "Gabriel Zieger",
+      "Arne Bochmann",
+      "M. A. Van Spronsen",
+      "Владимир Сиваков"
+    ],
+    "german_collaborator_institutes": [
+      "Friedrich Schiller University Jena",
+      "Helmholtz Institute Jena",
+      "Leibniz Institute of Photonic Technology"
+    ],
+    "concepts": [
+      "Tin",
+      "Materials science",
+      "Silicon",
+      "Chemical vapor deposition",
+      "Chemical engineering",
+      "Thermal decomposition",
+      "Nanotechnology",
+      "Optoelectronics",
+      "Chemistry",
+      "Organic chemistry",
+      "Metallurgy",
+      "Engineering"
+    ],
+    "abstract": "Tin-containing layers with different degrees of oxidation are uniformly distributed along the length of silicon nanowires formed by a top-down method by applying metalorganic chemical vapor deposition. The electronic and atomic structure of the obtained layers is investigated by applying nondestructive surface-sensitive X-ray absorption near edge spectroscopy using synchrotron radiation. The results demonstrated, for the first time, a distribution effect of the tin-containing phases in the nanostructured silicon matrix compared to the results obtained for planar structures at the same deposition temperatures. The amount and distribution of tin-containing phases can be effectively varied and controlled by adjusting the geometric parameters (pore diameter and length) of the initial matrix of nanostructured silicon. Due to the occurrence of intense interactions between precursor molecules and decomposition by-products in the nanocapillary, as a consequence of random thermal motion of molecules in the nanocapillary, which leads to additional kinetic energy and formation of reducing agents, resulting in effective reduction of tin-based compounds to a metallic tin state for molecules with the highest penetration depth in the nanostructured silicon matrix. This effect will enable clear control of the phase distributions of functional materials in 3D matrices for a wide range of applications.",
+    "matched_topics": [
+      "micro- and nanotechnology for precision engineering",
+      "precision measurement",
+      "additive manufacturing"
+    ],
+    "topic_category": "manufacturing-and-micro-nano",
+    "topic_method": "nanostructured materials engineering",
+    "rationale": "The study on nanostructured silicon relates to precision measurement and micro/nano technology applications."
+  },
+  {
+    "id": "https://openalex.org/W2995298571",
+    "title": "Introducing a novel in vivo method to access visual performance during dewetting process of contact lens surface",
+    "publication_year": 2020,
+    "publication_date": "2020-03-09",
+    "source_type": "journal",
+    "pdf_url": "",
+    "html_url": "",
+    "authors": [
+      "Oliver Kolbe",
+      "Felix Zimmermann",
+      "Sebastian Marx",
+      "Wolfgang Sickenberger"
+    ],
+    "german_collaborator_institutes": [
+      "Ernst Abbe University of Applied Sciences Jena"
+    ],
+    "concepts": [
+      "Dewetting",
+      "Contact lens",
+      "Visual acuity",
+      "Ophthalmology",
+      "Dry eyes",
+      "Materials science",
+      "Medicine",
+      "Lens (geology)",
+      "Optometry",
+      "Optics",
+      "Composite material",
+      "Physics",
+      "Wetting"
+    ],
+    "abstract": "",
+    "abstract_recovery_method": "not_recovered",
+    "matched_topics": [
+      "optical engineering and precision equipment",
+      "precision measurement"
+    ],
+    "topic_category": "optics-and-equipment",
+    "topic_method": "experimental method",
+    "rationale": "The paper discusses a method related to optical performance measurement, relevant to precision measurement in optical engineering."
+  },
+  {
+    "id": "https://openalex.org/W3013976675",
+    "title": "Analytical solution of a binary melt solidification model in the presence of a quasi-equilibrium mushy region for the case of the non-linear phase diagram",
+    "publication_year": 2020,
+    "publication_date": "2020-03-26",
+    "source_type": "journal",
+    "pdf_url": "",
+    "html_url": "",
+    "authors": [
+      "Irina Nizovtseva",
+      "Ilya Starodumov",
+      "Dmitri V. Alexandrov"
+    ],
+    "german_collaborator_institutes": [
+      "Friedrich Schiller University Jena"
+    ],
+    "concepts": [
+      "Thermodynamics",
+      "Allowance (engineering)",
+      "Phase diagram",
+      "Crystallization",
+      "Phase (matter)",
+      "Materials science",
+      "Fraction (chemistry)",
+      "Diagram",
+      "Steady state (chemistry)",
+      "Parametric statistics",
+      "Binary number",
+      "Mathematics",
+      "Chemistry",
+      "Physics",
+      "Chromatography",
+      "Physical chemistry",
+      "Statistics",
+      "Mechanical engineering",
+      "Arithmetic",
+      "Engineering"
+    ],
+    "abstract": "The process of directional crystallization with a quasi-equilibrium mushy region is considered in the steady-state conditions with allowance for the non-linear phase diagram. A complete analytical solution of model equations is found in a parametric form by introducing a new variable-the solid phase fraction in the mushy layer. The temperature and solute concentration, as well as the solid fraction in the mushy layer, its boundaries, and the crystallization velocity, are determined analytically. It is shown that a non-linear phase diagram substantially influences the behavior of solutions obtained.",
+    "matched_topics": [
+      "precision engineering progress",
+      "additive manufacturing"
+    ],
+    "topic_category": "manufacturing-and-micro-nano",
+    "topic_method": "analytical modeling",
+    "rationale": "The paper discusses solidification processes relevant to precision manufacturing and additive techniques."
+  },
+  {
+    "id": "https://openalex.org/W3022241145",
+    "title": "Impact of the thermally induced focus shift on the quality of a laser cutting edge",
+    "publication_year": 2020,
+    "publication_date": "2020-04-28",
+    "source_type": "journal",
+    "pdf_url": "",
+    "html_url": "",
+    "authors": [
+      "Leonie Tatzel",
+      "Fernando Puente León"
+    ],
+    "german_collaborator_institutes": [
+      "Karlsruhe Institute of Technology"
+    ],
+    "concepts": [
+      "Enhanced Data Rates for GSM Evolution",
+      "Focus (optics)",
+      "Materials science",
+      "Laser",
+      "Quality (philosophy)",
+      "Laser cutting",
+      "Laser power scaling",
+      "Position (finance)",
+      "Depth of focus (tectonics)",
+      "Surface roughness",
+      "Thermal",
+      "Process (computing)",
+      "Mechanical engineering",
+      "Surface finish",
+      "Optics",
+      "Computer science",
+      "Composite material",
+      "Engineering",
+      "Artificial intelligence",
+      "Physics"
+    ],
+    "abstract": "The phenomenon of thermal focus shift in optical systems, mainly caused by thermal lensing, is well known. There are numerous publications dealing with this effect, but they do not answer the question of how relevant this problem is to the practical application of lasers in laser cutting machines. In this paper, we examine the effect of the thermally induced change of the focus position on the quality of the cut edge when laser cutting 3 mm thick stainless steel with an 8 kW disk laser. After measuring the magnitude of the focus shift, its impact on the quality of the resulting cutting edge was determined for three different scenarios: recommended process parameters, increased speed, and decreased gas pressure. Roughness and perpendicularity tolerance were used to quantify the quality of the cutting edges according to the ISO standard. It becomes clear that it is difficult to explain the effect of the change in the focus position on quality aspects in general, as this also depends on other process parameters. Nevertheless, it can be shown that the resulting cut edge quality decreases in all three scenarios as a result of the thermal focus shift. This problem cannot be avoided by simply changing the process parameter corresponding to the focal position in the opposed direction of the thermal behavior before starting. Even though the reduction of quality might not be severe today, the focus shift should be considered for all applications that require a very high cutting quality. Furthermore, this effect cannot be neglected anymore as laser power will continue to rise in the future.",
+    "matched_topics": [
+      "optical engineering and precision equipment",
+      "precision manufacturing",
+      "additive manufacturing"
+    ],
+    "topic_category": "optics-and-equipment",
+    "topic_method": "experimental analysis",
+    "rationale": "The study addresses thermal focus shift in laser cutting, impacting precision manufacturing quality, relevant to optical engineering and precision equipment."
+  },
+  {
+    "id": "https://openalex.org/W3045826803",
+    "title": "X-ray characterization of physical-vapor-transport-grown bulk AlN single crystals",
+    "publication_year": 2020,
+    "publication_date": "2020-07-30",
+    "source_type": "journal",
+    "pdf_url": "https://journals.iucr.org/j/issues/2020/04/00/te5057/te5057.pdf",
+    "html_url": "https://doi.org/10.1107/s1600576720008961",
+    "authors": [
+      "Thomas Wicht",
+      "S. Müller",
+      "Roland Weingärtner",
+      "Boris M. Epelbaum",
+      "Sven Besendörfer",
+      "U. W. Bläß",
+      "M. Weißer",
+      "Tobias Unruh",
+      "Elke Meißner"
+    ],
+    "german_collaborator_institutes": [
+      "Fraunhofer Institute for Integrated Systems and Device Technology",
+      "Friedrich-Alexander-Universität Erlangen-Nürnberg"
+    ],
+    "concepts": [
+      "Characterization (materials science)",
+      "Materials science",
+      "Crystallography",
+      "X-ray",
+      "Chemistry",
+      "Nanotechnology",
+      "Optics",
+      "Physics"
+    ],
+    "abstract": "AlN slices from bulk crystals grown under low thermomechanical stress conditions via the physical vapor transport (PVT) method were analyzed by X-ray methods to study the influence of the growth mode on the crystal quality. Defect types and densities were analyzed along axial [0001] as well as lateral growth directions. X-ray diffraction (0110) rocking-curve mappings of representative wafer cuts reveal a low mean FWHM of 13.4 arcsec, indicating the generally high crystal quality. The total dislocation density of 2 × 10<sup>3</sup> cm<sup>-2</sup> as determined by X-ray topography is low and dislocations are largely threading edge dislocations of <b>b</b> = 1/3〈1120〉 type. The absence of basal plane dislocations in homogeneous crystal regions void of macroscopic defects can be linked to the low-stress growth conditions. Under the investigated growth conditions this high crystal quality can be maintained both along the axial [0001] direction and within lateral growth directions. Exceptions to this are some locally confined, misoriented grains and defect clusters, most of which are directly inherited from the seed or are formed due to the employed seed fixation technique on the outer periphery of the crystals. Seed-shaping experiments indicate no apparent kinetic limitations for an enhanced lateral expansion rate and the resulting crystal quality, specifically with regard to the growth mode on <i>a</i>-face facets.",
+    "matched_topics": [
+      "precision measurement",
+      "optical engineering and precision equipment",
+      "micro- and nanotechnology for precision engineering"
+    ],
+    "topic_category": "optics-and-equipment",
+    "topic_method": "X-ray characterization",
+    "rationale": "The study of AlN crystal quality through X-ray methods relates to precision measurement and optical engineering."
+  },
+  {
+    "id": "https://openalex.org/W3140138474",
+    "title": "Low-temperature sintered Ni–Zn–Co–Mn–O spinel oxide ceramics for multilayer NTC thermistors",
+    "publication_year": 2021,
+    "publication_date": "2021-03-28",
+    "source_type": "journal",
+    "pdf_url": "https://link.springer.com/content/pdf/10.1007/s10854-021-05733-9.pdf",
+    "html_url": "https://doi.org/10.1007/s10854-021-05733-9",
+    "authors": [
+      "Timmy Reimann",
+      "Jörg Töpfer"
+    ],
+    "german_collaborator_institutes": [
+      "Ernst Abbe University of Applied Sciences Jena"
+    ],
+    "concepts": [
+      "Thermistor",
+      "Spinel",
+      "Sintering",
+      "Materials science",
+      "Ceramic",
+      "Cofiring",
+      "Microstructure",
+      "Manganite",
+      "Electrical resistivity and conductivity",
+      "Analytical Chemistry (journal)",
+      "Metallurgy",
+      "Mineralogy",
+      "Chemistry",
+      "Electrical engineering",
+      "Ferromagnetism",
+      "Chromatography",
+      "Engineering",
+      "Organic chemistry",
+      "Combustion",
+      "Quantum mechanics"
+    ],
+    "abstract": "Abstract The phase formation, sintering behavior and electrical properties of Ni–Co–Zn–Mn spinel NTC thermistor ceramics of the series Ni 0.5 Zn z Co 0.5 Mn 2− z O 4 with 0 ≤ z ≤ 1 were studied. In contrast to NiMn 2 O 4 , which exhibits limited stability in air below 730 °C and above 970 °C, the Zn–Co-substituted nickel manganite spinels are stable at T &lt; 730 °C and decompose at T d &gt; 900 °C, with T d increasing with decreasing Zn Content z . The samples were sintered at 900 °C with addition of 3 wt% Bi 2 O 3 as sintering aid and densities of above 92% were achieved. The room temperature resistivity and thermistor B -constants are almost independent of composition at 0 ≤ z ≤ 0.6 and start to increase at higher Zn concentrations. A multilayer NTC thermistor was fabricated using green tapes of a spinel of composition z = 0.75, commercial Ag paste, and cofiring at 900 °C. The firing behavior, microstructure formation and electrical properties of the multilayer thermistor are reported.",
+    "matched_topics": [
+      "precision measurement",
+      "micro- and nanotechnology for precision engineering"
+    ],
+    "topic_category": "manufacturing-and-micro-nano",
+    "topic_method": "material synthesis and characterization",
+    "rationale": "The study involves precision measurement of electrical properties and microstructure in thermistor ceramics, relevant to precision engineering."
+  },
+  {
+    "id": "https://openalex.org/W3157763159",
+    "title": "Picosecond Charge Localization Dynamics in CH<sub>3</sub>NH<sub>3</sub>PbI<sub>3</sub> Perovskite Probed by Infrared-Activated Vibrations",
+    "publication_year": 2021,
+    "publication_date": "2021-05-05",
+    "source_type": "journal",
+    "pdf_url": "https://mediatum.ub.tum.de/1614896",
+    "html_url": "https://mediatum.ub.tum.de/1614896",
+    "authors": [
+      "Klara Stallhofer",
+      "Matthias Nuber",
+      "Daniele Cortecchia",
+      "Annalisa Bruno",
+      "Reinhard Kienberger",
+      "Felix Deschler",
+      "Cesare Soci",
+      "Hristo Iglev"
+    ],
+    "german_collaborator_institutes": [
+      "Technical University of Munich"
+    ],
+    "concepts": [
+      "Photoexcitation",
+      "Picosecond",
+      "Femtosecond",
+      "Charge carrier",
+      "Materials science",
+      "Infrared",
+      "Chemical physics",
+      "Perovskite (structure)",
+      "Crystal structure",
+      "Lattice (music)",
+      "Crystal (programming language)",
+      "Molecular physics",
+      "Molecular vibration",
+      "Ultrashort pulse",
+      "Optoelectronics",
+      "Molecule",
+      "Excitation",
+      "Chemistry",
+      "Crystallography",
+      "Optics"
+    ],
+    "abstract": "Hybrid metal halide perovskites exhibit well-defined semiconducting properties and efficient optoelectronic performance considering their soft crystal structure and low-energy lattice motions. The response of such a crystal lattice to light-induced charges is a fundamental question, for which experimental insight into ultrafast time scales is still sought. Here, we use infrared-activated vibrations (IRAV) of the organic components within the hybrid perovskite lattice as a sensitive probe for local structural reorganizations after photoexcitation, with femtosecond resolution. We find that the IRAV signal response shows a delayed rise of about 3 ps and subsequent decay of pronounced monomolecular character, distinguishing it from absorption associated with free carriers. We interpret our results as a two-step carrier localization process. Initially, carriers localize transiently in local energy minima formed by lattice fluctuations. A subpopulation of these can then fall into deeper trapped states over picoseconds, likely due to local reorganization of the organic molecules surrounding the carriers.",
+    "matched_topics": [
+      "optical engineering and precision equipment",
+      "micro- and nanotechnology for precision engineering"
+    ],
+    "topic_category": "optics-and-equipment",
+    "topic_method": "experimental",
+    "rationale": "The study explores ultrafast dynamics in perovskite materials, relevant for precision measurement and optical engineering applications."
+  },
+  {
+    "id": "https://openalex.org/W3163818899",
+    "title": "Glass tube cutting with aberration-corrected non-diffracting ultrashort laser pulses",
+    "publication_year": 2021,
+    "publication_date": "2021-06-18",
+    "source_type": "journal",
+    "pdf_url": "https://arxiv.org/pdf/2105.09864",
+    "html_url": "http://arxiv.org/abs/2105.09864",
+    "authors": [
+      "Henning Rave",
+      "Henning Heiming",
+      "Patrick Szumny",
+      "Myriam Kaiser",
+      "Jonas Kleiner",
+      "Daniel Flamm"
+    ],
+    "german_collaborator_institutes": [
+      "S&F Systemtechnik (Germany)"
+    ],
+    "concepts": [
+      "Materials science",
+      "Optics",
+      "Laser",
+      "Etching (microfabrication)",
+      "Laser beam machining",
+      "Ultrashort pulse",
+      "Compensation (psychology)",
+      "Substrate (aquarium)",
+      "Materials processing",
+      "Surface micromachining",
+      "Optoelectronics",
+      "Thermal",
+      "Beam (structure)",
+      "Wavefront",
+      "Fiber laser",
+      "Laser cutting",
+      "Photomask",
+      "Image processing",
+      "Laser beams",
+      "Laser ultrasonics"
+    ],
+    "abstract": "The separation of complex inner and outer contours of glass articles with curved surfaces using ultrashort pulsed lasers is reported. Single-pass, full-thickness modifications along the entire substrate are achieved using a processing optics that allows for beam shaping of non-diffracting beams and, additionally, for aberration compensation of phase distortions occurring at the curved interface. The glass articles finally separated by thermal stress or via selective etching meet the demands of the medical industry in terms of micro-debris, surface quality, and processing speed.",
+    "matched_topics": [
+      "optical engineering and precision equipment",
+      "precision manufacturing",
+      "additive manufacturing"
+    ],
+    "topic_category": "optics-and-equipment",
+    "topic_method": "laser processing",
+    "rationale": "The paper discusses laser cutting techniques for precision glass manufacturing, relevant to optical engineering and precision equipment."
+  },
+  {
+    "id": "https://openalex.org/W3213384729",
+    "title": "Epitaxial type-I and type-II InAs-AlAsSb core–shell nanowires on silicon",
+    "publication_year": 2021,
+    "publication_date": "2021-11-08",
+    "source_type": "journal",
+    "pdf_url": "https://aip.scitation.org/doi/pdf/10.1063/5.0065867",
+    "html_url": "https://doi.org/10.1063/5.0065867",
+    "authors": [
+      "Fabio Giudice",
+      "Sergej Fust",
+      "Paul Schmiedeke",
+      "Johannes Pantle",
+      "Markus Döblinger",
+      "Akhil Ajay",
+      "Steffen Meder",
+      "Hubert Riedl",
+      "Jonathan J. Finley",
+      "Gregor Koblmüller"
+    ],
+    "german_collaborator_institutes": [
+      "Ludwig-Maximilians-Universität München",
+      "Technical University of Munich"
+    ],
+    "concepts": [
+      "Materials science",
+      "Optoelectronics",
+      "Nanowire",
+      "Band offset",
+      "Silicon",
+      "Epitaxy",
+      "Photoluminescence",
+      "Heterojunction",
+      "Photonics",
+      "Band gap",
+      "Semiconductor",
+      "Direct and indirect band gaps",
+      "Gallium arsenide",
+      "Nanotechnology",
+      "Layer (electronics)",
+      "Valence band"
+    ],
+    "abstract": "Low-bandgap semiconductor nanowires (NWs) attract considerable interest for mid-infrared (MIR) photonics and optoelectronics, where ideal candidate materials require surface-passivated core–shell systems with large tunability in band offset, lineup, and emission wavelength while maintaining close lattice-matching conditions. Here, we propose and demonstrate epitaxial InAs–AlAsSb core–shell NW arrays on silicon (Si) that offer exceptional control over both the internal strain close to lattice-matching as well as band lineups tunable between type-I and type-II, with almost no analogue in the III–V materials family. We develop direct monolithic growth of high-uniformity InAs–AlAsSb NWs with wide tunability in shell composition and employ correlated Raman scattering and micro-photoluminescence spectroscopy to elaborate the interplay among hydrostatic strain, band lineup, and emission energy of the NW core luminescence tuned from ∼0.4 to 0.55 eV. Electronic structure calculations further support the experimentally observed tunability between type-I and type-II band lineups. The Si-integrated InAs-AlAsSb NW materials system holds large prospects not only for on-chip MIR photonics but also for other applications including high-speed transistors and NW-based hot carrier solar cells.",
+    "matched_topics": [
+      "micro- and nanotechnology for precision engineering",
+      "optical engineering and precision equipment"
+    ],
+    "topic_category": "manufacturing-and-micro-nano",
+    "topic_method": "nanotechnology",
+    "rationale": "The paper discusses nanowires for photonics, relevant to precision engineering in micro/nano technology and optical applications."
+  },
+  {
+    "id": "https://openalex.org/W3215076829",
+    "title": "Physics-aware learning and domain-specific loss design in ophthalmology",
+    "publication_year": 2021,
+    "publication_date": "2021-11-27",
+    "source_type": "journal",
+    "pdf_url": "",
+    "html_url": "",
+    "authors": [
+      "Hendrik Burwinkel",
+      "H. Matz",
+      "Stefan Saur",
+      "Christoph Hauger",
+      "Michael Trost",
+      "Nino Hirnschall",
+      "Oliver Findl",
+      "Nassir Navab",
+      "Seyed‐Ahmad Ahmadi"
+    ],
+    "german_collaborator_institutes": [
+      "Ludwig-Maximilians-Universität München",
+      "Technical University of Munich"
+    ],
+    "concepts": [
+      "Computer science",
+      "Biometrics",
+      "Human eye",
+      "Domain (mathematical analysis)",
+      "Artificial intelligence",
+      "Lens (geology)",
+      "Intraocular lens",
+      "Cataract surgery",
+      "Machine learning",
+      "Optics",
+      "Medicine",
+      "Mathematics",
+      "Surgery",
+      "Physics",
+      "Mathematical analysis"
+    ],
+    "abstract": "",
+    "abstract_recovery_method": "not_recovered",
+    "matched_topics": [
+      "AI for precision engineering",
+      "optical engineering and precision equipment"
+    ],
+    "topic_category": "ai-and-digital-precision",
+    "topic_method": "machine learning for precision manufacturing",
+    "rationale": "The paper discusses AI applications in ophthalmology, relevant to precision engineering in optical systems."
+  },
+  {
+    "id": "https://openalex.org/W4206656123",
+    "title": "Amorphization and nanocrystal formation in a Pd–Ni–Cu–P alloy after cooling under different conditions",
+    "publication_year": 2022,
+    "publication_date": "2022-01-03",
+    "source_type": "journal",
+    "pdf_url": "",
+    "html_url": "",
+    "authors": [
+      "E. V. Kharanzhevskiy",
+      "P. K. Galenko",
+      "Markus Rettenmayr",
+      "S. Koch",
+      "Robert Wonneberger",
+      "M. V. Zamoryanskaya",
+      "M. A. Yagovkina",
+      "Demid A. Kirilenko",
+      "V. A. Bershteĭn",
+      "P. N. Yakushev",
+      "L. M. Egorova",
+      "Kseniia N. Orekhova",
+      "Владимир Лебедев",
+      "А. В. Егоров",
+      "А. S. Senchenkov"
+    ],
+    "german_collaborator_institutes": [
+      "Friedrich Schiller University Jena"
+    ],
+    "concepts": [
+      "Alloy",
+      "Transmission electron microscopy",
+      "Nanocrystal",
+      "Materials science",
+      "Diffraction",
+      "Amorphous solid",
+      "Calorimetry",
+      "Microanalysis",
+      "Crystallography",
+      "Amorphous metal",
+      "Differential scanning calorimetry",
+      "Metallurgy",
+      "Analytical Chemistry (journal)",
+      "Chemical engineering",
+      "Thermodynamics",
+      "Chemistry",
+      "Nanotechnology",
+      "Optics",
+      "Physics",
+      "Engineering"
+    ],
+    "abstract": "Structure formation during solidification of a Pd-Ni-Cu-P melt is studied. It is demonstrated that changes in the heat transfer conditions lead to a nonlinear change in the characteristics of the structure. The article presents the regimes of cooling the samples and the results of their structure and composition studies. It is found that a decrease in the cooling rate of the alloy leads to an increase in the size, proportion and composition of nanoinclusions in an amorphous matrix. X-ray diffraction method, electron probe microanalysis, transmission microscopy and scanning calorimetry are used for samples characterization. This article is part of the theme issue 'Transport phenomena in complex systems (part 2)'.",
+    "matched_topics": [
+      "micro- and nanotechnology for precision engineering",
+      "precision measurement"
+    ],
+    "topic_category": "manufacturing-and-micro-nano",
+    "topic_method": "experimental characterization",
+    "rationale": "The study of nanocrystal formation and structure characterization relates to precision measurement and micro/nano technology."
+  },
+  {
+    "id": "https://openalex.org/W4283527513",
+    "title": "Nucleation and Growth of an Ensemble of Crystals during the Intermediate Stage of a Phase Transition in Metastable Liquids",
+    "publication_year": 2022,
+    "publication_date": "2022-06-24",
+    "source_type": "journal",
+    "pdf_url": "https://www.mdpi.com/2073-4352/12/7/895/pdf?version=1656053578",
+    "html_url": "https://doi.org/10.3390/cryst12070895",
+    "authors": [
+      "Liubov V. Toropova",
+      "Eugenya V. Makoveeva",
+      "Sergei I. Osipov",
+      "Alexey P. Malygin",
+      "Yang Yang",
+      "Dmitri V. Alexandrov"
+    ],
+    "german_collaborator_institutes": [
+      "Friedrich Schiller University Jena"
+    ],
+    "concepts": [
+      "Ostwald ripening",
+      "Nucleation",
+      "Supercooling",
+      "Metastability",
+      "Crystallization",
+      "Supersaturation",
+      "Thermodynamics",
+      "Phase transition",
+      "Saddle point",
+      "Crystal growth",
+      "Distribution function",
+      "Materials science",
+      "Chemistry",
+      "Physics",
+      "Mathematics",
+      "Geometry",
+      "Organic chemistry"
+    ],
+    "abstract": "In this paper, an analytical method of solving the integro-differential system of kinetic and balance equations describing the evolution of an ensemble of crystals during the intermediate phase of the bulk crystallization process is described. The theory is developed for kinetic equations of the first- and second order corresponding to the absence and presence of fluctuations in particle growth rates. The crystal-size distribution function as well as the dynamics of metastability reduction in a supercooled melt (supersaturated solution) are analytically found using the saddle-point and the Laplace transform methods. The theory enables us to obtain the crystal-size distribution function that establishes in a supercooled (supersaturated) liquid at the beginning of the final stage of a phase transformation process when Ostwald ripening, coagulation and fragmentation of crystals are able to occur.",
+    "matched_topics": [
+      "micro- and nanotechnology for precision engineering",
+      "precision measurement"
+    ],
+    "topic_category": "manufacturing-and-micro-nano",
+    "topic_method": "analytical modeling",
+    "rationale": "The study of crystal growth and size distribution relates to precision measurement and micro/nanotechnology in manufacturing processes."
+  },
+  {
+    "id": "https://openalex.org/W4379977683",
+    "title": "Experimental assessment of the energy performance of microfluidic glazing components: The first results of a monitoring campaign carried out in an outdoor test facility",
+    "publication_year": 2023,
+    "publication_date": "2023-06-07",
+    "source_type": "journal",
+    "pdf_url": "https://www.sciencedirect.com/science/article/pii/S0360544223014469",
+    "html_url": "https://doi.org/10.1016/j.energy.2023.128052",
+    "authors": [
+      "Manuela Baracani",
+      "Fabio Favoino",
+      "Stefano Fantucci",
+      "Valentina Serra",
+      "Marco Perino",
+      "Marisandra Introna",
+      "René Limbach",
+      "Lothar Wondraczek"
+    ],
+    "german_collaborator_institutes": [
+      "Friedrich Schiller University Jena"
+    ],
+    "concepts": [
+      "Glazing",
+      "Heat exchanger",
+      "Thermal",
+      "Environmental science",
+      "Materials science",
+      "Heat transfer",
+      "Nuclear engineering",
+      "Automotive engineering",
+      "Mechanical engineering",
+      "Engineering",
+      "Composite material",
+      "Meteorology",
+      "Mechanics",
+      "Physics"
+    ],
+    "abstract": "",
+    "abstract_recovery_method": "not_recovered",
+    "matched_topics": [
+      "micro- and nanotechnology for precision engineering",
+      "precision measurement",
+      "additive manufacturing"
+    ],
+    "topic_category": "manufacturing-and-micro-nano",
+    "topic_method": "experimental assessment",
+    "rationale": "The study involves microfluidic components, relevant to precision measurement and manufacturing techniques."
+  },
+  {
+    "id": "https://openalex.org/W3048271227",
+    "title": "Laser-induced Leidenfrost surfaces",
+    "publication_year": 2020,
+    "publication_date": "2020-08-09",
+    "source_type": "journal",
+    "pdf_url": "",
+    "html_url": "",
+    "authors": [
+      "Oliver Dubnack",
+      "Clemens Kunz",
+      "Stephan Gräf",
+      "Frank A. Müller"
+    ],
+    "german_collaborator_institutes": [
+      "Friedrich Schiller University Jena"
+    ],
+    "concepts": [
+      "Leidenfrost effect",
+      "Femtosecond",
+      "Laser",
+      "Materials science",
+      "Contact angle",
+      "Wetting",
+      "Boiling",
+      "Drop (telecommunication)",
+      "Levitation",
+      "Sapphire",
+      "Composite material",
+      "Optics",
+      "Nanotechnology",
+      "Mechanics",
+      "Chemistry",
+      "Heat transfer",
+      "Mechanical engineering",
+      "Nucleate boiling",
+      "Heat transfer coefficient",
+      "Engineering"
+    ],
+    "abstract": "",
+    "abstract_recovery_method": "not_recovered",
+    "matched_topics": [
+      "optical engineering and precision equipment",
+      "precision measurement"
+    ],
+    "topic_category": "optics-and-equipment",
+    "topic_method": "experimental",
+    "rationale": "The paper discusses laser-induced surfaces relevant to precision measurement and optical engineering applications."
+  },
+  {
+    "id": "https://openalex.org/W3088394825",
+    "title": "Laser beam activation of polymer surfaces for selective chemical metallization",
+    "publication_year": 2020,
+    "publication_date": "2020-01-01",
+    "source_type": "journal",
+    "pdf_url": "https://doi.org/10.1016/j.procir.2020.09.067",
+    "html_url": "https://doi.org/10.1016/j.procir.2020.09.067",
+    "authors": [
+      "Michael Seiler",
+      "Jann Jelto Gruben",
+      "Andreas Knauft",
+      "Andrea Barz",
+      "Jens Bliedtner"
+    ],
+    "german_collaborator_institutes": [
+      "Ernst Abbe University of Applied Sciences Jena"
+    ],
+    "concepts": [
+      "Materials science",
+      "Laser",
+      "Fluence",
+      "Homogeneous",
+      "Optoelectronics",
+      "Resist",
+      "Process window",
+      "Process (computing)",
+      "Polymer",
+      "Volume (thermodynamics)",
+      "Composite material",
+      "Beam (structure)",
+      "Mold",
+      "Optics",
+      "Lithography",
+      "Computer science",
+      "Operating system",
+      "Quantum mechanics",
+      "Layer (electronics)",
+      "Thermodynamics"
+    ],
+    "abstract": "The application of molded interconnected devices (MID) holds great potential to reduce volume and weight of electronic circuit carriers. The material for laser-based manufacturing usually contents additives inside the matrix, which are required for the activation process. This paper presents an alternative without any additives in the mold. The main focus is the experimental investigation of laser fluence as well as pulse and line distance. The process parameters, that lead to a homogeneous metallization, are described and evaluated in order to define the boundaries of the new laser activation process.",
+    "matched_topics": [
+      "optical engineering and precision equipment",
+      "additive manufacturing"
+    ],
+    "topic_category": "optics-and-equipment",
+    "topic_method": "laser processing",
+    "rationale": "The paper discusses laser activation for metallization, relevant to optical engineering and precision manufacturing."
+  },
+  {
+    "id": "https://openalex.org/W3088922131",
+    "title": "Ultrafast optical switching and power limiting in intersubband polaritonic metasurfaces",
+    "publication_year": 2020,
+    "publication_date": "2020-01-01",
+    "source_type": "conference",
+    "pdf_url": "",
+    "html_url": "",
+    "authors": [
+      "Sander A. Mann",
+      "Nish Nookala",
+      "Samuel C. Johnson",
+      "Ahmed Mekkawy",
+      "John F. Klem",
+      "Igal Brener",
+      "Markus B. Raschke",
+      "Andrea Alù",
+      "Mikhail A. Belkin"
+    ],
+    "german_collaborator_institutes": [
+      "Technical University of Munich"
+    ],
+    "concepts": [
+      "Ultrashort pulse",
+      "Plasmon",
+      "Optoelectronics",
+      "Resonator",
+      "Limiting",
+      "Saturation (graph theory)",
+      "Photonics",
+      "Nonlinear optics",
+      "Materials science",
+      "Nonlinear system",
+      "Quantum",
+      "Physics",
+      "Ultrafast optics",
+      "Optics",
+      "Laser",
+      "Quantum mechanics",
+      "Engineering",
+      "Mathematics",
+      "Combinatorics",
+      "Mechanical engineering"
+    ],
+    "abstract": "We experimentally demonstrate a nonlinear metasurface comprising plasmonic resonators coupled to multi-quantum well transition. Due to MQW saturation, the metasurface provides a giant j (3) on the order of 3x10 -13 m 2 /V 2 with ~2 ps response time.",
+    "matched_topics": [
+      "optical engineering and precision equipment",
+      "micro- and nanotechnology for precision engineering"
+    ],
+    "topic_category": "optics-and-equipment",
+    "topic_method": "experimental demonstration",
+    "rationale": "The paper discusses a nonlinear metasurface with applications in optical engineering, relevant to precision measurement and equipment."
+  },
+  {
+    "id": "https://openalex.org/W3108892323",
+    "title": "Third-harmonic generation with tailored modes in liquid core fibers with geometric birefringence",
+    "publication_year": 2020,
+    "publication_date": "2020-11-30",
+    "source_type": "journal",
+    "pdf_url": "",
+    "html_url": "",
+    "authors": [
+      "Kay Schaarschmidt",
+      "Jens Kobelke",
+      "Tobias Meyer",
+      "Mario Chemnitz",
+      "Markus A. Schmidt"
+    ],
+    "german_collaborator_institutes": [
+      "Friedrich Schiller University Jena",
+      "Leibniz Institute of Photonic Technology"
+    ],
+    "concepts": [
+      "Birefringence",
+      "Optics",
+      "Materials science",
+      "Modal",
+      "Phase matching",
+      "Core (optical fiber)",
+      "Electric field",
+      "Dispersion (optics)",
+      "Phase (matter)",
+      "Harmonic",
+      "Coupling (piping)",
+      "Finite element method",
+      "Second-harmonic generation",
+      "Physics",
+      "Acoustics",
+      "Composite material",
+      "Laser",
+      "Thermodynamics",
+      "Quantum mechanics"
+    ],
+    "abstract": "Geometrically induced birefringence represents a pathway for precisely engineering the modes in fibers and is particularly relevant for applications that crucially depend on modal dispersion. Here liquid core fibers (LCFs) with elliptical cores are analyzed in view of modal properties and third-harmonic generation (THG) numerically and experimentally. Using finite element modeling, the impact of ellipticity on phase matching, inter-modal coupling, electric field distribution, and birefringence are investigated. Significant THG in practically relevant modes, in accordance with phase-matching calculations, was measured in inorganic solvent-based LCFs.",
+    "matched_topics": [
+      "optical engineering and precision equipment",
+      "precision measurement"
+    ],
+    "topic_category": "optics-and-equipment",
+    "topic_method": "experimental and numerical analysis",
+    "rationale": "The study focuses on precise engineering of fiber modes, relevant for optical applications and precision measurement."
+  },
+  {
+    "id": "https://openalex.org/W3127951948",
+    "title": "Phase Conversion of Ice‐Templated α‐Tricalcium Phosphate Scaffolds into Low‐Temperature Calcium Phosphates with Anisotropic Open Porosity",
+    "publication_year": 2021,
+    "publication_date": "2021-02-10",
+    "source_type": "journal",
+    "pdf_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/adem.202001417",
+    "html_url": "https://doi.org/10.1002/adem.202001417",
+    "authors": [
+      "Annika Seifert",
+      "Jürgen Gröll",
+      "Jan Weichhold",
+      "Anne V. Boehm",
+      "Frank A. Müller",
+      "Uwe Gbureck"
+    ],
+    "german_collaborator_institutes": [
+      "Friedrich Schiller University Jena",
+      "University of Würzburg"
+    ],
+    "concepts": [
+      "Brushite",
+      "Phosphoric acid",
+      "Materials science",
+      "Porosity",
+      "Hydrothermal circulation",
+      "Calcium",
+      "Phase (matter)",
+      "Chemical engineering",
+      "Phosphate",
+      "Hydrothermal synthesis",
+      "Mineralogy",
+      "Atmospheric temperature range",
+      "Composite material",
+      "Metallurgy",
+      "Chemistry",
+      "Organic chemistry",
+      "Physics",
+      "Engineering",
+      "Meteorology"
+    ],
+    "abstract": "The current study aims to extend the material platform for anisotropically structured calcium phosphates to low‐temperature phases such as calcium‐deficient hydroxyapatite (CDHA) or the secondary phosphates monetite and brushite. This is achieved by the phase conversion of highly porous α‐tricalcium phosphate (α‐TCP) scaffolds fabricated by ice‐templating into the aforementioned phases by hydrothermal treatment or incubation in phosphoric acid. Prior to these steps, α‐TCP scaffolds are either sintered for 8 h at 1400 °C or remain in their original state. Both nonsintered and sintered α‐TCP specimens are converted into CDHA by hydrothermal treatment, while a transformation into monetite and brushite is achieved by incubation in phosphoric acid. Hydrothermal treatment for 72 h at 175 °C increases the porosity in nonsintered samples from 85% to 88% and from 75% to 88% in the sintered ones. An increase in the specific surface area from (1.102 ± 0.005) to (9.17 ± 0.01) m 2 g −1 and from (0.190 ± 0.004) to (2.809 ± 0.002) m 2 g −1 due to the phase conversion is visible for both the nonsintered and sintered samples. Compressive strength of the nonsintered samples increases significantly from (0.76 ± 0.11) to (5.29 ± 0.94) MPa due to incubation in phosphoric acid.",
+    "matched_topics": [
+      "precision engineering progress",
+      "micro- and nanotechnology for precision engineering",
+      "precision measurement"
+    ],
+    "topic_category": "manufacturing-and-micro-nano",
+    "topic_method": "material processing and characterization",
+    "rationale": "The study involves phase conversion of materials relevant to precision engineering and measurement of structural properties."
+  },
+  {
+    "id": "https://openalex.org/W3129151577",
+    "title": "Robot deployed Laser-Ultrasonic NDT system for inspection of large aircraft structures",
+    "publication_year": 2021,
+    "publication_date": "2021-01-01",
+    "source_type": "conference",
+    "pdf_url": "https://doi.org/10.1088/1757-899x/1024/1/012032",
+    "html_url": "https://doi.org/10.1088/1757-899x/1024/1/012032",
+    "authors": [
+      "Vicki James",
+      "Dave Carswell",
+      "Jonathan Riise",
+      "P. Ian Nicholson",
+      "Norbert Graf",
+      "N. Huber",
+      "Martin Gärtner",
+      "Bernhard Reitinger",
+      "Edgar Scherleitner",
+      "Peter Burgholzer",
+      "Jon Phipps",
+      "Dave Burns",
+      "Ciro Incarnato"
+    ],
+    "german_collaborator_institutes": [
+      "InnoLas Solutions (Germany)"
+    ],
+    "concepts": [
+      "Nondestructive testing",
+      "Fuselage",
+      "Aerospace",
+      "Laser",
+      "Ultrasonic sensor",
+      "Laser Doppler vibrometer",
+      "Ultrasonic testing",
+      "Raster scan",
+      "Optics",
+      "Acoustics",
+      "Materials science",
+      "Computer science",
+      "Mechanical engineering",
+      "Engineering",
+      "Aerospace engineering",
+      "Artificial intelligence",
+      "Laser beams",
+      "Medicine",
+      "Physics",
+      "Radiology"
+    ],
+    "abstract": "Abstract The mandatory Non-Destructive Testing (NDT) by the aerospace industry for both present and future generation hybrid aircraft using thick composite structures poses many challenges for traditional inspection techniques. Laser Ultrasonic Testing (LUT) deployed by a robot for inspection of modern aerospace composite components shows good promise. It is a non-contact method offering the possibility of fast scan times without the need for couplant. This paper presents the latest work-in-progress for the design and development of the system developed by the ACCURATe consortium. ACCURATe is an ongoing H2020 Clean Sky 2 part funded project to develop a laser ultrasound based NDT system prototype for fast and contactless testing of large carbon fibre reinforced polymer (CFRP) aircraft structures. The approach is based on a non-contact laser generated and detected pulsed ultrasound technique with delivery of both the laser ultrasound excitation and detection pulses through flexible optical fibres. The backscattered light from the lasers is also collected into a fibre. The measurement head, which contains the two beam outputs and the light collection optics is raster scanned over the surface by a 6-axis robot arm. A balanced two wave mixing interferometer (B-TWM) is used for the demodulation of the ultrasonic waves. The system has recently been used to scan a reference panel, and a scrap panel of fuselage, the latest test results are presented and show promising progress against the project objectives.",
+    "matched_topics": [
+      "optical engineering and precision equipment",
+      "precision measurement",
+      "smart manufacturing and automation"
+    ],
+    "topic_category": "optics-and-equipment",
+    "topic_method": "non-contact laser ultrasonic testing",
+    "rationale": "The paper discusses a robotic laser-ultrasonic NDT system for aerospace, relevant to precision measurement and automation in manufacturing."
+  },
+  {
+    "id": "https://openalex.org/W3131987406",
+    "title": "Numerical study of pattern formation in compliant surfaces scraped by a rigid tip",
+    "publication_year": 2021,
+    "publication_date": "2021-02-12",
+    "source_type": "journal",
+    "pdf_url": "http://link.aps.org/pdf/10.1103/PhysRevE.103.022802",
+    "html_url": "https://doi.org/10.1103/physreve.103.022802",
+    "authors": [
+      "Pedro J. Martínez",
+      "Enrico Gnecco",
+      "J. J. Mazo"
+    ],
+    "german_collaborator_institutes": [
+      "Friedrich Schiller University Jena"
+    ],
+    "concepts": [
+      "Indentation",
+      "Materials science",
+      "Mechanics",
+      "Amplitude",
+      "Optics",
+      "Physics",
+      "Composite material"
+    ],
+    "abstract": "The emergence of surface patterns on the surfaces of compliant materials subject to plowing wear is a complex problem which can be quantitatively characterized, e.g., on polymer surfaces scraped by an atomic force microscope (AFM) tip. Here we explore the applicability of a phenomenological model recently introduced to describe this phenomenon. Based on the competition between the viscoplastic indentation and the elastic shear stress caused by the tip, the model is able to reproduce the wavy features (ripples) observed when the tip is scanned along a series of parallel lines. For low values of the driving velocity v and the spacing b between scan lines, the existence of dotted areas formed by variously oriented pit alignments is observed. Moreover, coexistence of rippled with dotted domains is also observed at suitable parameter values. The formation process of the ripples is also described in detail. The amplitude, period, and orientation of these features are estimated numerically for different values of v and b parameters. We have also revisited the formation of the wavy patterns formed when a single line is scanned, and derived an equation which correctly describes their period and depth, and the static friction as well. This equation is not applicable when several lines are scanned one after the other and the ripples emerge as result of a cooperative process which involves the scanning of several lines.",
+    "matched_topics": [
+      "micro- and nanotechnology for precision engineering",
+      "precision measurement"
+    ],
+    "topic_category": "manufacturing-and-micro-nano",
+    "topic_method": "numerical modeling",
+    "rationale": "The study explores surface pattern formation in compliant materials, relevant to precision measurement and micro/nano technology."
+  },
+  {
+    "id": "https://openalex.org/W3134252487",
+    "title": "Verification of a calibration method for 3D screw thread metrology",
+    "publication_year": 2021,
+    "publication_date": "2021-03-01",
+    "source_type": "journal",
+    "pdf_url": "https://iopscience.iop.org/article/10.1088/1361-6501/abead2/pdf",
+    "html_url": "https://doi.org/10.1088/1361-6501/abead2",
+    "authors": [
+      "Anita Przyklenk",
+      "Sebastian Schädel",
+      "Martin Stein"
+    ],
+    "german_collaborator_institutes": [
+      "Physikalisch-Technische Bundesanstalt"
+    ],
+    "concepts": [
+      "Thread (computing)",
+      "Metrology",
+      "Computer science",
+      "Calibration",
+      "Algorithm",
+      "Mathematics",
+      "Optics",
+      "Physics",
+      "Programming language",
+      "Statistics"
+    ],
+    "abstract": "Abstract The novel approach for holistic screw thread calibrations developed by the Physikalisch-Technische Bundesanstalt was published in 2019. A significant achievement has been made in order to meet increasing demands in manufacturing processes and quality assurance, particularly when workpieces with complex geometries are under inspection. This article deals with the verification of the previously presented three-dimensional calibration procedure for screw threads. Screw thread pitch diameters, the lead and flank angles are compared to those determined by the standardized method based on line-like, rather two-dimensional measurements and evaluation. In order to provide a reliable basis for the verification, one thread gauge was calibrated under laboratory conditions for precision metrology. Additionally, calibrations were conducted by three alternating operators on three different coordinate measuring machines to investigate the influence by user and machine. The resulting normalized errors <mml:math xmlns:mml=\"http://www.w3.org/1998/Math/MathML\" overflow=\"scroll\"> <mml:mrow> <mml:mo>|</mml:mo> </mml:mrow> <mml:msub> <mml:mi>E</mml:mi> <mml:mi>n</mml:mi> </mml:msub> <mml:mrow> <mml:mo>|</mml:mo> </mml:mrow> </mml:math> of screw thread determinants under test and reference values are significantly smaller than 0.5 which indicates a high level of agreement.",
+    "matched_topics": [
+      "precision measurement",
+      "machine tool technology"
+    ],
+    "topic_category": "manufacturing-and-micro-nano",
+    "topic_method": "calibration and metrology",
+    "rationale": "The paper discusses a calibration method for screw thread metrology, relevant to precision measurement and machine tool technology."
+  },
+  {
+    "id": "https://openalex.org/W3194355647",
+    "title": "Nucleation and detachment of polystyrene nanoparticles from plowing-induced surface wrinkling",
+    "publication_year": 2021,
+    "publication_date": "2021-08-20",
+    "source_type": "journal",
+    "pdf_url": "https://doi.org/10.1016/j.apsadv.2021.100148",
+    "html_url": "https://doi.org/10.1016/j.apsadv.2021.100148",
+    "authors": [
+      "Jana Hennig",
+      "Alexander Litschko",
+      "J. J. Mazo",
+      "Enrico Gnecco"
+    ],
+    "german_collaborator_institutes": [
+      "Friedrich Schiller University Jena"
+    ],
+    "concepts": [
+      "Crazing",
+      "Materials science",
+      "Nucleation",
+      "Polystyrene",
+      "Composite material",
+      "RADIUS",
+      "Characterization (materials science)",
+      "Nanoparticle",
+      "Enhanced Data Rates for GSM Evolution",
+      "Ripple",
+      "Nanotechnology",
+      "Polymer",
+      "Chemistry",
+      "Computer science",
+      "Quantum mechanics",
+      "Voltage",
+      "Physics",
+      "Organic chemistry",
+      "Computer security",
+      "Telecommunications"
+    ],
+    "abstract": "",
+    "abstract_recovery_method": "not_recovered",
+    "matched_topics": [
+      "micro- and nanotechnology for precision engineering",
+      "precision measurement"
+    ],
+    "topic_category": "manufacturing-and-micro-nano",
+    "topic_method": "experimental study",
+    "rationale": "The study explores nanoparticle behavior, relevant to precision measurement and micro/nano technology."
+  },
+  {
+    "id": "https://openalex.org/W4205354879",
+    "title": "Rapid eutectic growth: from rod growth to diffusionless solidification",
+    "publication_year": 2022,
+    "publication_date": "2022-01-03",
+    "source_type": "journal",
+    "pdf_url": "",
+    "html_url": "",
+    "authors": [
+      "P. K. Galenko",
+      "Junfeng Xu"
+    ],
+    "german_collaborator_institutes": [
+      "Friedrich Schiller University Jena"
+    ],
+    "concepts": [
+      "Eutectic system",
+      "Supercooling",
+      "Materials science",
+      "Thermodynamics",
+      "Metastability",
+      "Work (physics)",
+      "Growth velocity",
+      "Eutectic bonding",
+      "Diffusion",
+      "Microstructure",
+      "Metallurgy",
+      "Chemistry",
+      "Physics",
+      "Organic chemistry",
+      "Endocrinology",
+      "Medicine"
+    ],
+    "abstract": "Numerous experimental data on the rapid solidification of eutectic systems exhibit the formation of metastable solid phases with the initial (nominal) chemical composition. This fact is explained by the suppression of eutectic decomposition due to diffusionless (chemically partitionless) solidification beginning at a high but finite growth velocity of crystals. In the present work, a model is suggested for the diffusionless growth to analyse the atomic diffusion in the rod eutectic couples growing into supercooled liquid. A simplified calculating method for the equation related to the Bessel function in the solution of the growth of rod eutectics is obtained. This method can also be used in the calculation of other rod eutectic growth models. This article is part of the theme issue 'Transport phenomena in complex systems (part 2)'.",
+    "matched_topics": [
+      "precision engineering progress",
+      "micro- and nanotechnology for precision engineering",
+      "precision measurement"
+    ],
+    "topic_category": "manufacturing-and-micro-nano",
+    "topic_method": "theoretical modeling and analysis",
+    "rationale": "The study of eutectic growth relates to precision measurement and micro/nano technology in manufacturing processes."
+  },
+  {
+    "id": "https://openalex.org/W4207000668",
+    "title": "Electronically Tunable Transparent Conductive Thin Films for Scalable Integration of 2D Materials with Passive 2D–3D Interfaces",
+    "publication_year": 2022,
+    "publication_date": "2022-01-22",
+    "source_type": "journal",
+    "pdf_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/adfm.202111343",
+    "html_url": "https://doi.org/10.1002/adfm.202111343",
+    "authors": [
+      "Theresa Grünleitner",
+      "Alex Henning",
+      "Michele Bissolo",
+      "Armin Kleibert",
+      "C. A. F. Vaz",
+      "Andreas V. Stier",
+      "Jonathan J. Finley",
+      "Ian D. Sharp"
+    ],
+    "german_collaborator_institutes": [
+      "Technical University of Munich"
+    ],
+    "concepts": [
+      "Materials science",
+      "Raman spectroscopy",
+      "Monolayer",
+      "Optoelectronics",
+      "Chemical vapor deposition",
+      "Photoluminescence",
+      "Nanotechnology",
+      "Layer (electronics)",
+      "Thin film",
+      "Fabrication",
+      "Electrical conductor",
+      "Composite material",
+      "Optics",
+      "Medicine",
+      "Physics",
+      "Alternative medicine",
+      "Pathology"
+    ],
+    "abstract": "Abstract A novel transparent conductive support structure for scalable integration of 2D materials is demonstrated, providing an electronically passive 2D–3D interface while also enabling facile interfacial charge transport. This structure, which comprises an evaporated nanocrystalline carbon (nc‐C) film beneath nanometer‐thin atomic layer deposited AlO x , is thermally stable and allows direct chemical vapor deposition of 2D materials onto the surface. The combination of spatial uniformity, enhanced charge screening, and low interface defect concentrations yields a tenfold enhancement of MoS 2 photoluminescence intensity compared to flakes on conventional Si/SiO 2 , while also retaining the strong optical contrast for monolayer flakes. Tunneling across the ultrathin AlO x enables facile interfacial charge injection, which is utilized for high‐resolution scanning electron microscopy and photoemission electron microscopy with no detectable charging. Thus, this combination of scalable fabrication and electronic conductivity across a weakly interacting 2D–3D interface opens up new opportunities for device integration and characterization of 2D materials.",
+    "matched_topics": [
+      "optical engineering and precision equipment",
+      "micro- and nanotechnology for precision engineering"
+    ],
+    "topic_category": "optics-and-equipment",
+    "topic_method": "nanotechnology",
+    "rationale": "The paper discusses scalable integration of 2D materials, relevant to precision engineering in optics and nanotechnology."
+  },
+  {
+    "id": "https://openalex.org/W4281612331",
+    "title": "Few-cycle short-wave-infrared light source for strong-field experiments at 200 kHz repetition rate",
+    "publication_year": 2022,
+    "publication_date": "2022-06-01",
+    "source_type": "journal",
+    "pdf_url": "https://doi.org/10.1364/oe.460915",
+    "html_url": "https://doi.org/10.1364/oe.460915",
+    "authors": [
+      "Ivan Sytcevich",
+      "Anne‐Lise Viotti",
+      "Chen Guo",
+      "Jan Vogelsang",
+      "Fabian Langer",
+      "A. L’Huillier",
+      "Cord L. Arnold"
+    ],
+    "german_collaborator_institutes": [
+      "Carl von Ossietzky Universität Oldenburg",
+      "Deutsches Elektronen-Synchrotron DESY"
+    ],
+    "concepts": [
+      "Optics",
+      "Carrier-envelope phase",
+      "Interferometry",
+      "Materials science",
+      "High harmonic generation",
+      "Infrared",
+      "Dispersion (optics)",
+      "Amplifier",
+      "Self-phase modulation",
+      "Pulse duration",
+      "Nonlinear optics",
+      "Laser",
+      "Physics",
+      "Optoelectronics",
+      "CMOS"
+    ],
+    "abstract": "We present a compact, few-cycle, short-wave infrared light source delivering 13 µJ, carrier-envelope phase (CEP) stable pulses around 2 µm, operating at 200 kHz repetition rate. Starting from an ytterbium fiber amplifier, the seed is produced via white-light generation followed by difference frequency generation, and later amplified in two BiBO nonlinear crystals. A pulse duration of 15.8 fs is measured with the dispersion scan technique, while the CEP stability is assessed via a monolithic spectral interferometry scheme. We demonstrate the potential of the system to drive strong-field experiments by performing high-order harmonic generation in argon gas.",
+    "matched_topics": [
+      "optical engineering and precision equipment",
+      "precision measurement"
+    ],
+    "topic_category": "optics-and-equipment",
+    "topic_method": "experimental",
+    "rationale": "The paper discusses a short-wave infrared light source relevant for precision measurement and optical engineering applications."
+  },
+  {
+    "id": "https://openalex.org/W4297498055",
+    "title": "Real-time analysis of magnetic nanoparticle clustering effects by inline-magnetic particle spectroscopy",
+    "publication_year": 2022,
+    "publication_date": "2022-09-28",
+    "source_type": "journal",
+    "pdf_url": "",
+    "html_url": "",
+    "authors": [
+      "Alexander‐N. Egler‐Kemmerer",
+      "Abdulkader Baki",
+      "Norbert Löwa",
+      "Olaf Kosch",
+      "Raphael Thiermann",
+      "Frank Wiekhorst",
+      "Regina Bleul"
+    ],
+    "german_collaborator_institutes": [
+      "Fraunhofer Institute for Microengineering and Microsystems",
+      "Physikalisch-Technische Bundesanstalt"
+    ],
+    "concepts": [
+      "Magnetic nanoparticles",
+      "Materials science",
+      "Nanoparticle",
+      "Nanomaterials",
+      "Nanotechnology",
+      "Magnetic particle inspection",
+      "Particle (ecology)",
+      "Particle aggregation",
+      "Geology",
+      "Oceanography"
+    ],
+    "abstract": "",
+    "abstract_recovery_method": "not_recovered",
+    "matched_topics": [
+      "micro- and nanotechnology for precision engineering",
+      "precision measurement",
+      "additive manufacturing"
+    ],
+    "topic_category": "manufacturing-and-micro-nano",
+    "topic_method": "inline-magnetic particle spectroscopy",
+    "rationale": "The paper discusses magnetic nanoparticle clustering, relevant to precision measurement and micro/nano technology."
+  },
+  {
+    "id": "https://openalex.org/W4321479793",
+    "title": "Optimization over decision trees: a case study for the design of stable direct-current electricity networks",
+    "publication_year": 2023,
+    "publication_date": "2023-02-23",
+    "source_type": "journal",
+    "pdf_url": "https://link.springer.com/content/pdf/10.1007/s11081-023-09788-x.pdf",
+    "html_url": "https://doi.org/10.1007/s11081-023-09788-x",
+    "authors": [
+      "Daria Gutina",
+      "Andreas Bärmann",
+      "Georg Roeder",
+      "Martin Schellenberger",
+      "Frauke Liers"
+    ],
+    "german_collaborator_institutes": [
+      "Fraunhofer Institute for Integrated Systems and Device Technology",
+      "Friedrich-Alexander-Universität Erlangen-Nürnberg"
+    ],
+    "concepts": [
+      "Computer science",
+      "Mathematical optimization",
+      "Classifier (UML)",
+      "Decision tree",
+      "Integer programming",
+      "Financial engineering",
+      "Black box",
+      "Optimization problem",
+      "Computation",
+      "Machine learning",
+      "Artificial intelligence",
+      "Algorithm",
+      "Mathematics",
+      "Financial economics",
+      "Economics"
+    ],
+    "abstract": "Abstract In many real-world mixed-integer optimization problems from engineering, the side constraints can be subdivided into two categories: constraints which describe a certain logic to model a feasible allocation of resources (such as a maximal number of available assets, working time requirements, maintenance requirements, contractual obligations, etc.), and constraints which model physical processes and the related quantities (such as current, pressure, temperature, etc.). While the first type of constraints can often easily be stated in terms of a mixed-integer program (MIP), the second part may involve the incorporation of complex non-linearities, partial differential equations or even a black-box simulation of the involved physical process. In this work, we propose the integration of a trained tree-based classifier—a decision-tree or a random forest, into a mixed-integer optimization model as a possible remedy. We assume that the classifier has been trained on data points produced by a detailed simulation of a given complex process to represent the functional relationship between the involved physical quantities. We then derive MIP-representable reformulations of the trained classifier such that the resulting model can be solved using state-of-the-art solvers. At the hand of several use cases in terms of possible optimization goals, we show the broad applicability of our framework that is easily extendable to other tasks beyond engineering. In a detailed real-world computational study for the design of stable direct-current power networks, we demonstrate that our approach yields high-quality solutions in reasonable computation times.",
+    "matched_topics": [
+      "AI for precision engineering",
+      "smart manufacturing and automation"
+    ],
+    "topic_category": "ai-and-digital-precision",
+    "topic_method": "mixed-integer optimization",
+    "rationale": "The paper integrates AI with optimization in engineering, relevant for smart manufacturing and automation."
+  },
+  {
+    "id": "https://openalex.org/W4364355453",
+    "title": "Impact of borosilicate bioactive glass scaffold processing and reactivity on in-vitro dissolution properties",
+    "publication_year": 2023,
+    "publication_date": "2023-04-11",
+    "source_type": "journal",
+    "pdf_url": "https://doi.org/10.1016/j.mtcomm.2023.105984",
+    "html_url": "https://doi.org/10.1016/j.mtcomm.2023.105984",
+    "authors": [
+      "Agata Szczodra",
+      "Jenna Tainio",
+      "Amel Houaoui",
+      "Shixuan Wang",
+      "Juuso Pohjola",
+      "Susanna Miettinen",
+      "Delia S. Brauer",
+      "Jonathan Massera"
+    ],
+    "german_collaborator_institutes": [
+      "Friedrich Schiller University Jena"
+    ],
+    "concepts": [
+      "Dissolution",
+      "Borosilicate glass",
+      "Materials science",
+      "Phosphate glass",
+      "Bioactive glass",
+      "Precipitation",
+      "Phosphate",
+      "Chemical engineering",
+      "Soda-lime glass",
+      "Ion",
+      "Composite material",
+      "Chemistry",
+      "Organic chemistry",
+      "Optoelectronics",
+      "Doping",
+      "Physics",
+      "Meteorology",
+      "Engineering"
+    ],
+    "abstract": "In this study, bulk borosilicate glasses and 3D scaffolds (processed by the burn-off technique and by robocasting) were synthesized to investigate the impact of the manufacturing method, glass composition and preincubation time on in vitro dissolution and cell response. The studied compositions are based on commercial bioactive glass S53P4 (BonAlive) where 12.5% SiO2 has been replaced by B2O (labelled B12.5), and part of the CaO is replaced with MgO and SrO (labelled B12.5-Mg-Sr). First, the impact of the processing and glass composition, on the dissolution rate, was assessed. As expected, scaffolds were found to exhibit faster dissolution, due to the increased surface area, when compared to the bulk glass. Furthermore, the 3D printed scaffolds were found to dissolve faster than the burn-off scaffolds. Moreover, scaffolds made from B12.5-Mg-Sr glass composition exhibited slower ion release and precipitation of calcium phosphate (CaP) layer, when compared to B12.5, due to the stabilizing effect of Mg and Sr. Finally, dynamic condition produces lower ion releases that static condition and could be more optimal for in vitro cell growth. Secondly, in culture with murine MC3T3-E1 cells, it was shown that 3 days preincubation would be optimal to decrease the burst of ions that is known to lead to cell death. However, it was found that MC3T3-E1 survived and proliferated only in presence of B12.5-Mg-Sr scaffolds. Finally, it was shown that despite scaffolds having different porosities, they had no significant difference on human adipose-derived stem cells (hADSCs) survival. This manuscript brings new information on 1) the impact of material design (porosity) and composition on dissolution kinetic sand reactivity, 2) the impact of static vs dynamic testing on in-vitro dissolution and 3) the impact of materials’ pre-incubation on cell behavior.",
+    "matched_topics": [
+      "additive manufacturing",
+      "precision manufacturing",
+      "micro- and nanotechnology for precision engineering"
+    ],
+    "topic_category": "manufacturing-and-micro-nano",
+    "topic_method": "3D printing and material processing",
+    "rationale": "The study involves 3D scaffolds and material processing, relevant to additive manufacturing and precision engineering."
+  },
+  {
+    "id": "https://openalex.org/W4387618089",
+    "title": "Retest variability and patient reliability indices of quantitative fundus autofluorescence in age-related macular degeneration: a MACUSTAR study report",
+    "publication_year": 2023,
+    "publication_date": "2023-10-13",
+    "source_type": "journal",
+    "pdf_url": "https://www.nature.com/articles/s41598-023-43417-y.pdf",
+    "html_url": "https://doi.org/10.1038/s41598-023-43417-y",
+    "authors": [
+      "Leon von der Emde",
+      "Merten Mallwitz",
+      "Marc Vaisband",
+      "Jan Hasenauer",
+      "Marlene Saßmannshausen",
+      "Jan Henrik Terheyden",
+      "Hansjürgen Agostini",
+      "Lebriz Altay",
+      "R. Atia",
+      "F. Bandello",
+      "P. G. Basile",
+      "J. Batuca",
+      "Charlotte Behning",
+      "M. Belmouhand",
+      "Moritz Berger",
+      "Alison M. Binns",
+      "C. J. F. Boon",
+      "M. Böttger",
+      "C. Bouchet",
+      "John Brazier",
+      "Thomas Butt",
+      "C. Carapezzi",
+      "J. Carlton",
+      "Ângela Carneiro",
+      "A. Charil"
+    ],
+    "german_collaborator_institutes": [
+      "Bayer (Germany)",
+      "Helmholtz Zentrum München",
+      "Institut für Medizinische Biometrie, Informatik und Epidemiologie",
+      "Ludwig-Maximilians-Universität München",
+      "STZ eyetrial",
+      "St. Franziskus Hospital",
+      "University Hospital Bonn",
+      "University Hospital Cologne",
+      "University Medical Center Freiburg",
+      "University of Bonn",
+      "University of Freiburg",
+      "Universität Ulm"
+    ],
+    "concepts": [
+      "Macular degeneration",
+      "Intraclass correlation",
+      "Medicine",
+      "Reliability (semiconductor)",
+      "Autofluorescence",
+      "Drusen",
+      "Fundus (uterus)",
+      "Ophthalmology",
+      "Audiology",
+      "Psychometrics",
+      "Quantum mechanics",
+      "Fluorescence",
+      "Power (physics)",
+      "Clinical psychology",
+      "Physics"
+    ],
+    "abstract": "This study aimed to determine the retest variability of quantitative fundus autofluorescence (QAF) in patients with and without age-related macular degeneration (AMD) and evaluate the predictive value of patient reliability indices on retest reliability. A total of 132 eyes from 68 patients were examined, including healthy individuals and those with various stages of AMD. Duplicate QAF imaging was conducted at baseline and 2&amp;nbsp;weeks later across six study sites. Intraclass correlation (ICC) analysis was used to evaluate the consistency of imaging, and mean opinion scores (MOS) of image quality were generated by two researchers. The contribution of MOS and other factors to retest variation was assessed using mixed-effect linear models. Additionally, a Random Forest Regressor was trained to evaluate the extent to which manual image grading of image quality could be replaced by automated assessment (inferred MOS). The results showed that ICC values were high for all QAF images, with slightly lower values in AMD-affected eyes. The average inter-day ICC was found to be 0.77 for QAF segments within the QAF8 ring and 0.74 for peripheral segments. Image quality was predicted with a mean absolute error of 0.27 on a 5-point scale, and of all evaluated reliability indices, MOS/inferred MOS proved most important. The findings suggest that QAF allows for reliable testing of autofluorescence levels at the posterior pole in patients with AMD in a multicenter, multioperator setting. Patient reliability indices could serve as eligibility criteria for clinical trials, helping identify patients with adequate retest reliability.",
+    "abstract_recovery_method": "exact_from_html",
+    "matched_topics": [
+      "AI for precision engineering",
+      "precision measurement"
+    ],
+    "topic_category": "ai-and-digital-precision",
+    "topic_method": "automated assessment",
+    "rationale": "The study employs AI for automated image quality assessment, relevant to precision measurement in medical imaging."
+  },
+  {
+    "id": "https://openalex.org/W3010324275",
+    "title": "Current loss analysis in photoelectrochemical devices",
+    "publication_year": 2020,
+    "publication_date": "2020-03-01",
+    "source_type": "journal",
+    "pdf_url": "https://aip.scitation.org/doi/pdf/10.1063/1.5142561",
+    "html_url": "https://doi.org/10.1063/1.5142561",
+    "authors": [
+      "Tobias A. Kistler",
+      "Peter Agbo"
+    ],
+    "german_collaborator_institutes": [
+      "Technical University of Munich"
+    ],
+    "concepts": [
+      "Photovoltaic system",
+      "Materials science",
+      "Current (fluid)",
+      "Degradation (telecommunications)",
+      "Electrocatalyst",
+      "Voltage",
+      "Hydrogen production",
+      "Characterization (materials science)",
+      "Process engineering",
+      "Hydrogen",
+      "Optoelectronics",
+      "Computer science",
+      "Nanotechnology",
+      "Electrode",
+      "Electrochemistry",
+      "Electrical engineering",
+      "Telecommunications",
+      "Chemistry",
+      "Organic chemistry",
+      "Physical chemistry"
+    ],
+    "abstract": "Ongoing efforts to stabilize the operation of photoelectrochemical (PEC) devices remain critical for achieving economically viable solar fuel production, as devices with lifetimes on the order of 10 to 30 years are projected requirements for utility-scale, PEC device implementation. However, insight into the causes of device degradation and activity losses is generally provided by monitoring the device current, a quantity which masks the relative contributions of photovoltaic component degradation and electrocatalyst activity drops to overall performance losses. In this study, an approach for deconvoluting the various contributors to PEC device losses is described. In particular, the causes for observed fluctuations in device performance are determined through the collection of real-time, current–voltage data, paired with an analytical method that enables the decomposition of drops in device current into its constituent photovoltaic- and catalyst-driven performance losses. We test the validity of this approach by applying it to the data collected for a PEC hydrogen evolution test-bed.",
+    "matched_topics": [
+      "optical engineering and precision equipment",
+      "precision measurement"
+    ],
+    "topic_category": "optics-and-equipment",
+    "topic_method": "analytical method for performance analysis",
+    "rationale": "The study addresses performance losses in photoelectrochemical devices, relevant to precision measurement and optical engineering."
+  },
+  {
+    "id": "https://openalex.org/W3038665581",
+    "title": "Focal field analysis of highly multi-mode fiber beams based on modal decomposition",
+    "publication_year": 2020,
+    "publication_date": "2020-06-30",
+    "source_type": "journal",
+    "pdf_url": "https://arxiv.org/pdf/2010.09650",
+    "html_url": "http://arxiv.org/abs/2010.09650",
+    "authors": [
+      "Hao Pang",
+      "Tobias Haecker",
+      "Alexandre Bense",
+      "Tobias Haist",
+      "Daniel Flamm"
+    ],
+    "german_collaborator_institutes": [
+      "S&F Systemtechnik (Germany)",
+      "University of Stuttgart"
+    ],
+    "concepts": [
+      "Optics",
+      "Caustic (mathematics)",
+      "Coherence (philosophical gambling strategy)",
+      "Modal",
+      "Optical fiber",
+      "Laser",
+      "Fiber laser",
+      "Amplitude",
+      "Materials science",
+      "Modal analysis",
+      "Decomposition",
+      "Beam (structure)",
+      "Physics",
+      "Light beam",
+      "Field (mathematics)",
+      "Light intensity",
+      "Computer simulation",
+      "Coherence time",
+      "Laser beams",
+      "Beam propagation method"
+    ],
+    "abstract": "In this work, a numerical modal decomposition approach is applied to model the optical field of laser light after propagating through a highly multi-mode fiber. The algorithm for the decomposition is based on the reconstruction of measured intensity profiles along the laser beam caustic with consideration of intermodal degrees of coherence derived from spectral analysis. To enhance the accuracy of the model, different approaches and strategies are applied and discussed. The presented decomposition into a set of linearly polarized modes enables both the wave-optical simulation of radiation transport by highly multi-mode fibers and, additionally, the analysis of free-space propagation with arbitrarily modified complex amplitude distributions.",
+    "matched_topics": [
+      "optical engineering and precision equipment",
+      "precision measurement"
+    ],
+    "topic_category": "optics-and-equipment",
+    "topic_method": "numerical modal decomposition",
+    "rationale": "The paper discusses optical field modeling and precision measurement techniques relevant to optical engineering."
+  },
+  {
+    "id": "https://openalex.org/W3088999363",
+    "title": "Evaluation of end-to-end process and information flow analyses through digital transformation in mechanical engineering",
+    "publication_year": 2020,
+    "publication_date": "2020-01-01",
+    "source_type": "journal",
+    "pdf_url": "https://doi.org/10.1016/j.procir.2020.04.070",
+    "html_url": "https://doi.org/10.1016/j.procir.2020.04.070",
+    "authors": [
+      "Thomas Pschybilla",
+      "Alex Homann"
+    ],
+    "german_collaborator_institutes": [
+      "University of Stuttgart"
+    ],
+    "concepts": [
+      "End-to-end principle",
+      "Process (computing)",
+      "End user",
+      "Digital transformation",
+      "Systems engineering",
+      "Perspective (graphical)",
+      "Computer science",
+      "Process management",
+      "Information flow",
+      "Manufacturing engineering",
+      "Engineering",
+      "Computer security",
+      "Linguistics",
+      "World Wide Web",
+      "Operating system",
+      "Artificial intelligence",
+      "Philosophy"
+    ],
+    "abstract": "The widespread development and use of digital technologies provide companies with new opportunities to optimize end-to-end processes, which include internal, supplier-oriented and customer-oriented processes, by implementing lean information flows. Existing approaches for the modelling, analysis or quantification of processes and information flows reach their limits. They do not take the optimization possibilities of digitalization from an end-to-end perspective sufficiently into account. This paper describes the requirements for future interdisciplinary approaches. Additionally, existing approaches will be evaluated and significant elements for the requirements will be highlighted.",
+    "matched_topics": [
+      "smart manufacturing and automation",
+      "Industry 4.0"
+    ],
+    "topic_category": "ai-and-digital-precision",
+    "topic_method": "digital transformation",
+    "rationale": "The paper discusses digital transformation in mechanical engineering, relevant to smart manufacturing and Industry 4.0."
   }
 ]
