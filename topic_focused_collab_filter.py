@@ -31,7 +31,7 @@ class TopicConfig:
     max_pages: int
     per_page: int
     topics: list[str]
-    cooling_taxonomy: dict[str, list[str]]
+    topic_taxonomy: dict[str, list[str]]
     results_dir: str
     output_filtered_json: str
     output_relevant_jsonl: str
@@ -154,9 +154,9 @@ def load_topic_config(path: str = "config.json") -> TopicConfig:
         max_pages=int(raw["max_pages"]),
         per_page=min(200, int(raw["per_page"])),
         topics=[str(t).strip() for t in raw["topics"] if str(t).strip()],
-        cooling_taxonomy={
+        topic_taxonomy={
             str(level): [str(m) for m in methods]
-            for level, methods in (raw.get("cooling_taxonomy") or {}).items()
+            for level, methods in ((raw.get("topic_taxonomy") or raw.get("cooling_taxonomy") or {})).items()
         },
         results_dir=str(raw["results_dir"]),
         output_filtered_json=str(raw["output_filtered_json"]),
@@ -285,14 +285,15 @@ def llm_topic_decision(
     title: str,
     abstract: str,
     topics: list[str],
-    cooling_taxonomy: dict[str, list[str]],
+    topic_taxonomy: dict[str, list[str]],
     model: str,
     api_key: str,
     prompt_cfg: PromptConfig,
 ) -> dict[str, Any]:
     user_prompt = prompt_cfg.relevance_user_prompt_template.format(
         topics_json=json.dumps(topics, ensure_ascii=False),
-        cooling_taxonomy_json=json.dumps(cooling_taxonomy, ensure_ascii=False),
+        topic_taxonomy_json=json.dumps(topic_taxonomy, ensure_ascii=False),
+        cooling_taxonomy_json=json.dumps(topic_taxonomy, ensure_ascii=False),
         title=title,
         abstract=abstract[:5000],
     )
@@ -317,19 +318,13 @@ def llm_topic_decision(
     return {"relevant": False, "matched_topics": [], "rationale": "Malformed model output."}
 
 
-def keyword_fallback_decision(title: str, abstract: str, topics: list[str]) -> dict[str, Any]:
+def keyword_fallback_decision(title: str, abstract: str, topics: list[str], keyword_hints: list[str] | None = None) -> dict[str, Any]:
     text = f"{title} {abstract}".lower()
-    broad_terms = [
-        "thermal management",
-        "thermal",
-        "cooling",
-        "heat dissipation",
-        "heat transfer",
-        "temperature control",
-        "therm",
-    ]
     matches = [t for t in topics if t.lower() in text]
-    matches.extend([t for t in broad_terms if t in text and t not in matches])
+    for t in (keyword_hints or topics):
+        tl = t.lower()
+        if tl in text and t not in matches:
+            matches.append(t)
     return {"relevant": bool(matches), "matched_topics": matches, "rationale": "Keyword fallback matching."}
 
 
@@ -480,13 +475,13 @@ def main() -> int:
                     title,
                     abstract,
                     cfg.topics,
-                    cfg.cooling_taxonomy,
+                    cfg.topic_taxonomy,
                     cfg.cheap_model,
                     api_key,
                     prompt_cfg,
                 )
             else:
-                decision = keyword_fallback_decision(title, abstract, cfg.topics)
+                decision = keyword_fallback_decision(title, abstract, cfg.topics, [str(x) for x in raw_cfg.get("relevance_keyword_hints", [])])
 
             if bool(decision.get("relevant")):
                 row = extract_metadata(work, host_ids)

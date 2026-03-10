@@ -27,7 +27,7 @@ Edit `config.json` (organized into clearly separated sections):
 - **Data fetch**: institution/date/page settings.
 - **Outputs**: report and dataset output filenames.
 - **Models & API keys**: OpenAI/OpenAlex model and auth settings.
-- **Topic taxonomy**: `topics`, `cooling_taxonomy`, `forbidden_topics`.
+- **Topic taxonomy**: `topics`, `topic_taxonomy`, `forbidden_topics`.
 - **Prompts**: relevance and analysis prompt templates.
 
 - `institution_ids`
@@ -87,7 +87,7 @@ Use `config.json` as the single configuration file for all scripts.
 
 Key settings:
 - `topics`: precision-engineering category terms (configured to favor recall, including slightly related papers).
-- `cooling_taxonomy`: level-to-method mapping used to tag relevant papers (chip-level, board-level, system-level).
+- `topic_taxonomy`: category-to-method mapping used to tag relevant papers (domain-specific, configurable).
 - `forbidden_topics`: topics to exclude early (mapped to OpenAlex concept tags, then filtered out).
 - `cheap_model`: low-cost model for paper-level relevance decisions.
 - `analysis_model`: stronger model for final synthesis.
@@ -138,10 +138,10 @@ Use this 4-step pipeline (all read from `config.json`):
    - Reports initial and final abstract availability, plus HTML/PDF/arXiv recovered counts and GPT/manual counts.
 3. `classify_topics_from_filtered.py`
    - Runs topic relevance classification using both title and abstract with recall-oriented matching (includes slightly related precision-engineering papers) and writes relevant JSONL (`output_relevant_jsonl`).
-   - Writes a second JSON file (`output_relevant_tagged_json`) containing only relevant papers with `cooling_level` and `cooling_methodology` tags.
+   - Writes a second JSON file (`output_relevant_tagged_json`) containing only relevant papers with configurable `category_label_field` / `method_label_field` tags (default: `topic_category` / `topic_method`).
 4. `write_topic_analysis.py`
    - Reads `output_relevant_tagged_json` (falls back to `output_relevant_jsonl` if needed) and writes concise table-first analysis markdown (`output_analysis_md`) + `topic_stats.json`.
-   - The report explicitly summarizes chip-level / board-level / system-level collaboration focus, partner research focus, breakthrough signals, trends, and future directions.
+   - The report summarizes configurable topic-category collaboration focus, partner research focus, breakthrough signals, trends, and future directions.
 
 Run order in terminal:
 
