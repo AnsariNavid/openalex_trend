@@ -1,19 +1,31 @@
 {
   "institution_ids": [
-    "https://openalex.org/I74973139",
-    "https://openalex.org/I136199984"
+    "https://openalex.org/I4210139566",
+    "https://openalex.org/I4210135542",
+    "https://openalex.org/I4210124116",
+    "https://openalex.org/I4210155782",
+    "https://openalex.org/I1302207122",
+    "https://openalex.org/I4210109350",
+    "https://openalex.org/I4210104457",
+    "https://openalex.org/I4210137704",
+    "https://openalex.org/I4210137523",
+    "https://openalex.org/I4210126874",
+    "https://openalex.org/I3167484455",
+    "https://openalex.org/I160414472",
+    "https://openalex.org/I4210129999",
+    "https://openalex.org/I4210147020",
+    "https://openalex.org/I4210117459",
+    "https://openalex.org/I205156485",
+    "https://openalex.org/I4210152909",
+    "https://openalex.org/I4210126143",
+    "https://openalex.org/I4210088644"
   ],
   "from_date": "2020-01-01",
-  "to_date": "2024-12-31",
-  "max_pages": 8,
-  "per_page": 200,
-  "forbidden_topics": [
-    "bioinformatics",
-    "health",
-    "climate",
-    "biology"
-  ],
-
+  "to_date": "2026-12-31",
+  "max_pages": 10000,
+  "per_page": 2000,
+  "top_collaborators": 10,
+  "top_individuals": 10,
   "results_dir": "results",
   "output_report": "collaboration_report.md",
   "output_filtered_json": "filtered_german_collab_dataset.json",
