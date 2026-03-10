@@ -139,7 +139,7 @@ Use this 4-step pipeline (all read from `config.json`):
 3. `classify_topics_from_filtered.py`
    - Runs topic relevance classification using both title and abstract with recall-oriented matching (includes slightly related precision-engineering papers) and writes relevant JSONL (`output_relevant_jsonl`).
    - Writes a second JSON file (`output_relevant_tagged_json`) containing only relevant papers with configurable `category_label_field` / `method_label_field` tags (default: `topic_category` / `topic_method`).
-   - Saves checkpoints every `classification_checkpoint_every` papers (default 100), prints selected-paper counts, and resumes from the last checkpoint if interrupted.
+   - Saves checkpoints every `classification_checkpoint_every` papers (default 100), prints analyzed/selected counts even when selected count is 0, and resumes from the last checkpoint if interrupted.
 4. `write_topic_analysis.py`
    - Reads `output_relevant_tagged_json` (falls back to `output_relevant_jsonl` if needed) and writes concise table-first analysis markdown (`output_analysis_md`) + `topic_stats.json`.
    - The report summarizes configurable topic-category collaboration focus, partner research focus, breakthrough signals, trends, and future directions.

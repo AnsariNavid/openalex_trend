@@ -221,12 +221,16 @@ def main() -> int:
             pb.update("Classifying filtered papers by topics", i + 1, len(filtered))
 
             if processed_since_checkpoint >= cfg.checkpoint_every:
+                analyzed_count = i + 1
                 save_outputs(out_jsonl, out_tagged, relevant)
                 progress_path.write_text(
-                    json.dumps({"next_index": i + 1, "selected_count": len(relevant)}, ensure_ascii=False, indent=2) + "\n",
+                    json.dumps({"next_index": analyzed_count, "selected_count": len(relevant)}, ensure_ascii=False, indent=2) + "\n",
                     encoding="utf-8",
                 )
-                print(f"Checkpoint saved at {i + 1}/{len(filtered)} | selected papers: {len(relevant)}")
+                print(
+                    f"Checkpoint: analyzed {analyzed_count}/{len(filtered)} papers | "
+                    f"relevant selected so far: {len(relevant)}"
+                )
                 processed_since_checkpoint = 0
 
         save_outputs(out_jsonl, out_tagged, relevant)
@@ -235,7 +239,7 @@ def main() -> int:
 
         print(f"Relevant list saved: {out_jsonl.resolve()}")
         print(f"Relevant tagged JSON saved: {out_tagged.resolve()}")
-        print(f"Relevant entries: {len(relevant)}")
+        print(f"Relevant entries (final): {len(relevant)}")
         return 0
     except Exception as e:  # noqa: BLE001
         print(f"Error: {e}")
