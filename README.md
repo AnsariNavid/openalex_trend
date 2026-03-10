@@ -86,7 +86,7 @@ Use `topic_focused_collab_filter.py` when you want to track only papers relevant
 Use `config.json` as the single configuration file for all scripts.
 
 Key settings:
-- `topics`: broad thermal-management category terms (configured to favor recall, including slightly related papers).
+- `topics`: precision-engineering category terms (configured to favor recall, including slightly related papers).
 - `cooling_taxonomy`: level-to-method mapping used to tag relevant papers (chip-level, board-level, system-level).
 - `forbidden_topics`: topics to exclude early (mapped to OpenAlex concept tags, then filtered out).
 - `cheap_model`: low-cost model for paper-level relevance decisions.
@@ -137,7 +137,7 @@ Use this 4-step pipeline (all read from `config.json`):
    - If still missing, prompts manual abstract entry title-by-title.
    - Reports initial and final abstract availability, plus HTML/PDF/arXiv recovered counts and GPT/manual counts.
 3. `classify_topics_from_filtered.py`
-   - Runs topic relevance classification using both title and abstract with recall-oriented matching (includes slightly related thermal-management papers) and writes relevant JSONL (`output_relevant_jsonl`).
+   - Runs topic relevance classification using both title and abstract with recall-oriented matching (includes slightly related precision-engineering papers) and writes relevant JSONL (`output_relevant_jsonl`).
    - Writes a second JSON file (`output_relevant_tagged_json`) containing only relevant papers with `cooling_level` and `cooling_methodology` tags.
 4. `write_topic_analysis.py`
    - Reads `output_relevant_tagged_json` (falls back to `output_relevant_jsonl` if needed) and writes concise table-first analysis markdown (`output_analysis_md`) + `topic_stats.json`.
