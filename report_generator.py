@@ -80,7 +80,7 @@ def load_config(path: str = "config.json") -> ReportConfig:
         results_dir=str(raw["results_dir"]),
         output_relevant_tagged_json=str(raw.get("output_relevant_tagged_json", "topic_relevant_tagged_papers.json")),
         output_report=str(raw.get("output_report", "collaboration_report.md")),
-        analysis_model=str(raw.get("analysis_model", "gpt-4.1")),
+        analysis_model=str(raw.get("analysis_model", "gpt-5.4")),
         report_system_prompt=str(raw.get("report_system_prompt", "")),
         report_user_prompt_template=str(raw.get("report_user_prompt_template", "")),
     )

@@ -1,9 +1,10 @@
 {
   "relevant_count": 1262,
+  "verified_pairs": 0,
   "category_counts": {
-    "ai-and-digital-precision": 187,
     "optics-and-equipment": 659,
-    "manufacturing-and-micro-nano": 416
+    "manufacturing-and-micro-nano": 416,
+    "ai-and-digital-precision": 187
   },
   "method_counts": {
     "theoretical review": 3,
@@ -696,6 +697,7 @@
     "imaging properties evaluation": 1,
     "mechanoluminescence and material design": 1
   },
+  "pair_counts": [],
   "year_category_counts": {
     "2020": {
       "optics-and-equipment": 123,
@@ -732,138 +734,5 @@
       "manufacturing-and-micro-nano": 6,
       "ai-and-digital-precision": 7
     }
-  },
-  "partner_focus": [
-    {
-      "partner": "Friedrich Schiller University Jena",
-      "type": "University",
-      "papers": 332,
-      "dominant_category": "optics-and-equipment",
-      "category_counts": {
-        "optics-and-equipment": 157,
-        "manufacturing-and-micro-nano": 131,
-        "ai-and-digital-precision": 44
-      }
-    },
-    {
-      "partner": "Technical University of Munich",
-      "type": "University",
-      "papers": 315,
-      "dominant_category": "optics-and-equipment",
-      "category_counts": {
-        "optics-and-equipment": 200,
-        "manufacturing-and-micro-nano": 94,
-        "ai-and-digital-precision": 21
-      }
-    },
-    {
-      "partner": "Leibniz Institute of Photonic Technology",
-      "type": "Institute/Other",
-      "papers": 102,
-      "dominant_category": "optics-and-equipment",
-      "category_counts": {
-        "optics-and-equipment": 82,
-        "manufacturing-and-micro-nano": 16,
-        "ai-and-digital-precision": 4
-      }
-    },
-    {
-      "partner": "Friedrich-Alexander-Universität Erlangen-Nürnberg",
-      "type": "University",
-      "papers": 75,
-      "dominant_category": "optics-and-equipment",
-      "category_counts": {
-        "optics-and-equipment": 35,
-        "ai-and-digital-precision": 9,
-        "manufacturing-and-micro-nano": 31
-      }
-    },
-    {
-      "partner": "Fraunhofer Institute for Integrated Systems and Device Technology",
-      "type": "Institute/Other",
-      "papers": 72,
-      "dominant_category": "manufacturing-and-micro-nano",
-      "category_counts": {
-        "optics-and-equipment": 27,
-        "ai-and-digital-precision": 5,
-        "manufacturing-and-micro-nano": 40
-      }
-    },
-    {
-      "partner": "Munich Center for Quantum Science and Technology",
-      "type": "Institute/Other",
-      "papers": 69,
-      "dominant_category": "optics-and-equipment",
-      "category_counts": {
-        "manufacturing-and-micro-nano": 17,
-        "optics-and-equipment": 50,
-        "ai-and-digital-precision": 2
-      }
-    },
-    {
-      "partner": "University of Stuttgart",
-      "type": "University",
-      "papers": 60,
-      "dominant_category": "optics-and-equipment",
-      "category_counts": {
-        "optics-and-equipment": 37,
-        "manufacturing-and-micro-nano": 6,
-        "ai-and-digital-precision": 17
-      }
-    },
-    {
-      "partner": "Ludwig-Maximilians-Universität München",
-      "type": "University",
-      "papers": 59,
-      "dominant_category": "optics-and-equipment",
-      "category_counts": {
-        "optics-and-equipment": 38,
-        "ai-and-digital-precision": 3,
-        "manufacturing-and-micro-nano": 18
-      }
-    },
-    {
-      "partner": "Ernst Abbe University of Applied Sciences Jena",
-      "type": "University",
-      "papers": 50,
-      "dominant_category": "optics-and-equipment",
-      "category_counts": {
-        "optics-and-equipment": 27,
-        "manufacturing-and-micro-nano": 19,
-        "ai-and-digital-precision": 4
-      }
-    },
-    {
-      "partner": "Karlsruhe Institute of Technology",
-      "type": "Institute/Other",
-      "papers": 50,
-      "dominant_category": "ai-and-digital-precision",
-      "category_counts": {
-        "optics-and-equipment": 22,
-        "ai-and-digital-precision": 23,
-        "manufacturing-and-micro-nano": 5
-      }
-    },
-    {
-      "partner": "Fraunhofer Institute for Applied Optics and Precision Engineering",
-      "type": "Institute/Other",
-      "papers": 45,
-      "dominant_category": "optics-and-equipment",
-      "category_counts": {
-        "optics-and-equipment": 40,
-        "manufacturing-and-micro-nano": 5
-      }
-    },
-    {
-      "partner": "University of Tübingen",
-      "type": "University",
-      "papers": 43,
-      "dominant_category": "optics-and-equipment",
-      "category_counts": {
-        "optics-and-equipment": 32,
-        "ai-and-digital-precision": 10,
-        "manufacturing-and-micro-nano": 1
-      }
-    }
-  ]
+  }
 }
