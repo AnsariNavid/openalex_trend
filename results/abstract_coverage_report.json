@@ -1,0 +1,1186 @@
+{
+  "input_file": "results\\filtered_german_collab_dataset.json",
+  "enriched_output_file": "results\\filtered_german_collab_dataset.json",
+  "total_entries": 1893,
+  "initial_entries_with_abstract": 1452,
+  "initial_entries_missing_abstract": 441,
+  "final_entries_with_abstract": 1601,
+  "final_entries_missing_abstract": 292,
+  "final_coverage_ratio": 0.8457474907554147,
+  "exact_abstract_recovered_from_html": 128,
+  "exact_abstract_recovered_from_pdf": 0,
+  "exact_abstract_recovered_from_arxiv": 2,
+  "abstract_generated_by_gpt": 19,
+  "abstract_entered_manually": 0,
+  "still_missing_after_recovery": 292,
+  "missing_entries": [
+    {
+      "id": "https://openalex.org/W4292641216",
+      "title": "Metal–organic frameworks and covalent organic frameworks as disruptive membrane materials for energy-efficient gas separation"
+    },
+    {
+      "id": "https://openalex.org/W3100913777",
+      "title": "Band structure engineering and defect control of Ta3N5 for efficient photoelectrochemical water oxidation"
+    },
+    {
+      "id": "https://openalex.org/W3214552774",
+      "title": "Excitons and emergent quantum phenomena in stacked 2D semiconductors"
+    },
+    {
+      "id": "https://openalex.org/W4380791999",
+      "title": "Layered materials as a platform for quantum technologies"
+    },
+    {
+      "id": "https://openalex.org/W3007501729",
+      "title": "Optimizing the changing locations of mobile parcel lockers in last-mile distribution"
+    },
+    {
+      "id": "https://openalex.org/W3024038277",
+      "title": "The forgotten sons: Warehousing systems for brick-and-mortar retail chains"
+    },
+    {
+      "id": "https://openalex.org/W3013529070",
+      "title": "Photocathode engineering for efficient photoelectrochemical CO2 reduction"
+    },
+    {
+      "id": "https://openalex.org/W4200558765",
+      "title": "Electrically tunable nonlinear polaritonic metasurface"
+    },
+    {
+      "id": "https://openalex.org/W3023557184",
+      "title": "Cryo-FIB-SEM as a promising tool for localizing proteins in 3D"
+    },
+    {
+      "id": "https://openalex.org/W3036421713",
+      "title": "Adjustable synthesis of polydopamine nanospheres and their nucleation and growth"
+    },
+    {
+      "id": "https://openalex.org/W3087370575",
+      "title": "On the structural integrity of Fe-36Ni Invar alloy processed by selective laser melting"
+    },
+    {
+      "id": "https://openalex.org/W3131991809",
+      "title": "A New Measurement Conception for the ‘Doing-Using-Interacting’ Mode of Innovation"
+    },
+    {
+      "id": "https://openalex.org/W4293671237",
+      "title": "Effect of the boriding environment on the wear response of laser-clad AlCoCrFeNi high entropy alloy coatings"
+    },
+    {
+      "id": "https://openalex.org/W4365505184",
+      "title": "Ionic liquids tailoring crystal orientation and electronic properties for stable perovskite solar cells"
+    },
+    {
+      "id": "https://openalex.org/W3089951979",
+      "title": "Microchannel reactor heat-exchangers: A review of design strategies for the effective thermal coupling of gas phase reactions"
+    },
+    {
+      "id": "https://openalex.org/W3092417313",
+      "title": "Dimensioning battery energy storage systems for peak shaving based on a real-time control algorithm"
+    },
+    {
+      "id": "https://openalex.org/W3168911988",
+      "title": "Ultra-short pulsed laser powder bed fusion of Al-Si alloys: Impact of pulse duration and energy in comparison to continuous wave excitation"
+    },
+    {
+      "id": "https://openalex.org/W4391567354",
+      "title": "High-quality nanocavities through multimodal confinement of hyperbolic polaritons in hexagonal boron nitride"
+    },
+    {
+      "id": "https://openalex.org/W3118457895",
+      "title": "CuZr-based bulk metallic glass and glass matrix composites fabricated by selective laser melting"
+    },
+    {
+      "id": "https://openalex.org/W4308565308",
+      "title": "Structural and luminescence behavior of Eu3+ ions in ZnO-B2O3-WO3 glasses"
+    },
+    {
+      "id": "https://openalex.org/W4300687604",
+      "title": "Improved production process with new spheroidization machine with high efficiency and low energy consumption for rounding natural graphite for Li-ion battery applications"
+    },
+    {
+      "id": "https://openalex.org/W4396639084",
+      "title": "Peculiarities in XPS spectra of Sn/SiO2 layers as an effect of surface charge"
+    },
+    {
+      "id": "https://openalex.org/W4322101904",
+      "title": "The effect of glass structure and local rare earth site symmetry on the optical properties of rare earth doped alkaline earth aluminosilicate glasses"
+    },
+    {
+      "id": "https://openalex.org/W4281389434",
+      "title": "Fracture toughness of 3Y-TZP ceramic measured by the Chevron-Notch Beam method: A round-robin study"
+    },
+    {
+      "id": "https://openalex.org/W4362576405",
+      "title": "Robotized sorting systems: Large-scale scheduling under real-time conditions with limited lookahead"
+    },
+    {
+      "id": "https://openalex.org/W4221121672",
+      "title": "A fully-printed electrochemical platform for assisted colorimetric detection of phosphate in saliva: Greenness and whiteness quantification by the AGREE and RGB tools"
+    },
+    {
+      "id": "https://openalex.org/W4385686372",
+      "title": "Operational experience with a liquid organic hydrogen carrier (LOHC) system for bidirectional storage of electrical energy over 725 h"
+    },
+    {
+      "id": "https://openalex.org/W4206628478",
+      "title": "Structure and properties of niobium carbide coated vanadium composite membranes for high temperature hydrogen separation"
+    },
+    {
+      "id": "https://openalex.org/W4296889685",
+      "title": "A transversal approach to predict surface charge compensation in piezoelectric force microscopy"
+    },
+    {
+      "id": "https://openalex.org/W3175499533",
+      "title": "Factors influencing the gas bubble evolution and the cristobalite formation in quartz glass Cz crucibles for Czochralski growth of silicon crystals"
+    },
+    {
+      "id": "https://openalex.org/W3175845437",
+      "title": "Cofiring of LTCC multilayer assemblies with integrated NTC thermistor temperature sensor layers"
+    },
+    {
+      "id": "https://openalex.org/W3036987706",
+      "title": "A novel approach for the quantification of scratch healing of polymers"
+    },
+    {
+      "id": "https://openalex.org/W3093176941",
+      "title": "Promoting effect of Rh on the activity and stability of Pt-based methane combustion catalyst in microreactors"
+    },
+    {
+      "id": "https://openalex.org/W4396711246",
+      "title": "Laser-based battery pack disassembly: a compact benchmark analysis for separation technologies"
+    },
+    {
+      "id": "https://openalex.org/W4408211607",
+      "title": "3D damage evolution and microstructural-based machine learning model for stiffness prediction in woven composite under cyclic loads"
+    },
+    {
+      "id": "https://openalex.org/W4400187223",
+      "title": "University scientists’ multiple goals achievement: Social capital and its impact on research performance and research commercialization"
+    },
+    {
+      "id": "https://openalex.org/W4404183280",
+      "title": "Microwave electromagnetic shielding with free-standing composites based on graphene oxide and silver nanowires"
+    },
+    {
+      "id": "https://openalex.org/W4388706457",
+      "title": "Patient-Reported Postoperative Neuropsychological Deterioration After Heart Valve Replacement and Coronary Artery Bypass Grafting"
+    },
+    {
+      "id": "https://openalex.org/W4408313214",
+      "title": "Physics-informed machine learning for Na-Ion conductivity and activation energy"
+    },
+    {
+      "id": "https://openalex.org/W3037221385",
+      "title": "Plastic deformation of a Zr-based bulk metallic glass fabricated by selective laser melting"
+    },
+    {
+      "id": "https://openalex.org/W3202220144",
+      "title": "Combined dynamic operation of PEM fuel cell and continuous dehydrogenation of perhydro-dibenzyltoluene"
+    },
+    {
+      "id": "https://openalex.org/W3002877239",
+      "title": "Structure and in vitro dissolution of Mg and Sr containing borosilicate bioactive glasses for bone tissue engineering"
+    },
+    {
+      "id": "https://openalex.org/W3135855915",
+      "title": "Sustainable preparation of anti-inflammatory atorvastatin PLGA nanoparticles"
+    },
+    {
+      "id": "https://openalex.org/W3174198374",
+      "title": "Fine defect engineering of graphene friction"
+    },
+    {
+      "id": "https://openalex.org/W3042530207",
+      "title": "Bridging the gap between high temperature and low temperature oxidation of 316 L"
+    },
+    {
+      "id": "https://openalex.org/W3105003929",
+      "title": "Microstructural aspects of additive manufacturing of Al Li alloys with high Li content"
+    },
+    {
+      "id": "https://openalex.org/W3114985358",
+      "title": "Biaxial flexural strength of zirconia: A round robin test with 12 laboratories"
+    },
+    {
+      "id": "https://openalex.org/W3088233449",
+      "title": "Crystallization study of sol–gel derived 13-93 bioactive glass powder"
+    },
+    {
+      "id": "https://openalex.org/W3002284140",
+      "title": "Effect of poly(acrylic acid) architecture on setting and mechanical properties of glass ionomer cements"
+    },
+    {
+      "id": "https://openalex.org/W3136444550",
+      "title": "SALSA: Combining branch-and-bound with dynamic programming to smoothen workloads in simple assembly line balancing"
+    },
+    {
+      "id": "https://openalex.org/W3089161410",
+      "title": "Image-based roughness estimation of laser cut edges with a convolutional neural network"
+    },
+    {
+      "id": "https://openalex.org/W3015879199",
+      "title": "Solid state diffusion of metallic impurities from crucible and coating materials into crystalline silicon ingots for PV application"
+    },
+    {
+      "id": "https://openalex.org/W3137252793",
+      "title": "Deepening our understanding of bioactive glass crystallization using TEM and 3D nano-CT"
+    },
+    {
+      "id": "https://openalex.org/W3174151731",
+      "title": "Early oxidation stages of a Co-Cr-Fe-Mn-Ni-Si complex concentrated alloy with Cr, Mn, and Si contents matching those of 316L stainless steel"
+    },
+    {
+      "id": "https://openalex.org/W3005134685",
+      "title": "Hydrogen transport through the V-Cr-Al alloys: Hydrogen solution, permeation and thermal-stability"
+    },
+    {
+      "id": "https://openalex.org/W3115852811",
+      "title": "Optimizing carpool formation along high-occupancy vehicle lanes"
+    },
+    {
+      "id": "https://openalex.org/W3204629591",
+      "title": "Charge transfer transitions in glasses - Attempt of a systematic review"
+    },
+    {
+      "id": "https://openalex.org/W3087515624",
+      "title": "Photoluminescence and Raman Spectroscopy Study on Color Centers of Helium Ion-Implanted 4H–SiC"
+    },
+    {
+      "id": "https://openalex.org/W3092614867",
+      "title": "Structure, electrochemical impedance and Raman spectroscopy of lithium-niobium-titanium-oxide ceramics for LTCC technology"
+    },
+    {
+      "id": "https://openalex.org/W3168177716",
+      "title": "Molecular dynamics simulation of color centers in silicon carbide by helium and dual ion implantation and subsequent annealing"
+    },
+    {
+      "id": "https://openalex.org/W4212972839",
+      "title": "Sub-Kelvin thermometry for evaluating the local temperature stability within in situ TEM gas cells"
+    },
+    {
+      "id": "https://openalex.org/W4205653165",
+      "title": "Superparamagnetic and highly bioactive SPIONS/bioactive glass nanocomposite and its potential application in magnetic hyperthermia"
+    },
+    {
+      "id": "https://openalex.org/W3173503993",
+      "title": "A modified glass ionomer cement to mediate dentine repair"
+    },
+    {
+      "id": "https://openalex.org/W4221109279",
+      "title": "Physics-based 0D-U-I-SoC cell performance model for aqueous organic redox flow batteries"
+    },
+    {
+      "id": "https://openalex.org/W4311532599",
+      "title": "Matching supply and demand for free-floating car sharing: On the value of optimization"
+    },
+    {
+      "id": "https://openalex.org/W3125826565",
+      "title": "Cation distribution in NiMn2O4 spinel probed by high temperature thermopower measurements"
+    },
+    {
+      "id": "https://openalex.org/W4320478818",
+      "title": "Computational prediction of structure-borne noise in a two-stage double-helical gearbox using harmonic balance method"
+    },
+    {
+      "id": "https://openalex.org/W3169562457",
+      "title": "The influence of Cr and Ni doping on the microstructure of oxygen containing diamond-like carbon films"
+    },
+    {
+      "id": "https://openalex.org/W4223907161",
+      "title": "Physical properties and luminescence of highly stable erbium-doped antimony glasses for NIR broadband amplification"
+    },
+    {
+      "id": "https://openalex.org/W4292830814",
+      "title": "A two-step electroless plating method for Pd composite membranes with enhanced hydrogen selectivity and superior high-temperature stability"
+    },
+    {
+      "id": "https://openalex.org/W3043017930",
+      "title": "Organizations in reaction-diffusion systems: Effects of diffusion and boundary conditions"
+    },
+    {
+      "id": "https://openalex.org/W3173222568",
+      "title": "A combined experimental and in silico approach to determine the compatibility of poly(ester amide)s and indomethacin in polymer nanoparticles"
+    },
+    {
+      "id": "https://openalex.org/W4386423768",
+      "title": "Observation of the boson peak in a two-dimensional material"
+    },
+    {
+      "id": "https://openalex.org/W4206929931",
+      "title": "Substantial enhancement of hydrogen permeability of Mo2C/V composite membranes by ion beam sputtering"
+    },
+    {
+      "id": "https://openalex.org/W3210451067",
+      "title": "Spite vs. risk: Explaining overbidding in the second-price all-pay auction"
+    },
+    {
+      "id": "https://openalex.org/W3170148678",
+      "title": "X-Ray diffraction analysis and modeling of the depth profile of lattice strains in AlGaN stacks"
+    },
+    {
+      "id": "https://openalex.org/W4395063614",
+      "title": "Magnetite crystallization in a sodium-calcium-silicate glass with high iron oxide concentration–Effect on the magnetic properties"
+    },
+    {
+      "id": "https://openalex.org/W4400272968",
+      "title": "Neuroticism and the sales profession"
+    },
+    {
+      "id": "https://openalex.org/W4400300744",
+      "title": "Poly(vinyl pyridine) coatings cross-linked with transition metal complexes as active layers for biosensors sensitive to protein adsorption and cell adhesion"
+    },
+    {
+      "id": "https://openalex.org/W3017236617",
+      "title": "The old sheep: a convenient and suitable model for senile osteopenia"
+    },
+    {
+      "id": "https://openalex.org/W3133819642",
+      "title": "Er3+/Yb3+ activated up-conversion luminescence of zinc-tin-oxide-based powders"
+    },
+    {
+      "id": "https://openalex.org/W4313398731",
+      "title": "Microstructure and hydrogen transport properties of (V90Cr5Al5)90Cu10 alloy membranes"
+    },
+    {
+      "id": "https://openalex.org/W4376255649",
+      "title": "The shape of dendritic tips: the role of external impacts"
+    },
+    {
+      "id": "https://openalex.org/W4386087102",
+      "title": "Formation of laser-induced periodic surface structures on Zr-based bulk metallic glasses with different chemical composition"
+    },
+    {
+      "id": "https://openalex.org/W4388559357",
+      "title": "Comparative study of methods for counting of dislocations in 4H-SiC"
+    },
+    {
+      "id": "https://openalex.org/W3133557713",
+      "title": "Influence of natural oxide layers at Ni/NiAl interfaces on Ni3Al phase formation"
+    },
+    {
+      "id": "https://openalex.org/W4383873870",
+      "title": "Comparison of microstructure, sintering behavior, and biological response of sol-gel and melt-derived 13–93 bioactive glass scaffolds"
+    },
+    {
+      "id": "https://openalex.org/W4293456818",
+      "title": "Coups and the dynamics of media freedom"
+    },
+    {
+      "id": "https://openalex.org/W4308158992",
+      "title": "Investigation on the influence of a titanium coating on the aging behavior of ATZ ceramics for implant applications"
+    },
+    {
+      "id": "https://openalex.org/W4388210734",
+      "title": "Thermodynamics and kinetics of interdiffusion in Ni//NiAl diffusion couples"
+    },
+    {
+      "id": "https://openalex.org/W4394823916",
+      "title": "Non-destructive depth reconstruction of Al-Al2Cu layer structure with nanometer resolution using extreme ultraviolet coherence tomography"
+    },
+    {
+      "id": "https://openalex.org/W4392706224",
+      "title": "Sensitivity study of super-junction power MOSFETs by spatial and depth resolved heavy ion SEE mapping with various bias, LETs and ion ranges"
+    },
+    {
+      "id": "https://openalex.org/W4405893763",
+      "title": "Automatic Si phase extraction from microscopic images of Al-Si alloys by unsupervised machine learning and supervised deep learning"
+    },
+    {
+      "id": "https://openalex.org/W4386631070",
+      "title": "Osseointegration of photodynamic active biomaterials for bone regeneration in an animal bone model over a period of 12 months"
+    },
+    {
+      "id": "https://openalex.org/W4412988188",
+      "title": "Invisible origins: paediatric neuroendocrine neoplasms of unknown primary site in the MET registry and SEER database"
+    },
+    {
+      "id": "https://openalex.org/W4402678082",
+      "title": "Pfadabhängigkeiten"
+    },
+    {
+      "id": "https://openalex.org/W3004084390",
+      "title": "Degradation of Pd/Nb30Ti35Co35/Pd hydrogen permeable membrane: A numerical description"
+    },
+    {
+      "id": "https://openalex.org/W3016225355",
+      "title": "Phase formation and saturation magnetization of La-Zn-substituted M-type strontium ferrites"
+    },
+    {
+      "id": "https://openalex.org/W3200832553",
+      "title": "Structure and luminescent properties of Sm3+-doped metaphosphate glasses"
+    },
+    {
+      "id": "https://openalex.org/W3140942706",
+      "title": "Image-based modelling and visualisation of the relationship between laser-cut edge and process parameters"
+    },
+    {
+      "id": "https://openalex.org/W3206514075",
+      "title": "Viscosity and fragility of selected glass-forming chalcogenides"
+    },
+    {
+      "id": "https://openalex.org/W3213468788",
+      "title": "A holistic contribution to fast innovation in electric vehicles: An overview of the DEMOBASE research project"
+    },
+    {
+      "id": "https://openalex.org/W4200606904",
+      "title": "Self-motion illusions from distorted optic flow in multifocal glasses"
+    },
+    {
+      "id": "https://openalex.org/W4288886215",
+      "title": "Enhancing the thermoelectric properties of CaMnO3-δ via optimal substituent selection"
+    },
+    {
+      "id": "https://openalex.org/W3027292103",
+      "title": "A method for the strain rate dependent correction for control type of fatigue tests"
+    },
+    {
+      "id": "https://openalex.org/W4306958649",
+      "title": "Preparation of thin (∼2 μm) Pd membranes on ceramic supports with excellent selectivity and attrition resistance"
+    },
+    {
+      "id": "https://openalex.org/W3185877077",
+      "title": "Structure and peculiar luminescence of Eu3+-doped sodium/alkaline earths phosphate glasses"
+    },
+    {
+      "id": "https://openalex.org/W3214581617",
+      "title": "Enhancement of hydrogen permeation stability at high temperatures for Pd/Nb30Ti35Co35/Pd composite membranes by HfN intermediate layer"
+    },
+    {
+      "id": "https://openalex.org/W4287881710",
+      "title": "2D model of the transfer processes for CO2 methanation in a microchannel reactor"
+    },
+    {
+      "id": "https://openalex.org/W4320519005",
+      "title": "Slow coarsening of tetragonal zirconia nanocrystals in a phase-separated sodium borosilicate glass"
+    },
+    {
+      "id": "https://openalex.org/W4210996813",
+      "title": "Material evaluation for engineering a novel crucible setup for the growth of oxygen free Czochralski silicon crystals"
+    },
+    {
+      "id": "https://openalex.org/W4225264246",
+      "title": "Merging operando and computational X-ray spectroscopies to study the oxygen evolution reaction"
+    },
+    {
+      "id": "https://openalex.org/W4327923927",
+      "title": "Surface amorphization of bulk NiTi induced by laser radiation"
+    },
+    {
+      "id": "https://openalex.org/W3120346081",
+      "title": "Alterations of neurometabolism in the dorsolateral prefrontal cortex and thalamus in transition to psychosis patients change under treatment as usual – A two years follow-up 1H/31P-MR-spectroscopy study"
+    },
+    {
+      "id": "https://openalex.org/W4319777785",
+      "title": "Oscillating combustion of different fuel types for NOX reduction in grate furnaces and coal burners"
+    },
+    {
+      "id": "https://openalex.org/W3153915222",
+      "title": "Measurement of the Curie temperature based on temperature dependent thermal properties"
+    },
+    {
+      "id": "https://openalex.org/W4381619087",
+      "title": "Early-stage clustering in Tb-doped borosilicate glasses revealed by high-resolution scanning transmission electron microscopy and luminescence properties"
+    },
+    {
+      "id": "https://openalex.org/W4389410210",
+      "title": "Manganese cycling and transport in boreal estuaries impacted by acidic Mn-rich drainage"
+    },
+    {
+      "id": "https://openalex.org/W3207032328",
+      "title": "Physico-chemical characterization, bioactivity evaluation and cytotoxicity of PDA nanoparticles doped tricalcium silicate cements"
+    },
+    {
+      "id": "https://openalex.org/W4365447545",
+      "title": "Reactive magnetron sputtering to enhance the hydrogen permeation performance of NbC/V composite membranes"
+    },
+    {
+      "id": "https://openalex.org/W4388793608",
+      "title": "Solving the puzzle of hierarchical martensitic microstructures in NiTi by (111)-oriented epitaxial films"
+    },
+    {
+      "id": "https://openalex.org/W4389622999",
+      "title": "Defects distribution and evolution in selected-area helium ion implanted 4H–SiC"
+    },
+    {
+      "id": "https://openalex.org/W4400115658",
+      "title": "Human factors in model-driven engineering: future research goals and initiatives for MDE"
+    },
+    {
+      "id": "https://openalex.org/W4391743828",
+      "title": "Enhancement of DC conductivity of CuBO2 by incorporation of sulfur"
+    },
+    {
+      "id": "https://openalex.org/W3024859313",
+      "title": "All-inkjet-printed MoS2 field-effect transistors on paper for low-cost and flexible electronics"
+    },
+    {
+      "id": "https://openalex.org/W3048610075",
+      "title": "Low pO2 sintering and reoxidation of lead-free KNNLT piezoceramic laminates"
+    },
+    {
+      "id": "https://openalex.org/W3089032903",
+      "title": "Additive manufacturing of binary Al-Li alloys"
+    },
+    {
+      "id": "https://openalex.org/W3128910388",
+      "title": "Tanks-in-series model for high-temperature electrochemical hydrogen pump"
+    },
+    {
+      "id": "https://openalex.org/W3094064106",
+      "title": "Intrinsic nano-diffusion-couple for studying high temperature diffusion in multi-component superalloys"
+    },
+    {
+      "id": "https://openalex.org/W3085921153",
+      "title": "Mechanochemically synthesized Cu3P/C composites as a conversion electrode for Li-ion and Na-ion batteries in different electrolytes"
+    },
+    {
+      "id": "https://openalex.org/W3127886006",
+      "title": "Rail platooning: Scheduling trains along a rail corridor with rapid-shunting facilities"
+    },
+    {
+      "id": "https://openalex.org/W3016932472",
+      "title": "Bi-metallic Pd/Au nanoparticles prepared by UV-excimer laser exposure"
+    },
+    {
+      "id": "https://openalex.org/W3169401647",
+      "title": "Luminescent Sm-doped aluminosilicate glass as a substrate for enhanced photoresponsivity of MoS2 based photodetector"
+    },
+    {
+      "id": "https://openalex.org/W2995298571",
+      "title": "Introducing a novel in vivo method to access visual performance during dewetting process of contact lens surface"
+    },
+    {
+      "id": "https://openalex.org/W3116486441",
+      "title": "Biopolymer surface modification of PLGA fibers enhances interfacial shear strength and supports immobilization of rhGDF-5 in fiber-reinforced brushite cement"
+    },
+    {
+      "id": "https://openalex.org/W3215076829",
+      "title": "Physics-aware learning and domain-specific loss design in ophthalmology"
+    },
+    {
+      "id": "https://openalex.org/W4379977683",
+      "title": "Experimental assessment of the energy performance of microfluidic glazing components: The first results of a monitoring campaign carried out in an outdoor test facility"
+    },
+    {
+      "id": "https://openalex.org/W3048271227",
+      "title": "Laser-induced Leidenfrost surfaces"
+    },
+    {
+      "id": "https://openalex.org/W3166807006",
+      "title": "Challenges in early phase of product family development processes"
+    },
+    {
+      "id": "https://openalex.org/W3194355647",
+      "title": "Nucleation and detachment of polystyrene nanoparticles from plowing-induced surface wrinkling"
+    },
+    {
+      "id": "https://openalex.org/W4297498055",
+      "title": "Real-time analysis of magnetic nanoparticle clustering effects by inline-magnetic particle spectroscopy"
+    },
+    {
+      "id": "https://openalex.org/W3109702800",
+      "title": "A Modular MIMO Millimeter-Wave Imaging Radar System for Space Applications and Its Components"
+    },
+    {
+      "id": "https://openalex.org/W3124716216",
+      "title": "Lifetime limiting defects in 4H-SiC epitaxial layers: The influence of substrate originated defects"
+    },
+    {
+      "id": "https://openalex.org/W3161868179",
+      "title": "Facet growth and geometry of the growth ridge during dynamic Czochralski processes"
+    },
+    {
+      "id": "https://openalex.org/W4285148773",
+      "title": "Approach for model-based requirements engineering for the planning of engineering generations in the agile development of mechatronic systems"
+    },
+    {
+      "id": "https://openalex.org/W4310260811",
+      "title": "Nanocrystalline vanadium carbides as highly active catalysts on vanadium foils for high temperature hydrogen separation"
+    },
+    {
+      "id": "https://openalex.org/W4361216435",
+      "title": "Crystallization of lithium aluminosilicate and microstructure of a lithium alumino borosilicate glass designed for zero thermal expansion"
+    },
+    {
+      "id": "https://openalex.org/W4376865754",
+      "title": "Tuning the microstructure and hydrogen permeability of VC/V composite membranes by radio frequency magnetron sputtering with applied substrate bias"
+    },
+    {
+      "id": "https://openalex.org/W4380793034",
+      "title": "On the low-cycle fatigue behavior of a novel high-strength mold steel"
+    },
+    {
+      "id": "https://openalex.org/W3036593681",
+      "title": "All-inkjet-printed high-performance flexible MoS2 and MoS2-reduced graphene oxide field-effect transistors"
+    },
+    {
+      "id": "https://openalex.org/W3161234532",
+      "title": "Feasibility and clinical usefulness of modelling glioblastoma migration in adjuvant radiotherapy"
+    },
+    {
+      "id": "https://openalex.org/W4386135657",
+      "title": "Experimentally assessed efficiency improvement of innovative 3D-shaped structures as volumetric absorbers"
+    },
+    {
+      "id": "https://openalex.org/W4387235698",
+      "title": "Pension reform preferences in Germany: Does information matter?"
+    },
+    {
+      "id": "https://openalex.org/W3217294967",
+      "title": "FabOS: Towards an open, distributed, real-time-capable, and secure operating system for production"
+    },
+    {
+      "id": "https://openalex.org/W4320032926",
+      "title": "Itching and treatments in atopic dermatitis (AD): results from the German AD registry TREATgermany"
+    },
+    {
+      "id": "https://openalex.org/W4389871125",
+      "title": "Photoluminescence and X-ray induced scintillation in Gd3+-Tb3+ co-doped fluoride-phosphate glasses, and derived glass-ceramics containing NaGdF4 nanocrystals"
+    },
+    {
+      "id": "https://openalex.org/W4391154612",
+      "title": "Ni-doped NbC films for remarkably enhancing hydrogen permeation performance of NbC/V composite membranes"
+    },
+    {
+      "id": "https://openalex.org/W3168332611",
+      "title": "The time-dependency of the healing behavior of laser-scratched polymer films"
+    },
+    {
+      "id": "https://openalex.org/W4403566371",
+      "title": "Influence of Y2O3 doping on the aging behavior and mechanical properties of ATZ ceramics"
+    },
+    {
+      "id": "https://openalex.org/W2809750144",
+      "title": "Conditional cooperation and the effect of punishment"
+    },
+    {
+      "id": "https://openalex.org/W3172200616",
+      "title": "Microstructure investigation and fluorescence properties of europium-doped scheelite crystals in glass-ceramics made under different synthesis conditions"
+    },
+    {
+      "id": "https://openalex.org/W3043554341",
+      "title": "Chemical gradients at the surface of TiO2-doped cordierite glass-ceramics"
+    },
+    {
+      "id": "https://openalex.org/W3114269264",
+      "title": "Hands-free Adjustment of the Microscope in Microneurosurgery"
+    },
+    {
+      "id": "https://openalex.org/W3005145415",
+      "title": "Phase field model derivation for rapid crystal growth in polycrystalline alloys"
+    },
+    {
+      "id": "https://openalex.org/W3030159524",
+      "title": "Protecting investors in equity crowdfunding: An empirical analysis of the small investor protection act"
+    },
+    {
+      "id": "https://openalex.org/W3089004008",
+      "title": "Using Component-based Software Synthesis and Constraint Solving to generate Sets of Manufacturing Simulation Models"
+    },
+    {
+      "id": "https://openalex.org/W3119120765",
+      "title": "Observation of interaction forces by investigation of the influence of eluent additives on the retention behavior of aqueous nanoparticle dispersions in asymmetrical flow field-flow fractionation"
+    },
+    {
+      "id": "https://openalex.org/W3093109587",
+      "title": "Irradiation tests of bolometer sensor prototypes for ITER"
+    },
+    {
+      "id": "https://openalex.org/W3095587972",
+      "title": "Tanks-in-series model for an auto-thermal reforming reactor with a channeled monolith"
+    },
+    {
+      "id": "https://openalex.org/W3134719016",
+      "title": "A complete fuel processor for propylene glycol as hydrogen supply for a 5 kw low temperature pem fuel cell – Interim report on single reactors and system performance"
+    },
+    {
+      "id": "https://openalex.org/W4205287794",
+      "title": "Positions of the horizontal and vertical centre of rotation in eyes with different refractive errors"
+    },
+    {
+      "id": "https://openalex.org/W4213348177",
+      "title": "Electromagnetic levitation method as a containerless experimental technique"
+    },
+    {
+      "id": "https://openalex.org/W4310478431",
+      "title": "Performance of vertical gate-all-around nanowire p-MOS transistors determined by boron depletion during oxidation"
+    },
+    {
+      "id": "https://openalex.org/W3004617046",
+      "title": "Model experiment on a glass-forming Pd-Ni-Cu-P alloy"
+    },
+    {
+      "id": "https://openalex.org/W3110984458",
+      "title": "Scheduling taxi services for a team of car relocators"
+    },
+    {
+      "id": "https://openalex.org/W3172232627",
+      "title": "Specific heat capacity of the intermetallics ε-Cu3Sn, η/η′-Cu6Sn5, Al3Ni and Al3Ni2"
+    },
+    {
+      "id": "https://openalex.org/W3005040341",
+      "title": "Hodograph-equation for rapid solidification of Si-0.1 at.% As alloy melt"
+    },
+    {
+      "id": "https://openalex.org/W3094200929",
+      "title": "Formation of near-surface melt films on glass ceramics due to ultrashort laser pulses"
+    },
+    {
+      "id": "https://openalex.org/W4404642616",
+      "title": "Strategic consensus at founding and product innovation performance in high-tech ventures"
+    },
+    {
+      "id": "https://openalex.org/W3024755887",
+      "title": "Crystal growth velocities of a highly anisotropic phase obtained via surface and volume crystallization of barium–strontium–zinc silicate glasses"
+    },
+    {
+      "id": "https://openalex.org/W3080169802",
+      "title": "Silver doped glasses from the system BaO/SrO/ZnO/SiO2 – The influence of Sb, Sn, and Ta on the formation of core-shell structures"
+    },
+    {
+      "id": "https://openalex.org/W4403424234",
+      "title": "Development of a methodology for the derivation of technical requirements for (cyber-) physical product-service systems in service-oriented business models"
+    },
+    {
+      "id": "https://openalex.org/W3009700907",
+      "title": "Modification of silicon nitride with oligo(ethylene glycol)-terminated organophosphonate monolayers"
+    },
+    {
+      "id": "https://openalex.org/W3193460256",
+      "title": "Numerical forecast of redzone extension in cast silicon ingots in dependence on the purity level of crucible, coating and feedstock"
+    },
+    {
+      "id": "https://openalex.org/W4281765638",
+      "title": "Magnetron sputtering deposition of Mo2N catalytic films on vanadium foils for high temperature hydrogen separation"
+    },
+    {
+      "id": "https://openalex.org/W3083225768",
+      "title": "A method for automated Bruch’s membrane segmentation in optical coherence tomography"
+    },
+    {
+      "id": "https://openalex.org/W4224303827",
+      "title": "Tuning of high-temperature dielectric properties in the system (Bi0.5Na0.5)TiO3–BaTiO3–CaZrO3"
+    },
+    {
+      "id": "https://openalex.org/W4226445100",
+      "title": "Mixed-mode fracture behaviour of refractories with asymmetric wedge splitting test. Part II: Experimental case study"
+    },
+    {
+      "id": "https://openalex.org/W4313367969",
+      "title": "On the interpretation of confocal spectral depth profiling of color center and carrier concentration by photoluminescence and Raman of implanted 4H–SiC"
+    },
+    {
+      "id": "https://openalex.org/W4327591193",
+      "title": "State or private security supply? An analysis from the institutional economics perspective"
+    },
+    {
+      "id": "https://openalex.org/W4404462683",
+      "title": "Towards the theory of crystal growth ahead of the moving solid–liquid phase interface: a U-shaped anomalous behaviour of the crystallization velocity of melt undercooling"
+    },
+    {
+      "id": "https://openalex.org/W3107801441",
+      "title": "Die neue „heimliche Ressource der Sozialpolitik“? Soziales Engagement als geschlechterpolitisch ambivalenter Möglichkeitsraum im Community Kapitalismus"
+    },
+    {
+      "id": "https://openalex.org/W4319442731",
+      "title": "Modeling of solidification processes under consideration of particle transport in the melt under terrestrial and microgravity conditions"
+    },
+    {
+      "id": "https://openalex.org/W4400362107",
+      "title": "Deep learning-based localization of electrical connector sockets for automated mating"
+    },
+    {
+      "id": "https://openalex.org/W4404789601",
+      "title": "Detection and Handling of Laser Cutting Parameter Changes during the Deployment of Machine Learning Models"
+    },
+    {
+      "id": "https://openalex.org/W4405287745",
+      "title": "Facet growth kinetics and diameter fluctuations in molten zone Si crystal growth"
+    },
+    {
+      "id": "https://openalex.org/W3004586196",
+      "title": "On the theory of non-stationary directional solidification with a phase transition layer"
+    },
+    {
+      "id": "https://openalex.org/W3004862359",
+      "title": "Phase field analysis of the growth of fast and slow crystallites"
+    },
+    {
+      "id": "https://openalex.org/W3087956251",
+      "title": "Stress evolution in thick GaN layers grown by HVPE"
+    },
+    {
+      "id": "https://openalex.org/W4213219699",
+      "title": "Structure of binary antimony phosphate glasses by diffraction methods"
+    },
+    {
+      "id": "https://openalex.org/W3004968557",
+      "title": "Effect of tiny amount of impurity and convective transport on dendrite growth kinetics"
+    },
+    {
+      "id": "https://openalex.org/W3091226851",
+      "title": "Formation of zabuyelite, Li2CO3, on dolomite and kutnohorite {10.4} surfaces from supersaturated and undersaturated solutions: Growth behavior and anomalous friction at the nanoscale"
+    },
+    {
+      "id": "https://openalex.org/W3092325676",
+      "title": "Calorimetric approach to assess the apatite-forming capacity of bioactive glasses"
+    },
+    {
+      "id": "https://openalex.org/W3125592989",
+      "title": "Influence of oscillating main flow on separation efficiency in asymmetrical flow field-flow fractionation"
+    },
+    {
+      "id": "https://openalex.org/W3200672146",
+      "title": "Gear mesh excitation and non-uniform Rational B-Splines"
+    },
+    {
+      "id": "https://openalex.org/W4320479352",
+      "title": "Phase formation in the Ni-enriched zone below the surface oxide on NiTi"
+    },
+    {
+      "id": "https://openalex.org/W3082146469",
+      "title": "Skalierbare kontinuierliche Grignard‐Reagenz‐Bildung"
+    },
+    {
+      "id": "https://openalex.org/W3082695247",
+      "title": "Synthesis of functionalized biphenyls via heterogeneous photocatalysis in versatile microreactors"
+    },
+    {
+      "id": "https://openalex.org/W3082939718",
+      "title": "WITHDRAWN: Sub-20 nm multilayer nanopillar patterning for hybrid SET/CMOS integration"
+    },
+    {
+      "id": "https://openalex.org/W3105310351",
+      "title": "Dendritic crystallization from the undercooled melts: effect of tiny amount of impurity"
+    },
+    {
+      "id": "https://openalex.org/W3132408817",
+      "title": "Composition effects come to the surface"
+    },
+    {
+      "id": "https://openalex.org/W3143080653",
+      "title": "2D model of the transfer processes in S-traps with wash-coated monolith channels and fixed bed for the application of H2S chemisorption in a fuel processor/fuel cell system"
+    },
+    {
+      "id": "https://openalex.org/W3178891980",
+      "title": "The effect of dataset size on pretraining and transfer learning for diabetic retinopathy in narrow field to widefield domain shift"
+    },
+    {
+      "id": "https://openalex.org/W3198716284",
+      "title": "MHz SS-OCT – from biometry to live volumetric imaging"
+    },
+    {
+      "id": "https://openalex.org/W3206042698",
+      "title": "Automated quantitative analysis of void morphology evolution in Ag Ag direct bonding interface after accelerated aging"
+    },
+    {
+      "id": "https://openalex.org/W4283810191",
+      "title": "Individual, group, and temporal perspectives on the link between wealth and realistic threat"
+    },
+    {
+      "id": "https://openalex.org/W4322719037",
+      "title": "Correction: Association of the delayed changes in glutamate levels and functional connectivity with the immediate network effects of S-ketamine"
+    },
+    {
+      "id": "https://openalex.org/W4384205819",
+      "title": "The sum of symmetries is lower than its parts"
+    },
+    {
+      "id": "https://openalex.org/W3128141340",
+      "title": "Diabetic retinopathy detection in widefield images by using transfer learning from handheld narrow field images"
+    },
+    {
+      "id": "https://openalex.org/W3047541557",
+      "title": "Anmerkung zu BGH, Beschl. v. 15.1.2020 – XII ZB 381/19 (LG Heidelberg)"
+    },
+    {
+      "id": "https://openalex.org/W3084976349",
+      "title": "Anmerkung zu BVerfG, Beschl. v. 15.1.2020 – 2 BvR 1763/16 (OLG Schleswig)"
+    },
+    {
+      "id": "https://openalex.org/W3088210339",
+      "title": "Accommodation training with different myopia correction methods"
+    },
+    {
+      "id": "https://openalex.org/W3095339059",
+      "title": "Interocular transfer of distortion adaptation"
+    },
+    {
+      "id": "https://openalex.org/W3107687546",
+      "title": "Mythen der deutschen Nachkriegsentwicklung"
+    },
+    {
+      "id": "https://openalex.org/W3109617577",
+      "title": "Laudatio zum 80. Geburtstag von Prof. Peter Fritsch"
+    },
+    {
+      "id": "https://openalex.org/W3164450093",
+      "title": "Comparison of multi-retinal layer segmentation vs. existing segmentation in CIRRUS OCT images"
+    },
+    {
+      "id": "https://openalex.org/W3178078295",
+      "title": "Electron channelling contrast imaging (ECCI) applied to a fresnoite dendrite grown via electrochemically induced nucleation"
+    },
+    {
+      "id": "https://openalex.org/W3178448828",
+      "title": "A multipurpose SS-OCT engine – from axial eye length measurements to 4D OCT"
+    },
+    {
+      "id": "https://openalex.org/W3179454360",
+      "title": "Improving OCT B-Scan classification feature attribution maps with adversarial training"
+    },
+    {
+      "id": "https://openalex.org/W3180620802",
+      "title": "Impact of unconstrained head movements to scotoma and enhanced scotoma simulation in virtual-reality (VR) smooth pursuit gaming"
+    },
+    {
+      "id": "https://openalex.org/W3182508219",
+      "title": "Effect of short-wavelength light emitting screen technologies on human contrast sensitivity"
+    },
+    {
+      "id": "https://openalex.org/W3197478174",
+      "title": "So werden PAVK-Patienten optimal betreut"
+    },
+    {
+      "id": "https://openalex.org/W3198967556",
+      "title": "Optical coherence tomography angiography (OCTA) quantification using a new multilayer segmentation (MLS) vs fast segmentation (FS) in healthy and patients with diabetic retinopathy (DR)"
+    },
+    {
+      "id": "https://openalex.org/W3199666842",
+      "title": "Juergen B. Donges – Außenwirtschaftler, Ordnungspolitiker, Re-Regulierer"
+    },
+    {
+      "id": "https://openalex.org/W3199695567",
+      "title": "Nienke Stamer, Die medizinische Zwangsbehandlung Minderjähriger im Spannungsfeld nationaler Grund- und internationaler Menschenrechte. Zulässigkeit und Grenzen ärztlicher Maßnahmen gegen den Willen von Kindern und Jugendlichen."
+    },
+    {
+      "id": "https://openalex.org/W3202167668",
+      "title": "Psychophysical simulation of visual acuity using simple convolutional neuronal network"
+    },
+    {
+      "id": "https://openalex.org/W3204702342",
+      "title": "Anmerkung zu LG Düsseldorf (Dienstgericht für Richter), Urt. v. 8.12.2020 – DG – 6/2020"
+    },
+    {
+      "id": "https://openalex.org/W3211374501",
+      "title": "COLLOIDAL SYNTHESIS OF FLUORESCENT MoX2 (X = S, Se) NANOSHEETS VIA A DESIGN OF EXPERIMENTS APPROACH"
+    },
+    {
+      "id": "https://openalex.org/W3212250117",
+      "title": "A real-time anterior segment tracking method"
+    },
+    {
+      "id": "https://openalex.org/W3212269149",
+      "title": "High-purity Ta3N5 Photoelectrodes for Photoelectrochemical Energy Conversion"
+    },
+    {
+      "id": "https://openalex.org/W3213676562",
+      "title": "A comparison study of corneal motion analysis using optical coherence tomography (OCT) devices with two different acquisition speeds"
+    },
+    {
+      "id": "https://openalex.org/W4200150442",
+      "title": "Optimizing Over-the-Air Tests with Antenna Measurements plus Full-wave Simulation"
+    },
+    {
+      "id": "https://openalex.org/W4200436785",
+      "title": "Over-the-Air-Tests optimieren mit Antennenmessungen plus Vollwellensimulation"
+    },
+    {
+      "id": "https://openalex.org/W4214675309",
+      "title": "Anmerkung zu OVG Nordrhein-Westfalen, Urt. v. 23.4.2021 – 9 A 4109/18 (VG Münster)"
+    },
+    {
+      "id": "https://openalex.org/W4220883299",
+      "title": "Bis zu wie vielen Toten darf man sich irren?"
+    },
+    {
+      "id": "https://openalex.org/W4221066399",
+      "title": "Colloidal Synthesis Of Fluorescent MoX2 (X = S, Se) Nanosheets Via a Design Of Experiments Approach"
+    },
+    {
+      "id": "https://openalex.org/W4230304372",
+      "title": "Gewissensbits – wie würden Sie urteilen?"
+    },
+    {
+      "id": "https://openalex.org/W4240959623",
+      "title": "Gewissensbits – wie würden Sie urteilen?"
+    },
+    {
+      "id": "https://openalex.org/W4281760378",
+      "title": "Validierung radarbasierter ADAS-/AD-Funktionen auf Vehicle-in-the-Loop-Prüfständen"
+    },
+    {
+      "id": "https://openalex.org/W4282025066",
+      "title": "Validation of Radar-based ADAS and AD Functions on Vehicle-in-the-Loop Testbeds"
+    },
+    {
+      "id": "https://openalex.org/W4282839331",
+      "title": "Anmerkung zu BVerfG, Beschl. v. 2.11.2021 – 1 BvR 1575/18"
+    },
+    {
+      "id": "https://openalex.org/W4283818864",
+      "title": "Funktionsmedizinische und optometrische Sicht auf digitale Medien in der Schule und Freizeit"
+    },
+    {
+      "id": "https://openalex.org/W4297008367",
+      "title": "Contents"
+    },
+    {
+      "id": "https://openalex.org/W4297131912",
+      "title": "Das Verfassungsgebot der intertemporalen Freiheitssicherung als Gewährleistung von Gleichheit in der Zeit"
+    },
+    {
+      "id": "https://openalex.org/W4312395232",
+      "title": "Characterization of autofluorescence and quantitative protoporphyrin IX biomarkers for optical spectroscopy-guided glioma surgery"
+    },
+    {
+      "id": "https://openalex.org/W4323359495",
+      "title": "Author Correction: Comparability of automated drusen volume measurements in age-related macular degeneration: a MACUSTAR study report"
+    },
+    {
+      "id": "https://openalex.org/W4360844204",
+      "title": "Contents"
+    },
+    {
+      "id": "https://openalex.org/W4381383621",
+      "title": "Sein oder Nichtsein, das ist hier die Frage Anmerkung zu BVerfG, Beschl. v. 7.4.2022 – 1 BvR 1187/19"
+    },
+    {
+      "id": "https://openalex.org/W4385698527",
+      "title": "Frontmatter"
+    },
+    {
+      "id": "https://openalex.org/W4386028425",
+      "title": "Contents"
+    },
+    {
+      "id": "https://openalex.org/W4386480284",
+      "title": "LP-39: The use of metabolome analysis in supporting the category justification of fatty acid alkanolamides (FAA) under the EU REACH Regulation"
+    },
+    {
+      "id": "https://openalex.org/W4386772946",
+      "title": "Inhalt"
+    },
+    {
+      "id": "https://openalex.org/W4388967138",
+      "title": "Inhalt"
+    },
+    {
+      "id": "https://openalex.org/W4391999413",
+      "title": "Computational dynamics of information ratios"
+    },
+    {
+      "id": "https://openalex.org/W4392198169",
+      "title": "Wundheilung der Kornea – Pharmakologische Therapie"
+    },
+    {
+      "id": "https://openalex.org/W4392603616",
+      "title": "Obituary - Dr. Fuccio Cristiano"
+    },
+    {
+      "id": "https://openalex.org/W4392712568",
+      "title": "Editorial on special issue “Physically relevant moving boundary problems”"
+    },
+    {
+      "id": "https://openalex.org/W4400844421",
+      "title": "Preface to the special issue in micro and nano structured mid-IR to terahertz materials and devices"
+    },
+    {
+      "id": "https://openalex.org/W4401006278",
+      "title": "Analysis of Crystal Defects by Electron Channeling Contrast Imaging (ECCI) for the Advancement of Structural Materials"
+    },
+    {
+      "id": "https://openalex.org/W4405272915",
+      "title": "Zur Strafbarkeit von Datenfunden im Darknet"
+    },
+    {
+      "id": "https://openalex.org/W4407361997",
+      "title": "Divertor conceptual design of the European Volumetric Neutron Source"
+    },
+    {
+      "id": "https://openalex.org/W4408919548",
+      "title": "Discretization of continuous-time arbitrage strategies in financial markets with fractional Brownian motion"
+    },
+    {
+      "id": "https://openalex.org/W4409102188",
+      "title": "132 GBaud PAM4 IM/DD Silicon Receiver Subassembly Realized by Stacking Technology"
+    },
+    {
+      "id": "https://openalex.org/W4409178687",
+      "title": "Estimation of the backlash size on rack-and-pinion drives of machine tools using supervised learning classification methods"
+    },
+    {
+      "id": "https://openalex.org/W4410289061",
+      "title": "Editorial"
+    },
+    {
+      "id": "https://openalex.org/W4410576192",
+      "title": "Novel energy-filtered implantation technique for field stop formation in silicon power devices"
+    },
+    {
+      "id": "https://openalex.org/W4411474714",
+      "title": "Spiteful bidding in first-price all-pay auctions"
+    },
+    {
+      "id": "https://openalex.org/W4411532869",
+      "title": "NEXAFS spectral peculiarities in Sn:SiO2 composite layer"
+    },
+    {
+      "id": "https://openalex.org/W4413997443",
+      "title": "Politische Partizipation in Ostdeutschland"
+    },
+    {
+      "id": "https://openalex.org/W4414288291",
+      "title": "Soziologie geht über die Grenzen"
+    },
+    {
+      "id": "https://openalex.org/W4415224018",
+      "title": "Assessment of an algorithm-based combination device for objective and subjective refraction: accuracy and efficiency across examiner experience levels"
+    },
+    {
+      "id": "https://openalex.org/W4415446595",
+      "title": "TCT-739 Left Atrial Appendage Closure in Patients with Dementia: Data from The National Inpatient Sample Database"
+    },
+    {
+      "id": "https://openalex.org/W4415446708",
+      "title": "TCT-747 Sex and Racial Disparities in Patients Undergoing Left Atrial Appendage Closure in The United States – A Nationwide Analysis between 2018 to 2021"
+    },
+    {
+      "id": "https://openalex.org/W4415475671",
+      "title": "A summary of the Lucy Ashton resistance prediction workshop"
+    },
+    {
+      "id": "https://openalex.org/W4415547492",
+      "title": "Hyperspectral imaging using a custom-designed holographic optical element with two volume Bragg gratings"
+    },
+    {
+      "id": "https://openalex.org/W4416543405",
+      "title": "3D microstructural damage quantification and comparative analysis of initiation mechanisms in woven and chopped composites under compressive fatigue"
+    },
+    {
+      "id": "https://openalex.org/W7117968967",
+      "title": "Kombination von Lean-Prinzipien und KI für eine nachhaltige Lebensmittelproduktion"
+    },
+    {
+      "id": "https://openalex.org/W7119036997",
+      "title": "Broadband visible emission in undoped K2ZnGeO4 by near UV and X-ray excitation"
+    },
+    {
+      "id": "https://openalex.org/W7128802751",
+      "title": "UV emission quenching in silicon-coupled upconverting nanocomposites"
+    },
+    {
+      "id": "https://openalex.org/W7131068502",
+      "title": "3-Jahres-Frakturrisiko bei postmenopausalen Frauen mit Rheumatoider Arthritis basierend auf der DVO-Leitlinie 2023"
+    },
+    {
+      "id": "https://openalex.org/W7131225991",
+      "title": "Systemic and Intracranial Efficacy and Safety of Trastuzumab Deruxtecan in Patients with HER2-Mutant Non-Small Cell Lung Cancer across Treatment Lines: Evidence from the TRACER/HERTras Real-World Cohort"
+    },
+    {
+      "id": "https://openalex.org/W7133347936",
+      "title": "Structural and spectroscopic properties of Yb:Al-P co-doped silica fiber preform materials"
+    }
+  ]
+}
