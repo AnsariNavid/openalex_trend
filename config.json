@@ -1,0 +1,108 @@
+{
+  "institution_ids": [
+    "https://openalex.org/I74973139",
+    "https://openalex.org/I136199984"
+  ],
+  "from_date": "2020-01-01",
+  "to_date": "2024-12-31",
+  "max_pages": 8,
+  "per_page": 200,
+  "top_collaborators": 10,
+  "top_individuals": 10,
+  "results_dir": "results",
+  "output_report": "collaboration_report.md",
+  "output_filtered_json": "filtered_german_collab_dataset.json",
+  "output_relevant_jsonl": "topic_relevant_papers.jsonl",
+  "output_relevant_tagged_json": "topic_relevant_tagged_papers.json",
+  "output_analysis_md": "topic_analysis.md",
+  "openai_model": "gpt-4o-mini",
+  "cheap_model": "gpt-4o-mini",
+  "analysis_model": "gpt-4.1",
+  "batch_classification_model": "gpt-4.1",
+  "openalex_api_key": "",
+  "topics": [
+    "precision engineering progress",
+    "AI for precision engineering",
+    "smart manufacturing and automation",
+    "optical engineering and precision equipment",
+    "micro- and nanotechnology for precision engineering",
+    "precision measurement",
+    "machine tool technology",
+    "precision manufacturing",
+    "Industry 4.0",
+    "additive manufacturing"
+  ],
+  "topic_taxonomy": {
+    "ai-and-digital-precision": [
+      "AI for precision engineering",
+      "machine learning for precision manufacturing",
+      "digital twin",
+      "intelligent process control",
+      "automation"
+    ],
+    "optics-and-equipment": [
+      "optical engineering",
+      "precision equipment",
+      "laser processing",
+      "ultra-precision optics",
+      "metrology instrumentation"
+    ],
+    "manufacturing-and-micro-nano": [
+      "microtechnology",
+      "nanotechnology",
+      "precision measurement",
+      "machine tool technology",
+      "Industry 4.0",
+      "additive manufacturing"
+    ]
+  },
+  "relevance_keyword_hints": [
+    "precision engineering",
+    "smart manufacturing",
+    "automation",
+    "optical engineering",
+    "precision measurement",
+    "machine tool",
+    "Industry 4.0",
+    "additive manufacturing",
+    "microtechnology",
+    "nanotechnology"
+  ],
+  "category_label_field": "topic_category",
+  "method_label_field": "topic_method",
+  "analysis_category_facts": {
+    "ai-and-digital-precision": [
+      "AI for precision engineering",
+      "digital twin",
+      "automation"
+    ],
+    "optics-and-equipment": [
+      "optical engineering",
+      "precision equipment",
+      "metrology instrumentation"
+    ],
+    "manufacturing-and-micro-nano": [
+      "micro/nanotechnology",
+      "precision measurement",
+      "machine tool technology",
+      "Industry 4.0",
+      "additive manufacturing"
+    ]
+  },
+  "forbidden_topics": [
+    "bioinformatics",
+    "health",
+    "climate",
+    "biology"
+  ],
+  "relevance_system_prompt": "Classify whether a paper is relevant to precision engineering progress. Prioritize recall and include even slightly related work in AI for precision engineering, smart manufacturing, automation, optical engineering, precision equipment, micro/nano technology, precision measurement, machine tools, Industry 4.0, and additive manufacturing. Use both title and abstract.",
+  "relevance_user_prompt_template": "Return JSON with keys: relevant (bool), matched_topics (list[str]), topic_category (str), topic_method (str), rationale (str, <=40 words). Use both title and abstract and include slightly related precision-engineering papers.\\nTopics: {topics_json}\\nTopic taxonomy: {topic_taxonomy_json}\\nTitle: {title}\\nAbstract: {abstract}",
+  "analysis_system_prompt": "You are writing an executive collaboration brief on precision engineering progress. Keep it concise, easy to follow, and table-first. Focus on research focus by partner, major advancements, and future directions.",
+  "analysis_user_prompt_template": "Write a concise markdown report using short sections and tables. Avoid long paragraphs and generic background.\\nMust include:\\n1) Collaboration by category table using the taxonomy in input.\\n2) Partner focus table: partner name, type (University/Company/Other), dominant category, paper count.\\n3) Most important research advancements/breakthroughs (bullet list, brief, evidence-based).\\n4) Future direction analysis from observed collaborations.\\n5) Interesting trend highlights.\\n\\nInput topics: {topics_json}\\nRelevant paper count: {relevant_count}\\nTagged stats: {stats_json}\\nTagged paper sample: {paper_sample_json}",
+  "batch_classification_batch_size": 100,
+  "batch_relevance_system_prompt": "You are classifying publication relevance for precision engineering progress. Process a batch of papers and return strict JSON. Be recall-oriented and include anything slightly relevant to AI for precision engineering, smart manufacturing, automation, optical engineering, precision equipment, micro/nano technology, precision measurement, machine tools, Industry 4.0, or additive manufacturing.",
+  "batch_relevance_user_prompt_template": "Return a JSON object with key \"decisions\" (list). Each decision item MUST include: id (str), relevant (bool), matched_topics (list[str]), topic_category (str), topic_method (str), rationale (str <= 30 words). Evaluate using both title and abstract.\\nTopics: {topics_json}\\nTopic taxonomy: {topic_taxonomy_json}\\nPapers: {papers_json}\\nInclude one decision for every input paper id.",
+  "classification_checkpoint_every": 100,
+  "report_system_prompt": "Write concise executive markdown reports. Keep it table-first and easy to follow. Avoid unnecessary background and verbose text. Focus on actionable collaboration insights.",
+  "report_user_prompt_template": "Write a concise report with markdown tables and short bullets.\nMust include: \n1) Category relevance table (which papers align to which category of interest).\n2) University-to-company research focus table (partner, type, dominant category, paper count).\n3) Most important breakthroughs (short bullets, evidence-based).\n4) Future directions given current collaborations (short bullets).\n5) Interesting trends from year/category or method/category data.\nAvoid too much text; get straight to the point.\n\nInput topics: {topics_json}\nRelevant paper count: {relevant_count}\nTagged stats: {stats_json}\nTagged paper sample: {paper_sample_json}"
+}
