@@ -1,0 +1,89 @@
+{
+  "institution_ids": [
+    "https://openalex.org/I4210127875",
+    "https://openalex.org/I1304085615",
+    "https://openalex.org/I1343180700",
+    "https://openalex.org/I4210158342",
+    "https://openalex.org/I4210104622",
+    "https://openalex.org/I4210094487",
+    "https://openalex.org/I4210146682",
+    "https://openalex.org/I131781684",
+    "https://openalex.org/I4210142644",
+    "https://openalex.org/I4210133876",
+    "https://openalex.org/I4210140447",
+    "https://openalex.org/I4210155185",
+    "https://openalex.org/I4210120917",
+    "https://openalex.org/I1334877674",
+    "https://openalex.org/I4210119559",
+    "https://openalex.org/I137594350",
+    "https://openalex.org/I4210131793",
+    "https://openalex.org/I4210144190",
+    "https://openalex.org/I4210140450",
+    "https://openalex.org/I4210144507",
+    "https://openalex.org/I4210105601",
+    "https://openalex.org/I4210145291"
+  ],
+  "from_date": "2020-01-01",
+  "to_date": "2026-12-31",
+  "max_pages": 10000,
+  "per_page": 2000,
+  "top_collaborators": 10,
+  "top_individuals": 10,
+  "results_dir": "results",
+  "output_report": "collaboration_report.md",
+  "output_filtered_json": "filtered_german_collab_dataset.json",
+  "output_relevant_jsonl": "topic_relevant_papers.jsonl",
+  "output_relevant_tagged_json": "topic_relevant_tagged_papers.json",
+  "output_analysis_md": "topic_analysis.md",
+  "openai_model": "gpt-4o-mini",
+  "cheap_model": "gpt-4o-mini",
+  "analysis_model": "gpt-4.1",
+  "openalex_api_key": "",
+  "topics": [
+    "thermal management",
+    "electronic cooling",
+    "heat dissipation",
+    "thermal design",
+    "chip-level thermal management",
+    "board-level thermal management",
+    "system-level thermal management"
+  ],
+  "cooling_taxonomy": {
+    "chip-level": [
+      "microfluidics",
+      "thermal interface materials",
+      "TIM",
+      "hotspot mitigation",
+      "2.5D IC",
+      "3D IC"
+    ],
+    "board-level": [
+      "integrated heat pipe",
+      "heat pipe",
+      "vapor chamber",
+      "PCB thermal via",
+      "board cooling"
+    ],
+    "system-level": [
+      "cold plate cooling",
+      "two-phase immersion cooling",
+      "immersion cooling",
+      "rack-scale thermal management",
+      "data center cooling"
+    ]
+  },
+  "forbidden_topics": [
+    "bioinformatics",
+    "health",
+    "climate",
+    "biology"
+  ],
+  "relevance_system_prompt": "Classify whether a paper is even slightly relevant to thermal management across chip-level, board-level, or system-level cooling. Prefer recall over precision: include borderline-but-related papers. Use both title and abstract.",
+  "relevance_user_prompt_template": "Return JSON with keys: relevant (bool), matched_topics (list[str]), cooling_level (str: chip-level|board-level|system-level|unknown), cooling_methodology (str), rationale (str, <=40 words). Mark relevant=true for anything slightly related to thermal management/cooling/heat dissipation in electronics systems. \nTopics: {topics_json}\nCooling taxonomy: {cooling_taxonomy_json}\nTitle: {title}\nAbstract: {abstract}",
+  "analysis_system_prompt": "Write concise, smooth markdown analysis for research management. Avoid repeating statistics and avoid generic field explanations.",
+  "analysis_user_prompt_template": "Write sections: 'Topic-Focused Collaboration Analysis' and 'Actionable Next Steps'. Focus on collaboration patterns emerging from relevant papers and topics.\nInput topics: {topics_json}\nRelevant paper count: {relevant_count}\nTopic stats: {stats_json}\nPaper sample: {paper_sample_json}",
+  "batch_classification_model": "gpt-4.1",
+  "batch_classification_batch_size": 100,
+  "batch_relevance_system_prompt": "You are classifying publication relevance for thermal management research. Process a batch of papers and return only strict JSON. Be recall-oriented: include anything even slightly relevant to chip-level, board-level, or system-level thermal management/cooling.",
+  "batch_relevance_user_prompt_template": "Return a JSON object with key \"decisions\" (list). Each decision item MUST include: id (str), relevant (bool), matched_topics (list[str]), cooling_level (one of chip-level|board-level|system-level|unknown), cooling_methodology (str), rationale (str <= 30 words). Evaluate using both title and abstract.\nTopics: {topics_json}\nCooling taxonomy: {cooling_taxonomy_json}\nPapers: {papers_json}\nInclude one decision for every input paper id."
+}
