@@ -144,5 +144,10 @@
     "MVTec": "MVTec Software GmbH",
     "ZEISS": "Carl Zeiss AG",
     "Leica Microsystems": "Leica Microsystems"
-  }
+  },
+  "report_category_filter": "",
+  "report_subcategory_filter": "",
+  "report_year_start": null,
+  "report_year_end": null,
+  "report_language": "en"
 }

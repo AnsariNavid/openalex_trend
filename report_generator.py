@@ -15,13 +15,15 @@ import time
 from collections import Counter, defaultdict
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any
+from typing import Any, Optional
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
 from config_loader import load_json_file
 
 OPENAI_CHAT_ENDPOINT = "https://api.openai.com/v1/chat/completions"
+LANGUAGE_ENGLISH = "en"
+LANGUAGE_CHINESE = "zh"
 
 
 @dataclass
@@ -33,6 +35,11 @@ class ReportConfig:
     topic_taxonomy: dict[str, list[str]]
     category_field: str
     method_field: str
+    report_category_filter: str
+    report_subcategory_filter: str
+    report_year_start: int | None
+    report_year_end: int | None
+    report_language: str
     results_dir: str
     output_relevant_tagged_json: str
     output_report: str
@@ -66,6 +73,15 @@ def normalize_company_name(name: str, aliases: dict[str, str]) -> str:
     return n
 
 
+def _to_int(v: Any) -> Optional[int]:
+    if v is None or v == "":
+        return None
+    try:
+        return int(v)
+    except (TypeError, ValueError):
+        return None
+
+
 def load_config(path: str = "config.json") -> ReportConfig:
     raw = load_json_file(path)
     taxonomy = raw.get("topic_taxonomy") or raw.get("cooling_taxonomy") or {}
@@ -77,10 +93,15 @@ def load_config(path: str = "config.json") -> ReportConfig:
         topic_taxonomy={str(k): [str(v) for v in vals] for k, vals in taxonomy.items()},
         category_field=str(raw.get("category_label_field", "topic_category")),
         method_field=str(raw.get("method_label_field", "topic_method")),
+        report_category_filter=str(raw.get("report_category_filter", "")).strip(),
+        report_subcategory_filter=str(raw.get("report_subcategory_filter", "")).strip(),
+        report_year_start=_to_int(raw.get("report_year_start")),
+        report_year_end=_to_int(raw.get("report_year_end")),
+        report_language=str(raw.get("report_language", LANGUAGE_ENGLISH)).strip() or LANGUAGE_ENGLISH,
         results_dir=str(raw["results_dir"]),
         output_relevant_tagged_json=str(raw.get("output_relevant_tagged_json", "topic_relevant_tagged_papers.json")),
         output_report=str(raw.get("output_report", "collaboration_report.md")),
-        analysis_model=str(raw.get("analysis_model", "gpt-5.4")),
+        analysis_model=str(raw.get("analysis_model", "gpt-4.1")),
         report_system_prompt=str(raw.get("report_system_prompt", "")),
         report_user_prompt_template=str(raw.get("report_user_prompt_template", "")),
     )
@@ -94,6 +115,47 @@ def load_rows(cfg: ReportConfig) -> tuple[list[dict[str, Any]], str]:
     if isinstance(data, list):
         return data, str(tagged)
     return [], str(tagged)
+
+
+def _extract_year(row: dict[str, Any]) -> Optional[int]:
+    y = row.get("publication_year")
+    if isinstance(y, int):
+        return y
+    y2 = str(row.get("publication_date", "") or row.get("year", ""))
+    m = re.search(r"\b\d{4}\b", y2)
+    return int(m.group()) if m else None
+
+
+def filter_publications(
+    publications: list[dict[str, Any]],
+    category_field: str,
+    method_field: str,
+    category: str,
+    subcategory: str,
+    year_start: Optional[int],
+    year_end: Optional[int],
+) -> list[dict[str, Any]]:
+    filtered: list[dict[str, Any]] = []
+    category_l = category.lower().strip() if category else ""
+    subcategory_l = subcategory.lower().strip() if subcategory else ""
+
+    for publication in publications:
+        cat = str(publication.get(category_field, "") or "").lower()
+        sub = str(publication.get(method_field, "") or "").lower()
+
+        if category_l and category_l != cat:
+            continue
+        if subcategory_l and subcategory_l not in sub:
+            continue
+
+        year = _extract_year(publication)
+        if year_start is not None and (year is None or year < year_start):
+            continue
+        if year_end is not None and (year is None or year > year_end):
+            continue
+
+        filtered.append(publication)
+    return filtered
 
 
 def org_type(name: str) -> str:
@@ -141,7 +203,6 @@ def build_verified_pairs(rows: list[dict[str, Any]], cfg: ReportConfig) -> list[
         universities = [p for p in partners if org_type(p) == "University"]
         companies = [normalize_company_name(p, cfg.company_aliases) for p in partners if org_type(p) == "Company"]
 
-        # focus on listed entities when provided
         if cfg.target_universities:
             universities = [u for u in universities if looks_like_target(u, cfg.target_universities)]
         if cfg.target_companies:
@@ -149,12 +210,13 @@ def build_verified_pairs(rows: list[dict[str, Any]], cfg: ReportConfig) -> list[
 
         cat = str(r.get(cfg.category_field, "unknown") or "unknown")
         meth = str(r.get(cfg.method_field, "") or "")
-        year = r.get("publication_year")
+        year = _extract_year(r)
 
         for u in universities:
             for c in companies:
                 evidence = detect_evidence_strength(r, u, c)
                 verified.append({
+                    "paper_id": str(r.get("id", "") or ""),
                     "university": u,
                     "company": c,
                     "title": str(r.get("title", "")),
@@ -165,7 +227,6 @@ def build_verified_pairs(rows: list[dict[str, Any]], cfg: ReportConfig) -> list[
                     "evidence_strength": evidence,
                     "link": detect_publication_link(r),
                 })
-    # prefer stronger evidence first, then recent year
     order = {"High": 0, "Medium": 1, "Technical": 2}
     verified.sort(key=lambda x: (order.get(x["evidence_strength"], 9), -int(x["year"] or 0)))
     return verified
@@ -183,7 +244,7 @@ def build_stats(rows: list[dict[str, Any]], cfg: ReportConfig, verified: list[di
     by_pair = Counter((v["university"], v["company"]) for v in verified)
     by_year_cat: dict[int, Counter[str]] = defaultdict(Counter)
     for r in rows:
-        y = r.get("publication_year")
+        y = _extract_year(r)
         if isinstance(y, int):
             by_year_cat[y][str(r.get(cfg.category_field, "unknown") or "unknown")] += 1
 
@@ -197,6 +258,28 @@ def build_stats(rows: list[dict[str, Any]], cfg: ReportConfig, verified: list[di
     }
 
 
+def _build_instructions(language: str) -> str:
+    base = (
+        "You are an R&D intelligence analyst. Use ONLY the provided paper corpus for internal claims. "
+        "If evidence is missing, state it explicitly. Do not invent publications, links, counts, or collaborations. "
+        "Prefer concise table-first output and short executive prose."
+    )
+    if language == LANGUAGE_CHINESE:
+        return base + " Write the report in Simplified Chinese."
+    return base + " Write the report in English."
+
+
+def _memo_prompt(cfg: ReportConfig, stats: dict[str, Any], sample: list[dict[str, Any]]) -> str:
+    return cfg.report_user_prompt_template.format(
+        topics_json=json.dumps(cfg.topics, ensure_ascii=False),
+        target_companies_json=json.dumps(cfg.target_companies, ensure_ascii=False),
+        target_universities_json=json.dumps(cfg.target_universities, ensure_ascii=False),
+        relevant_count=stats.get("relevant_count", 0),
+        stats_json=json.dumps(stats, ensure_ascii=False),
+        paper_sample_json=json.dumps(sample, ensure_ascii=False),
+    )
+
+
 def fallback_report(rows: list[dict[str, Any]], verified: list[dict[str, Any]], stats: dict[str, Any], cfg: ReportConfig) -> str:
     top_verified = verified[:12]
     top_pairs = Counter((v["university"], v["company"]) for v in verified).most_common(10)
@@ -208,7 +291,7 @@ def fallback_report(rows: list[dict[str, Any]], verified: list[dict[str, Any]], 
     ]
 
     rel_rows = []
-    for (u, c), n in top_pairs[:8]:
+    for (u, c), _ in top_pairs[:8]:
         pair_items = [x for x in verified if x["university"] == u and x["company"] == c]
         cat = Counter(x["category"] for x in pair_items).most_common(1)[0][0] if pair_items else "unknown"
         meth = Counter(x["method"] for x in pair_items if x["method"]).most_common(1)
@@ -226,7 +309,12 @@ def fallback_report(rows: list[dict[str, Any]], verified: list[dict[str, Any]], 
         dom = sorted(counts.items(), key=lambda x: x[1], reverse=True)[:2]
         trend_rows.append([f"Year {y} concentration", ", ".join([f"{k} ({v})" for k, v in dom]), "Shows category focus shifts over time"])
 
-    breakthrough_rows = [[m, pair[0] if pair else "Mixed pairs", "Repeated co-publication signal"] for (m, _), pair in zip(top_methods[:6], [p[0] for p in top_pairs[:6]] + [""] * 6)]
+    breakthrough_rows = []
+    for idx, (m, _) in enumerate(top_methods[:6]):
+        pair_label = "Mixed pairs"
+        if idx < len(top_pairs):
+            pair_label = f"{top_pairs[idx][0][0]} ↔ {top_pairs[idx][0][1]}"
+        breakthrough_rows.append([m, pair_label, "Repeated co-publication signal"])
 
     bib_rows = [[v["title"][:90], v["year"], v["link"] or "n/a"] for v in top_verified]
 
@@ -301,6 +389,7 @@ def llm_report(rows: list[dict[str, Any]], verified: list[dict[str, Any]], stats
 
     sample = [
         {
+            "paper_id": v["paper_id"],
             "university": v["university"],
             "company": v["company"],
             "title": v["title"],
@@ -310,23 +399,17 @@ def llm_report(rows: list[dict[str, Any]], verified: list[dict[str, Any]], stats
             "evidence_strength": v["evidence_strength"],
             "link": v["link"],
         }
-        for v in verified[:200]
+        for v in verified[:250]
     ]
 
-    user_prompt = cfg.report_user_prompt_template.format(
-        topics_json=json.dumps(cfg.topics, ensure_ascii=False),
-        target_companies_json=json.dumps(cfg.target_companies, ensure_ascii=False),
-        target_universities_json=json.dumps(cfg.target_universities, ensure_ascii=False),
-        relevant_count=len(rows),
-        stats_json=json.dumps(stats, ensure_ascii=False),
-        paper_sample_json=json.dumps(sample, ensure_ascii=False),
-    )
+    user_prompt = _memo_prompt(cfg, stats, sample)
+    instructions = _build_instructions(cfg.report_language)
 
     payload = {
         "model": cfg.analysis_model,
         "temperature": 0.1,
         "messages": [
-            {"role": "system", "content": cfg.report_system_prompt},
+            {"role": "system", "content": f"{instructions}\n\n{cfg.report_system_prompt}".strip()},
             {"role": "user", "content": user_prompt},
         ],
     }
@@ -346,9 +429,19 @@ def main() -> int:
         print(f"Error: no relevant data found. Expected: {src}")
         return 1
 
-    verified = build_verified_pairs(rows, cfg)
-    stats = build_stats(rows, cfg, verified)
-    report = llm_report(rows, verified, stats, cfg)
+    filtered_rows = filter_publications(
+        publications=rows,
+        category_field=cfg.category_field,
+        method_field=cfg.method_field,
+        category=cfg.report_category_filter,
+        subcategory=cfg.report_subcategory_filter,
+        year_start=cfg.report_year_start,
+        year_end=cfg.report_year_end,
+    )
+
+    verified = build_verified_pairs(filtered_rows, cfg)
+    stats = build_stats(filtered_rows, cfg, verified)
+    report = llm_report(filtered_rows, verified, stats, cfg)
 
     out_path = Path(cfg.results_dir) / cfg.output_report
     out_path.parent.mkdir(parents=True, exist_ok=True)
@@ -356,6 +449,7 @@ def main() -> int:
     (Path(cfg.results_dir) / "topic_stats.json").write_text(json.dumps(stats, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
     print(f"Report source: {src}")
+    print(f"Filtered publications for report: {len(filtered_rows)}")
     print(f"Verified collaboration evidence rows: {len(verified)}")
     print(f"Report saved: {out_path.resolve()}")
     return 0

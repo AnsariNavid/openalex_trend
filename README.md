@@ -103,6 +103,8 @@ Key settings:
 - `output_relevant_jsonl`, `output_relevant_tagged_json`, `output_analysis_md`: output files under `results_dir`.
 - `batch_relevance_system_prompt`, `batch_relevance_user_prompt_template`: instructions for one-call batch classification of up to 100 papers.
 - `report_system_prompt`, `report_user_prompt_template`: evidence-first report style and section requirements.
+- `report_category_filter`, `report_subcategory_filter`, `report_year_start`, `report_year_end`: optional report-time filtering controls.
+- `report_language`: report output language (`en` or `zh`) for LLM generation instructions.
 
 ### Run
 
