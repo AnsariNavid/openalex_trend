@@ -39,7 +39,7 @@
 
   "openai_model": "gpt-4o-mini",
   "cheap_model": "gpt-4o-mini",
-  "analysis_model": "gpt-4.1",
+  "analysis_model": "gpt-5.4",
   "batch_classification_model": "gpt-4.1",
   "openalex_api_key": "",
 
