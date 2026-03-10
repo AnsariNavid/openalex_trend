@@ -1,0 +1,4 @@
+PI: Hidden champion in precision coupling hexapod positioning systems
+CODESYS: Software platform for Industry 4.0 applications
+Beckhoff: Champion in high-performance drive control technology
+HALCON: Hidden champion in machine vision software

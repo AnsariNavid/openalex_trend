@@ -1,0 +1,81 @@
+{
+  "topic_counts": {
+    "thermal management": 126,
+    "thermal design": 49,
+    "electronic cooling": 22,
+    "heat dissipation": 35,
+    "thermal interface materials": 1,
+    "chip-level thermal management": 17,
+    "board-level thermal management": 3,
+    "solder joint reliability": 1,
+    "system-level thermal management": 3,
+    "energy efficiency": 2,
+    "temperature robustness": 1
+  },
+  "topic_year_counts": {
+    "thermal management": {
+      "2020": 15,
+      "2021": 21,
+      "2022": 20,
+      "2023": 20,
+      "2024": 17,
+      "2025": 28,
+      "2026": 5
+    },
+    "electronic cooling": {
+      "2020": 2,
+      "2021": 5,
+      "2022": 3,
+      "2023": 5,
+      "2025": 7
+    },
+    "heat dissipation": {
+      "2020": 4,
+      "2021": 3,
+      "2022": 6,
+      "2023": 6,
+      "2024": 5,
+      "2025": 7,
+      "2026": 4
+    },
+    "thermal design": {
+      "2020": 8,
+      "2021": 6,
+      "2022": 4,
+      "2023": 8,
+      "2024": 12,
+      "2025": 11
+    },
+    "chip-level thermal management": {
+      "2020": 1,
+      "2021": 2,
+      "2022": 4,
+      "2023": 4,
+      "2024": 2,
+      "2025": 3,
+      "2026": 1
+    },
+    "board-level thermal management": {
+      "2021": 2,
+      "2023": 1
+    },
+    "system-level thermal management": {
+      "2020": 1,
+      "2021": 1,
+      "2022": 1
+    },
+    "thermal interface materials": {
+      "2024": 1
+    },
+    "solder joint reliability": {
+      "2022": 1
+    },
+    "energy efficiency": {
+      "2020": 1,
+      "2022": 1
+    },
+    "temperature robustness": {
+      "2021": 1
+    }
+  }
+}
