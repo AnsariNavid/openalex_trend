@@ -1,1 +1,154 @@
 # openalex_trend
+
+PyCharm-friendly scripts for OpenAlex collaboration analysis.
+
+## Scripts
+
+- `openalex_collab_report.py` — main report generator.
+- `pick_host_institutes.py` — interactive helper to choose host institutes and write them into `config.json`.
+- `classify_topics_batch.py` — batch topic classifier (up to 100 papers per model call) for higher-throughput relevance selection.
+
+## What the report includes
+
+1. Publications for multiple host institutes in a configurable date interval.
+2. Filtered output restricted to journals and conferences.
+3. Top 10 collaborating institutes in Germany.
+4. Named host institutes in the report header.
+5. **Collaboration directions per top German partner**, inferred from abstracts of papers co-authored with that partner.
+6. Yearly trend section (publication and collaborator-institute changes).
+7. Main collaborator individuals with a research-background column and short bios.
+8. Theme summaries based on publication abstracts.
+9. Smooth narrative + future collaboration section via GPT API (if `OPENAI_API_KEY` is set).
+
+## Configuration
+
+Edit `config.json` (organized into clearly separated sections):
+
+- **Data fetch**: institution/date/page settings.
+- **Outputs**: report and dataset output filenames.
+- **Models & API keys**: OpenAI/OpenAlex model and auth settings.
+- **Topic taxonomy**: `topics`, `topic_taxonomy`, `forbidden_topics`.
+- **Prompts**: relevance and analysis prompt templates.
+
+- `institution_ids`
+- `from_date`, `to_date`
+- `max_pages`, `per_page`
+- `top_collaborators`, `top_individuals`
+- `results_dir` (all outputs saved here)
+- `output_report`
+- `openai_model` (general model)
+- `analysis_model` (recommended stronger model for deeper direction analysis, default `gpt-4.1`)
+- `openalex_api_key` (your OpenAlex API key for authenticated requests)
+
+## Run in PyCharm
+
+### Option A: pick host institutes first
+
+1. Open `pick_host_institutes.py` and click **Run**.
+2. Search/select institutes interactively.
+3. It updates `config.json`.
+
+### Option B: run report directly
+
+1. Open `openalex_collab_report.py` and click **Run**.
+2. Report will be written to `results/<output_report>`.
+
+## Optional GPT setup
+
+```bash
+export OPENAI_API_KEY="your_key_here"
+```
+
+Without this key, the script still runs and generates non-GPT fallback text.
+
+Set `openalex_api_key` directly in `config.json` to use your OpenAlex API key for data requests.
+
+## Progress bars
+
+Both scripts print progress bars for each major operation so it is easy to follow execution.
+
+
+## Topic-focused script (new)
+
+Use `topic_focused_collab_filter.py` when you want to track only papers relevant to specific topics.
+
+### What it does
+
+1. Uses your host institutes and date range.
+2. Keeps only papers co-authored with German collaborator institutes.
+3. Reads each paper (title + abstract) and checks relevance to your custom topics one-by-one using a **cheap model** (`cheap_model`).
+4. Saves the full filtered dataset (journal/conference + German collaboration subset) to JSON.
+5. Saves topic-relevant papers with metadata to JSONL.
+6. Produces a short topic-level collaboration analysis markdown file.
+
+### Unified config
+
+Use `config.json` as the single configuration file for all scripts.
+
+Key settings:
+- `topics`: precision-engineering category terms (configured to favor recall, including slightly related papers).
+- `topic_taxonomy`: category-to-method mapping used to tag relevant papers (domain-specific, configurable).
+- `forbidden_topics`: topics to exclude early (mapped to OpenAlex concept tags, then filtered out).
+- `cheap_model`: low-cost model for paper-level relevance decisions.
+- `analysis_model`: stronger model for final synthesis.
+- `batch_classification_model`: stronger model used for batched classification requests.
+- `batch_classification_batch_size`: number of papers per batch request (capped at 100).
+- `openalex_api_key`: OpenAlex API key used for all OpenAlex requests.
+- `output_filtered_json`: full filtered dataset (journal/conference + German-collab subset).
+- `output_relevant_jsonl`, `output_relevant_tagged_json`, `output_analysis_md`: output files under `results_dir`.
+- `batch_relevance_system_prompt`, `batch_relevance_user_prompt_template`: instructions for one-call batch classification of up to 100 papers.
+
+### Run
+
+In PyCharm run `topic_focused_collab_filter.py`, or in terminal:
+
+```bash
+python topic_focused_collab_filter.py
+```
+
+
+
+### Batch classification option (new)
+
+If you want to classify faster in large sets, run:
+
+```bash
+python classify_topics_batch.py
+```
+
+This script sends papers in chunks (default 100 per request) to `batch_classification_model` and writes:
+- JSONL: `output_relevant_jsonl`
+- Tagged JSON: `output_relevant_tagged_json`
+
+## Split workflow scripts (generation -> abstract check -> analysis)
+
+Use this 4-step pipeline (all read from `config.json`):
+
+1. `generate_filtered_publications.py`
+   - First excludes works matching `forbidden_topics` (mapped to OpenAlex concept tags).
+   - Generates full filtered dataset JSON (`output_filtered_json`) after journal/conference + German-collaboration + configured date range filtering.
+2. `check_filtered_abstracts.py`
+   - Checks abstract availability on the filtered dataset and writes `results/abstract_coverage_report.json`.
+   - Attempts recovery for missing abstracts in this order:
+     - exact abstract extraction from `html_url`,
+     - exact abstract extraction from `pdf_url`,
+     - exact abstract extraction from arXiv API when title match is >= 90%,
+     - GPT-generated abstract from paper text if exact extraction fails.
+   - If still missing, prompts manual abstract entry title-by-title.
+   - Reports initial and final abstract availability, plus HTML/PDF/arXiv recovered counts and GPT/manual counts.
+3. `classify_topics_from_filtered.py`
+   - Runs topic relevance classification using both title and abstract with recall-oriented matching (includes slightly related precision-engineering papers) and writes relevant JSONL (`output_relevant_jsonl`).
+   - Writes a second JSON file (`output_relevant_tagged_json`) containing only relevant papers with configurable `category_label_field` / `method_label_field` tags (default: `topic_category` / `topic_method`).
+   - Saves checkpoints every `classification_checkpoint_every` papers (default 100), prints analyzed/selected counts even when selected count is 0, and resumes from the last checkpoint if interrupted.
+4. `write_topic_analysis.py`
+   - Reads `output_relevant_tagged_json` (falls back to `output_relevant_jsonl` if needed) and writes concise table-first analysis markdown (`output_analysis_md`) + `topic_stats.json`.
+   - The report summarizes configurable topic-category collaboration focus, partner research focus, breakthrough signals, trends, and future directions.
+
+Run order in terminal:
+
+```bash
+python generate_filtered_publications.py
+python check_filtered_abstracts.py results/filtered_german_collab_dataset.json results/abstract_coverage_report.json results/filtered_german_collab_dataset.json
+python classify_topics_from_filtered.py
+python write_topic_analysis.py
+```
