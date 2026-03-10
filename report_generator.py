@@ -2,8 +2,7 @@
 """Unified report generator.
 
 Generates a concise, table-first collaboration report from existing pipeline outputs.
-Primary input: results/topic_relevant_tagged_papers.json (configurable)
-Fallback input: results/topic_relevant_papers.jsonl
+Input: results/topic_relevant_tagged_papers.json (configurable)
 """
 
 from __future__ import annotations
@@ -87,13 +86,12 @@ def load_jsonl(path: Path) -> list[dict[str, Any]]:
 def load_rows(cfg: ReportConfig) -> tuple[list[dict[str, Any]], str]:
     out_dir = Path(cfg.results_dir)
     tagged = out_dir / cfg.output_relevant_tagged_json
-    if tagged.exists():
-        data = json.loads(tagged.read_text(encoding="utf-8"))
-        if isinstance(data, list):
-            return data, str(tagged)
-    jsonl = out_dir / cfg.output_relevant_jsonl
-    if jsonl.exists():
-        return load_jsonl(jsonl), str(jsonl)
+    if not tagged.exists():
+        return [], str(tagged)
+
+    data = json.loads(tagged.read_text(encoding="utf-8"))
+    if isinstance(data, list):
+        return data, str(tagged)
     return [], str(tagged)
 
 

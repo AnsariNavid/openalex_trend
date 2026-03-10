@@ -141,7 +141,7 @@ Use this 4-step pipeline (all read from `config.json`):
    - Writes a second JSON file (`output_relevant_tagged_json`) containing only relevant papers with configurable `category_label_field` / `method_label_field` tags (default: `topic_category` / `topic_method`).
    - Saves checkpoints every `classification_checkpoint_every` papers (default 100), prints analyzed/selected counts even when selected count is 0, and resumes from the last checkpoint if interrupted.
 4. `report_generator.py`
-   - Reads `output_relevant_tagged_json` (falls back to `output_relevant_jsonl` if needed) and writes a concise, table-first report to `output_report` + `topic_stats.json`.
+   - Reads `output_relevant_tagged_json` only and writes a concise, table-first report to `output_report` + `topic_stats.json`.
    - The report focuses on category relevance, university↔company research focus, breakthrough signals, trends, and future directions without unnecessary text.
 
 Run order in terminal:
