@@ -140,7 +140,8 @@ Use this 4-step pipeline (all read from `config.json`):
    - Runs topic relevance classification using both title and abstract with recall-oriented matching (includes slightly related thermal-management papers) and writes relevant JSONL (`output_relevant_jsonl`).
    - Writes a second JSON file (`output_relevant_tagged_json`) containing only relevant papers with `cooling_level` and `cooling_methodology` tags.
 4. `write_topic_analysis.py`
-   - Reads the relevant JSONL list and writes analysis markdown (`output_analysis_md`) + `topic_stats.json`.
+   - Reads `output_relevant_tagged_json` (falls back to `output_relevant_jsonl` if needed) and writes concise table-first analysis markdown (`output_analysis_md`) + `topic_stats.json`.
+   - The report explicitly summarizes chip-level / board-level / system-level collaboration focus, partner research focus, breakthrough signals, trends, and future directions.
 
 Run order in terminal:
 
