@@ -25,6 +25,7 @@ class TopicConfig:
     keyword_hints: list[str]
     category_field: str
     method_field: str
+    checkpoint_every: int
     results_dir: str
     output_filtered_json: str
     output_relevant_jsonl: str
@@ -73,6 +74,7 @@ def load_topic_config(path: str = "config.json") -> TopicConfig:
         keyword_hints=[str(x).strip() for x in raw.get("relevance_keyword_hints", []) if str(x).strip()],
         category_field=str(raw.get("category_label_field", "topic_category")),
         method_field=str(raw.get("method_label_field", "topic_method")),
+        checkpoint_every=max(1, int(raw.get("classification_checkpoint_every", 100))),
         results_dir=str(raw["results_dir"]),
         output_filtered_json=str(raw["output_filtered_json"]),
         output_relevant_jsonl=str(raw["output_relevant_jsonl"]),
@@ -140,6 +142,25 @@ def keyword_relevance(row: dict[str, Any], cfg: TopicConfig) -> dict[str, Any]:
     return {"relevant": bool(matches), "matched_topics": matches, "rationale": "Keyword fallback matching."}
 
 
+def load_jsonl(path: Path) -> list[dict[str, Any]]:
+    rows: list[dict[str, Any]] = []
+    if not path.exists():
+        return rows
+    with path.open("r", encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if line:
+                rows.append(json.loads(line))
+    return rows
+
+
+def save_outputs(out_jsonl: Path, out_tagged: Path, rows: list[dict[str, Any]]) -> None:
+    with out_jsonl.open("w", encoding="utf-8") as f:
+        for r in rows:
+            f.write(json.dumps(r, ensure_ascii=False) + "\n")
+    out_tagged.write_text(json.dumps(rows, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+
 def main() -> int:
     pb = ProgressBar()
     try:
@@ -152,17 +173,35 @@ def main() -> int:
         prompt_cfg = load_prompt_config_from_raw(raw_cfg)
         pb.update("Loading prompt config", 1, 1)
 
-        filtered_path = Path(cfg.results_dir) / cfg.output_filtered_json
+        out_dir = Path(cfg.results_dir)
+        out_dir.mkdir(parents=True, exist_ok=True)
+
+        filtered_path = out_dir / cfg.output_filtered_json
         if not filtered_path.exists():
             print(f"Error: filtered dataset not found: {filtered_path}")
             return 1
 
-        filtered = json.loads(filtered_path.read_text(encoding="utf-8"))
-        api_key = os.getenv("OPENAI_API_KEY", "")
+        out_jsonl = out_dir / cfg.output_relevant_jsonl
+        out_tagged = out_dir / cfg.output_relevant_tagged_json
+        progress_path = out_dir / ".classify_topics_from_filtered.progress.json"
 
-        pb.update("Classifying filtered papers by topics", 0, len(filtered))
-        relevant = []
-        for i, row in enumerate(filtered, start=1):
+        filtered = json.loads(filtered_path.read_text(encoding="utf-8"))
+        relevant = load_jsonl(out_jsonl)
+
+        start_idx = 0
+        if progress_path.exists():
+            st = json.loads(progress_path.read_text(encoding="utf-8"))
+            start_idx = int(st.get("next_index", 0))
+            start_idx = max(0, min(start_idx, len(filtered)))
+            print(f"Resuming classification from index {start_idx}/{len(filtered)}")
+            print(f"Previously selected papers: {len(relevant)}")
+
+        api_key = os.getenv("OPENAI_API_KEY", "")
+        pb.update("Classifying filtered papers by topics", start_idx, len(filtered))
+
+        processed_since_checkpoint = 0
+        for i in range(start_idx, len(filtered)):
+            row = filtered[i]
             decision = llm_relevance(row, cfg, prompt_cfg, api_key) if api_key else keyword_relevance(row, cfg)
             if bool(decision.get("relevant")):
                 out = dict(row)
@@ -177,20 +216,25 @@ def main() -> int:
                     out[cfg.method_field] = fallback_method
 
                 relevant.append(out)
-            pb.update("Classifying filtered papers by topics", i, len(filtered))
 
-        out_dir = Path(cfg.results_dir)
-        out_dir.mkdir(parents=True, exist_ok=True)
-        out_path = out_dir / cfg.output_relevant_jsonl
-        with out_path.open("w", encoding="utf-8") as f:
-            for r in relevant:
-                f.write(json.dumps(r, ensure_ascii=False) + "\n")
+            processed_since_checkpoint += 1
+            pb.update("Classifying filtered papers by topics", i + 1, len(filtered))
 
-        tagged_out_path = out_dir / cfg.output_relevant_tagged_json
-        tagged_out_path.write_text(json.dumps(relevant, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+            if processed_since_checkpoint >= cfg.checkpoint_every:
+                save_outputs(out_jsonl, out_tagged, relevant)
+                progress_path.write_text(
+                    json.dumps({"next_index": i + 1, "selected_count": len(relevant)}, ensure_ascii=False, indent=2) + "\n",
+                    encoding="utf-8",
+                )
+                print(f"Checkpoint saved at {i + 1}/{len(filtered)} | selected papers: {len(relevant)}")
+                processed_since_checkpoint = 0
 
-        print(f"Relevant list saved: {out_path.resolve()}")
-        print(f"Relevant tagged JSON saved: {tagged_out_path.resolve()}")
+        save_outputs(out_jsonl, out_tagged, relevant)
+        if progress_path.exists():
+            progress_path.unlink()
+
+        print(f"Relevant list saved: {out_jsonl.resolve()}")
+        print(f"Relevant tagged JSON saved: {out_tagged.resolve()}")
         print(f"Relevant entries: {len(relevant)}")
         return 0
     except Exception as e:  # noqa: BLE001
