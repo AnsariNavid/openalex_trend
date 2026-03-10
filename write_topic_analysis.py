@@ -17,29 +17,15 @@ from urllib.request import Request, urlopen
 from config_loader import load_json_file
 
 OPENAI_CHAT_ENDPOINT = "https://api.openai.com/v1/chat/completions"
-LEVEL_ORDER = ["chip-level", "board-level", "system-level", "unknown"]
-CATEGORY_FACTS = {
-    "chip-level": [
-        "Microfluidics",
-        "Thermal Interface Materials (TIMs)",
-        "hotspots mitigation in 2.5D/3D ICs",
-    ],
-    "board-level": [
-        "Integrated heat pipes",
-        "vapor chambers",
-        "PCB thermal via optimization",
-    ],
-    "system-level": [
-        "Cold-plate cooling",
-        "Two-phase immersion cooling",
-        "Rack-scale thermal management",
-    ],
-}
 
 
 @dataclass
 class TopicConfig:
     topics: list[str]
+    topic_taxonomy: dict[str, list[str]]
+    category_field: str
+    method_field: str
+    category_facts: dict[str, list[str]]
     results_dir: str
     output_relevant_jsonl: str
     output_relevant_tagged_json: str
@@ -70,8 +56,14 @@ def safe_post_json(url: str, payload: dict[str, Any], headers: dict[str, str], m
 
 def load_topic_config(path: str = "config.json") -> TopicConfig:
     raw = load_json_file(path)
+    taxonomy = raw.get("topic_taxonomy") or raw.get("cooling_taxonomy") or {}
+    facts = raw.get("analysis_category_facts") or taxonomy
     return TopicConfig(
         topics=[str(x) for x in raw["topics"]],
+        topic_taxonomy={str(k): [str(v) for v in vals] for k, vals in taxonomy.items()},
+        category_field=str(raw.get("category_label_field", "topic_category")),
+        method_field=str(raw.get("method_label_field", "topic_method")),
+        category_facts={str(k): [str(v) for v in vals] for k, vals in facts.items()},
         results_dir=str(raw["results_dir"]),
         output_relevant_jsonl=str(raw["output_relevant_jsonl"]),
         output_relevant_tagged_json=str(raw.get("output_relevant_tagged_json", "topic_relevant_tagged_papers.json")),
@@ -113,64 +105,62 @@ def load_relevant_rows(cfg: TopicConfig) -> tuple[list[dict[str, Any]], str]:
 
 def institute_type(name: str) -> str:
     n = name.lower()
-    company_terms = ["gmbh", "ag", "inc", "ltd", "corp", "company", "siemens", "bosch", "infineon", "intel"]
+    company_terms = ["gmbh", "ag", "inc", "ltd", "corp", "company", "co.", "llc", "plc"]
     if any(t in n for t in company_terms):
         return "Company"
-    if "university" in n or "universit" in n or "technische hochschule" in n:
+    if "university" in n or "universit" in n or "college" in n:
         return "University"
     return "Institute/Other"
 
 
-def build_stats(rows: list[dict[str, Any]], topics: list[str]) -> dict[str, Any]:
+def build_stats(rows: list[dict[str, Any]], cfg: TopicConfig) -> dict[str, Any]:
+    categories = list(cfg.topic_taxonomy.keys()) or sorted({str(r.get(cfg.category_field, "unknown")) for r in rows})
+    if "unknown" not in categories:
+        categories.append("unknown")
+
     by_topic = Counter()
-    by_level = Counter()
-    methods = Counter()
-    trends_by_year_level: dict[int, Counter[str]] = defaultdict(Counter)
-    uni_company_focus: dict[tuple[str, str], Counter[str]] = defaultdict(Counter)
+    by_category = Counter()
+    by_method = Counter()
+    trends_by_year_category: dict[int, Counter[str]] = defaultdict(Counter)
+    partner_focus: dict[tuple[str, str], Counter[str]] = defaultdict(Counter)
 
     for r in rows:
         year = r.get("publication_year")
-        level = str(r.get("cooling_level", "unknown") or "unknown")
-        method = str(r.get("cooling_methodology", "") or "")
-
-        by_level[level] += 1
+        category = str(r.get(cfg.category_field, r.get("cooling_level", "unknown")) or "unknown")
+        method = str(r.get(cfg.method_field, r.get("cooling_methodology", "")) or "")
+        by_category[category] += 1
         if method:
-            methods[method] += 1
+            by_method[method] += 1
         if isinstance(year, int):
-            trends_by_year_level[year][level] += 1
+            trends_by_year_category[year][category] += 1
 
         for t in r.get("matched_topics", []):
             by_topic[t] += 1
 
-        partners = r.get("german_collaborator_institutes", []) or []
-        for p in partners:
-            p_str = str(p)
-            p_type = institute_type(p_str)
-            uni_company_focus[(p_str, p_type)][level] += 1
+        for p in (r.get("german_collaborator_institutes") or []):
+            name = str(p)
+            partner_focus[(name, institute_type(name))][category] += 1
 
-    top_pairs = []
-    for (name, ptype), cnt in uni_company_focus.items():
+    partner_rows = []
+    for (name, ptype), cnt in partner_focus.items():
         total = sum(cnt.values())
         dominant = cnt.most_common(1)[0][0] if cnt else "unknown"
-        top_pairs.append({
+        partner_rows.append({
             "partner": name,
             "partner_type": ptype,
             "total_papers": total,
-            "dominant_level": dominant,
-            "level_counts": dict(cnt),
+            "dominant_category": dominant,
+            "category_counts": dict(cnt),
         })
-
-    top_pairs.sort(key=lambda x: x["total_papers"], reverse=True)
+    partner_rows.sort(key=lambda x: x["total_papers"], reverse=True)
 
     return {
         "topic_counts": dict(by_topic),
-        "level_counts": {k: by_level.get(k, 0) for k in LEVEL_ORDER if by_level.get(k, 0) > 0},
-        "method_counts": dict(methods),
-        "year_level_counts": {
-            str(y): {lvl: c for lvl, c in cnt.items()} for y, cnt in sorted(trends_by_year_level.items())
-        },
-        "partner_focus": top_pairs[:12],
-        "category_facts": CATEGORY_FACTS,
+        "category_counts": {k: by_category.get(k, 0) for k in categories if by_category.get(k, 0) > 0},
+        "method_counts": dict(by_method),
+        "year_category_counts": {str(y): dict(c) for y, c in sorted(trends_by_year_category.items())},
+        "partner_focus": partner_rows[:12],
+        "category_facts": cfg.category_facts,
         "relevant_count": len(rows),
     }
 
@@ -182,55 +172,36 @@ def _table(headers: list[str], rows: list[list[str]]) -> list[str]:
     return out
 
 
-def fallback_analysis(rows: list[dict[str, Any]], stats: dict[str, Any]) -> str:
-    lines = ["# Topic-Focused Collaboration Analysis", ""]
-    lines.append(f"- Relevant papers: **{len(rows)}**")
+def fallback_analysis(rows: list[dict[str, Any]], stats: dict[str, Any], cfg: TopicConfig) -> str:
+    lines = ["# Topic-Focused Collaboration Analysis", "", f"- Relevant papers: **{len(rows)}**", ""]
+
+    lines.append("## Collaboration by Category")
+    category_rows = [[k, str(v)] for k, v in stats["category_counts"].items()]
+    lines.extend(_table(["Category", "Paper count"], category_rows or [["n/a", "0"]]))
     lines.append("")
 
-    lines.append("## Collaboration by Cooling Category")
-    level_rows = [[lvl, str(stats["level_counts"].get(lvl, 0))] for lvl in ["chip-level", "board-level", "system-level"]]
-    lines.extend(_table(["Cooling category", "Paper count"], level_rows))
+    lines.append("## Research Focus by Partner")
+    partner_rows = [[p["partner"], p["partner_type"], p["dominant_category"], str(p["total_papers"])] for p in stats["partner_focus"][:8]]
+    lines.extend(_table(["Partner", "Type", "Dominant category", "Papers"], partner_rows or [["n/a", "n/a", "n/a", "0"]]))
     lines.append("")
 
-    lines.append("## Research Focus by Partner (University/Company)")
-    partner_rows = []
-    for p in stats["partner_focus"][:8]:
-        partner_rows.append([
-            p["partner"],
-            p["partner_type"],
-            p["dominant_level"],
-            str(p["total_papers"]),
-        ])
-    if partner_rows:
-        lines.extend(_table(["Partner", "Type", "Dominant cooling level", "Papers"], partner_rows))
-    else:
-        lines.append("No partner focus data available.")
-    lines.append("")
-
-    lines.append("## Key Methodology Signals")
-    top_methods = sorted(stats["method_counts"].items(), key=lambda x: x[1], reverse=True)[:8]
+    lines.append("## Key Research Advancements")
+    top_methods = sorted(stats["method_counts"].items(), key=lambda x: x[1], reverse=True)[:5]
     if top_methods:
-        lines.extend(_table(["Methodology", "Count"], [[m, str(c)] for m, c in top_methods]))
+        lines.extend(_table(["Method/Approach", "Count"], [[m, str(c)] for m, c in top_methods]))
     else:
         lines.append("No methodology tags available.")
     lines.append("")
 
-    lines.append("## Important Breakthrough Signals")
-    for m, c in top_methods[:3]:
-        lines.append(f"- {m}: strong momentum with {c} relevant papers.")
-    if not top_methods:
-        lines.append("- Insufficient tagged methodology data to infer breakthrough signals.")
-    lines.append("")
-
     lines.append("## Future Direction Outlook")
-    lines.append("- Strengthen chip-to-system integration projects to translate component-level advances into deployable thermal systems.")
-    lines.append("- Expand partnerships with the highest-output collaborators in each cooling level to accelerate commercialization-ready outcomes.")
-    lines.append("- Prioritize methods with repeated yearly presence as near-term scalable research bets.")
+    lines.append("- Scale collaborations in the highest-volume categories into multi-partner programs.")
+    lines.append("- Convert repeated methodology signals into targeted demonstrator projects.")
+    lines.append("- Strengthen university-company links where category dominance is clear.")
     lines.append("")
 
-    lines.append("## Category Definition Used")
-    for lvl in ["chip-level", "board-level", "system-level"]:
-        lines.append(f"- **{lvl}**: " + ", ".join(CATEGORY_FACTS[lvl]))
+    lines.append("## Category Definitions Used")
+    for k, vals in cfg.category_facts.items():
+        lines.append(f"- **{k}**: {', '.join(vals)}")
 
     return "\n".join(lines) + "\n"
 
@@ -238,14 +209,14 @@ def fallback_analysis(rows: list[dict[str, Any]], stats: dict[str, Any]) -> str:
 def generate_analysis(cfg: TopicConfig, prompt_cfg: PromptConfig, rows: list[dict[str, Any]], stats: dict[str, Any]) -> str:
     api_key = os.getenv("OPENAI_API_KEY")
     if not api_key:
-        return fallback_analysis(rows, stats)
+        return fallback_analysis(rows, stats, cfg)
 
     sample = [
         {
             "title": r.get("title"),
             "year": r.get("publication_year"),
-            "cooling_level": r.get("cooling_level", "unknown"),
-            "cooling_methodology": r.get("cooling_methodology", ""),
+            cfg.category_field: r.get(cfg.category_field, r.get("cooling_level", "unknown")),
+            cfg.method_field: r.get(cfg.method_field, r.get("cooling_methodology", "")),
             "german_collaborator_institutes": r.get("german_collaborator_institutes", [])[:5],
             "rationale": r.get("rationale", ""),
         }
@@ -271,9 +242,9 @@ def generate_analysis(cfg: TopicConfig, prompt_cfg: PromptConfig, rows: list[dic
     try:
         resp = safe_post_json(OPENAI_CHAT_ENDPOINT, payload, headers)
         content = resp.get("choices", [{}])[0].get("message", {}).get("content", "").strip()
-        return content or fallback_analysis(rows, stats)
+        return content or fallback_analysis(rows, stats, cfg)
     except Exception:
-        return fallback_analysis(rows, stats)
+        return fallback_analysis(rows, stats, cfg)
 
 
 def main() -> int:
@@ -286,7 +257,7 @@ def main() -> int:
         print(f"Error: relevant list not found or empty. Expected tagged JSON at: {source_path}")
         return 1
 
-    stats = build_stats(rows, cfg.topics)
+    stats = build_stats(rows, cfg)
     analysis = generate_analysis(cfg, prompt_cfg, rows, stats)
 
     out_path = Path(cfg.results_dir) / cfg.output_analysis_md

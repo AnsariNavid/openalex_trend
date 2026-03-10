@@ -21,7 +21,10 @@ OPENAI_CHAT_ENDPOINT = "https://api.openai.com/v1/chat/completions"
 @dataclass
 class TopicConfig:
     topics: list[str]
-    cooling_taxonomy: dict[str, list[str]]
+    topic_taxonomy: dict[str, list[str]]
+    keyword_hints: list[str]
+    category_field: str
+    method_field: str
     results_dir: str
     output_filtered_json: str
     output_relevant_jsonl: str
@@ -64,12 +67,13 @@ def safe_post_json(url: str, payload: dict[str, Any], headers: dict[str, str], m
 
 def load_topic_config(path: str = "config.json") -> TopicConfig:
     raw = load_json_file(path)
+    taxonomy_raw = raw.get("topic_taxonomy") or raw.get("cooling_taxonomy") or {}
     return TopicConfig(
         topics=[str(x) for x in raw["topics"]],
-        cooling_taxonomy={
-            str(level): [str(m) for m in methods]
-            for level, methods in (raw.get("cooling_taxonomy") or {}).items()
-        },
+        topic_taxonomy={str(level): [str(m) for m in methods] for level, methods in taxonomy_raw.items()},
+        keyword_hints=[str(x).strip() for x in raw.get("relevance_keyword_hints", []) if str(x).strip()],
+        category_field=str(raw.get("category_label_field", "topic_category")),
+        method_field=str(raw.get("method_label_field", "topic_method")),
         results_dir=str(raw["results_dir"]),
         output_filtered_json=str(raw["output_filtered_json"]),
         output_relevant_jsonl=str(raw["output_relevant_jsonl"]),
@@ -88,26 +92,18 @@ def load_prompt_config_from_raw(raw: dict[str, Any]) -> PromptConfig:
 
 def keyword_taxonomy_tag(title: str, abstract: str, cfg: TopicConfig) -> tuple[str, str]:
     text = f"{title} {abstract}".lower()
-    for level, methods in cfg.cooling_taxonomy.items():
+    for level, methods in cfg.topic_taxonomy.items():
         for method in methods:
             if method.lower() in text:
                 return level, method
     return "unknown", ""
 
 
-def keyword_is_relevant(title: str, abstract: str, topics: list[str]) -> tuple[bool, list[str]]:
+def keyword_is_relevant(title: str, abstract: str, cfg: TopicConfig) -> tuple[bool, list[str]]:
     text = f"{title} {abstract}".lower()
-    broad_terms = [
-        "thermal management",
-        "thermal",
-        "cooling",
-        "heat dissipation",
-        "heat transfer",
-        "temperature control",
-        "therm",
-    ]
-    matches = [t for t in topics if t.lower() in text]
-    matches.extend([t for t in broad_terms if t in text and t not in matches])
+    matches = [t for t in cfg.topics if t.lower() in text]
+    hints = cfg.keyword_hints or cfg.topics
+    matches.extend([t for t in hints if t.lower() in text and t not in matches])
     return bool(matches), matches
 
 
@@ -126,7 +122,8 @@ def llm_batch_decision(batch: list[dict[str, Any]], cfg: TopicConfig, prompt_cfg
 
     user_prompt = prompt_cfg.batch_relevance_user_prompt_template.format(
         topics_json=json.dumps(cfg.topics, ensure_ascii=False),
-        cooling_taxonomy_json=json.dumps(cfg.cooling_taxonomy, ensure_ascii=False),
+        topic_taxonomy_json=json.dumps(cfg.topic_taxonomy, ensure_ascii=False),
+        cooling_taxonomy_json=json.dumps(cfg.topic_taxonomy, ensure_ascii=False),
         papers_json=json.dumps(payload_rows, ensure_ascii=False),
     )
 
@@ -176,38 +173,33 @@ def main() -> int:
 
         pb.update("Batch classifying papers", 0, len(batches))
         for i, batch in enumerate(batches, start=1):
-            if api_key:
-                decisions = llm_batch_decision(batch, cfg, prompt_cfg, api_key)
-            else:
-                decisions = []
+            decisions = llm_batch_decision(batch, cfg, prompt_cfg, api_key) if api_key else []
 
             if decisions:
                 for d in decisions:
                     rid = str(d.get("id", ""))
-                    if not rid or rid not in by_id:
-                        continue
-                    if not bool(d.get("relevant")):
+                    if not rid or rid not in by_id or not bool(d.get("relevant")):
                         continue
                     base = dict(by_id[rid])
                     base["matched_topics"] = d.get("matched_topics", [])
-                    base["cooling_level"] = str(d.get("cooling_level", "unknown"))
-                    base["cooling_methodology"] = str(d.get("cooling_methodology", ""))
+                    base[cfg.category_field] = str(d.get(cfg.category_field, d.get("cooling_level", "unknown")))
+                    base[cfg.method_field] = str(d.get(cfg.method_field, d.get("cooling_methodology", "")))
                     base["rationale"] = d.get("rationale", "")
-                    if base["cooling_level"] == "unknown":
+                    if base[cfg.category_field] == "unknown":
                         lvl, meth = keyword_taxonomy_tag(base.get("title", ""), base.get("abstract", ""), cfg)
-                        base["cooling_level"] = lvl
-                        base["cooling_methodology"] = meth
+                        base[cfg.category_field] = lvl
+                        base[cfg.method_field] = meth
                     relevant.append(base)
             else:
                 for row in batch:
-                    ok, matches = keyword_is_relevant(row.get("title", ""), row.get("abstract", ""), cfg.topics)
+                    ok, matches = keyword_is_relevant(row.get("title", ""), row.get("abstract", ""), cfg)
                     if not ok:
                         continue
                     lvl, meth = keyword_taxonomy_tag(row.get("title", ""), row.get("abstract", ""), cfg)
                     out = dict(row)
                     out["matched_topics"] = matches
-                    out["cooling_level"] = lvl
-                    out["cooling_methodology"] = meth
+                    out[cfg.category_field] = lvl
+                    out[cfg.method_field] = meth
                     out["rationale"] = "Keyword fallback matching."
                     relevant.append(out)
 

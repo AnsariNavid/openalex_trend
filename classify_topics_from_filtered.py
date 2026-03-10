@@ -21,7 +21,10 @@ OPENAI_CHAT_ENDPOINT = "https://api.openai.com/v1/chat/completions"
 @dataclass
 class TopicConfig:
     topics: list[str]
-    cooling_taxonomy: dict[str, list[str]]
+    topic_taxonomy: dict[str, list[str]]
+    keyword_hints: list[str]
+    category_field: str
+    method_field: str
     results_dir: str
     output_filtered_json: str
     output_relevant_jsonl: str
@@ -63,12 +66,13 @@ def safe_post_json(url: str, payload: dict[str, Any], headers: dict[str, str], m
 
 def load_topic_config(path: str = "config.json") -> TopicConfig:
     raw = load_json_file(path)
+    taxonomy_raw = raw.get("topic_taxonomy") or raw.get("cooling_taxonomy") or {}
     return TopicConfig(
         topics=[str(x) for x in raw["topics"]],
-        cooling_taxonomy={
-            str(level): [str(m) for m in methods]
-            for level, methods in (raw.get("cooling_taxonomy") or {}).items()
-        },
+        topic_taxonomy={str(level): [str(m) for m in methods] for level, methods in taxonomy_raw.items()},
+        keyword_hints=[str(x).strip() for x in raw.get("relevance_keyword_hints", []) if str(x).strip()],
+        category_field=str(raw.get("category_label_field", "topic_category")),
+        method_field=str(raw.get("method_label_field", "topic_method")),
         results_dir=str(raw["results_dir"]),
         output_filtered_json=str(raw["output_filtered_json"]),
         output_relevant_jsonl=str(raw["output_relevant_jsonl"]),
@@ -87,7 +91,8 @@ def load_prompt_config_from_raw(raw: dict[str, Any]) -> PromptConfig:
 def llm_relevance(row: dict[str, Any], cfg: TopicConfig, prompt_cfg: PromptConfig, api_key: str) -> dict[str, Any]:
     user_prompt = prompt_cfg.relevance_user_prompt_template.format(
         topics_json=json.dumps(cfg.topics, ensure_ascii=False),
-        cooling_taxonomy_json=json.dumps(cfg.cooling_taxonomy, ensure_ascii=False),
+        topic_taxonomy_json=json.dumps(cfg.topic_taxonomy, ensure_ascii=False),
+        cooling_taxonomy_json=json.dumps(cfg.topic_taxonomy, ensure_ascii=False),
         title=row.get("title", ""),
         abstract=(row.get("abstract") or "")[:5000],
     )
@@ -112,34 +117,26 @@ def llm_relevance(row: dict[str, Any], cfg: TopicConfig, prompt_cfg: PromptConfi
     return {
         "relevant": False,
         "matched_topics": [],
-        "cooling_level": "unknown",
-        "cooling_methodology": "",
+        cfg.category_field: "unknown",
+        cfg.method_field: "",
         "rationale": "Malformed model output.",
     }
 
 
 def keyword_taxonomy_tag(row: dict[str, Any], cfg: TopicConfig) -> tuple[str, str]:
     text = f"{row.get('title','')} {row.get('abstract','')}".lower()
-    for level, methods in cfg.cooling_taxonomy.items():
+    for level, methods in cfg.topic_taxonomy.items():
         for method in methods:
             if method.lower() in text:
                 return level, method
     return "unknown", ""
 
 
-def keyword_relevance(row: dict[str, Any], topics: list[str]) -> dict[str, Any]:
+def keyword_relevance(row: dict[str, Any], cfg: TopicConfig) -> dict[str, Any]:
     text = f"{row.get('title','')} {row.get('abstract','')}".lower()
-    broad_terms = [
-        "thermal management",
-        "thermal",
-        "cooling",
-        "heat dissipation",
-        "heat transfer",
-        "temperature control",
-        "therm",
-    ]
-    matches = [t for t in topics if t.lower() in text]
-    matches.extend([t for t in broad_terms if t in text and t not in matches])
+    matches = [t for t in cfg.topics if t.lower() in text]
+    hints = cfg.keyword_hints or cfg.topics
+    matches.extend([t for t in hints if t.lower() in text and t not in matches])
     return {"relevant": bool(matches), "matched_topics": matches, "rationale": "Keyword fallback matching."}
 
 
@@ -166,18 +163,18 @@ def main() -> int:
         pb.update("Classifying filtered papers by topics", 0, len(filtered))
         relevant = []
         for i, row in enumerate(filtered, start=1):
-            decision = llm_relevance(row, cfg, prompt_cfg, api_key) if api_key else keyword_relevance(row, cfg.topics)
+            decision = llm_relevance(row, cfg, prompt_cfg, api_key) if api_key else keyword_relevance(row, cfg)
             if bool(decision.get("relevant")):
                 out = dict(row)
                 out["matched_topics"] = decision.get("matched_topics", [])
-                out["cooling_level"] = str(decision.get("cooling_level", "unknown"))
-                out["cooling_methodology"] = str(decision.get("cooling_methodology", ""))
+                out[cfg.category_field] = str(decision.get(cfg.category_field, decision.get("cooling_level", "unknown")))
+                out[cfg.method_field] = str(decision.get(cfg.method_field, decision.get("cooling_methodology", "")))
                 out["rationale"] = decision.get("rationale", "")
 
-                if (not out["cooling_level"] or out["cooling_level"] == "unknown") and cfg.cooling_taxonomy:
+                if (not out[cfg.category_field] or out[cfg.category_field] == "unknown") and cfg.topic_taxonomy:
                     fallback_level, fallback_method = keyword_taxonomy_tag(row, cfg)
-                    out["cooling_level"] = fallback_level
-                    out["cooling_methodology"] = fallback_method
+                    out[cfg.category_field] = fallback_level
+                    out[cfg.method_field] = fallback_method
 
                 relevant.append(out)
             pb.update("Classifying filtered papers by topics", i, len(filtered))
