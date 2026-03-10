@@ -91,6 +91,8 @@ Use `config.json` as the single configuration file for all scripts.
 Key settings:
 - `topics`: precision-engineering category terms (configured to favor recall, including slightly related papers).
 - `topic_taxonomy`: category-to-method mapping used to tag relevant papers (domain-specific, configurable).
+- `target_companies`, `target_universities`: decision-maker focus lists used by report generation.
+- `company_aliases`: normalization map (e.g., HALCON -> MVTec Software GmbH).
 - `forbidden_topics`: topics to exclude early (mapped to OpenAlex concept tags, then filtered out).
 - `cheap_model`: low-cost model for paper-level relevance decisions.
 - `analysis_model`: stronger model for final synthesis.
@@ -100,6 +102,7 @@ Key settings:
 - `output_filtered_json`: full filtered dataset (journal/conference + German-collab subset).
 - `output_relevant_jsonl`, `output_relevant_tagged_json`, `output_analysis_md`: output files under `results_dir`.
 - `batch_relevance_system_prompt`, `batch_relevance_user_prompt_template`: instructions for one-call batch classification of up to 100 papers.
+- `report_system_prompt`, `report_user_prompt_template`: evidence-first report style and section requirements.
 
 ### Run
 

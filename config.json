@@ -33,16 +33,13 @@
   "output_relevant_tagged_json": "topic_relevant_tagged_papers.json",
   "output_university_filtered_json": "topic_relevant_filtered_by_universities.json",
   "output_analysis_md": "topic_analysis.md",
-
   "top_collaborators": 10,
   "top_individuals": 10,
-
   "openai_model": "gpt-4o-mini",
   "cheap_model": "gpt-4o-mini",
-  "analysis_model": "gpt-5.4",
+  "analysis_model": "gpt-4.1",
   "batch_classification_model": "gpt-4.1",
   "openalex_api_key": "",
-
   "topics": [
     "precision engineering progress",
     "AI for precision engineering",
@@ -112,16 +109,40 @@
       "additive manufacturing"
     ]
   },
-
   "classification_checkpoint_every": 100,
   "batch_classification_batch_size": 100,
-
   "relevance_system_prompt": "Classify whether a paper is relevant to precision engineering progress. Prioritize recall and include even slightly related work in AI for precision engineering, smart manufacturing, automation, optical engineering, precision equipment, micro/nano technology, precision measurement, machine tools, Industry 4.0, and additive manufacturing. Use both title and abstract.",
   "relevance_user_prompt_template": "Return JSON with keys: relevant (bool), matched_topics (list[str]), topic_category (str), topic_method (str), rationale (str, <=40 words). Use both title and abstract and include slightly related precision-engineering papers.\\nTopics: {topics_json}\\nTopic taxonomy: {topic_taxonomy_json}\\nTitle: {title}\\nAbstract: {abstract}",
   "batch_relevance_system_prompt": "You are classifying publication relevance for precision engineering progress. Process a batch of papers and return strict JSON. Be recall-oriented and include anything slightly relevant to AI for precision engineering, smart manufacturing, automation, optical engineering, precision equipment, micro/nano technology, precision measurement, machine tools, Industry 4.0, or additive manufacturing.",
   "batch_relevance_user_prompt_template": "Return a JSON object with key \"decisions\" (list). Each decision item MUST include: id (str), relevant (bool), matched_topics (list[str]), topic_category (str), topic_method (str), rationale (str <= 30 words). Evaluate using both title and abstract.\\nTopics: {topics_json}\\nTopic taxonomy: {topic_taxonomy_json}\\nPapers: {papers_json}\\nInclude one decision for every input paper id.",
   "analysis_system_prompt": "You are writing an executive collaboration brief on precision engineering progress. Keep it concise, easy to follow, and table-first. Focus on research focus by partner, major advancements, and future directions.",
   "analysis_user_prompt_template": "Write a concise markdown report using short sections and tables. Avoid long paragraphs and generic background.\\nMust include:\\n1) Collaboration by category table using the taxonomy in input.\\n2) Partner focus table: partner name, type (University/Company/Other), dominant category, paper count.\\n3) Most important research advancements/breakthroughs (bullet list, brief, evidence-based).\\n4) Future direction analysis from observed collaborations.\\n5) Interesting trend highlights.\\n\\nInput topics: {topics_json}\\nRelevant paper count: {relevant_count}\\nTagged stats: {stats_json}\\nTagged paper sample: {paper_sample_json}",
-  "report_system_prompt": "Write concise executive markdown reports. Keep it table-first and easy to follow. Avoid unnecessary background and verbose text. Focus on actionable collaboration insights.",
-  "report_user_prompt_template": "Write a concise report with markdown tables and short bullets.\nMust include: \n1) Category relevance table (which papers align to which category of interest).\n2) University-to-company research focus table (partner, type, dominant category, paper count).\n3) Most important breakthroughs (short bullets, evidence-based).\n4) Future directions given current collaborations (short bullets).\n5) Interesting trends from year/category or method/category data.\nAvoid too much text; get straight to the point.\n\nInput topics: {topics_json}\nRelevant paper count: {relevant_count}\nTagged stats: {stats_json}\nTagged paper sample: {paper_sample_json}"
+  "report_system_prompt": "You are a senior research analyst producing a concise, publication-backed report for decision-makers. Only use collaborations supported by explicit publication evidence from the input metadata. Do not invent collaborations. Keep output structured, analytical, and table-first. Be explicit about evidence strength and uncertainty.",
+  "report_user_prompt_template": "Create a high-quality report on progress of precision engineering in Germany with emphasis on AI for precision engineering, using only publication-backed university-company collaborations from the provided records.\n\nApply these evidence rules:\n- Count collaborations only when publication metadata indicates both university and company.\n- Do NOT count mere tool/product usage or unsupported assumptions.\n- Label evidence strength as High / Medium / Technical.\n- If strong evidence is missing for listed pairs, mention this in limitations and do not invent data.\n\nUse this exact section structure:\n1) Executive summary (120-180 words)\n2) Verified publication-backed collaboration map (table)\n3) Relationship analysis by pair (table)\n4) Interesting trends (table)\n5) Breakthroughs (short table, 3-6 rows)\n6) Limitations (3-6 bullets)\n7) Bibliography (table with links)\n\nTarget companies: {target_companies_json}\nTarget universities: {target_universities_json}\nInput topics: {topics_json}\nRelevant paper count: {relevant_count}\nTagged stats: {stats_json}\nVerified publication sample: {paper_sample_json}",
+  "target_companies": [
+    "TRUMPF",
+    "ZEISS",
+    "Leica Microsystems",
+    "Festo",
+    "SCHOTT",
+    "KUKA",
+    "Rohde & Schwarz",
+    "PI (Physik Instrumente)",
+    "CODESYS",
+    "Beckhoff",
+    "MVTec Software GmbH"
+  ],
+  "target_universities": [
+    "Technical University of Munich (TUM)",
+    "RWTH Aachen",
+    "Karlsruhe Institute of Technology (KIT)",
+    "University of Stuttgart",
+    "TU Berlin"
+  ],
+  "company_aliases": {
+    "HALCON": "MVTec Software GmbH",
+    "MVTec": "MVTec Software GmbH",
+    "ZEISS": "Carl Zeiss AG",
+    "Leica Microsystems": "Leica Microsystems"
+  }
 }
