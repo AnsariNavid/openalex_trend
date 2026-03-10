@@ -5,6 +5,7 @@ PyCharm-friendly scripts for OpenAlex collaboration analysis.
 ## Scripts
 
 - `report_generator.py` — unified report generator (concise, table-first collaboration report).
+- `filter_by_german_universities.py` — interactive filter for `topic_relevant_tagged_papers.json` by user-provided German university names.
 - `pick_host_institutes.py` — interactive helper to choose host institutes and write them into `config.json`.
 - `classify_topics_batch.py` — batch topic classifier (up to 100 papers per model call) for higher-throughput relevance selection.
 
@@ -29,6 +30,8 @@ Edit `config.json` (organized into clearly separated sections):
 - **Models & API keys**: OpenAI/OpenAlex model and auth settings.
 - **Topic taxonomy**: `topics`, `topic_taxonomy`, `forbidden_topics`.
 - **Prompts**: relevance and analysis prompt templates.
+
+`config.json` is grouped into blocks (scope, outputs, models, taxonomy, runtime controls, prompts) with blank lines between sections for readability.
 
 - `institution_ids`
 - `from_date`, `to_date`
@@ -109,6 +112,18 @@ python topic_focused_collab_filter.py
 
 
 ### Batch classification option (new)
+
+
+### Filter tagged papers by German universities (interactive)
+
+If you want a subset for specific universities, run:
+
+```bash
+python filter_by_german_universities.py
+```
+
+The script asks for university names one by one (empty input to finish), filters `output_relevant_tagged_json`, and writes `output_university_filtered_json` under `results_dir`.
+
 
 If you want to classify faster in large sets, run:
 
